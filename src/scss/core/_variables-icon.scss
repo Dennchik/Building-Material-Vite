@@ -1,0 +1,22 @@
+@use 'sass:string'; // Импортируем модуль string
+$icon-font-family: 'icon-set' !default;
+$icon-font-path: '../fonts' !default;
+
+$icon-phone-outbound: string.unquote('"\\e910"');
+$icon-paragraph-right: string.unquote('"\\e90f"');
+$icon-local: string.unquote('"\\e90e"');
+$icon-house-holl: string.unquote('"\\e900"');
+$icon-persons: string.unquote('"\\e901"');
+$icon-clock: string.unquote('"\\e902"');
+$icon-union: string.unquote('"\\e904"');
+$icon-car: string.unquote('"\\e905"');
+$icon-patch-plus: string.unquote('"\\e906"');
+$icon-heart-like: string.unquote('"\\e9da"');
+$icon-house: string.unquote('"\\e907"');
+$icon-tools: string.unquote('"\\e908"');
+$icon-person: string.unquote('"\\e909"');
+$icon-search: string.unquote('"\\e90a"');
+$icon-cart: string.unquote('"\\e90b"');
+$icon-telephone: string.unquote('"\\e90c"');
+$icon-bar-chart: string.unquote('"\\e90d"');
+$icon-heart: string.unquote('"\\e903"');

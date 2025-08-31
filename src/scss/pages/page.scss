@@ -1,0 +1,168 @@
+@use '../core/all' as *;
+
+.scroll-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #00ffea34;
+  pointer-events: none;
+  z-index: 20;
+}
+.page {
+  // .page__form-request
+  &__form-questions,
+  &__form-request,
+  &__order-call {
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    z-index: 17;
+    backdrop-filter: blur(40px);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    pointer-events: none;
+    background-color: #24344496;
+    transition: opacity 0.3s ease-in-out;
+    overflow-x: hidden;
+
+    &.is-open {
+      opacity: 1;
+      .form-question,
+      .form-request,
+      .order-call {
+        top: 0;
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+
+  // .page__header
+  &__header {
+    position: fixed;
+    z-index: 17;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  // .page__main-content
+  &__main-content {
+    padding-top: 102px;
+    position: relative;
+    z-index: 8;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    line-height: 125%; /* 15/12 */
+
+    @include screen-1260 {
+      padding-top: 140px;
+    }
+
+    @include screen-690 {
+      padding-top: 208px;
+    }
+  }
+}
+
+._bg-color {
+  background: $font-color-title;
+  margin: 6rem 0;
+
+  @include screen-490 {
+    margin: 16px 0;
+  }
+}
+
+.main-content {
+  // .main-content__section
+  &__section {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__footer {
+    background: #243444;
+  }
+}
+
+//* - [ @keyframes Animations ] -
+
+@keyframes rain {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+// @keyframes blick {
+//   0% {
+//     left: -30px;
+//     margin-left: 0px;
+//   }
+//   30% {
+//     left: 110%;
+//     margin-left: 80px;
+//   }
+//   100% {
+//     left: 110%;
+//     margin-left: 80px;
+//   }
+// }
+
+// @keyframes fadeInBackground {
+//   0% {
+//     background: rgb(28, 21, 63);
+//   }
+
+//   100% {
+//     background: $font-color-title;
+//   }
+// }
+
+// /* Анимация открытия */
+// @keyframes expand-height {
+//   0% {
+//     width: 0;
+//     height: 2px; /* Тонкая полоска */
+//     transform: translate(-50%, -50%) scaleX(0); /* Сжатие по ширине */
+//   }
+//   50% {
+//     width: 100%; /* Полоса расширяется по ширине */
+//     height: 2px; /* Пока остаётся тонкой */
+//     transform: translate(-50%, -50%) scaleX(1); /* Расширение по ширине */
+//   }
+//   100% {
+//     width: 100%; /* Полная ширина */
+//     height: 100%; /* Полная высота */
+//     transform: translate(-50%, -50%) scaleX(1); /* Завершение */
+//   }
+// }
+
+// /* Анимация закрытия */
+// @keyframes collapse-width {
+//   0% {
+//     width: 100%; /* Полная ширина */
+//     height: 100%; /* Полная высота */
+//     transform: translate(-50%, -50%) scaleX(1); /* Полное состояние */
+//   }
+//   50% {
+//     width: 100%; /* Полоса остаётся широкой */
+//     height: 2px; /* Высота уменьшается до тонкой линии */
+//     transform: translate(-50%, -50%) scaleX(1); /* Ширина сохраняется */
+//   }
+//   100% {
+//     width: 0; /* Полоса исчезает по ширине */
+//     height: 2px; /* Тонкая полоска */
+//     transform: translate(-50%, -50%) scaleX(0); /* Сжатие по ширине */
+//   }
+// }

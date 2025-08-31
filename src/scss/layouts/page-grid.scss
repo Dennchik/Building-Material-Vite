@@ -1,0 +1,36 @@
+@use '../core/mixins' as *;
+
+.page-grid {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
+
+  &__content {
+    margin: 0 auto;
+    // padding: 0;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 3.1rem;
+    box-sizing: border-box;
+
+    // @include screen-960 {
+    //   grid-template-columns: 1fr minmax(190px, 249px) !important;
+    //   gap: 20px;
+    // }
+
+    @include screen-375 {
+      grid-template-columns: repeat(1, 1fr) !important;
+    }
+  }
+
+  &__column {
+    width: 100%;
+    height: 100%;
+    background: #ff9e4315;
+  }
+}

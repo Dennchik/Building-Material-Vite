@@ -1,0 +1,122 @@
+//todo ---------------------------- Core ---------------------------------------
+@use 'core/variables' as *;
+@use 'core/mixins' as *;
+// todo --------------------------- Modules ------------------------------------
+@use 'modules/preloader.scss';
+// todo --------------------------- Assets -------------------------------------
+@use 'assets/burger-button';
+@use 'assets/sidebar-menu';
+// @use 'assets/parallax';
+// todo --------------------------- Chunks -------------------------------------
+// @use 'chunks/menu-list';
+// todo --------------------------- Fonts --------------------------------------
+// @use 'core/_fonts.scss';
+//todo  --------------------------- Icon Fonts ---------------------------------
+@use 'core/iconfonts';
+// todo --------------------------- Plugins ------------------------------------
+// @use 'assets/swiper-11.2.5';
+// todo --------------------------- layout -------------------------------------
+@use 'layouts/bem-block';
+@use 'layouts/header';
+// @use 'layouts/footer';
+@use 'layouts/page-grid';
+// todo ---------------------------- Pages -------------------------------------
+@use 'pages/page';
+// todo -------------------------- Section -------------------------------------
+
+// todo ------------------------ Default fonts ---------------------------------
+// &display=swap&subset=cyrillic-ext
+@import url('https://fonts.googleapis.com/css?family=Roboto:regular,500,600,700,800,900&display=swap&subset=cyrillic-ext');
+@import url('https://fonts.googleapis.com/css?family=Inter:regular,500,600,700,800,900&display=swap&subset=cyrillic-ext');
+// #region
+// todo ---------------------------- Style -------------------------------------
+.wrapper {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: 100%;
+}
+
+[class*='_container'] {
+  width: 100%;
+  height: 100%;
+  max-width: $maxWidthContainer;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  @include screen-490 {
+    padding: 0 16px;
+  }
+}
+
+[class*=' _img'] {
+  display: inline-block;
+  width: auto;
+  height: auto;
+
+  img {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    object-fit: cover;
+  }
+}
+
+[class*='_ibg'] {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+[class*='icon-'] {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// .btn-grad {
+//   position: relative;
+//   background: #fff;
+//   background: linear-gradient(90deg, #fff, rgba(4, 217, 255, 0.26), #fff);
+
+//   text-align: center;
+//   text-transform: uppercase;
+
+//   transition: background 0.5s;
+//   background-size: 500% auto;
+//   box-shadow: 0 0 10px #a0a0a0;
+// }
+.button {
+  &:hover {
+    .grad-blink {
+      opacity: 1;
+      animation: rain 1s linear infinite;
+    }
+  }
+}

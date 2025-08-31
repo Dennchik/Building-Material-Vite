@@ -1,0 +1,82 @@
+@font-face {
+  font-family: 'icon-set';
+  src:  url('fonts/icon-set.eot?wjxcat');
+  src:  url('fonts/icon-set.eot?wjxcat#iefix') format('embedded-opentype'),
+    url('fonts/icon-set.ttf?wjxcat') format('truetype'),
+    url('fonts/icon-set.woff?wjxcat') format('woff'),
+    url('fonts/icon-set.svg?wjxcat#icon-set') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icon-set' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga";
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-house-holl:before {
+  content: "\e900";
+}
+.icon-persons:before {
+  content: "\e901";
+}
+.icon-clock:before {
+  content: "\e902";
+}
+.icon-union:before {
+  content: "\e904";
+}
+.icon-car:before {
+  content: "\e905";
+}
+.icon-patch-plus:before {
+  content: "\e906";
+}
+.icon-heart-like:before {
+  content: "\e9da";
+}
+.icon-house:before {
+  content: "\e907";
+}
+.icon-tools:before {
+  content: "\e908";
+}
+.icon-person:before {
+  content: "\e909";
+}
+.icon-search:before {
+  content: "\e90a";
+}
+.icon-cart:before {
+  content: "\e90b";
+}
+.icon-telephone:before {
+  content: "\e90c";
+}
+.icon-bar-chart:before {
+  content: "\e90d";
+}
+.icon-heart:before {
+  content: "\e903";
+}

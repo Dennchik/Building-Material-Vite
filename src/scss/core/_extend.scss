@@ -1,0 +1,275 @@
+@use 'variables' as *;
+@use 'mixins.scss' as *;
+
+//* ----------------------------------------------------------------------------
+.background-clip {
+  &::before {
+    content: 'Храмы';
+    display: block;
+    position: absolute;
+    background-clip: text;
+    // background: linear-gradient(-135deg, transparent 40%, $black-color);
+    color: transparent;
+    text-shadow: none;
+    background-size: 300% 100%;
+    background-position: 100% 0;
+    transition: background-position 0.5s;
+    mix-blend-mode: multiply;
+  }
+}
+
+.box-shadow {
+  box-shadow: 0 1px 5px #000000;
+  backdrop-filter: blur(10px);
+}
+
+//* ----------------------------------------------------------------------------
+
+.gradient-border-bottom {
+  background-image: linear-gradient(
+    to left top,
+    rgba(205, 215, 238, 0.61) 25%,
+    transparent 75%
+  );
+}
+
+.line-through {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.gradient-loader {
+  background-image: radial-gradient(
+      ellipse at bottom center,
+      rgba(36, 52, 68, 0.37) 30%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse at 10% 0,
+      rgba(23, 27, 28, 0.877) 25%,
+      rgba(238, 238, 238, 0) 70%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse at 110% 100%,
+      rgba(23, 27, 28, 0.733) 25%,
+      rgba(238, 238, 238, 0) 70%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 0 100%,
+      $color 0,
+      rgba(36, 52, 68, 0.37) 30%,
+      transparent
+    ),
+    radial-gradient(circle at 100% 0, $color, $color 30%, transparent),
+    radial-gradient(ellipse at 30% 2%, #171b1c 0, $color 100%, transparent);
+}
+
+.effect-blink {
+  position: absolute;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  overflow: hidden;
+  pointer-events: none;
+
+  &::after {
+    position: absolute;
+    content: '';
+    width: 50px;
+    height: 800px;
+    background: linear-gradient(90deg, transparent, #2434449f, transparent);
+    opacity: 0.4;
+    transform: translateY(-50%) rotate(45deg);
+    transition: all 0.1s;
+    animation: blick 3s infinite linear;
+  }
+}
+
+.link_split {
+  position: relative;
+  outline: 0;
+  line-height: 1;
+  transition: color 0s 0.3s;
+  display: inline-block;
+  white-space: nowrap;
+
+  &:hover {
+    text-shadow: none;
+    color: transparent;
+    transition: none;
+
+    &::before {
+      transform: translate3d(0px, -2px, 0);
+    }
+
+    &::after {
+      transform: translate3d(0px, 2px, 0);
+    }
+
+    &::before,
+    &::after {
+      transition: color 0.3s, transform 0.3s;
+    }
+  }
+
+  &::before,
+  &::after {
+    content: attr(data-letters);
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: color 0.3s, opacity 0.3s, transform 0.5s;
+  }
+
+  &::before {
+    clip-path: polygon(0 0, 100% 0%, 100% 30%, 0 65%);
+  }
+
+  &::after {
+    clip-path: polygon(0 65%, 100% 30%, 100% 100%, 0 100%);
+  }
+}
+
+.link_underline-center {
+  position: relative;
+  transition: color 0.3s ease-in-out;
+
+  &::before {
+    content: '';
+    transform: scaleX(0);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    transition: transform 0.3s ease-in-out;
+    opacity: 0.6;
+    background-color: $color-green;
+  }
+
+  &::after {
+    bottom: 0;
+    left: 0;
+  }
+
+  &:hover {
+    &::before {
+      transform: scaleX(1);
+    }
+
+    a {
+      opacity: 1;
+    }
+  }
+}
+
+.link_underline {
+  position: relative;
+  transition: color 0.3s ease-in-out;
+
+  &::before,
+  &::after {
+    content: '';
+    transform: scaleX(0);
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    transition: transform 0.3s ease-in-out;
+    opacity: 0.6;
+    background-color: $font-color-secondary;
+  }
+
+  &::after {
+    bottom: 0;
+    left: 0;
+  }
+
+  &::before {
+    bottom: 0;
+    right: 0;
+  }
+
+  &:hover {
+    &::before,
+    &::after {
+      width: 47%;
+      transform: scaleX(1);
+    }
+
+    a {
+      opacity: 1;
+    }
+  }
+}
+.link_underline-lr {
+  position: relative;
+  transition: color 0.3s ease-in-out;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    transition: width 0.3s ease-in-out;
+    // opacity: 0.6;
+    background: linear-gradient(to right, #ffffffb0, #5e4da8);
+  }
+  span {
+    pointer-events: none;
+  }
+
+  &::before {
+    bottom: 0;
+    left: 0;
+  }
+
+  &:hover {
+    span {
+      opacity: 1;
+    }
+    &::before {
+      width: 100%;
+    }
+  }
+}
+
+.grad-blink {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(0, 119, 255, 0.438) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  opacity: 0;
+  transition: 0.3s;
+  top: -50%;
+}
+//* ------------------------------- Gradient -----------------------------------
+.grad_underline {
+  /* Определяем фоновые изображения */
+  transition: background-size 400ms;
+
+  /* Размер фона для каждого слоя */
+  background-image: linear-gradient(to left, transparent, transparent),
+    linear-gradient(
+      to left,
+      var(--background-selected),
+      var(--font-color-active)
+    );
+
+  /* Позиционирование фона */
+  background-repeat: no-repeat;
+
+  /* Повторение фона */
+  background-position: 100% 100%, /* Первое изображение */ 0 100%; /* Второе изображение */
+
+  /* Переход для изменения размера фона */
+  background-size: 100% 1px, /* Первое изображение */ 0 1px; /* Второе изображение */
+}

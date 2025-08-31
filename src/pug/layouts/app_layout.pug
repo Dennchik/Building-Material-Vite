@@ -1,0 +1,57 @@
+include ../includes/mixins
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge") 
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(name="description" content="Краткое описание документа")
+    meta(name="keywords" content="keywords-ключевые слова для поиска")
+    block link 
+      link(rel="icon" type="image/icon" href=webRoot + "img/icons/icon.svg")
+      link(rel="stylesheet" href="/src/scss/index.scss")
+    //- block style
+    block script
+      <script defer type="module" src="/src/js/main.js"></script>
+      //- script(defer src="/src/js/main.js")
+
+
+    block title
+    - var text
+    title #{text}
+
+  body
+    include ../modules/preloader
+    include ../includes/mixins
+    .wrapper
+      .page 
+        block header 
+          header.page__header
+            include ../layouts/header
+        block page-content
+          main.page__main-content
+            .main-content._container#wrapper
+              .main-content__content#content
+                block main-content 
+                footer.main-content__footer
+                  block footer 
+                    //- include footer 
+          .page__form-request.request-form
+            block form-request
+              //- include ../modules/form-request
+          .page__order-call.order-call-form
+            block order-call
+              //- include ../modules/form-order-call
+          .page__form-questions.questions-form
+            block form-question-sheet
+              //- include ../modules/form-question-sheet
+          nav.page__aside-menu
+            block burger-menu
+              //- include ../assets/sidebar-menu 
+        block menu-float
+          .menu-float
+            .menu-float__body._container
+        block cookies
+          //- include ../modules/cookies-accept
+    block .page-grid
+      include ../layouts/page-grid

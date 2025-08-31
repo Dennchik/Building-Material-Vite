@@ -1,0 +1,306 @@
+@use '../core/all' as *;
+
+.swiper-wrapper > .swiper-slide:not(.swiper-slide-active) {
+  .main-slide__title {
+    transition: opacity 0.9s ease-in-out;
+    opacity: 0 !important;
+  }
+
+  .main-slide__text {
+    transition: opacity 0.9s ease-in-out;
+    opacity: 0 !important;
+  }
+}
+//* ----------------------------------------------------------------------------
+.menu-float {
+  box-shadow: 0 -2px 5px #0000002d;
+  border-top: 0.5px solid rgba(87, 96, 105, 1);
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 111;
+  background-color: #fff;
+
+  @include min-768 {
+    display: none;
+  }
+
+  &__body {
+    display: flex;
+    justify-content: center;
+    padding-block: 1rem !important;
+  }
+}
+
+//* ----------------------------------------------------------------------------
+.return-button {
+  cursor: pointer;
+  position: fixed;
+  z-index: 13;
+  top: 50%;
+  right: 5px;
+  margin-top: -17px;
+  width: 35px;
+  height: 65px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f2ebe4;
+
+  i {
+    &::before {
+      text-shadow: none;
+      font-weight: 400;
+    }
+  }
+
+  ._button {
+    font-size: 3.8rem;
+    position: relative;
+    z-index: 13;
+    left: 0;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    img {
+      width: 20px;
+      height: 100%;
+      // height: 35px;
+    }
+
+    &:hover {
+      animation: fadeInBackground;
+    }
+  }
+
+  &._rotate {
+    ._button {
+      scale: -1;
+    }
+  }
+}
+
+//* ----------------------------------------------------------------------------
+.checkbox {
+  // .checkbox__input
+  &__input {
+    display: none;
+
+    &:checked + .checkbox__checked ._icon {
+      scale: 1;
+    }
+  }
+
+  &__checked {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    line-height: 130%;
+    width: 16px;
+    height: 16px;
+  }
+
+  // .checkbox__label
+  &__label {
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    font-size: 1.6rem;
+    line-height: 110%;
+    max-width: 66.1rem;
+    gap: 12px;
+
+    @include screen-490 {
+      font-size: 12px;
+    }
+
+    ._icon {
+      display: block;
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      scale: 0;
+      transition: scale 0.2s ease;
+      transform: translateX(-1px);
+      color: $font-color-title;
+
+      &::before {
+        font-size: 18px;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      flex: 0 0 16px;
+      height: 16px;
+      width: 16px;
+      background: $background;
+      transition: box-shadow 0.3s ease-in-out;
+    }
+
+    a {
+      text-decoration: underline;
+      font-weight: 600;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+._clip-circle {
+  @include min-960 {
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      color: #fff;
+      background: linear-gradient(-45deg, #20193c, #020101 70%);
+      clip-path: circle(var(--size) at var(--pos));
+      transition: all 0.9s ease-in-out;
+      z-index: 1;
+    }
+
+    &:hover {
+      &:before {
+        --size: 200%;
+      }
+    }
+  }
+}
+
+//* ------------------------- [Class _ibg] -------------------------------------
+
+.t-h1 {
+  filter: contrast(120%);
+  font-size: 46px;
+  text-transform: uppercase;
+  line-height: 117.391304%; /* 54/46 */
+
+  @include minmax-490-1920 {
+    font-size: calc(
+      17px + (46 - 17) * ((100vw - 490px) / (1920 - 490))
+    ) !important;
+  }
+  @include screen-490 {
+    font-size: 17px !important;
+  }
+}
+.t-h2 {
+  filter: contrast(120%);
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+
+  @include minmax-490-1920 {
+    font-size: calc(
+      17px + (40 - 17) * ((100vw - 490px) / (1920 - 490))
+    ) !important;
+  }
+  @include screen-490 {
+    font-size: 17px !important;
+  }
+}
+.t-h3 {
+  filter: contrast(120%);
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  @include minmax-490-1920 {
+    font-size: calc(
+      20px + (32 - 20) * ((100vw - 490px) / (1920 - 490))
+    ) !important;
+  }
+  @include screen-490 {
+    font-size: 20px !important;
+  }
+}
+.t-text-14-12 {
+  font-size: 24px;
+  line-height: 130%;
+  letter-spacing: 0;
+  color: $color;
+  filter: contrast(150%);
+  @include minmax-490-1920 {
+    font-size: calc(14px + (24 - 14) * ((100vw - 490px) / (1920 - 490)));
+  }
+  @include screen-490 {
+    font-size: 14px;
+  }
+}
+
+.t-text-30 {
+  font-size: 28px;
+  line-height: 130%;
+  letter-spacing: 0;
+  @include minmax-490-1920 {
+    font-size: calc(16px + (28 - 16) * ((100vw - 490px) / (1920 - 490)));
+  }
+  @include screen-490 {
+    font-size: 16px;
+  }
+}
+
+.t-text-26 {
+  font-size: 30px;
+  @include minmax-490-1920 {
+    font-size: calc(16px + (26 - 16) * ((100vw - 490px) / (1920 - 490)));
+  }
+  @include screen-490 {
+    font-size: 16px;
+  }
+}
+
+.button {
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-family-default;
+  font-weight: 400;
+  overflow: hidden;
+
+  span {
+    display: block;
+    text-transform: uppercase;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  @include screen-490 {
+    height: 40px;
+  }
+}
+
+//* ----------------------------------------------------------------------------
+.button-container {
+  button {
+    background: transparent;
+    transition: background 0.4s ease-in-out;
+    &:disabled {
+      cursor: not-allowed;
+      pointer-events: none;
+      box-shadow: none;
+      background: silver;
+    }
+  }
+}
