@@ -3,29 +3,33 @@
 @use 'extend.scss' as *;
 
 html {
-  font: {
-    style: normal;
-    size: 62.5%;
-    weight: $font-weight-default;
-    family: $font-family-default;
-  }
-  height: 100%;
   counter-reset: heading;
-  color: var(--font-color-default);
   scroll-behavior: smooth;
+  height: 100%;
+  color: var(--font-color-default);
+  font: {
+    size: 62.5%;
 
-  @include screen-1140 {
+    family: $font-family-default;
+    style: normal;
+    weight: $font-weight-default;
+  }
+
+  @include screen-1440 {
     font-size: 50%;
   }
 }
 
 body {
   scroll-behavior: smooth;
+
   overscroll-behavior: none;
+
   font: 1.4rem/ 1.4 $font-family-default;
   font-weight: $font-weight-default;
-  background: $background;
   line-height: 1;
+
+  background: $background;
 
   &.no-scroll {
     overflow: hidden;
@@ -37,90 +41,77 @@ body {
   margin: 0;
   padding: 0;
   border: none;
+
   -webkit-tap-highlight-color: transparent;
+
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+
   @media screen {
     scrollbar-width: thin;
   }
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 img,
 svg {
-  vertical-align: top;
+  pointer-events: none;
   max-width: 100%;
   height: auto;
-  pointer-events: none;
+  vertical-align: top;
 }
 
 a {
   cursor: pointer;
-  text-decoration: none;
   color: inherit;
-}
-
-a:hover {
   text-decoration: none;
-  vertical-align: baseline;
-  background-color: transparent;
-}
 
-a:focus {
-  text-decoration: none;
-}
+  &:hover {
+    text-decoration: none;
+    vertical-align: baseline;
+    background-color: transparent;
+  }
 
-a:visited {
-  vertical-align: middle;
-  text-emphasis-style: none;
-}
+  &:focus {
+    text-decoration: none;
+  }
 
-input,
-button,
-textarea {
-  border: none;
+  &:visited {
+    text-emphasis-style: none;
+    vertical-align: middle;
+  }
 }
 
 button,
 input[type='submit'] {
-  display: inline-block;
   cursor: pointer;
+  display: inline-block;
   background: transparent none;
   box-shadow: none;
 }
 
-// input::-ms-clear {
-// 	display: none;
-// }
-
 input,
 textarea,
 button,
 select {
+  border: none;
+
   font-family: inherit;
   font-size: inherit;
   color: inherit;
+
   background-color: transparent;
 }
-
+a:focus,
+a:active,
 input:focus,
 input:active,
 button:focus,
-button:active {
+button:active,
+textarea:focus,
+textarea:active {
   outline: none;
-}
-
-input,
-textarea,
-button,
-select {
-  font-family: inherit;
-  font-size: inherit;
-  color: inherit;
-  background-color: transparent;
 }
 
 button::-moz-focus-inner {
@@ -130,13 +121,6 @@ button::-moz-focus-inner {
 
 label {
   cursor: pointer;
-}
-
-a:focus,
-a:active,
-input:focus,
-textarea:focus {
-  outline: none;
 }
 
 ul,
@@ -158,21 +142,15 @@ h6 {
 //  * Изменить стиль выделения текста
 ::selection {
   color: $text-color-selection;
-  background-color: $text-selection;
   text-shadow: 0 1px 0 #000;
-}
-
-::-moz-selection {
-  color: $text-color-selection;
   background-color: $text-selection;
-  text-shadow: 0 1px 0 #000;
 }
 
 /// * Изменить стиль полосы прокрутки (scrollbar)
 ::-webkit-scrollbar {
+  position: fixed;
   width: 0.8rem;
   padding: 0.031em;
-  position: fixed;
 }
 
 ::-webkit-scrollbar-track {

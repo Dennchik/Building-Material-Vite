@@ -1,5 +1,6 @@
 @use 'mixins' as *;
 @use 'variables' as *;
+
 @include min-920 {
 	/* FLOW: RIGHT */
 	[data-tooltip] {
@@ -77,7 +78,7 @@
 }
 
 .breadcrumb {
-	a:after {
+	a::after {
 		content: '';
 		border-top: 12px solid transparent;
 		border-bottom: 12px solid transparent;

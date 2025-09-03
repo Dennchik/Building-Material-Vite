@@ -2,7 +2,7 @@
   .header__content
     .top-menu.header__top-menu
       .top-menu__column
-        +iconfont('local', '_icon')
+        +iconfont('local', 'icon')
         span Обнинск
       .top-menu__column
         ul.top-menu__list 
@@ -21,8 +21,8 @@
         .main-menu__logo-wrapper 
           a(href="#home" aria-label="home" ).main-menu__logo.anchor-link 
             img(src=webRoot + "img/logo.svg" alt="logo") 
-        .main-menu__button.button(data-da="col-2" data-da-position="1" data-da-resolution="920")
-          +iconfont('paragraph-right', '_icon')
+        .main-menu__button.button.catalog(data-da="col-2" data-da-position="1" data-da-resolution="960")
+          +iconfont('paragraph-right', 'icon')
           span Каталог
       .main-menu__column(data-da="col-1" data-da-position="0" data-da-resolution="1260")
         form(action="/search/" aria-label="Поиск в интернете" ).search-form#quick-search
@@ -30,28 +30,28 @@
           .search-form__input 
             input(type="text" name="search" placeholder="Поиск по каталогу..." id="site-search" autocomplete="off")
             button.search-form__button-search(type="submit") 
-              +iconfont('search', '_icon')
+              +iconfont('search', 'icon')
       .main-menu__column
         .menu-header
           ul.menu-header__list(data-da="menu-float__body" data-da-position="1" data-da-resolution="768") 
             li.menu-header__item.link_underline-center 
               a(href="#").menu-header__link 
-                +iconfont('heart', '_icon')
+                +iconfont('heart', 'icon')
                 span._text Избранное
             li.menu-header__item.link_underline-center 
               a(href="#").menu-header__link 
-                +iconfont('person', '_icon')
+                +iconfont('person', 'icon')
                 span._text Войти
             li.menu-header__item.link_underline-center 
               a(href="#").menu-header__link 
-                +iconfont('cart', '_icon')
+                +iconfont('cart', 'icon')
                 span._text Корзина
             li.menu-header__item.link_underline-center 
               a(href="#").menu-header__link 
-                +iconfont('bar-chart', '_icon')
+                +iconfont('bar-chart', 'icon')
                 span.menu-header__text Сравнение
           .menu-header__button.button.accent-button(data-da="col-2" data-da-position="2" data-da-resolution="690")
-            +iconfont('phone-outbound', '_icon')
+            +iconfont('phone-outbound', 'icon')
             a(href="tel:+7 961 120 50-00") 8&nbsp;961&nbsp;120&nbsp;50-00
       .main-menu__column.side-button
         include ../assets/burger-button

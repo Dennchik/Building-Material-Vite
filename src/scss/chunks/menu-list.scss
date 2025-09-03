@@ -109,9 +109,9 @@
         color: $font-color-secondr;
         background-image: linear-gradient(
           -40deg,
-          rgb(4, 4, 14) 35%,
+          rgb(4 4 14) 35%,
           rgb(43 55 73) 80%,
-          rgb(9, 9, 27) 75%
+          rgb(9 9 27) 75%
         );
       }
     }
@@ -124,8 +124,7 @@
       line-height: 1;
 
       &:nth-child(1) {
-        justify-self: start;
-        align-self: center;
+        place-self: center start;
         white-space: nowrap;
       }
     }

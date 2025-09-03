@@ -8,8 +8,8 @@ export function compileScss() {
   const outputDir = resolve('public/css');
 
   fs.mkdirSync(outputDir, { recursive: true });
-
-  const scssFiles = globSync(`${inputDir}/*.scss`); // ✅ получаем список файлов
+  // ✅ получаем список файлов
+  const scssFiles = globSync(`${inputDir}/*.scss`);
 
   scssFiles.forEach((file) => {
     const fileName = basename(file, '.scss');

@@ -1,41 +1,50 @@
-@use '../core/all' as *;
+@use '../core/variables' as *;
+@use '../core/mixins' as *;
 
 .scroll-container {
+  pointer-events: none;
+
   position: fixed;
+  z-index: 20;
   top: 0;
   left: 0;
+
   width: 100%;
   height: 100vh;
+
   background: #00ffea34;
-  pointer-events: none;
-  z-index: 20;
 }
 .page {
   // .page__form-request
   &__form-questions,
   &__form-request,
   &__order-call {
+    pointer-events: none;
+
     position: fixed;
-    top: 0;
-    opacity: 0;
     z-index: 17;
-    backdrop-filter: blur(40px);
+    top: 0;
+
+    overflow-x: hidden;
+    display: flex;
+
     width: 100%;
     height: 100vh;
-    display: flex;
-    pointer-events: none;
+
+    opacity: 0;
     background-color: #24344496;
+    backdrop-filter: blur(40px);
+
     transition: opacity 0.3s ease-in-out;
-    overflow-x: hidden;
 
     &.is-open {
       opacity: 1;
       .form-question,
       .form-request,
       .order-call {
+        pointer-events: auto;
         top: 0;
         opacity: 1;
-        pointer-events: auto;
       }
     }
   }
@@ -46,18 +55,21 @@
     z-index: 17;
     top: 0;
     left: 0;
+
     width: 100%;
     margin: 0 auto;
   }
 
   // .page__main-content
   &__main-content {
-    padding-top: 102px;
     position: relative;
     z-index: 8;
+    inset: 0;
+
     width: 100%;
     height: 100%;
-    inset: 0;
+    padding-top: 102px;
+
     line-height: 125%; /* 15/12 */
 
     @include screen-1260 {
@@ -67,22 +79,16 @@
     @include screen-690 {
       padding-top: 208px;
     }
-  }
-}
 
-._bg-color {
-  background: $font-color-title;
-  margin: 6rem 0;
-
-  @include screen-490 {
-    margin: 16px 0;
+    @include screen-490 {
+      padding-top: 178px;
+    }
   }
 }
 
 .main-content {
   // .main-content__section
   &__section {
-    overflow: hidden;
     position: relative;
     z-index: 1;
     width: 100%;
@@ -132,37 +138,35 @@
 // /* Анимация открытия */
 // @keyframes expand-height {
 //   0% {
-//     width: 0;
-//     height: 2px; /* Тонкая полоска */
-//     transform: translate(-50%, -50%) scaleX(0); /* Сжатие по ширине */
+//     width: 0;width
+//     height: 2px;height /* Тонкая полоска */
+//     transform: translate(-50%, -50%) scaleX(0);transform /* Сжатие по ширине */
 //   }
 //   50% {
-//     width: 100%; /* Полоса расширяется по ширине */
-//     height: 2px; /* Пока остаётся тонкой */
-//     transform: translate(-50%, -50%) scaleX(1); /* Расширение по ширине */
+//     width: 100%;width /* Полоса расширяется по ширине */
+//     height: 2px;height /* Пока остаётся тонкой */
+//     transform: translate(-50%, -50%) scaleX(1);transform /* Расширение по ширине */
 //   }
-//   100% {
-//     width: 100%; /* Полная ширина */
-//     height: 100%; /* Полная высота */
-//     transform: translate(-50%, -50%) scaleX(1); /* Завершение */
+//   100% {width /* Полная ширина */
+//     height: 100%;height /* Полная высота */
+//     transform: translate(-50%, -50%) scaleX(1);transform /* Завершение */
 //   }
 // }
 
 // /* Анимация закрытия */
 // @keyframes collapse-width {
-//   0% {
-//     width: 100%; /* Полная ширина */
-//     height: 100%; /* Полная высота */
-//     transform: translate(-50%, -50%) scaleX(1); /* Полное состояние */
+//   0% {width /* Полная ширина */
+//     height: 100%;height /* Полная высота */
+//     transform: translate(-50%, -50%) scaleX(1);transform /* Полное состояние */
 //   }
 //   50% {
-//     width: 100%; /* Полоса остаётся широкой */
-//     height: 2px; /* Высота уменьшается до тонкой линии */
-//     transform: translate(-50%, -50%) scaleX(1); /* Ширина сохраняется */
+//     width: 100%;width /* Полоса остаётся широкой */
+//     height: 2px;height /* Высота уменьшается до тонкой линии */
+//     transform: translate(-50%, -50%) scaleX(1);transform /* Ширина сохраняется */
 //   }
 //   100% {
-//     width: 0; /* Полоса исчезает по ширине */
-//     height: 2px; /* Тонкая полоска */
-//     transform: translate(-50%, -50%) scaleX(0); /* Сжатие по ширине */
+//     width: 0;width /* Полоса исчезает по ширине */
+//     height: 2px;height /* Тонкая полоска */
+//     transform: translate(-50%, -50%) scaleX(0);transform /* Сжатие по ширине */
 //   }
 // }

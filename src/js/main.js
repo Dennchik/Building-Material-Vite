@@ -1,10 +1,25 @@
 import '../scss/main.scss';
 import loaded from './assets/preloader.js';
+import { counterProduct } from './components/counter.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+  counterProduct();
+});
+// todo - [ Assets ] -
+//* - [Slide] -
+import { buildSwiper } from './layouts/build-swiper.js';
+buildSwiper();
+
+import { slide } from './components/slide.js';
+slide('.product-slide');
 // import { smoother } from './animations/animations.jsx';
 // import { validateForm } from './assets/validate-form.js';
 import { dynamicAdaptive } from './assets/dynamic-adaptive.js';
 // import { anchorsSmoothScrolling } from './assets/anchors-smooth-scrolling.js';
+
 import {
+  addFavorites,
+  sidebarMenuHandle,
   //   animateHeader,
   //   smoothScrollTitle,
   //   fadeInItem,
@@ -17,7 +32,6 @@ import {
   //   maskPhone,
   //   cookiesAccept,
   //   shadowScrollHeader,
-  sidebarMenuHandle,
   //   toggleModal,
   //   lineMarquee,
 } from './layouts/layouts.js';
@@ -25,7 +39,9 @@ import {
 const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 loaded('.preloader');
 // validateForm();
-
+addFavorites('.product-card__favourites');
+sidebarMenuHandle();
+dynamicAdaptive();
 // fadeInColumn('.its-col');
 // fadeInBlock('.its-block');
 // fadeInItem('.its-el');
@@ -34,8 +50,6 @@ loaded('.preloader');
 // smoothScrollTitle('.el-item');
 // animateHeader();
 // anchorsSmoothScrolling();
-sidebarMenuHandle();
-dynamicAdaptive();
 // shadowScrollHeader();
 // toggleModal();
 if (!isMobile) {

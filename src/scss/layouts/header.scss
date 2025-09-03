@@ -5,28 +5,35 @@
 .header {
   // .header__content
   &__content {
-    background: #fff;
-    font-family: Inter;
+    font-family: $font-family-second;
     font-size: 12px;
+    background: #fff;
   }
 
   // .header__top-menu
   &__top-menu {
+    display: flex;
+    gap: 31px;
+    justify-content: space-between;
+
     margin: 0 -2rem;
     padding: 10px 2rem;
-    background: rgba(239, 239, 241, 1);
-    gap: 3.1rem;
-    display: flex;
-    justify-content: space-between;
+
+    background: rgb(239 239 241 / 100%);
   }
 
   // .header__main-menu
   &__main-menu {
     display: flex;
-    align-items: center;
     gap: 3.1rem;
+    align-items: center;
     justify-content: space-between;
+
     padding: 14px 0;
+
+    @include screen-490 {
+      padding: 9px 0 3px;
+    }
   }
 }
 
@@ -34,25 +41,27 @@
   // .top-menu__column
   &__column {
     flex: 0 1 20%;
-    ._icon {
-      font-size: 11px;
+    white-space: nowrap;
+    .icon {
       margin-right: 3px;
+      font-size: 11px;
     }
   }
 
   // .top-menu__list
   &__list {
-    min-width: 54.1rem;
     display: flex;
+    gap: 2rem;
     align-items: center;
     justify-content: space-between;
-    gap: 2rem;
+
+    min-width: 541px;
   }
 
   // .top-menu__item
   &__item {
-    white-space: nowrap;
     font-size: 12px;
+    white-space: nowrap;
   }
 
   // .top-menu__link
@@ -72,8 +81,8 @@
       gap: 2.4rem;
 
       @include screen-768 {
-        width: 100%;
         justify-content: space-between;
+        width: 100%;
       }
     }
     &:nth-child(2) {
@@ -91,6 +100,7 @@
 
   // .main-menu__logo-wrapper
   &__logo-wrapper {
+    display: block;
   }
 
   // .main-menu__logo
@@ -102,70 +112,72 @@
 
   // .main-menu__button
   &__button {
-    width: fit-content;
-    color: #fff;
     display: flex;
     gap: 0.5rem;
-    padding: 12px 2.84rem;
+
+    width: fit-content;
     border-radius: 10px;
+
+    color: #fff;
+
     background: linear-gradient(
       180deg,
-      rgba(123.22681427001953, 123.22681427001953, 123.82211303710938, 1),
-      rgba(21, 23, 25, 1) 100%
+      rgb(123 123 124),
+      rgb(21 23 25 / 100%) 100%
     );
-    transition: scale 0.2s, box-shadow 0.2s ease-in-out;
 
-    ._icon {
+    transition:
+      scale 0.2s,
+      box-shadow 0.2s ease-in-out;
+
+    .icon {
       font-size: 11px;
-    }
-    span {
-      font-size: 16px;
-      font-weight: 500;
-      line-height: 100%;
     }
 
     &:hover {
       scale: 0.98;
-      box-shadow: 0px -1px 10px 1px rgba(0, 1, 2, 0.897) inset;
+      box-shadow: 0 -1px 10px 1px rgb(0 1 2 / 89.7%) inset;
     }
   }
 }
 
 .search-form {
-  width: 100%;
   display: flex;
   justify-content: space-between;
-  border: 1px solid rgba(87, 96, 105, 1);
+
+  width: 100%;
+  border: 1px solid rgb(87 96 105 / 100%);
   border-radius: 10px;
-  background: rgba(217, 217, 217, 0);
+
+  background: rgb(217 217 217 / 0%);
 
   // .search-form__button-search
   &__button-search {
     transform: translateX(1px);
+
     padding: 10.5px 15px;
     border-radius: 10px;
+
     background: linear-gradient(
       180deg,
-      rgba(123.22681427001953, 123.22681427001953, 123.82211303710938, 1),
-      rgba(21, 23, 25, 1) 100%
+      rgb(123 123 124),
+      rgb(21 23 25 / 100%) 100%
     );
+
     transition: box-shadow 0.2s ease-in-out;
 
-    ._icon {
-      transition: scale 0.2s ease-in-out;
-      color: inherit;
+    .icon {
       font-size: 1.6rem;
       color: #fff;
+      transition: scale 0.2s ease-in-out;
     }
 
     &:hover {
-      ._icon {
+      box-shadow: 0 -1px 10px 1px rgb(0 1 2 / 89.7%) inset;
+
+      .icon {
         scale: 1.3;
       }
-    }
-
-    &:hover {
-      box-shadow: 0px -1px 10px 1px rgba(0, 1, 2, 0.897) inset;
     }
   }
 
@@ -174,26 +186,33 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+
     input {
-      padding: 8px;
       width: 100%;
+      padding: 9.5px;
+      font-size: 16px;
     }
   }
 }
 
 .menu-header {
   display: flex;
-  align-items: center;
   gap: 2.8rem;
+  align-items: center;
+  justify-content: space-between;
 
   @include min-920 {
-    min-width: 54.1rem;
+    min-width: 541px;
   }
 
   // .menu-header__list
   &__list {
     display: flex;
-    gap: 3.4rem;
+    gap: 31px;
+
+    @include screen-820 {
+      gap: 3rem;
+    }
   }
 
   // .menu-header__item
@@ -201,18 +220,22 @@
     cursor: pointer;
     transition: color 0.2s ease;
 
-    ._icon {
-      font-size: 17px;
-      margin-bottom: 3px;
-      color: inherit;
-      pointer-events: none;
-      transition: scale 0.2s ease;
-    }
     &:hover {
       color: $color-green;
-      ._icon {
+      .icon {
         scale: 1.2;
       }
+    }
+
+    .icon {
+      pointer-events: none;
+
+      margin-bottom: 3px;
+
+      font-size: 17px;
+      color: inherit;
+
+      transition: scale 0.2s ease;
     }
   }
 
@@ -224,47 +247,52 @@
 
   // .menu-header__text
   &__text {
-    line-height: 100%;
-    font-size: 12px;
     pointer-events: none;
+    font-size: 12px;
+    line-height: 100%;
   }
 
   // .menu-header__button
   &__button {
     position: relative;
+
     display: flex;
     gap: 1rem;
-    padding: 12px 2.84rem;
+
     border-radius: 10px;
+
     background: linear-gradient(
       180deg,
-      rgba(88, 141, 3, 1),
-      oklch(35.043% 0.09308 147.299) 100%
+      rgb(88 141 3 / 100%),
+      oklch(35.043% 0.093 147.299deg) 100%
     );
-    transition: scale 0.2s, box-shadow 0.2s ease-in-out;
 
-    ._icon {
-      font-size: 1.4rem;
-      color: #fff;
-    }
+    transition:
+      scale 0.2s,
+      box-shadow 0.2s ease-in-out;
 
     a {
+      line-height: 100%;
       color: #fff;
-      font-size: 16px;
       white-space: nowrap;
     }
 
     &:hover {
       scale: 0.98;
-      box-shadow: 0px -1px 10px 1px rgba(0, 1, 2, 0.897) inset;
+      box-shadow: 0 -1px 10px 1px rgb(0 1 2 / 89.7%) inset;
+    }
+    .icon {
+      font-size: 14px;
+      color: #fff;
     }
   }
 }
 
 .menu-screen {
   display: flex;
-  justify-content: space-between;
   gap: 3.4rem;
+  justify-content: space-between;
+  padding-bottom: 1.2rem;
 
   // .menu-screen__column
   &__column {
@@ -274,10 +302,10 @@
 
     &:nth-child(2) {
       display: flex;
-      justify-content: space-between;
       gap: 10px;
+      justify-content: space-between;
 
-      @include min-920 {
+      @include min-960 {
         display: none;
       }
     }
@@ -285,7 +313,7 @@
 
   @include screen-920 {
     .button {
-      min-width: 180px;
+      min-width: 190.69px;
     }
 
     .main-menu__column {
@@ -296,5 +324,20 @@
   @include screen-690 {
     flex-direction: column;
     gap: 2rem;
+
+    .catalog {
+      min-width: 144px;
+    }
+  }
+
+  @include screen-490 {
+    gap: 9px;
+    .catalog {
+      min-width: 120px;
+    }
+
+    .accent-button {
+      min-width: 144px;
+    }
   }
 }

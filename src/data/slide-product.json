@@ -1,0 +1,7 @@
+{
+  "slide": [
+    { "title": "Категория 1", "image": "img-1.png" },
+    { "title": "Категория 2", "image": "img-2.png" },
+    { "title": "Категория 3", "image": "img-3.png" }
+  ]
+}

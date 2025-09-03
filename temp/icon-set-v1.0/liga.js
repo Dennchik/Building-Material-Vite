@@ -25,6 +25,15 @@
     var icons;
     if (!supportsProperty('fontFeatureSettings')) {
         icons = {
+            'rouble': '&#xf159;',
+            'rub': '&#xf159;',
+            'minus': '&#xe912;',
+            'plus': '&#xe913;',
+            'recycle': '&#xe911;',
+            'arrow-down': '&#xe92c;',
+            'arrow-up': '&#xe95c;',
+            'arrow-left': '&#xe92d;',
+            'arrow-thin': '&#xe950;',
             'heart-like': '&#xe9da;',
           '0': 0
         };

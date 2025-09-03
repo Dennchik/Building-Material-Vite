@@ -16,7 +16,7 @@
 
   &.is-active {
     .burger-button__line {
-      // background-color: $color-secondary;
+      // background-color: $color-secondary;background-color
       &:nth-child(1) {
         transform: translateY(8px);
       }

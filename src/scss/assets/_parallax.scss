@@ -3,7 +3,6 @@
 	position: absolute;
 	top: 0;
 	z-index: -1;
-	height: 100vh;
 	width: 100%;
 	height: 100vh;
 	pointer-events: none;
@@ -25,10 +24,11 @@
 			width: 100%;
 			height: 100%;
 			pointer-events: none;
-			// opacity: 0.2;
+			// opacity: 0.2;opacity
 			object-fit: cover;
 			object-position: center;
 			will-change: transform;
+
 			@include screen-1440 {
 				object-position: 36% 0;
 			}
@@ -42,7 +42,7 @@
 	width: 100%;
 	opacity: 1;
 	overflow: hidden;
-	// filter: grayscale(1);
+	// filter: grayscale(1);filter
 
 	&__inner {
 		height: 100%;
@@ -72,14 +72,14 @@
 
 		// &:not(:last-child) {
 		// 	&::after {
-		// 		content: '';
-		// 		position: absolute;
-		// 		top: 0;
-		// 		right: 0;
-		// 		background-color: #ffffff25;
-		// 		height: 100%;
-		// 		width: 2.5px;
-		// 		z-index: 999;
+		// 		content: '';content
+		// 		position: absolute;position
+		// 		top: 0;top
+		// 		right: 0;right
+		// 		background-color: #ffffff25;background-color
+		// 		height: 100%;height
+		// 		width: 2.5px;width
+		// 		z-index: 999;z-index
 		// 	}
 		// }
 
@@ -129,6 +129,6 @@
 		// 	#4894e3 20%,
 		// 	#3b8de1 50%,
 		// 	#3b8de1 80%
-		// );
+		// );background-image
 	}
 }

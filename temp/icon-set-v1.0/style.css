@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icon-set';
-  src:  url('fonts/icon-set.eot?wjxcat');
-  src:  url('fonts/icon-set.eot?wjxcat#iefix') format('embedded-opentype'),
-    url('fonts/icon-set.ttf?wjxcat') format('truetype'),
-    url('fonts/icon-set.woff?wjxcat') format('woff'),
-    url('fonts/icon-set.svg?wjxcat#icon-set') format('svg');
+  src:  url('fonts/icon-set.eot?hplqo3');
+  src:  url('fonts/icon-set.eot?hplqo3#iefix') format('embedded-opentype'),
+    url('fonts/icon-set.ttf?hplqo3') format('truetype'),
+    url('fonts/icon-set.woff?hplqo3') format('woff'),
+    url('fonts/icon-set.svg?hplqo3#icon-set') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -35,7 +35,46 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-house-holl:before {
+.icon-sum:before {
+  content: "\e914";
+}
+.icon-rub:before {
+  content: "\f159";
+}
+.icon-minus:before {
+  content: "\e912";
+}
+.icon-plus:before {
+  content: "\e913";
+}
+.icon-heart:before {
+  content: "\e903";
+}
+.icon-recycle:before {
+  content: "\e911";
+}
+.icon-arrow-down:before {
+  content: "\e92c";
+}
+.icon-arrow-up:before {
+  content: "\e95c";
+}
+.icon-arrow-left:before {
+  content: "\e92d";
+}
+.icon-arrow-right:before {
+  content: "\e950";
+}
+.icon-phone-outbound:before {
+  content: "\e910";
+}
+.icon-paragraph-right:before {
+  content: "\e90f";
+}
+.icon-local:before {
+  content: "\e90e";
+}
+.icon-house-hall:before {
   content: "\e900";
 }
 .icon-persons:before {
@@ -76,7 +115,4 @@
 }
 .icon-bar-chart:before {
   content: "\e90d";
-}
-.icon-heart:before {
-  content: "\e903";
 }

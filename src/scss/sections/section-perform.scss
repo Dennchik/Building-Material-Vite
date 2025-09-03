@@ -5,13 +5,13 @@
   // .section-perform__body
 
   &__body {
-    display: flex;
-    align-items: center;
-    gap: 3.1rem;
-    justify-content: space-between;
-    padding: 2rem 0 4.5rem;
     display: grid;
     grid-template-columns: 1fr max-content;
+    gap: 3.1rem;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 2rem 0 5rem;
 
     @include screen-1024 {
       grid-template-columns: 1fr;
@@ -26,20 +26,13 @@
   // .section-perform__column
   &__column {
     &:nth-child(1) {
-      flex: 0 1 auto;
-
       @include screen-1024 {
         grid-row: 2 / 3;
       }
     }
 
     &:nth-child(2) {
-      flex: 0 1 40%;
       max-width: 541px;
-
-      @include min-1024 {
-        padding-bottom: 0 7.4rem;
-      }
 
       @include screen-1024 {
         min-width: 100%;
@@ -53,17 +46,17 @@
 
   // .section-perform__title
   &__title {
-    font-weight: 500;
-    line-height: 117.391304%; /* 54px/46 */
-    text-transform: uppercase;
     margin-bottom: 2rem;
+    font-weight: 500;
+    line-height: 117.391%; /* 54px/46 */
+    text-transform: uppercase;
   }
 
   // .section-perform__text
   &__text {
+    margin-bottom: 2.6rem;
     font-size: 1.8rem;
     line-height: 100%;
-    margin-bottom: 2.6rem;
   }
 
   // .section-perform__buttons
@@ -77,21 +70,28 @@
 
   &__button {
     cursor: pointer;
+
     padding: 0.9rem 2rem;
-    border: 1px solid rgba(45, 47, 48, 1);
+    border: 1px solid rgb(45 47 48 / 100%);
     border-radius: 10px;
+
     transition: color 0.2s ease-in-out;
 
     &:hover {
-      color: $color-green;
       border: 1px solid green;
+      color: $color-green;
     }
     span {
       pointer-events: none;
-      white-space: nowrap;
-      font-family: Inter;
+
+      font-family: $font-family-second;
       font-size: 1.4rem;
       line-height: 100%;
+      white-space: nowrap;
+    }
+
+    @include screen-490 {
+      padding: 0.9rem 1rem;
     }
   }
 
@@ -100,8 +100,8 @@
   &__image {
     width: auto;
     img {
-      object-position: top right;
       width: 100%;
+      object-position: top right;
     }
 
     @include min-1024 {

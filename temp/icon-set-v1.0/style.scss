@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: '#{$icomoon-font-family}';
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?wjxcat');
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?wjxcat#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?wjxcat') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?wjxcat') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?wjxcat##{$icomoon-font-family}') format('svg');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?hplqo3');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?hplqo3#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?hplqo3') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?hplqo3') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?hplqo3##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -37,9 +37,74 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-house-holl {
+.icon-sum {
   &:before {
-    content: $icon-house-holl; 
+    content: $icon-sum; 
+  }
+}
+.icon-rub {
+  &:before {
+    content: $icon-rub; 
+  }
+}
+.icon-minus {
+  &:before {
+    content: $icon-minus; 
+  }
+}
+.icon-plus {
+  &:before {
+    content: $icon-plus; 
+  }
+}
+.icon-heart {
+  &:before {
+    content: $icon-heart; 
+  }
+}
+.icon-recycle {
+  &:before {
+    content: $icon-recycle; 
+  }
+}
+.icon-arrow-down {
+  &:before {
+    content: $icon-arrow-down; 
+  }
+}
+.icon-arrow-up {
+  &:before {
+    content: $icon-arrow-up; 
+  }
+}
+.icon-arrow-left {
+  &:before {
+    content: $icon-arrow-left; 
+  }
+}
+.icon-arrow-right {
+  &:before {
+    content: $icon-arrow-right; 
+  }
+}
+.icon-phone-outbound {
+  &:before {
+    content: $icon-phone-outbound; 
+  }
+}
+.icon-paragraph-right {
+  &:before {
+    content: $icon-paragraph-right; 
+  }
+}
+.icon-local {
+  &:before {
+    content: $icon-local; 
+  }
+}
+.icon-house-hall {
+  &:before {
+    content: $icon-house-hall; 
   }
 }
 .icon-persons {
@@ -105,11 +170,6 @@
 .icon-bar-chart {
   &:before {
     content: $icon-bar-chart; 
-  }
-}
-.icon-heart {
-  &:before {
-    content: $icon-heart; 
   }
 }
 

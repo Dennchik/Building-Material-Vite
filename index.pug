@@ -1,13 +1,15 @@
 extends ./src/pug/layouts/app_layout
 append link
-	//- link(rel="stylesheet" type="text/css" href=`${webRoot}/css/index.css`)
 prepend script
-	//- script(defer src="@@webRoot/js/vendors/runtime.min.js")
-	//- script(defer src="@@webRoot/js/vendors/swiper-bundle.min.js") 
-	//- script(defer src="@@webRoot/js/vendors/anime-vendors.min.js")
 block title
 block main-content 
-	section.main-content__section 
+	section.main-content__section
 		include ./src/pug/sections/section-perform
-	section.main-content__section 
+	section.main-content__section
 		include ./src/pug/sections/section-label
+	section.main-content__section
+		include ./src/pug/sections/section-product-prices
+	section.main-content__section
+		include ./src/pug/sections/section-new-products
+	section.main-content__section
+		include ./src/pug/sections/section-categories

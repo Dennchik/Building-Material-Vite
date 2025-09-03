@@ -61,6 +61,16 @@ export function shadowScrollHeader() {
   };
 }
 
+//* - [ Добавить в избранное ] -
+export function addFavorites(className) {
+  const els = document.querySelectorAll(className);
+  els.forEach((el) => {
+    el.addEventListener('click', () => {
+      el.classList.toggle('like');
+    });
+  });
+}
+
 //* - [ Управление переключением меню ] -
 export function sidebarMenuHandle() {
   const burgerButtons = document.querySelectorAll('.burger-button');
@@ -261,7 +271,7 @@ export function fieldsetsToggle() {
   };
 }
 
-//* - [ Устраняем смещение Content'a  ]
+//* - [ Устраняем смещение Contents  ]
 function resetScrollbarOffset(el) {
   document.documentElement.style.removeProperty('--scroll-position');
 
