@@ -1,3 +1,4 @@
+//? Опросный лист
 document.addEventListener('DOMContentLoaded', () => {
   const fieldsets = document.querySelectorAll(
     '.question-sheet .question-sheet__fieldset-table'
@@ -22,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  document.querySelectorAll('._btn-prew').forEach((btn) => {
+  document.querySelectorAll('._btn-prev').forEach((btn) => {
     btn.addEventListener('click', () => {
       if (current > 0) {
         current--;

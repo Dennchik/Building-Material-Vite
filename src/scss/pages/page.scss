@@ -58,6 +58,43 @@
 
     width: 100%;
     margin: 0 auto;
+    padding: 0 0 14px;
+
+    background-color: #fff;
+
+    transition: 0.3s ease;
+
+    &::after {
+      // @extend .gradient-border-bottom;
+      content: '';
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      width: 0;
+      height: 1px;
+
+      // background: #5353531f;
+
+      transition: all 0.7s ease-in-out;
+    }
+
+    &.with-border {
+      // @extend .box-shadow;
+      transition: all 0.5s ease-in-out;
+
+      &::after {
+        z-index: 9;
+        width: 100%;
+        box-shadow: $boxShadow;
+        box-shadow: 0 3px 10px 3px #3131311c;
+      }
+    }
+
+    @include screen-490 {
+      padding: 0 0 9px;
+    }
   }
 
   // .page__main-content
@@ -81,7 +118,7 @@
     }
 
     @include screen-490 {
-      padding-top: 178px;
+      padding-top: 175px;
     }
   }
 }

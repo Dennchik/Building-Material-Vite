@@ -1,14 +1,15 @@
-import { defineConfig } from 'vite';
-import { resolve } from 'path';
-import autoprefixer from 'autoprefixer'; // 👈 вот этот импорт добавь
-import { fonts } from './vite/tasks/fonts.js';
-import { fontStyle } from './vite/tasks/fontsStyle';
+import { defineConfig } from 'vite'; // 👈
+import { resolve } from 'path'; // 👈
+import postcssMediaMinMax from 'postcss-media-minmax'; // 👈
+import autoprefixer from 'autoprefixer'; // 👈
+import { fonts } from './vite/tasks/fonts.js'; // 👈
+import { fontStyle } from './vite/tasks/fontsStyle'; // 👈
 import { viteConvertPugInHtml } from '@mish.dev/vite-convert-pug-in-html';
-import { compileScss } from './vite/tasks/scss.js';
-import { convertImagesToWebp } from './vite/tasks/webp.js';
+import { compileScss } from './vite/tasks/scss.js'; // 👈
+import { convertImagesToWebp } from './vite/tasks/webp.js'; // 👈
 
 //* data - данные
-import categories from './src/data/slide-product.json' with { type: 'json' };
+import slideCart from './src/data/slide-product.json' with { type: 'json' };
 import data from './src/data/data.json' with { type: 'json' };
 
 // 🔹 Сначала конвертируем шрифты перед dev/build
@@ -30,16 +31,16 @@ export default defineConfig(({ command }) => {
       viteConvertPugInHtml({
         minify: true,
         locals: {
-          // Добавляем поддержку @@ синтаксиса
+          // 👈  Добавляем поддержку @@ синтаксиса
           '@@webRoot': isProd ? './' : '/',
-          // Альтернативно можно использовать webRoot для совместимости
+          // 👈  Альтернативно можно использовать webRoot для совместимости
           webRoot: isProd ? './' : '/',
-          categories,
+          slideCart,
           ...data,
         },
         pugOptions: {
-          pretty: !isProd, // форматирование только в development
-          // Дополнительные опции Pug если нужно
+          pretty: !isProd, // 👈 форматирование только в development
+          // 👈  Дополнительные опции Pug если нужно
         },
       }),
     ],
@@ -60,6 +61,7 @@ export default defineConfig(({ command }) => {
               'not dead',
             ],
           }),
+          ...(isProd ? [] : [postcssMediaMinMax()]), // 👈 конвертация нового синтаксиса медиа-запросов
         ],
       },
       preprocessorOptions: {
@@ -74,7 +76,7 @@ export default defineConfig(({ command }) => {
     build: {
       outDir: 'build',
       emptyOutDir: true,
-      sourcemap: !isProd, // карты отключены в Production
+      sourcemap: !isProd, // 👈  карты отключены в Production
       rollupOptions: {
         input: {
           main: resolve(__dirname, 'index.html'),

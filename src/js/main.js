@@ -1,42 +1,41 @@
 import '../scss/main.scss';
-import loaded from './assets/preloader.js';
+import loaded from './utils/preloader.js';
 import { counterProduct } from './components/counter.js';
+import { addCartAnimation } from './animations/add-cart-animation.jsx';
 
-document.addEventListener('DOMContentLoaded', () => {
-  counterProduct();
-});
+addCartAnimation(
+  '.favourites',
+  '.product-card__favourites',
+  '.icon-heart-like',
+  '.icon-heart-like',
+  'like'
+);
+
 // todo - [ Assets ] -
 //* - [Slide] -
-import { buildSwiper } from './layouts/build-swiper.js';
+import { buildSwiper } from './utils/build-swiper.js';
 buildSwiper();
 
 import { slide } from './components/slide.js';
 slide('.product-slide');
 // import { smoother } from './animations/animations.jsx';
 // import { validateForm } from './assets/validate-form.js';
-import { dynamicAdaptive } from './assets/dynamic-adaptive.js';
+import { dynamicAdaptive } from './modules/dynamic-adaptive.js';
 // import { anchorsSmoothScrolling } from './assets/anchors-smooth-scrolling.js';
 
 import {
   addFavorites,
   sidebarMenuHandle,
-  //   animateHeader,
-  //   smoothScrollTitle,
-  //   fadeInItem,
-  //   fadeInBlock,
-  //   fadeInColumn,
-  //   fadeInItemLeft,
-  //   fadeInItemRight,
-  // } from './animations/anime-js.jsx';
-  // import {
-  //   maskPhone,
-  //   cookiesAccept,
-  //   shadowScrollHeader,
-  //   toggleModal,
-  //   lineMarquee,
+  hideTopMenu,
 } from './layouts/layouts.js';
 
+document.addEventListener('DOMContentLoaded', () => {
+  counterProduct();
+  hideTopMenu();
+});
+// hideTopMenu('.header__content');
 const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+
 loaded('.preloader');
 // validateForm();
 addFavorites('.product-card__favourites');

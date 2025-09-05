@@ -14,7 +14,9 @@
       url('#{$font-path}/#{$file_name}.ttf') format('truetype');
   }
 }
-
+:root {
+  --mq-header-size: normal;
+}
 //* ----------------------------------------------------------------------------
 @mixin screen {
   @media screen {
@@ -24,6 +26,10 @@
 
 @mixin screen-1920 {
   @media screen and (width <= 1920px) {
+    :root {
+      --mq-header-size: big;
+    }
+
     @content;
   }
 }
@@ -48,6 +54,10 @@
 
 @mixin screen-1024 {
   @media screen and (width <= 1024px) {
+    :root {
+      --mq-header-size: big;
+    }
+
     @content;
   }
 }
@@ -60,18 +70,27 @@
 
 @mixin screen-960 {
   @media screen and (width <= 960px) {
+    :root {
+      --mq-header-size: big;
+    }
     @content;
   }
 }
 
 @mixin screen-920 {
   @media screen and (width <= 920px) {
+    :root {
+      --mq-header-size: big;
+    }
     @content;
   }
 }
 
 @mixin screen-820 {
   @media screen and (width <= 820px) {
+    :root {
+      --mq-header-size: big;
+    }
     @content;
   }
 }
@@ -125,73 +144,79 @@
 }
 //* ----------------------------------------------------------------------------
 @mixin min-1260 {
-  @media (width >= 1260.99px) {
+  @media (width > 1260.99px) {
     @content;
   }
 }
 
 @mixin min-1440 {
-  @media (width >= 1440.99px) {
+  @media (width > 1440.99px) {
     @content;
   }
 }
 
 @mixin min-1140 {
-  @media (width >= 1140.99px) {
+  @media (width > 1140.99px) {
     @content;
   }
 }
 
 @mixin min-1024 {
-  @media (width >= 1024.99px) {
+  @media (width > 1024.99px) {
     @content;
   }
 }
 
 @mixin min-960 {
-  @media (width >= 960.99px) {
+  @media (width > 960px) {
     @content;
   }
 }
 
 @mixin min-920 {
-  @media (width >= 920.99px) {
+  @media (width > 920.99px) {
+    @content;
+  }
+}
+
+@mixin min-820 {
+  @media (width > 820px) {
     @content;
   }
 }
 
 @mixin min-768 {
-  @media (width >= 768px) {
+  @media (width > 768px) {
     @content;
   }
 }
 
 @mixin min-690 {
-  @media (width >= 690px) {
+  @media (width > 690px) {
     @content;
   }
 }
 
 @mixin min-490 {
-  @media (width >= 490px) {
+  @media (width > 490px) {
     @content;
   }
 }
 
 @mixin min-425 {
-  @media (width >= 425px) {
+  @media (width > 425px) {
     @content;
   }
 }
 
 @mixin min-375 {
-  @media (width >= 375px) {
+  @media (width > 375px) {
     @content;
   }
 }
 
 @mixin min-320 {
-  @media (width >= 320px) {
+  @media (width > 320px) {
     @content;
   }
 }

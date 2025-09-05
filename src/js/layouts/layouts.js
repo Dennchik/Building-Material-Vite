@@ -39,6 +39,27 @@ export function maskPhone(selector) {
   });
 }
 
+export function hideTopMenu() {
+  let lastScrollTop = 0;
+  const scrollMenu = document.querySelector('.page__header');
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      scrollMenu.style.top = '-32px';
+      // Прокрутка вниз — скрываем
+      scrollMenu.classList.add('with-border');
+    } else {
+      // Прокрутка вверх — показываем
+      scrollMenu.style.top = '0';
+      scrollMenu.classList.remove('with-border');
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // защита от отрицательных значений
+  });
+}
+
 export function shadowScrollHeader() {
   const handleScroll = () => {
     const headerMain = document.querySelector('.header');
@@ -198,7 +219,7 @@ export function toggleModal() {
         modal.classList.add('is-open');
 
         if (modalSelector === '.questions-form') {
-          const { showFieldset } = fieldsetsToggle(); // Получаем showFieldset
+          const { showFieldset } = fieldSetsToggle(); // Получаем showFieldset
           showFieldset(0); // Активируем первый fieldset
         }
       });
@@ -225,9 +246,9 @@ export function toggleModal() {
 }
 
 //* - [Переключение полей формы]
-export function fieldsetsToggle() {
+export function fieldSetsToggle() {
   const container = document.querySelector('.form-question__content');
-  const fieldsets = document.querySelectorAll(
+  const fieldSets = document.querySelectorAll(
     '.form-question .form-question__fieldset-table'
   );
   let current = 0;
@@ -243,14 +264,14 @@ export function fieldsetsToggle() {
   };
 
   const showFieldset = (index) => {
-    fieldsets.forEach((fs) => fs.classList.remove('active'));
-    fieldsets[index].classList.add('active');
+    fieldSets.forEach((fs) => fs.classList.remove('active'));
+    fieldSets[index].classList.add('active');
     updateContainerHeight();
   };
 
   document.querySelectorAll('._btn-next').forEach((btn) => {
     btn.addEventListener('click', () => {
-      if (current < fieldsets.length - 1) {
+      if (current < fieldSets.length - 1) {
         current++;
         showFieldset(current);
       }

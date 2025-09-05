@@ -4,7 +4,6 @@
 
 html {
   counter-reset: heading;
-  scroll-behavior: smooth;
   height: 100%;
   color: var(--font-color-default);
   font: {
@@ -21,7 +20,7 @@ html {
 }
 
 body {
-  scroll-behavior: smooth;
+  // scroll-behavior: smooth;
 
   overscroll-behavior: none;
 

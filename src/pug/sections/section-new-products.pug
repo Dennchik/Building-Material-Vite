@@ -5,215 +5,46 @@
     .product__content(data-quantity-container)
       .product__slide
         .product-slide.swiper
-          .product-slide__slide
-            .product-card
-              .product-card__header
-                .product-card__label
-                  span -12%
-                .product-card__icons
-                  .product-card__compare
-                    +iconfont('paragraph-right', 'icon')
-                  .product-card__favourites
-                    +iconfont('heart', 'icon')
-                    +iconfont('heart-like', 'icon')
-              .product-card__content
-                .product-card__image
-                  +picture(webRoot + 'img/products/prod-1.png', 'image')
-                .product-card__info
-                  p Цемент ЦЕМЕНТУМ М500,40 кг (30 шт/под)
-                .product-card__sum
-                  +iconfont('sum', 'icon')
-                  | :
-                  span
-                .product-card__price
-                  span 460,00р
-                .product-card__article Фирма или артикул
-                .product-card__footer
-                  .product-card__counter
-                    .quantity.product-card__quantity
-                      .quantity__button.quantity-remove
-                        +iconfont('minus', 'icon')
-                      .quantity__input
-                        input.input(type="text" name="form[]" value="0" placeholder="<+>" autocomplete="off")
-                      .quantity__button.quantity-add
-                        +iconfont('plus', 'icon')
-                  .product-card__button
-                    span В корзину
-          .product-slide__slide
-            .product-card
-              .product-card__header
-                .product-card__label
-                  span -12%
-                .product-card__icons
-                  .product-card__compare
-                    +iconfont('paragraph-right', 'icon')
-                  .product-card__favourites
-                    +iconfont('heart', 'icon')
-                    +iconfont('heart-like', 'icon')
-              .product-card__content
-                .product-card__image
-                  +picture(webRoot + 'img/products/prod-2.png', 'image')
-                .product-card__info
-                  p Пескобетон Novamix М-300,40 кг
-                .product-card__sum
-                  +iconfont('sum', 'icon')
-                  | :
-                  span
-                .product-card__price
-                  span 460,00р
-                .product-card__article Фирма или артикул
-                .product-card__footer
-                  .product-card__counter
-                    .quantity.product-card__quantity
-                      .quantity__button.quantity-remove
-                        +iconfont('minus', 'icon')
-                      .quantity__input
-                        input.input(type="text" name="form[]" value="0" placeholder="<+>" autocomplete="off")
-                      .quantity__button.quantity-add
-                        +iconfont('plus', 'icon')
-                  .product-card__button
-                    span В корзину
-          .product-slide__slide
-            .product-card
-              .product-card__header
-                .product-card__label
-                  span -12%
-                .product-card__icons
-                  .product-card__compare
-                    +iconfont('paragraph-right', 'icon')
-                  .product-card__favourites
-                    +iconfont('heart', 'icon')
-                    +iconfont('heart-like', 'icon')
-              .product-card__content
-                .product-card__image
-                  +picture(webRoot + 'img/products/prod-3.png', 'image')
-                .product-card__info
-                  p Сухая смесь универсальная Novamix М-150, 40 кг
-                .product-card__sum
-                  +iconfont('sum', 'icon')
-                  | :
-                  span
-                .product-card__price
-                  span 460,00р
-                .product-card__article Фирма или артикул
-                .product-card__footer
-                  .product-card__counter
-                    .quantity.product-card__quantity
-                      .quantity__button.quantity-remove
-                        +iconfont('minus', 'icon')
-                      .quantity__input
-                        input.input(type="text" name="form[]" value="0" placeholder="<+>" autocomplete="off")
-                      .quantity__button.quantity-add
-                        +iconfont('plus', 'icon')
-                  .product-card__button
-                    span В корзину
-          .product-slide__slide
-            .product-card
-              .product-card__header
-                .product-card__label
-                  span -12%
-                .product-card__icons
-                  .product-card__compare
-                    +iconfont('paragraph-right', 'icon')
-                  .product-card__favourites
-                    +iconfont('heart', 'icon')
-                    +iconfont('heart-like', 'icon')
-              .product-card__content
-                .product-card__image
-                  +picture(webRoot + 'img/products/prod-4.png', 'image')
-                .product-card__info
-                  p Штукатурка гипсовая Волма Холст серая, 30 кг
-                .product-card__sum
-                  +iconfont('sum', 'icon')
-                  | :
-                  span
-                .product-card__price
-                  span 460,00р
-                .product-card__article Фирма или артикул
-                .product-card__footer
-                  .product-card__counter
-                    .quantity.product-card__quantity
-                      .quantity__button.quantity-remove
-                        +iconfont('minus', 'icon')
-                      .quantity__input
-                        input.input(type="text" name="form[]" value="0" placeholder="<+>" autocomplete="off")
-                      .quantity__button.quantity-add
-                        +iconfont('plus', 'icon')
-                  .product-card__button
-                    span В корзину
-          .product-slide__slide
-            .product-card
-              .product-card__header
-                .product-card__label
-                  span -12%
-                .product-card__icons
-                  .product-card__compare
-                    +iconfont('paragraph-right', 'icon')
-                  .product-card__favourites
-                    +iconfont('heart', 'icon')
-                    +iconfont('heart-like', 'icon')
-              .product-card__content
-                .product-card__image
-                  +picture(webRoot + 'img/products/prod-5.png', 'image')
-                .product-card__info
-                  p Шпаклевка готовая финишная Danogips SuperFinish, 17л/28 кг
-                .product-card__sum
-                  +iconfont('sum', 'icon')
-                  | :
-                  span
-                .product-card__price
-                  span 460,00р
-                .product-card__article Фирма или артикул
-                .product-card__footer
-                  .product-card__counter
-                    .quantity.product-card__quantity
-                      .quantity__button.quantity-remove
-                        +iconfont('minus', 'icon')
-                      .quantity__input
-                        input.input(type="text" name="form[]" value="0" placeholder="<+>" autocomplete="off")
-                      .quantity__button.quantity-add
-                        +iconfont('plus', 'icon')
-                  .product-card__button
-                    span В корзину
-          .product-slide__slide
-            .product-card
-              .product-card__header
-                .product-card__label
-                  span -12%
-                .product-card__icons
-                  .product-card__compare
-                    +iconfont('paragraph-right', 'icon')
-                  .product-card__favourites
-                    +iconfont('heart', 'icon')
-                    +iconfont('heart-like', 'icon')
-              .product-card__content
-                .product-card__image
-                  +picture(webRoot + 'img/products/prod-3.png', 'image')
-                .product-card__info
-                  p Шпаклевка готовая финишная Danogips SuperFinish, 17л/28 кг
-                .product-card__sum
-                  +iconfont('sum', 'icon')
-                  | :
-                  span
-                .product-card__price
-                  span 460,00р
-                .product-card__article Фирма или артикул
-                .product-card__footer
-                  .product-card__counter
-                    .quantity.product-card__quantity
-                      .quantity__button.quantity-remove
-                        +iconfont('minus', 'icon')
-                      .quantity__input
-                        input.input(type="text" name="form[]" value="0" placeholder="<+>" autocomplete="off")
-                      .quantity__button.quantity-add
-                        +iconfont('plus', 'icon')
-                  .product-card__button
-                    span В корзину
+          each product in slideCart.newProducts
+            .product-slide__slide
+              .product-card
+                .product-card__header
+                  .product-card__label
+                    span= product.label
+                  .product-card__icons
+                    .product-card__compare
+                      +iconfont('paragraph-right', 'icon')
+                    .product-card__favourites
+                      +iconfont('heart', 'icon')
+                      +iconfont('heart-like', 'icon')
+                .product-card__content
+                  .product-card__image
+                    +picture(webRoot + 'img/products/' + product.image, 'image')
+                  .product-card__info
+                    p= product.title 
+                  .product-card__sum
+                    +iconfont('sum', 'icon')
+                    | :
+                    span
+                  .product-card__price
+                    span= product.price 
+                  .product-card__article= product.article 
+                  .product-card__footer
+                    .product-card__counter
+                      .quantity.product-card__quantity
+                        .quantity__button.quantity-remove
+                          +iconfont('minus', 'icon')
+                        .quantity__input
+                          input.input(type="text" name="form[]" value="0" placeholder="<+>" autocomplete="off")
+                        .quantity__button.quantity-add
+                          +iconfont('plus', 'icon')
+                    .product-card__button
+                      span В корзину
         .swiper-scrollbar
         .navigation
           .navigation__prev
-            .navigation_icon
+            .navigation__icon
               +iconfont('arrow-left', 'icon')
           .navigation__next
-            .navigation_icon
+            .navigation__icon
               +iconfont('arrow-right', 'icon')
