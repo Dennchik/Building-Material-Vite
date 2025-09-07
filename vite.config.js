@@ -1,16 +1,20 @@
+//* Plugins
 import { defineConfig } from 'vite'; // 👈
 import { resolve } from 'path'; // 👈
 import postcssMediaMinMax from 'postcss-media-minmax'; // 👈
 import autoprefixer from 'autoprefixer'; // 👈
-import { fonts } from './vite/tasks/fonts.js'; // 👈
-import { fontStyle } from './vite/tasks/fontsStyle'; // 👈
 import { viteConvertPugInHtml } from '@mish.dev/vite-convert-pug-in-html';
-import { compileScss } from './vite/tasks/scss.js'; // 👈
+//* Tasks
+import { fontStyle } from './vite/tasks/fontsStyle'; // 👈
 import { convertImagesToWebp } from './vite/tasks/webp.js'; // 👈
-import productsMap from './src/data/productsMap.json';
+import { compileScss } from './vite/tasks/scss.js'; // 👈
+import { fonts } from './vite/tasks/fonts.js'; // 👈
 //* data - данные
+import about from './src/data/about.json' with { type: 'json' };
+import partners from './src/data/partners.json' with { type: 'json' };
 import products from './src/data/products.json' with { type: 'json' };
 import data from './src/data/data.json' with { type: 'json' };
+import productsMap from './src/data/productsMap.json';
 
 // 🔹 Сначала конвертируем шрифты перед dev/build
 fonts('./public/fonts');
@@ -36,6 +40,8 @@ export default defineConfig(({ command }) => {
           '@@webRoot': isProd ? './' : '/',
           // 👈  Альтернативно можно использовать webRoot для совместимости
           webRoot: isProd ? './' : '/',
+          about,
+          partners,
           products,
           ...data,
         },

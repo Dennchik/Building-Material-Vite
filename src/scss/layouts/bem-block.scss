@@ -223,83 +223,89 @@
   @include screen-490 {
     font-size: 17px !important;
   }
-  .t-h2 {
-    font-size: 40px;
-    line-height: 100%;
-    text-transform: uppercase;
-    letter-spacing: 1.4px;
+}
+.t-h2 {
+  font-size: 40px;
+  line-height: 100%;
+  text-align: center;
+  text-transform: uppercase;
 
-    filter: contrast(120%);
-
-    @include minmax-490-1920 {
-      font-size: calc(
-        17px + (40 - 17) * ((100vw - 490px) / (1920 - 490))
-      ) !important;
-    }
-
-    @include screen-490 {
-      font-size: 17px !important;
-    }
-  }
-  .t-h3 {
-    font-size: 32px;
-    line-height: 100%;
-    text-transform: uppercase;
-    letter-spacing: 1.4px;
-
-    filter: contrast(120%);
-
-    @include minmax-490-1920 {
-      font-size: calc(
-        20px + (32 - 20) * ((100vw - 490px) / (1920 - 490))
-      ) !important;
-    }
-
-    @include screen-490 {
-      font-size: 20px !important;
-    }
-  }
-  .t-text-14-12 {
-    font-size: 24px;
-    line-height: 130%;
-    color: $color;
-    letter-spacing: 0;
-
-    filter: contrast(150%);
-
-    @include minmax-490-1920 {
-      font-size: calc(14px + (24 - 14) * ((100vw - 490px) / (1920 - 490)));
-    }
-
-    @include screen-490 {
-      font-size: 14px;
-    }
+  @include minmax-490-1920 {
+    font-size: calc(
+      17px + (40 - 17) * ((100vw - 490px) / (1920 - 490))
+    ) !important;
   }
 
-  .t-text-30 {
-    font-size: 28px;
-    line-height: 130%;
-    letter-spacing: 0;
+  @include screen-490 {
+    font-size: 17px !important;
+  }
+}
+.t-h3 {
+  font-size: 32px;
+  line-height: 100%;
+  text-transform: uppercase;
 
-    @include minmax-490-1920 {
-      font-size: calc(16px + (28 - 16) * ((100vw - 490px) / (1920 - 490)));
-    }
-
-    @include screen-490 {
-      font-size: 16px;
-    }
+  @include minmax-490-1920 {
+    font-size: calc(
+      20px + (32 - 20) * ((100vw - 490px) / (1920 - 490))
+    ) !important;
   }
 
-  .t-text-26 {
-    font-size: 30px;
+  @include screen-490 {
+    font-size: 20px !important;
+  }
+}
 
-    @include minmax-490-1920 {
-      font-size: calc(16px + (26 - 16) * ((100vw - 490px) / (1920 - 490)));
-    }
+.t-h5 {
+  font-size: 18px;
+  line-height: 100%;
 
-    @include screen-490 {
-      font-size: 16px;
-    }
+  @include minmax-490-1920 {
+    font-size: calc(
+      14px + (18 - 14) * ((100vw - 490px) / (1920 - 490))
+    ) !important;
+  }
+
+  @include screen-490 {
+    font-size: 14px !important;
+  }
+}
+.t-text-18-12 {
+  font-size: 18px;
+  line-height: 100%;
+
+  @include minmax-490-1920 {
+    font-size: calc(12px + (18 - 12) * ((100vw - 490px) / (1920 - 490)));
+  }
+
+  @include screen-490 {
+    font-size: 12px;
+  }
+}
+
+.t-text-30 {
+  font-size: 28px;
+  line-height: 130%;
+  letter-spacing: 0;
+
+  @include minmax-490-1920 {
+    font-size: calc(16px + (28 - 16) * ((100vw - 490px) / (1920 - 490)));
+  }
+
+  @include screen-490 {
+    font-size: 16px;
+  }
+}
+
+.t-text-26 {
+  font-size: 30px;
+
+  @include minmax-490-1920 {
+    font-size: calc(16px + (26 - 16) * ((100vw - 490px) / (1920 - 490)));
+  }
+
+  @include screen-490 {
+    font-size: 16px;
   }
 }
 
