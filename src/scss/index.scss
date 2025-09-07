@@ -4,8 +4,8 @@
 @use 'sections/section-slide';
 @use 'sections/section-categories';
 
-// todo --------------------------- Plugins ------------------------------------
-// @use 'assets/swiper-11.2.10';
+// todo ------------------------ components ------------------------------------
+@use 'components/sidebar-menu';
 // todo -------------------------- Modules -------------------------------------
 // @use 'modules/form-list';
 // @use 'modules/cookies-accept';

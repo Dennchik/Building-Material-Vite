@@ -472,4 +472,131 @@
   justify-content: flex-end;
 }
 
+.sidebar-menu {
+  pointer-events: all;
+  position: fixed;
+  z-index: 13;
+  top: 82px;
+  right: 0;
+  transform: translateX(100%);
+  width: 100%;
+  height: calc(100vh - 82px);
+  background-color: #fff;
+  transition: transform 0.3s ease-in-out;
+}
+@media (width > 490px) {
+  .sidebar-menu {
+    top: 95px;
+  }
+}
+.sidebar-menu._open-menu {
+  transform: translateX(0);
+}
+.sidebar-menu__body {
+  height: auto;
+}
+.sidebar-menu__content {
+  transform-origin: 200% 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  height: 100%;
+  padding: 16px 16px 50px;
+  font-size: 16px;
+}
+@media screen and (width <= 490px) {
+  .sidebar-menu__content {
+    padding: 16px 10px 67px;
+    font-size: 12px;
+  }
+}
+.sidebar-menu__menu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+@media screen and (width <= 490px) {
+  .sidebar-menu__menu {
+    gap: 12px;
+  }
+}
+.sidebar-menu__catalog._open .sidebar-menu__title .icon {
+  transform: rotate(-90deg);
+}
+.sidebar-menu__title {
+  display: flex;
+  gap: 7px;
+  font-weight: 500;
+  line-height: 1;
+}
+.sidebar-menu__sub-title {
+  display: flex;
+  gap: 10px;
+  padding: 16px 16px 0;
+  font-weight: 500;
+  line-height: 1;
+}
+@media screen and (width <= 490px) {
+  .sidebar-menu__sub-title {
+    padding: 10px 10px 0;
+  }
+}
+.sidebar-menu__sub-title span {
+  pointer-events: none;
+}
+.sidebar-menu__icons {
+  pointer-events: none;
+  position: relative;
+}
+.sidebar-menu__icons .icon {
+  transform: rotate(90deg);
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+.sidebar-menu__menu-catalog {
+  font-family: "Inter", sans-serif;
+  line-height: 100%;
+  color: rgb(73, 74, 75);
+}
+.sidebar-menu__menu-catalog._open .sidebar-menu__sub-title .icon {
+  transform: rotate(-90deg);
+}
+.sidebar-menu .top-menu__list {
+  flex-direction: column;
+  gap: 7px;
+  align-items: start;
+}
+.sidebar-menu .top-menu__link {
+  font-size: 16px;
+}
+@media screen and (width <= 490px) {
+  .sidebar-menu .top-menu__link {
+    font-size: 12px;
+  }
+}
+
+.sub-menu__items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+}
+@media screen and (width <= 490px) {
+  .sub-menu__items {
+    padding: 10px;
+  }
+}
+.sub-menu__item {
+  padding-left: 16px;
+  line-height: 1;
+}
+@media screen and (width <= 490px) {
+  .sub-menu__item {
+    padding-left: 10px;
+  }
+}
+
 /*# sourceMappingURL=index.css.map */

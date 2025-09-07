@@ -1,8 +1,10 @@
 import '../scss/main.scss';
+//* - [Utils] -
+import { buildSwiper } from './utils/build-swiper.js';
+buildSwiper();
 import loaded from './utils/preloader.js';
-import { counterProduct } from './components/counter.js';
 import { addCartAnimation } from './animations/add-cart-animation.jsx';
-
+//* - [ Animation ] -
 addCartAnimation(
   '.favourites',
   '.product-card__favourites',
@@ -10,28 +12,31 @@ addCartAnimation(
   '.icon-heart-like',
   'like'
 );
-
-// todo - [ Assets ] -
-//* - [Slide] -
-import { buildSwiper } from './utils/build-swiper.js';
-buildSwiper();
-
+//* - [ Components ] -
+import { counterProduct } from './components/counter.js';
 import { slide } from './components/slide.js';
 slide('.product-slide');
 // import { smoother } from './animations/animations.jsx';
 // import { validateForm } from './assets/validate-form.js';
 import { dynamicAdaptive } from './modules/dynamic-adaptive.js';
 // import { anchorsSmoothScrolling } from './assets/anchors-smooth-scrolling.js';
+import productsMap from '../data/productsMap.json';
+
+// Если у тебя Pug компилируется через Vite плагин, то productsMap можно прокинуть в шаблон:
+export const templateData = {
+  productsMap,
+};
 
 import {
   addFavorites,
   sidebarMenuHandle,
   hideTopMenu,
+  collapseToggle,
 } from './layouts/layouts.js';
-
 document.addEventListener('DOMContentLoaded', () => {
   counterProduct();
   hideTopMenu();
+  collapseToggle();
 });
 // hideTopMenu('.header__content');
 const isMobile = /Mobi|Android/i.test(navigator.userAgent);

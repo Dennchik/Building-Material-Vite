@@ -13,54 +13,19 @@
   letter-spacing: 0;
 }
 
-.icon-sum {
+.icon-pointer-right {
   &::before {
-    content: $icon-sum;
+    content: $icon-pointer-right;
   }
 }
-.icon-rub {
+.icon-pointer-left {
   &::before {
-    content: $icon-rub;
+    content: $icon-pointer-left;
   }
 }
-.icon-minus {
+.icon-pointer {
   &::before {
-    content: $icon-minus;
-  }
-}
-.icon-plus {
-  &::before {
-    content: $icon-plus;
-  }
-}
-.icon-heart {
-  &::before {
-    content: $icon-heart;
-  }
-}
-.icon-recycle {
-  &::before {
-    content: $icon-recycle;
-  }
-}
-.icon-arrow-down {
-  &::before {
-    content: $icon-arrow-down;
-  }
-}
-.icon-arrow-up {
-  &::before {
-    content: $icon-arrow-up;
-  }
-}
-.icon-arrow-left {
-  &::before {
-    content: $icon-arrow-left;
-  }
-}
-.icon-arrow-right {
-  &::before {
-    content: $icon-arrow-right;
+    content: $icon-pointer;
   }
 }
 .icon-phone-outbound {
@@ -146,5 +111,55 @@
 .icon-bar-chart {
   &::before {
     content: $icon-bar-chart;
+  }
+}
+.icon-sum {
+  &::before {
+    content: $icon-sum;
+  }
+}
+.icon-rub {
+  &::before {
+    content: $icon-rub;
+  }
+}
+.icon-minus {
+  &::before {
+    content: $icon-minus;
+  }
+}
+.icon-plus {
+  &::before {
+    content: $icon-plus;
+  }
+}
+.icon-heart {
+  &::before {
+    content: $icon-heart;
+  }
+}
+.icon-recycle {
+  &::before {
+    content: $icon-recycle;
+  }
+}
+.icon-arrow-down {
+  &::before {
+    content: $icon-arrow-down;
+  }
+}
+.icon-arrow-up {
+  &::before {
+    content: $icon-arrow-up;
+  }
+}
+.icon-arrow-left {
+  &::before {
+    content: $icon-arrow-left;
+  }
+}
+.icon-arrow-right {
+  &::before {
+    content: $icon-arrow-right;
   }
 }

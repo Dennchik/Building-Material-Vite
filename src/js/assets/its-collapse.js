@@ -69,28 +69,28 @@ export default class ItcCollapse {
   }
 }
 //* ----------------------------------------------------------------------------
-import ItcCollapse from './assets/its-collapse.js';
-const item = document.querySelectorAll('._slideToggle');
+// import ItcCollapse from './assets/its-collapse.js';
+// const item = document.querySelectorAll('._slideToggle');
 
-item.forEach((item) => {
-  const trigger = item.querySelector('._trigger');
-  if (!trigger) return;
-  // Создаём объект ItcCollapse один раз и сохраняем в элементе
-  const collapseEl = item.querySelector('._collapse');
-  if (!collapseEl) return;
-  item._collapseInstance = new ItcCollapse(collapseEl);
-  trigger.addEventListener('click', () => {
-    // Закрываем другие элементы в том же аккордеоне
-    const accordion = item.closest('.accordion');
-    if (accordion) {
-      const opened = item.querySelector('._open');
-      if (opened && opened !== item) {
-        opened.classList.remove('_open');
-        opened._collapseInstance.toggle();
-      }
-    }
-    // Переключаем текущий
-    item.classList.toggle('_open');
-    item._collapseInstance.toggle();
-  });
-});
+// item.forEach((item) => {
+//   const trigger = item.querySelector('._trigger');
+//   if (!trigger) return;
+//   // Создаём объект ItcCollapse один раз и сохраняем в элементе
+//   const collapseEl = item.querySelector('._collapse');
+//   if (!collapseEl) return;
+//   item._collapseInstance = new ItcCollapse(collapseEl);
+//   trigger.addEventListener('click', () => {
+//     // Закрываем другие элементы в том же аккордеоне
+//     const accordion = item.closest('.accordion');
+//     if (accordion) {
+//       const opened = item.querySelector('._open');
+//       if (opened && opened !== item) {
+//         opened.classList.remove('_open');
+//         opened._collapseInstance.toggle();
+//       }
+//     }
+//     // Переключаем текущий
+//     item.classList.toggle('_open');
+//     item._collapseInstance.toggle();
+//   });
+// });

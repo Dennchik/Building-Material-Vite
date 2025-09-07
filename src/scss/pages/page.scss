@@ -114,12 +114,18 @@
     }
 
     @include screen-690 {
-      padding-top: 208px;
+      padding-top: 145px;
     }
 
     @include screen-490 {
-      padding-top: 175px;
+      padding-top: 120px;
     }
+  }
+
+  // .page__aside-menu
+  &__aside-menu {
+    position: relative;
+    z-index: 99;
   }
 }
 

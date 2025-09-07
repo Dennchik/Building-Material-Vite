@@ -12,7 +12,9 @@
     transition: opacity 0.9s ease-in-out;
   }
 }
-
+._collapse:not(._show) {
+  display: none;
+}
 .button {
   display: flex;
   justify-content: center;

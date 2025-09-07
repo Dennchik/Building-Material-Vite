@@ -25,6 +25,7 @@
     var icons;
     if (!supportsProperty('fontFeatureSettings')) {
         icons = {
+            'heart-like': '&#xe9da;',
             'rouble': '&#xf159;',
             'rub': '&#xf159;',
             'minus': '&#xe912;',
@@ -34,7 +35,6 @@
             'arrow-up': '&#xe95c;',
             'arrow-left': '&#xe92d;',
             'arrow-thin': '&#xe950;',
-            'heart-like': '&#xe9da;',
           '0': 0
         };
         delete icons['0'];
