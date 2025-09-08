@@ -1,37 +1,42 @@
 @use '../core/extend' as *;
 .preloader {
+  @extend .gradient-loader;
   position: fixed;
-  inset: 0;
   z-index: 999;
+  inset: 0;
+
   display: flex;
   align-items: center;
   justify-content: center;
 
-  @extend .gradient-loader;
-
   &__loader {
+    position: relative;
+
+    display: inline-block;
+
+    box-sizing: border-box;
     width: 48px;
     height: 48px;
     border: 3px solid #fff;
     border-radius: 50%;
-    display: inline-block;
-    position: relative;
-    box-sizing: border-box;
+
     animation: rotation 1s linear infinite;
   }
 
   &__loader::after {
     content: '';
-    box-sizing: border-box;
+
     position: absolute;
-    left: 50%;
     top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
+
+    box-sizing: border-box;
     width: 56px;
     height: 56px;
-    border-radius: 50%;
     border: 3px solid;
     border-color: #ff3d00 transparent;
+    border-radius: 50%;
   }
 }
 .preloader-remove {

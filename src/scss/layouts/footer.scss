@@ -1,2 +1,123 @@
 @use '../core/variables' as *;
 @use '../core/mixins' as *;
+
+.footer {
+  // .footer__body
+  &__body {
+    padding-block: 5rem;
+  }
+
+  // .footer__content
+  &__content {
+    display: flex;
+    gap: 31px;
+    justify-content: space-between;
+    color: #fff;
+
+    @media screen and (width <= 1289px) {
+      gap: 16px;
+    }
+  }
+
+  // .footer__column
+  &__column {
+    width: fit-content;
+    background-color: #ff5f5f33;
+
+    &:nth-child(1) {
+      display: flex;
+      flex: 1 1 20%;
+      flex-direction: column;
+
+      .footer__text {
+        &:nth-child(2) {
+          flex: 1 1 auto;
+          border: 1px solid white;
+        }
+      }
+    }
+    &:nth-child(2) {
+      flex: 0 1 calc(40% + 31px);
+    }
+    &:nth-child(3),
+    &:nth-child(4) {
+      flex: 1 1 20%;
+    }
+
+    @include screen-1289 {
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4) {
+        flex: 1 1 25%;
+      }
+    }
+  }
+
+  // .footer__logo
+  &__logo {
+    margin-bottom: 23px;
+  }
+
+  // .footer__text
+  &__text {
+    margin-bottom: 16px;
+    font-size: 12px;
+  }
+
+  // .footer__title
+  &__title {
+    margin-bottom: 16px;
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    color: rgb(103 103 103 / 100%);
+
+    @include screen-490 {
+      margin-bottom: 10px;
+    }
+  }
+
+  // .footer__links
+  &__links {
+    display: flex;
+    column-gap: 31px;
+
+    a {
+      display: block;
+    }
+
+    @include screen-1289 {
+      flex-direction: column;
+    }
+  }
+
+  // .footer__links-col
+  &__links-col {
+    flex: 0 1 50%;
+    width: 100%;
+
+    a {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    @include screen-1289 {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  // .footer__links-row
+  &__links-row {
+  }
+
+  // .footer__link
+  &__link {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+}
