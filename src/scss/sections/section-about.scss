@@ -16,6 +16,10 @@
     grid-template-columns: 1fr max-content;
     gap: 3.1rem;
 
+    @media screen and (width <= 1289px) {
+      gap: 20px;
+    }
+
     @include screen-1140 {
       grid-template-columns: 50% 1fr;
     }
@@ -31,12 +35,16 @@
     grid-template-columns: repeat(3, minmax(145px, 255px));
     gap: 31px;
 
-    @include screen-768 {
-      gap: 16px;
+    @media screen and (width <= 1289px) {
+      gap: 20px;
     }
 
     @include screen-1024 {
       grid-template-columns: repeat(3, minmax(145px, 1fr));
+    }
+
+    @include screen-768 {
+      gap: 16px;
     }
 
     @include screen-490 {
