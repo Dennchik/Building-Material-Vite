@@ -1,8 +1,11 @@
 // todo --------------------------- Fonts --------------------------------------
 @use 'core/fonts';
 @use 'core/fonts-import';
+// todo --------------------------- layout -------------------------------------
+@use 'layouts/bem-block';
+@use 'layouts/header';
+@use 'layouts/page-grid';
 //todo  --------------------------- Icon Fonts ---------------------------------
-
 @use 'core/iconfonts';
 //todo  --------------------------- Core ---------------------------------------
 @use 'core/reset' as *;
@@ -12,20 +15,16 @@
 @use 'modules/preloader.scss';
 // todo --------------------------- Assets -------------------------------------
 @use 'assets/burger-button';
-// @use 'assets/sidebar-menu';
-// @use 'assets/parallax';
+@use 'assets/swiper-11.2.5';
+// todo ------------------------ components ------------------------------------
+@use 'components/sidebar-menu';
+// @use 'components/parallax';
+// todo --------------------------- Pages --------------------------------------
+@use 'pages/page';
 // todo --------------------------- Chunks -------------------------------------
 // @use 'chunks/menu-list';
 // todo --------------------------- Plugins ------------------------------------
-@use 'assets/swiper-11.2.5';
-// todo --------------------------- layout -------------------------------------
-@use 'layouts/bem-block';
-@use 'layouts/header';
-// todo --------------------------- Pages --------------------------------------
-@use 'pages/page';
-// todo --------------------------- Section ------------------------------------
 
-@use 'layouts/page-grid';
 // todo --------------------------- Style --------------------------------------
 .wrapper {
   display: flex;
@@ -98,7 +97,6 @@
 }
 
 [class*='icon-'] {
-  cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
