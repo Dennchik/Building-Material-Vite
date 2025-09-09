@@ -8,7 +8,7 @@
           each item in news 
             .slide-news__slide
               .slide-news__image
-                +picture(webRoot + 'img/news/' + item.image, 'image')
+                +picture('/img/news/' + item.image, 'image')
               .slide-news__info
                 .slide-news__text= item.text
                 .slide-news__date= item.data
