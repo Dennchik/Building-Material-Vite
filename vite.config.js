@@ -49,8 +49,8 @@ export default defineConfig(({ command }) => {
 
         locals: {
           productsMap,
-          // webRoot: isProd ? '../' : './',
-          webRoot: '../',
+          webRoot: isProd ? './' : '/',
+          // webRoot: '../',
           news,
           about,
           partners,
