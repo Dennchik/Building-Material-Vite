@@ -48,7 +48,7 @@
 
     @include screen-490 {
       padding: 16px 10px 67px;
-      font-size: 12px;
+      font-size: 14px;
     }
   }
 
@@ -60,7 +60,7 @@
     gap: 16px;
 
     @include screen-490 {
-      gap: 12px;
+      gap: 16px;
     }
   }
   // .sidebar-menu__catalog
@@ -85,7 +85,7 @@
   // .sidebar-menu__sub-title
   &__sub-title {
     display: flex;
-    gap: 10px;
+    gap: 16px;
 
     padding: 16px 16px 0;
 
@@ -93,7 +93,7 @@
     line-height: 1;
 
     @include screen-490 {
-      padding: 10px 10px 0;
+      padding: 14px 14px 0;
     }
 
     span {
@@ -130,7 +130,6 @@
   .top-menu {
     &__list {
       flex-direction: column;
-      gap: 7px;
       align-items: start;
     }
 
@@ -138,7 +137,7 @@
       font-size: 16px;
 
       @include screen-490 {
-        font-size: 12px;
+        font-size: 14px;
       }
     }
   }
@@ -149,11 +148,11 @@
   &__items {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 16px;
+    gap: 16px;
+    padding: 16px 16px 0;
 
     @include screen-490 {
-      padding: 10px;
+      padding: 14px 14px 0;
     }
   }
 

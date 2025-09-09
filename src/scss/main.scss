@@ -12,6 +12,7 @@
 @use 'core/reset' as *;
 @use 'core/variables' as *;
 @use 'core/mixins' as *;
+@use 'core/extend' as *;
 // todo --------------------------- Modules ------------------------------------
 @use 'modules/preloader.scss';
 // todo --------------------------- Assets -------------------------------------
@@ -46,7 +47,7 @@
   margin: 0 auto;
   padding: 0 2rem;
 
-  @include screen-320 {
+  @include screen-375 {
     padding: 0 10px;
   }
 }
@@ -101,9 +102,4 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-}
-.favourites {
-  div {
-    display: inline;
-  }
 }

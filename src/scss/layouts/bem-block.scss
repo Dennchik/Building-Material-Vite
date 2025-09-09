@@ -270,12 +270,12 @@
     font-size: 14px !important;
   }
 }
-.t-text-18-12 {
-  font-size: 18px;
+.t-text-14-12 {
+  font-size: 14px;
   line-height: 100%;
 
   @include minmax-490-1920 {
-    font-size: calc(12px + (18 - 12) * ((100vw - 490px) / (1920 - 490)));
+    font-size: calc(12px + (14 - 12) * ((100vw - 490px) / (1920 - 490)));
   }
 
   @include screen-490 {

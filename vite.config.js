@@ -1,6 +1,9 @@
 //* Plugins
 import { defineConfig } from 'vite'; // 👈
-import { resolve } from 'path'; // 👈
+// import pugPlugin from 'vite-plugin-pug';
+// import { resolve } from 'path'; // 👈
+import path, { resolve } from 'path';
+
 import postcssMediaMinMax from 'postcss-media-minmax'; // 👈
 import autoprefixer from 'autoprefixer'; // 👈
 import { viteConvertPugInHtml } from '@mish.dev/vite-convert-pug-in-html';
@@ -32,8 +35,13 @@ export default defineConfig(({ command }) => {
         inputDir: 'public/img', // папка с картинками
         quality: 80,
       }),
+      // pugPlugin(),
       viteConvertPugInHtml({
         minify: true,
+        // Папка, где лежат все Pug-страницы
+        pagesDir: path.resolve(__dirname, 'public/pages'),
+        // Расширение файлов
+        extension: '.pug',
         locals: {
           productsMap,
           // 👈  Добавляем поддержку @@ синтаксиса
@@ -46,7 +54,7 @@ export default defineConfig(({ command }) => {
           ...data,
         },
         pugOptions: {
-          // pretty: !isProd, // 👈 форматирование только в development
+          pretty: !isProd, // 👈 форматирование только в development
           // 👈  Дополнительные опции Pug если нужно
         },
       }),
@@ -85,11 +93,12 @@ export default defineConfig(({ command }) => {
       emptyOutDir: true,
       sourcemap: !isProd, // 👈  карты отключены в Production
       rollupOptions: {
-        input: {
-          main: resolve(__dirname, 'index.html'),
-          // about: resolve(__dirname, 'page/about.html'),
-          // contacts: resolve(__dirname, 'page/contacts.html'),
-        },
+        input: {},
+        // input: {
+        //   main: resolve(__dirname, 'public/pages/index.html'),
+        //   about: resolve(__dirname, 'public/pages/about/index.pug'),
+        //   // contacts: resolve(__dirname, 'page/contacts.html'),
+        // },
       },
     },
   };

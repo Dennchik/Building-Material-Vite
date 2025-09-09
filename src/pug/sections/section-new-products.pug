@@ -13,21 +13,21 @@
                     span= product.label
                   .product-card__icons
                     .product-card__compare
-                      +iconfont('paragraph-right', 'icon')
+                      +iconfont('bar-chart', 'icon')
                     .product-card__favourites
                       +iconfont('heart', 'icon')
                       +iconfont('heart-like', 'icon')
                 .product-card__content
-                  .product-card__image
+                  a(href="#").product-card__image
                     +picture(webRoot + 'img/products/' + product.image, 'image')
                   .product-card__info
                     p= product.title 
+                  .product-card__price
+                    span= product.price 
                   .product-card__sum
                     +iconfont('sum', 'icon')
                     | :
                     span
-                  .product-card__price
-                    span= product.price 
                   .product-card__article= product.article 
                   .product-card__footer
                     .product-card__counter

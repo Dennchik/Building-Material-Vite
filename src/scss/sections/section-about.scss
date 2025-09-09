@@ -1,4 +1,5 @@
 @use '../core/mixins' as *;
+
 .section-about {
   // .section-about__body
   &__body {
@@ -49,14 +50,20 @@
 
     @include screen-490 {
       grid-template-columns: repeat(2, minmax(145px, 1fr));
+      gap: 10px;
     }
   }
 
   // .section-about__column
   &__column {
+    overflow: hidden;
     box-sizing: border-box;
     border: 1px solid rgb(45 47 48 / 100%);
     border-radius: 10px;
+
+    @include screen-490 {
+      border-radius: 5px;
+    }
 
     &:last-child {
       border: none;
@@ -66,13 +73,25 @@
         rgb(123.226 123.226 123.822 / 100%),
         rgb(21 23 25 / 100%) 100%
       );
+      transition: box-shadow 0.3s ease-in-out;
+
+      &:hover {
+        box-shadow: 0 0 17px 1px rgb(146 146 146 / 32.2%);
+      }
     }
   }
 
   // .section-about__map
   &__map {
+    overflow: hidden;
+    border-radius: 10px;
+
     @include min-1140 {
       min-width: 541px;
+    }
+
+    @include screen-490 {
+      border-radius: 5px;
     }
   }
 
@@ -95,6 +114,7 @@
 
 .card-about {
   height: 100%;
+
   // .card-about__body
   &__body {
     display: flex;
@@ -103,6 +123,10 @@
 
     height: 100%;
     padding: 12px 1.6rem;
+
+    @include screen-490 {
+      padding: 12px 7px;
+    }
   }
 
   // .card-about__icon
@@ -115,7 +139,16 @@
 
   // .card-about__text
   &__text {
+    font-size: 14px;
     line-height: 100%;
+
+    @include minmax-490-1920 {
+      font-size: calc(12px + (14 - 12) * ((100vw - 490px) / (1920 - 490)));
+    }
+
+    @include screen-490 {
+      font-size: 12px;
+    }
   }
 }
 

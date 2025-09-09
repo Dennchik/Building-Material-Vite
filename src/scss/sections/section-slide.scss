@@ -39,6 +39,10 @@
 
   box-shadow: $boxShadow;
 
+  @include screen-490 {
+    border-radius: 5px;
+  }
+
   // .product-card__header
   &__header {
     display: flex;
@@ -114,12 +118,13 @@
 
   // .product-card__image
   &__image {
-    pointer-events: none;
+    cursor: pointer;
     display: flex;
     justify-content: center;
     margin-bottom: 13px;
 
     img {
+      pointer-events: none;
       object-fit: contain;
     }
   }
@@ -137,7 +142,7 @@
 
   // .product-card__price
   &__price {
-    padding-bottom: 5px;
+    margin-bottom: 5px;
 
     font-size: 14px;
     font-weight: 700;
@@ -148,10 +153,11 @@
 
   // .product-card__sum
   &__sum {
-    margin-bottom: 12px;
+    padding-bottom: 5px;
     font-weight: 500;
     text-align: center;
     text-transform: uppercase;
+
     .icon-sum {
       font-size: 16px;
       &::before {
@@ -160,7 +166,6 @@
     }
     span {
       font-size: 16px;
-      color: red;
 
       .icon-rub {
         font-size: 14px;

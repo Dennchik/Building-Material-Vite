@@ -3,45 +3,10 @@
 @use 'mixins.scss' as *;
 
 //* ----------------------------------------------------------------------------
-.background-clip {
-  color: rgb(0 0 0);
-  &::before {
-    content: 'Храмы';
-
-    position: absolute;
-
-    display: block;
-
-    color: transparent;
-    text-shadow: none;
-
-    background-position: 100% 0;
-    background-clip: text;
-    background-size: 300% 100%;
-    mix-blend-mode: multiply;
-
-    transition: background-position 0.5s;
-  }
-}
 
 .box-shadow {
   backdrop-filter: blur(10px);
   box-shadow: 0 1px 5px #000;
-}
-
-//* ----------------------------------------------------------------------------
-
-.gradient-border-bottom {
-  background-image: linear-gradient(
-    to left top,
-    rgb(205 215 238 / 61%) 25%,
-    transparent 75%
-  );
-}
-
-.line-through {
-  text-decoration: line-through;
-  opacity: 0.5;
 }
 
 .gradient-loader {

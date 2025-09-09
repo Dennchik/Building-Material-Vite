@@ -1,13 +1,13 @@
 %graystyle {
-	transition: all 0.1s ease 0s;
-	filter: grayscale(1);
-	-moz-filte: grayscale(1);
-	filter: grayscale(1);
+  filter: grayscale(1);
+  transition: all 0.1s ease 0s;
+
+  -moz-filte: grayscale(1);
 }
 
 %graystyleoff {
-	transition: all 0.3s ease 0s;
-	filter: grayscale(0);
-	-moz-filte: grayscale(0);
-	filter: grayscale(0);
+  filter: grayscale(0);
+  transition: all 0.3s ease 0s;
+
+  -moz-filte: grayscale(0);
 }

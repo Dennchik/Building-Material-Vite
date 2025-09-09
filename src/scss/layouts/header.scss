@@ -8,8 +8,6 @@
     display: flex;
     flex-direction: column;
     gap: 14px;
-
-    font-family: $font-family-second;
     font-size: 12px;
 
     @include screen-490 {
@@ -31,6 +29,8 @@
 
   // .header__location
   &__location {
+    user-select: none;
+
     .icon {
       margin-right: 3px;
       font-size: 11px;
@@ -40,7 +40,7 @@
   // .header__main-menu
   &__main-menu {
     display: flex;
-    gap: 16px;
+    gap: 31px;
     align-items: center;
     justify-content: space-between;
 
@@ -261,9 +261,16 @@
   &__list {
     display: flex;
     gap: 31px;
+    justify-content: space-between;
+    width: 100%;
 
     @include screen-820 {
       gap: 3rem;
+      justify-content: space-evenly;
+    }
+
+    @include screen-490 {
+      justify-content: space-around;
     }
   }
 
@@ -276,6 +283,7 @@
       color: $color-green;
     }
   }
+
   // menu-header__link
   &__link {
     display: flex;
@@ -304,7 +312,6 @@
     }
     .favourites {
       font-size: 16px;
-      font-weight: 600;
     }
   }
 
@@ -338,6 +345,7 @@
       scale: 0.98;
       box-shadow: 0 -1px 10px 1px rgb(0 1 2 / 89.7%) inset;
     }
+
     .icon {
       font-size: 14px;
       color: #fff;
