@@ -9,7 +9,7 @@ import postcssMediaMinMax from 'postcss-media-minmax'; // 👈
 import autoprefixer from 'autoprefixer'; // 👈
 import { viteConvertPugInHtml } from '@mish.dev/vite-convert-pug-in-html';
 //* Tasks
-// import { moveHtmlFiles } from './vite/tasks/moveHtmlFiles.js';
+import { moveHtmlFiles } from './vite/tasks/moveHtmlFiles.js';
 import { fontStyle } from './vite/tasks/fontsStyle'; // 👈
 import { convertImagesToWebp } from './vite/tasks/webp.js'; // 👈
 import { compileScss } from './vite/tasks/scss.js'; // 👈
@@ -49,8 +49,8 @@ export default defineConfig(({ command }) => {
 
         locals: {
           productsMap,
-          // webRoot: isProd ? './' : '/',
-          webRoot: '../',
+          webRoot: isProd ? './' : '/',
+          // webRoot: '../',
           news,
           about,
           partners,
@@ -62,7 +62,7 @@ export default defineConfig(({ command }) => {
           // 👈  Дополнительные опции Pug если нужно
         },
       }),
-      // moveHtmlFiles(), // ← ключевой плагин для переименования HTML
+      moveHtmlFiles(), // ← ключевой плагин для переименования HTML
     ],
     base: './',
     server: {
