@@ -1,9 +1,7 @@
-import { defineConfig } from 'vite'; // 👈
-// import { resolve } from 'path'; // 👈
 //* Path
+import { defineConfig } from 'vite'; // 👈
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-const __dirname = dirname(fileURLToPath(import.meta.url));
 //* Plugins
 import postcssMediaMinMax from 'postcss-media-minmax'; // 👈
 import autoprefixer from 'autoprefixer'; // 👈
@@ -22,7 +20,9 @@ import products from './src/data/products.json' with { type: 'json' };
 import data from './src/data/data.json' with { type: 'json' };
 import productsMap from './src/data/productsMap.json';
 
-// 🔹 Сначала конвертируем шрифты перед dev/build
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+// Конвертируем шрифты перед dev/build
 fonts('./public/fonts');
 
 export default defineConfig(({ command }) => {
@@ -31,26 +31,23 @@ export default defineConfig(({ command }) => {
   return {
     plugins: [
       fonts(),
-      // Запускаем compileScss() только при build
       ...(isProd ? [compileScss()] : []),
       fontStyle(),
-      convertImagesToWebp({
-        inputDir: 'public/img', // папка с картинками
-        quality: 80,
-      }),
-      // pugPlugin(),
+      convertImagesToWebp({ inputDir: 'public/img', quality: 80 }),
       viteConvertPugInHtml({
         minify: true,
-        // Расширение файлов
         extension: '.pug',
         flatOutput: true,
-        // базовое имя без расширения
+        // На случай, если плагин всё же применит rename — пусть будет корректный формат
         rename: (name) => `${name}.html`,
-
         locals: {
+          // webRoot: '../',
+
+          // 👈  Добавляем поддержку @@ синтаксиса
+          '@@webRoot': isProd ? './' : '/',
+          // 👈  Альтернативно можно использовать webRoot для совместимости
+          webRoot: isProd ? '../' : './',
           productsMap,
-          // webRoot: isProd ? '../' : './',
-          webRoot: '../',
           news,
           about,
           partners,
@@ -58,16 +55,14 @@ export default defineConfig(({ command }) => {
           ...data,
         },
         pugOptions: {
-          pretty: !isProd, // 👈 форматирование только в development
-          // 👈  Дополнительные опции Pug если нужно
+          pretty: !isProd,
         },
       }),
       moveHtmlFiles(), // ← ключевой плагин для переименования HTML
     ],
+
     base: './',
-    server: {
-      open: true,
-    },
+    server: { open: true },
 
     css: {
       devSourcemap: true,
@@ -96,14 +91,9 @@ export default defineConfig(({ command }) => {
     build: {
       outDir: 'build',
       emptyOutDir: true,
-      sourcemap: !isProd, // 👈  карты отключены в Production
+      sourcemap: !isProd,
       rollupOptions: {
-        // input: {},
-        input: {
-          // main: resolve(__dirname, 'pages/index.html'),
-          // about: resolve(__dirname, 'pages/about/index.html'),
-          // contacts: resolve(__dirname, 'page/contacts.html'),
-        },
+        input: {}, // Пусть Pug-плагин сам найдёт страницы
       },
     },
   };
