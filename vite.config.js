@@ -43,14 +43,12 @@ export default defineConfig(({ command }) => {
         minify: true,
         // Расширение файлов
         extension: '.pug',
-        flatOutput: true,
-        // базовое имя без расширения
-        rename: (name) => `${name}.html`,
 
         locals: {
           productsMap,
-          // webRoot: isProd ? './' : '/',
-          webRoot: '/',
+          // 👈  Добавляем поддержку @@ синтаксиса
+          // '@@webRoot': isProd ? './' : '/',
+          webRoot: isProd ? '../' : './',
           news,
           about,
           partners,

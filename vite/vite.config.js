@@ -7,7 +7,7 @@ import postcssMediaMinMax from 'postcss-media-minmax'; // 👈
 import autoprefixer from 'autoprefixer'; // 👈
 import { viteConvertPugInHtml } from '@mish.dev/vite-convert-pug-in-html';
 //* Tasks
-import { moveHtmlFiles } from './vite/tasks/moveHtmlFiles.js';
+// import { moveHtmlFiles } from './vite/tasks/moveHtmlFiles.js';
 import { fontStyle } from './vite/tasks/fontsStyle'; // 👈
 import { convertImagesToWebp } from './vite/tasks/webp.js'; // 👈
 import { compileScss } from './vite/tasks/scss.js'; // 👈
@@ -46,7 +46,7 @@ export default defineConfig(({ command }) => {
           // 👈  Добавляем поддержку @@ синтаксиса
           '@@webRoot': isProd ? './' : '/',
           // 👈  Альтернативно можно использовать webRoot для совместимости
-          webRoot: isProd ? '../' : './',
+          webRoot: isProd ? './' : '/',
           productsMap,
           news,
           about,
@@ -58,7 +58,7 @@ export default defineConfig(({ command }) => {
           pretty: !isProd,
         },
       }),
-      moveHtmlFiles(), // ← ключевой плагин для переименования HTML
+      // moveHtmlFiles(), // ← ключевой плагин для переименования HTML
     ],
 
     base: './',
