@@ -45,10 +45,11 @@ export default defineConfig(({ command }) => {
         extension: '.pug',
 
         locals: {
+          webRoot: './',
           productsMap,
           // 👈  Добавляем поддержку @@ синтаксиса
           // '@@webRoot': isProd ? './' : '/',
-          webRoot: isProd ? '../' : './',
+          // webRoot: isProd ? '../' : './',
           news,
           about,
           partners,

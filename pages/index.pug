@@ -1,9 +1,14 @@
-extends ../src/pug/layouts/app_layout
-append link
-prepend script
+extends ../src/pug/layouts/app_layout.pug
+
+block vars
+	- var webRoot = './' 
+append link  
+prepend script 
 block title
-	- var text='Home page'
+	- var text = 'Home page'
+
 block main-content 
+
 	section.main-content__section
 		include ./src/pug/sections/index/section-perform
 	section.main-content__section
