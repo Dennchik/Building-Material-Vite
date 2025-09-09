@@ -1,10 +1,13 @@
 import '../scss/main.scss';
 //* - [Utils] -
+import loaded from './utils/preloader.js';
+loaded('.preloader');
+
 import { buildSwiper } from './utils/build-swiper.js';
 buildSwiper();
-import loaded from './utils/preloader.js';
-import { addCartAnimation } from './animations/add-cart-animation.jsx';
+
 //* - [ Animation ] -
+import { addCartAnimation } from './animations/add-cart-animation.jsx';
 addCartAnimation(
   '.favourites',
   '.product-card__favourites',
@@ -12,10 +15,13 @@ addCartAnimation(
   '.icon-heart-like',
   'like'
 );
+
 //* - [ Components ] -
 import { counterProduct } from './components/counter.js';
-import { slide } from './components/slide.js';
+import { slide, slidNews } from './components/slide.js';
 slide('.product-slide');
+slidNews('.slide-news');
+
 // import { smoother } from './animations/animations.jsx';
 // import { validateForm } from './assets/validate-form.js';
 import { dynamicAdaptive } from './modules/dynamic-adaptive.js';
@@ -41,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // hideTopMenu('.header__content');
 const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 
-loaded('.preloader');
 // validateForm();
 addFavorites('.product-card__favourites');
 sidebarMenuHandle();

@@ -1,0 +1,20 @@
+extends ../../../src/pug/layouts/app_layout
+append link
+prepend script
+block title
+	- var text='Home page'
+block main-content 
+	section.main-content__section
+		include ./src/pug/sections/section-perform
+	section.main-content__section
+		include ./src/pug/sections/section-label
+	section.main-content__section
+		include ./src/pug/sections/section-product-prices
+	section.main-content__section
+		include ./src/pug/sections/section-new-products
+	section.main-content__section
+		include ./src/pug/sections/section-categories
+	section.main-content__section
+		include ./src/pug/sections/section-partners
+	section.main-content__section
+		include ./src/pug/sections/section-about

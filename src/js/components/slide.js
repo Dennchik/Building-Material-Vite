@@ -30,6 +30,32 @@ export function slide(selector) {
     });
   });
 }
+
+export function slidNews(selector) {
+  if (selector) {
+    new Swiper(selector, {
+      effect: 'slide',
+      lazy: true,
+
+      navigation: {
+        nextEl: '.btn-prev',
+        prevEl: '.btn-next',
+      },
+      slidesPerView: 3,
+      speed: 800,
+
+      loop: true,
+      grabCursor: true,
+      centeredSlides: false,
+      breakpoints: {
+        0: { slidesPerView: 2, spaceBetween: 10 },
+        690: { spaceBetween: 20 },
+        960: { slidesPerView: 3, spaceBetween: 30 },
+      },
+    });
+  }
+}
+
 // export function mainSlide(Slide) {
 //   if (Slide) {
 //     new Swiper(Slide, {

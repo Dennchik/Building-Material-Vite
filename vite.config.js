@@ -1,68 +1,64 @@
-//* Plugins
+//* Path
 import { defineConfig } from 'vite'; // 👈
-// import pugPlugin from 'vite-plugin-pug';
-// import { resolve } from 'path'; // 👈
-import path, { resolve } from 'path';
-
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+//* Plugins
 import postcssMediaMinMax from 'postcss-media-minmax'; // 👈
 import autoprefixer from 'autoprefixer'; // 👈
 import { viteConvertPugInHtml } from '@mish.dev/vite-convert-pug-in-html';
 //* Tasks
+import { moveHtmlFiles } from './vite/tasks/moveHtmlFiles.js';
 import { fontStyle } from './vite/tasks/fontsStyle'; // 👈
 import { convertImagesToWebp } from './vite/tasks/webp.js'; // 👈
 import { compileScss } from './vite/tasks/scss.js'; // 👈
 import { fonts } from './vite/tasks/fonts.js'; // 👈
 //* data - данные
+import news from './src/data/news.json' with { type: 'json' };
 import about from './src/data/about.json' with { type: 'json' };
 import partners from './src/data/partners.json' with { type: 'json' };
 import products from './src/data/products.json' with { type: 'json' };
 import data from './src/data/data.json' with { type: 'json' };
 import productsMap from './src/data/productsMap.json';
 
-// 🔹 Сначала конвертируем шрифты перед dev/build
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+// Конвертируем шрифты перед dev/build
 fonts('./public/fonts');
 
 export default defineConfig(({ command }) => {
   const isProd = command === 'build';
 
   return {
+    base: './',
+    server: { open: true },
+
     plugins: [
       fonts(),
-      // Запускаем compileScss() только при build
       ...(isProd ? [compileScss()] : []),
       fontStyle(),
-      convertImagesToWebp({
-        inputDir: 'public/img', // папка с картинками
-        quality: 80,
-      }),
-      // pugPlugin(),
+      convertImagesToWebp({ inputDir: 'public/img', quality: 80 }),
       viteConvertPugInHtml({
         minify: true,
-        // Папка, где лежат все Pug-страницы
-        pagesDir: path.resolve(__dirname, 'public/pages'),
-        // Расширение файлов
         extension: '.pug',
+        flatOutput: true,
+        // На случай, если плагин всё же применит rename — пусть будет корректный формат
+        rename: (name) => `${name}.html`,
         locals: {
+          webRoot: '../',
           productsMap,
-          // 👈  Добавляем поддержку @@ синтаксиса
-          '@@webRoot': isProd ? './' : '/',
-          // 👈  Альтернативно можно использовать webRoot для совместимости
-          webRoot: isProd ? './' : '/',
+          news,
           about,
           partners,
           products,
           ...data,
         },
         pugOptions: {
-          pretty: !isProd, // 👈 форматирование только в development
-          // 👈  Дополнительные опции Pug если нужно
+          pretty: !isProd,
         },
       }),
+      moveHtmlFiles(), // ← ключевой плагин для переименования HTML
     ],
-    base: './',
-    server: {
-      open: true,
-    },
+
     css: {
       devSourcemap: true,
       postcss: {
@@ -76,29 +72,22 @@ export default defineConfig(({ command }) => {
               'not dead',
             ],
           }),
-          ...(isProd ? [] : [postcssMediaMinMax()]), // 👈 конвертация нового синтаксиса медиа-запросов
+          ...(isProd ? [] : [postcssMediaMinMax()]),
         ],
       },
-      preprocessorOptions: {
-        scss: {},
-      },
+      preprocessorOptions: { scss: {} },
     },
+
     resolve: {
-      alias: {
-        '@': resolve(__dirname, 'src'),
-      },
+      alias: { '@': resolve(__dirname, 'src') },
     },
+
     build: {
       outDir: 'build',
       emptyOutDir: true,
-      sourcemap: !isProd, // 👈  карты отключены в Production
+      sourcemap: !isProd,
       rollupOptions: {
-        input: {},
-        // input: {
-        //   main: resolve(__dirname, 'public/pages/index.html'),
-        //   about: resolve(__dirname, 'public/pages/about/index.pug'),
-        //   // contacts: resolve(__dirname, 'page/contacts.html'),
-        // },
+        input: {}, // Пусть Pug-плагин сам найдёт страницы
       },
     },
   };
