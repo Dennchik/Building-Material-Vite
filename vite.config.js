@@ -45,7 +45,7 @@ export default defineConfig(({ command }) => {
         extension: '.pug',
 
         locals: {
-          webRoot: './',
+          webRoot: '/',
           productsMap,
           // 👈  Добавляем поддержку @@ синтаксиса
           // '@@webRoot': isProd ? './' : '/',

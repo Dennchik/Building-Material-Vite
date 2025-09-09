@@ -1,16 +1,16 @@
 include ../includes/mixins
-//- block vars
+block vars
 doctype html
 html(lang="ru")
   head
-    base(href=webRoot)
+    //- base(href=webRoot)
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible" content="IE=edge") 
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     meta(name="description" content="Краткое описание документа")
     meta(name="keywords" content="keywords-ключевые слова для поиска")
     block link 
-      link(rel="icon" type="image/icon" href="./img/icons/icon.svg")
+      link(rel="icon" type="image/icon" href="/img/icons/icon.svg")
       //- link(rel="stylesheet" href=webRoot + "src/scss/index.scss")
     block script 
       script(defer type="module" src="/src/js/main.js")
