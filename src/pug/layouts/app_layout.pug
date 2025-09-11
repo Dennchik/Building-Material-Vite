@@ -1,5 +1,5 @@
-include ../includes/mixins
-block vars
+include @/pug/includes/mixins
+//- block vars
 doctype html
 html(lang="ru")
   head
@@ -10,8 +10,7 @@ html(lang="ru")
     meta(name="description" content="Краткое описание документа")
     meta(name="keywords" content="keywords-ключевые слова для поиска")
     block link 
-      link(rel="icon" type="image/icon" href="/img/icons/icon.svg")
-      //- link(rel="stylesheet" href=webRoot + "src/scss/index.scss")
+      link(rel="icon" type="image/icon" href="/img/icons/icon.svg") 
     block script 
       script(defer type="module" src="/src/js/main.js")
 
@@ -20,13 +19,13 @@ html(lang="ru")
       title #{text}
 
   body
-    include ../modules/preloader
-    include ../includes/mixins
+    include @/pug/modules/preloader
+    include @/pug/includes/mixins
     .wrapper
       .page 
         block header 
           header.page__header
-            include ../layouts/header
+            include @/pug//layouts/header
         block page-content
           main.page__main-content
             .main-content._container#wrapper
@@ -47,7 +46,7 @@ html(lang="ru")
               //- include ../modules/form-question-sheet
           nav.page__aside-menu
             block burger-menu
-              //- include ../components/sidebar-menu 
+              include @/pug/components/sidebar-menu 
         block menu-float
           .menu-float
             .menu-float__body._container

@@ -1,27 +1,26 @@
-extends ../src/pug/layouts/app_layout.pug
+extends @/pug/layouts/app_layout.pug
 
-block vars
-	- var webRoot = './' 
 append link  
 prepend script 
+	script(defer type="module" src="/src/js/index.js")
 block title
 	- var text = 'Home page'
 
 block main-content 
 
 	section.main-content__section
-		include ./src/pug/sections/index/section-perform
+		include @/pug/sections/index/section-perform
 	section.main-content__section
-		include ./src/pug/sections/index/section-label
+		include @/pug/sections/index/section-label
 	section.main-content__section
-		include ./src/pug/sections/index/section-product-prices
+		include @/pug/sections/index/section-product-prices
 	section.main-content__section
-		include ./src/pug/sections/index/section-new-products
+		include @/pug/sections/index/section-new-products
 	section.main-content__section
-		include ./src/pug/sections/index/section-categories
+		include @/pug/sections/index/section-categories
 	section.main-content__section
-		include ./src/pug/sections/index/section-partners
+		include @/pug/sections/index/section-partners
 	section.main-content__section
-		include ./src/pug/sections/index/section-about
+		include @/pug/sections/index/section-about
 	section.main-content__section
-		include ./src/pug/sections/index/section-news
+		include @/pug/sections/index/section-news

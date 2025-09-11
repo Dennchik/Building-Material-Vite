@@ -1,94 +1,58 @@
-import { defineConfig } from 'vite'; // 👈
-// import { resolve } from 'path'; // 👈
+//! vite.config.js
+import { defineConfig } from 'vite'; //👈
 //* Path
-import { dirname, resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
-const __dirname = dirname(fileURLToPath(import.meta.url));
+import { dirname, resolve } from 'node:path'; //👈
+import { fileURLToPath } from 'node:url'; //👈
+import { paths } from './path.js';
 //* Plugins
-import postcssMediaMinMax from 'postcss-media-minmax'; // 👈
-import autoprefixer from 'autoprefixer'; // 👈
-import { viteConvertPugInHtml } from '@mish.dev/vite-convert-pug-in-html';
+import postcssSortMediaQueries from 'postcss-sort-media-queries';
+import postcssMediaMinMax from 'postcss-media-minmax'; //👈
+import autoprefixer from 'autoprefixer'; //👈
+import { viteConvertPugInHtml } from '@mish.dev/vite-convert-pug-in-html'; //👈
 //* Tasks
-import { moveHtmlFiles } from './vite/tasks/moveHtmlFiles.js';
-import { fontStyle } from './vite/tasks/fontsStyle'; // 👈
-import { convertImagesToWebp } from './vite/tasks/webp.js'; // 👈
-import { compileScss } from './vite/tasks/scss.js'; // 👈
-import { fonts } from './vite/tasks/fonts.js'; // 👈
-//* data - данные
-import news from './src/data/news.json' with { type: 'json' };
-import about from './src/data/about.json' with { type: 'json' };
-import partners from './src/data/partners.json' with { type: 'json' };
-import products from './src/data/products.json' with { type: 'json' };
-import data from './src/data/data.json' with { type: 'json' };
-import productsMap from './src/data/productsMap.json';
+import { moveHtmlFiles } from '../tasks/moveHtmlFiles.js'; //👈
+import { fontStyle } from '../tasks/fontsStyle.js'; //👈
+import { convertImagesToWebp } from '../tasks/webp.js'; //👈
+import { compileScss } from '../tasks/scss.js'; //👈
+import { fonts } from '../tasks/fonts.js'; //👈
+//* app
+import { app } from './app.js';
+import { getPugConfig } from './pug-config.js';
+
+const __dirname = dirname(fileURLToPath(import.meta.url)); //👈
 
 // 🔹 Сначала конвертируем шрифты перед dev/build
-fonts('./public/fonts');
+// fonts('./public/fonts');
+fonts(paths.fonts.src);
 
 export default defineConfig(({ command }) => {
   const isProd = command === 'build';
 
   return {
+    base: './',
     plugins: [
       fonts(),
-      // Запускаем compileScss() только при build
-      ...(isProd ? [compileScss()] : []),
+      ...(isProd ? [compileScss()] : []), // 👈 Запускаем compileScss() только при build
       fontStyle(),
-      convertImagesToWebp({
-        inputDir: 'public/img', // папка с картинками
-        quality: 80,
-      }),
-      // pugPlugin(),
-      viteConvertPugInHtml({
-        minify: true,
-        // Расширение файлов
-        extension: '.pug',
-        flatOutput: true,
-        // базовое имя без расширения
-        rename: (name) => `${name}.html`,
-
-        locals: {
-          productsMap,
-          webRoot: isProd ? './' : '/',
-          // webRoot: '../',
-          news,
-          about,
-          partners,
-          products,
-          ...data,
-        },
-        pugOptions: {
-          pretty: !isProd, // 👈 форматирование только в development
-          // 👈  Дополнительные опции Pug если нужно
-        },
-      }),
-      moveHtmlFiles(), // ← ключевой плагин для переименования HTML
+      convertImagesToWebp(app.webp),
+      viteConvertPugInHtml(getPugConfig(isProd)),
+      moveHtmlFiles(), // 👈 ключевой плагин для переименования HTML
     ],
-    base: './',
     server: {
       open: true,
     },
-
     css: {
       devSourcemap: true,
       postcss: {
         plugins: [
-          autoprefixer({
-            cascade: false,
-            overrideBrowserslist: [
-              'last 2 versions',
-              'ie >= 10',
-              '> 1%',
-              'not dead',
-            ],
-          }),
-          ...(isProd ? [] : [postcssMediaMinMax()]), // 👈 конвертация нового синтаксиса медиа-запросов
+          autoprefixer(app.autoprefixer),
+          postcssSortMediaQueries(app.postcssSortMediaQueries),
+          //*конвертация нового синтаксиса медиа-запросов
+          ...(isProd ? [] : [postcssMediaMinMax(app.postcssMediaMinMax)]), //👈
         ],
       },
-
       preprocessorOptions: { scss: {} },
     },
-
     resolve: {
       alias: { '@': resolve(__dirname, 'src') },
     },
@@ -96,15 +60,7 @@ export default defineConfig(({ command }) => {
     build: {
       outDir: 'build',
       emptyOutDir: true,
-      sourcemap: !isProd, // 👈  карты отключены в Production
-      rollupOptions: {
-        // input: {},
-        input: {
-          // main: resolve(__dirname, 'pages/index.html'),
-          // about: resolve(__dirname, 'pages/about/index.html'),
-          // contacts: resolve(__dirname, 'page/contacts.html'),
-        },
-      },
+      sourcemap: !isProd,
     },
   };
 });

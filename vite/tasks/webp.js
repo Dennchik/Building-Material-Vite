@@ -2,6 +2,7 @@ import path from 'path';
 import fs from 'fs';
 import { globSync } from 'glob';
 import sharp from 'sharp';
+import { paths } from '../config/path.js';
 
 export function convertImagesToWebp({
   inputDir = 'public/img',

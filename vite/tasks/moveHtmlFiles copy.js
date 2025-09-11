@@ -1,3 +1,4 @@
+// vite/tasks/moveHtmlFiles.js
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -22,31 +23,16 @@ export function moveHtmlFiles() {
             const parentDirName = path.basename(dir);
             const parentDirRelative = path.relative(buildDir, dir);
 
-            // Читаем HTML
-            let html = fs.readFileSync(fullPath, 'utf8');
-
-            // Считаем глубину вложенности
-            const depth = parentDirRelative.split(path.sep).length;
-            // Если файл был в корне pages (depth=1) → './'
-            // Если глубже (depth>1) → '../'
-            const newPrefix = depth > 1 ? '../' : './';
-
-            // Исправляем пути к ассетам и картинкам
-            html = html.replace(
-              /(\shref|\ssrc)=["'](\.\.\/)+/g,
-              `$1="${newPrefix}`
-            );
-
-            // Новый путь
+            // Если файл в подпапке — сохраняем вложенность
             const newPath = path.join(
               buildDir,
               path.dirname(parentDirRelative),
               `${parentDirName}.html`
             );
 
-            fs.writeFileSync(newPath, html, 'utf8');
+            fs.renameSync(fullPath, newPath);
 
-            // Удаляем старый файл и пустую папку
+            // Удаляем пустую папку
             fs.rmSync(dir, { recursive: true, force: true });
           }
         }

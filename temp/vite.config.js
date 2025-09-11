@@ -1,19 +1,23 @@
 import { defineConfig } from 'vite';
-import path, { dirname, resolve } from 'node:path';
+import path from 'node:path'; // 👈 импортируем весь модуль path
+import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+//* Plugins
 import postcssMediaMinMax from 'postcss-media-minmax';
 import autoprefixer from 'autoprefixer';
 import { viteConvertPugInHtml } from '@mish.dev/vite-convert-pug-in-html';
 
+//* Tasks
 import { moveHtmlFiles } from './vite/tasks/moveHtmlFiles.js';
 import { fontStyle } from './vite/tasks/fontsStyle';
 import { convertImagesToWebp } from './vite/tasks/webp.js';
 import { compileScss } from './vite/tasks/scss.js';
 import { fonts } from './vite/tasks/fonts.js';
 
+//* data
 import news from './src/data/news.json' with { type: 'json' };
 import about from './src/data/about.json' with { type: 'json' };
 import partners from './src/data/partners.json' with { type: 'json' };
@@ -21,20 +25,11 @@ import products from './src/data/products.json' with { type: 'json' };
 import data from './src/data/data.json' with { type: 'json' };
 import productsMap from './src/data/productsMap.json';
 
+// 🔹 Конвертируем шрифты перед dev/build
 fonts('./public/fonts');
 
 export default defineConfig(({ command }) => {
   const isProd = command === 'build';
-
-  // Функция для расчёта webRoot в build
-  const getWebRoot = (filename) => {
-    if (!isProd) return '/'; // dev — всегда абсолютный путь в корень
-
-    // build — считаем глубину относительно папки pages
-    const rel = path.relative(path.resolve(__dirname, 'pages'), filename);
-    const depth = rel.split(path.sep).length - 1;
-    return depth === 0 ? './' : '../'.repeat(depth);
-  };
 
   return {
     plugins: [
@@ -48,18 +43,22 @@ export default defineConfig(({ command }) => {
 
       viteConvertPugInHtml({
         minify: true,
+        // Расширение файлов
         extension: '.pug',
 
-        // locals как объект, но webRoot вычисляется динамически
         locals: {
           linkTo: (slug) => {
+            // убираем ведущие ./ или /
             const clean = slug.replace(/^\.?\//, '').replace(/\.html$/i, '');
-            return isProd ? `./${clean}.html` : `./${clean}/index.html`;
+            if (isProd) {
+              return `./${clean}.html`;
+            } else {
+              return `./${clean}/index.html`;
+            }
           },
 
-          // webRoot будет подставляться в шаблон через Pug-переменную filename
-          getWebRoot,
-
+          // 👈  Добавляем поддержку @@ синтаксиса
+          webRoot: isProd ? './' : '/',
           productsMap,
           news,
           about,
@@ -67,9 +66,9 @@ export default defineConfig(({ command }) => {
           products,
           ...data,
         },
-
         pugOptions: {
-          pretty: !isProd,
+          pretty: !isProd, // 👈 форматирование только в development
+          // 👈  Дополнительные опции Pug если нужно
         },
       }),
 
@@ -109,6 +108,11 @@ export default defineConfig(({ command }) => {
       outDir: 'build',
       emptyOutDir: true,
       sourcemap: !isProd,
+      rollupOptions: {
+        input: {
+          // можно явно указать страницы, если нужно
+        },
+      },
     },
   };
 });

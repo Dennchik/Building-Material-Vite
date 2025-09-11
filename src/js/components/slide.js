@@ -38,8 +38,8 @@ export function slidNews(selector) {
       lazy: true,
 
       navigation: {
-        nextEl: '.btn-prev',
-        prevEl: '.btn-next',
+        nextEl: '.btn-next',
+        prevEl: '.btn-prev',
       },
       slidesPerView: 3,
       speed: 800,

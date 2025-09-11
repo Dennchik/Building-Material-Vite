@@ -1,4 +1,5 @@
 import '../scss/main.scss';
+import '../scss/index.scss';
 //* - [Utils] -
 import loaded from './utils/preloader.js';
 loaded('.preloader');
@@ -28,29 +29,30 @@ import { dynamicAdaptive } from './modules/dynamic-adaptive.js';
 // import { anchorsSmoothScrolling } from './assets/anchors-smooth-scrolling.js';
 import productsMap from '../data/productsMap.json';
 
-// Если у тебя Pug компилируется через Vite плагин, то productsMap можно прокинуть в шаблон:
+// Если Pug компилируется через Vite плагин, то productsMap можно прокинуть в шаблон:
 export const templateData = {
   productsMap,
 };
-
+//* layouts
 import {
   addFavorites,
   sidebarMenuHandle,
   hideTopMenu,
   collapseToggle,
 } from './layouts/layouts.js';
+
 document.addEventListener('DOMContentLoaded', () => {
   counterProduct();
   hideTopMenu();
   collapseToggle();
+  addFavorites('.product-card__favourites');
+  sidebarMenuHandle();
+  dynamicAdaptive();
 });
 // hideTopMenu('.header__content');
 const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 
 // validateForm();
-addFavorites('.product-card__favourites');
-sidebarMenuHandle();
-dynamicAdaptive();
 // fadeInColumn('.its-col');
 // fadeInBlock('.its-block');
 // fadeInItem('.its-el');

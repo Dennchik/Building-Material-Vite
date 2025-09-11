@@ -1,5 +1,24 @@
 /* stylelint-disable at-rule-descriptor-value-no-unknown */
 @use 'variables' as *;
+@use 'variables-icon' as *;
+
+// @mixin font-face {
+//   font-family: '#{$icomoon-font-family}';
+//   font-family: $font_name;
+//   font-weight: #{$weight};
+//   font-style: #{$style};
+//   font-display: swap;
+//   src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?1q423w');
+//   src:
+//     url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?1q423w#iefix')
+//       format('embedded-opentype'),
+//     url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?1q423w')
+//       format('truetype'),
+//     url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?1q423w')
+//       format('woff'),
+//     url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?1q423w##{$icomoon-font-family}')
+//       format('svg');
+// }
 
 @mixin font-face($font_name, $file_name, $weight, $style) {
   @font-face {

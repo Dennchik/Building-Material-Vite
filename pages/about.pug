@@ -1,10 +1,12 @@
-extends ../src/pug/layouts/app_layout
+extends @/pug/layouts/app_layout
 
-block vars
-	- var webRoot = '../'
 append link
 prepend script
 block title
 	- var text='About page'
 
 block main-content 
+	section.main-content__section
+		include @/pug/sections/index/section-partners
+	section.main-content__section
+		include @/pug/sections/index/section-categories

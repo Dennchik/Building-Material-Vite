@@ -37,8 +37,10 @@
 
   // .slide-news__image
   &__image {
+    overflow: hidden;
     width: auto;
     border-radius: 10px;
+
     img {
       min-height: 120px;
     }
