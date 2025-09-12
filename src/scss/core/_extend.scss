@@ -12,30 +12,61 @@
 .gradient-loader {
   background-image:
     radial-gradient(
-      ellipse at bottom center,
-      rgb(36 52 68 / 37%) 30%,
-      transparent
+      at 20% 31%,
+      hsl(240deg 0.97% 40% / 100%) 0%,
+      hsl(240deg 0.97% 40% / 0%) 100%
     ),
     radial-gradient(
-      ellipse at 10% 0,
-      rgb(23 27 28 / 87.7%) 25%,
-      rgb(238 238 238 / 0%) 70%,
-      transparent 100%
+      at 70% 63%,
+      hsl(127deg 58% 19% / 100%) 0%,
+      hsl(127deg 58% 19% / 0%) 100%
     ),
     radial-gradient(
-      ellipse at 110% 100%,
-      rgb(23 27 28 / 73.3%) 25%,
-      rgb(238 238 238 / 0%) 70%,
-      transparent 100%
+      at 90.375% 78.106%,
+      hsl(85deg 86% 28% / 100%) 0%,
+      hsl(85deg 86% 28% / 0%) 100%
     ),
     radial-gradient(
-      circle at 0 100%,
-      $color 0,
-      rgb(36 52 68 / 37%) 30%,
-      transparent
+      at 92% 43%,
+      hsl(220deg 3% 15% / 100%) 0%,
+      hsl(220deg 3% 15% / 0%) 100%
     ),
-    radial-gradient(circle at 100% 0, $color, $color 30%, transparent),
-    radial-gradient(ellipse at 30% 2%, #171b1c 0, $color 100%, transparent);
+    radial-gradient(
+      at 77% 25%,
+      hsl(240deg 0.97% 40% / 100%) 0%,
+      hsl(240deg 0.97% 40% / 0%) 100%
+    ),
+    radial-gradient(
+      at 4.25% 55%,
+      hsl(127deg 58% 19% / 100%) 0%,
+      hsl(127deg 58% 19% / 0%) 100%
+    ),
+    radial-gradient(
+      at 97% 62%,
+      hsl(85deg 86% 28% / 100%) 0%,
+      hsl(85deg 86% 28% / 0%) 100%
+    ),
+    radial-gradient(
+      at 37% 16%,
+      hsl(220deg 3% 15% / 100%) 0%,
+      hsl(220deg 3% 15% / 0%) 100%
+    ),
+    radial-gradient(
+      at 83% 39%,
+      hsl(240deg 0.9% 40% / 100%) 0%,
+      hsl(240deg 0.9% 40% / 0%) 100%
+    ),
+    radial-gradient(
+      at 35% 91%,
+      hsl(127deg 58% 19% / 100%) 0%,
+      hsl(127deg 58% 19% / 0%) 100%
+    ),
+    radial-gradient(
+      at 87% 74%,
+      hsl(85deg 86% 28% / 100%) 0%,
+      hsl(85deg 86% 28% / 0%) 100%
+    ),
+    linear-gradient(45deg, #346918 50%, #0d471b);
 }
 
 .link-split {

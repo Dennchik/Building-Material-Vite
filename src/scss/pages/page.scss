@@ -65,7 +65,6 @@
     transition: 0.3s ease;
 
     &::after {
-      // @extend .gradient-border-bottom;
       content: '';
 
       position: absolute;
@@ -74,8 +73,6 @@
 
       width: 0;
       height: 1px;
-
-      // background: #5353531f;
 
       transition: all 0.7s ease-in-out;
     }
@@ -108,15 +105,15 @@
     padding-top: 102px;
 
     @include screen-1260 {
-      padding-top: 140px;
+      padding-top: 155px;
     }
 
     @include screen-690 {
-      padding-top: 145px;
+      padding-top: 165px;
     }
 
     @include screen-490 {
-      padding-top: 120px;
+      padding-top: 135px;
     }
   }
 

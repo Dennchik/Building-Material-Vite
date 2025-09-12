@@ -13,6 +13,6 @@ export const app = {
   postcssSortMediaQueries: { sort: 'mobile-first' },
   webp: {
     inputDir: 'public/img',
-    quality: 80,
+    quality: 100,
   },
 };

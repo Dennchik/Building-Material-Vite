@@ -2,11 +2,14 @@ extends @/pug/layouts/app_layout
 
 append link
 prepend script
+	script(defer type="module" src="/src/js/index.js")
 block title
 	- var text='About page'
 
 block main-content 
 	section.main-content__section
-		include @/pug/sections/index/section-partners
+		include @/pug/sections/about/section-about-company
 	section.main-content__section
-		include @/pug/sections/index/section-categories
+		include @/pug/sections/section-partners
+	section.main-content__section
+		include @/pug/sections/section-categories

@@ -204,9 +204,9 @@
   text-transform: uppercase;
   filter: contrast(120%);
 }
-@media (width >= 490px) and (width <= 1920px) {
+@media (width > 490px) and (width <= 1440px) {
   .t-h1 {
-    font-size: calc(17px + 29 * (100vw - 490px) / 1430) !important;
+    font-size: calc(17px + 29 * (100vw - 490px) / 950) !important;
   }
 }
 @media screen and (width <= 490px) {
@@ -221,9 +221,9 @@
   text-align: center;
   text-transform: uppercase;
 }
-@media (width >= 490px) and (width <= 1920px) {
+@media (width > 490px) and (width <= 1440px) {
   .t-h2 {
-    font-size: calc(17px + 23 * (100vw - 490px) / 1430) !important;
+    font-size: calc(17px + 23 * (100vw - 490px) / 950) !important;
   }
 }
 @media screen and (width <= 490px) {
@@ -237,7 +237,7 @@
   line-height: 100%;
   text-transform: uppercase;
 }
-@media (width >= 490px) and (width <= 1920px) {
+@media (width > 490px) and (width <= 1920px) {
   .t-h3 {
     font-size: calc(20px + 12 * (100vw - 490px) / 1430) !important;
   }
@@ -252,7 +252,7 @@
   font-size: 18px;
   line-height: 100%;
 }
-@media (width >= 490px) and (width <= 1920px) {
+@media (width > 490px) and (width <= 1920px) {
   .t-h5 {
     font-size: calc(14px + 4 * (100vw - 490px) / 1430) !important;
   }
@@ -263,13 +263,28 @@
   }
 }
 
-.t-text-14-12 {
-  font-size: 14px;
+.t-text-18-12 {
+  font-size: 18px;
   line-height: 100%;
 }
-@media (width >= 490px) and (width <= 1920px) {
+@media (width > 490px) and (width <= 1440px) {
+  .t-text-18-12 {
+    font-size: calc(12px + 6 * (100vw - 490px) / 950);
+  }
+}
+@media screen and (width <= 490px) {
+  .t-text-18-12 {
+    font-size: 12px;
+  }
+}
+
+.t-text-14-12 {
+  font-size: 14px;
+  letter-spacing: 0;
+}
+@media (width > 490px) and (width <= 1440px) {
   .t-text-14-12 {
-    font-size: calc(12px + 2 * (100vw - 490px) / 1430);
+    font-size: calc(12px + 2 * (100vw - 490px) / 950);
   }
 }
 @media screen and (width <= 490px) {
@@ -278,26 +293,10 @@
   }
 }
 
-.t-text-30 {
-  font-size: 28px;
-  line-height: 130%;
-  letter-spacing: 0;
-}
-@media (width >= 490px) and (width <= 1920px) {
-  .t-text-30 {
-    font-size: calc(16px + 12 * (100vw - 490px) / 1430);
-  }
-}
-@media screen and (width <= 490px) {
-  .t-text-30 {
-    font-size: 16px;
-  }
-}
-
 .t-text-26 {
   font-size: 30px;
 }
-@media (width >= 490px) and (width <= 1920px) {
+@media (width > 490px) and (width <= 1920px) {
   .t-text-26 {
     font-size: calc(16px + 10 * (100vw - 490px) / 1430);
   }
@@ -315,7 +314,7 @@
 }
 
 .gradient-loader, .preloader {
-  background-image: radial-gradient(ellipse at bottom center, rgba(36, 52, 68, 0.37) 30%, transparent), radial-gradient(ellipse at 10% 0, rgba(23, 27, 28, 0.877) 25%, rgba(238, 238, 238, 0) 70%, transparent 100%), radial-gradient(ellipse at 110% 100%, rgba(23, 27, 28, 0.733) 25%, rgba(238, 238, 238, 0) 70%, transparent 100%), radial-gradient(circle at 0 100%, rgb(0, 0, 0) 0, rgba(36, 52, 68, 0.37) 30%, transparent), radial-gradient(circle at 100% 0, rgb(0, 0, 0), rgb(0, 0, 0) 30%, transparent), radial-gradient(ellipse at 30% 2%, #171b1c 0, rgb(0, 0, 0) 100%, transparent);
+  background-image: radial-gradient(at 20% 31%, hsl(240, 0.97%, 40%) 0%, hsla(240, 0.97%, 40%, 0) 100%), radial-gradient(at 70% 63%, hsl(127, 58%, 19%) 0%, hsla(127, 58%, 19%, 0) 100%), radial-gradient(at 90.375% 78.106%, hsl(85, 86%, 28%) 0%, hsla(85, 86%, 28%, 0) 100%), radial-gradient(at 92% 43%, hsl(220, 3%, 15%) 0%, hsla(220, 3%, 15%, 0) 100%), radial-gradient(at 77% 25%, hsl(240, 0.97%, 40%) 0%, hsla(240, 0.97%, 40%, 0) 100%), radial-gradient(at 4.25% 55%, hsl(127, 58%, 19%) 0%, hsla(127, 58%, 19%, 0) 100%), radial-gradient(at 97% 62%, hsl(85, 86%, 28%) 0%, hsla(85, 86%, 28%, 0) 100%), radial-gradient(at 37% 16%, hsl(220, 3%, 15%) 0%, hsla(220, 3%, 15%, 0) 100%), radial-gradient(at 83% 39%, hsl(240, 0.9%, 40%) 0%, hsla(240, 0.9%, 40%, 0) 100%), radial-gradient(at 35% 91%, hsl(127, 58%, 19%) 0%, hsla(127, 58%, 19%, 0) 100%), radial-gradient(at 87% 74%, hsl(85, 86%, 28%) 0%, hsla(85, 86%, 28%, 0) 100%), linear-gradient(45deg, #346918 50%, #0d471b);
 }
 
 .link-split {
@@ -541,8 +540,11 @@
     justify-content: space-between;
     width: 100%;
   }
+  .main-menu__column:nth-child(1) :root {
+    --mq-header-size: big;
+  }
 }
-@media (width > 1260.99px) {
+@media (width > 1260px) {
   .main-menu__column:nth-child(2) {
     width: 100%;
   }
@@ -748,7 +750,7 @@
   justify-content: space-between;
   padding-bottom: 1.2rem;
 }
-@media (width > 1260.99px) {
+@media (width > 1260px) {
   .menu-screen {
     display: none;
   }
@@ -807,6 +809,9 @@
   .footer__body {
     padding-block: 5rem 8rem;
   }
+  .footer__body :root {
+    --mq-header-size: big;
+  }
 }
 .footer__content {
   display: grid;
@@ -835,6 +840,9 @@
     grid-template-columns: repeat(2, 1fr);
     column-gap: 16px;
   }
+  .footer__content :root {
+    --mq-header-size: big;
+  }
 }
 .footer__column {
   width: 100%;
@@ -856,6 +864,9 @@
 @media screen and (width <= 768px) {
   .footer__column:nth-child(2) {
     grid-column: 2/3;
+  }
+  .footer__column:nth-child(2) :root {
+    --mq-header-size: big;
   }
 }
 @media screen and (width <= 690px) {
@@ -908,6 +919,9 @@
 @media screen and (width <= 768px) {
   .footer__catalog {
     column-gap: 16px;
+  }
+  .footer__catalog :root {
+    --mq-header-size: big;
   }
 }
 .footer__links {
@@ -1825,17 +1839,17 @@ h6 {
 }
 @media screen and (width <= 1260px) {
   .page__main-content {
-    padding-top: 140px;
+    padding-top: 155px;
   }
 }
 @media screen and (width <= 690px) {
   .page__main-content {
-    padding-top: 145px;
+    padding-top: 165px;
   }
 }
 @media screen and (width <= 490px) {
   .page__main-content {
-    padding-top: 120px;
+    padding-top: 135px;
   }
 }
 .page__aside-menu {
@@ -1889,6 +1903,9 @@ h6 {
     grid-template-columns: repeat(2, minmax(170px, 1fr));
     gap: 16px;
   }
+  .categories__content :root {
+    --mq-header-size: big;
+  }
 }
 @media screen and (width <= 490px) {
   .categories__content {
@@ -1923,6 +1940,9 @@ h6 {
 @media screen and (width <= 768px) {
   .categories__card:last-child {
     grid-column: 1/3;
+  }
+  .categories__card:last-child :root {
+    --mq-header-size: big;
   }
 }
 @media screen and (width <= 490px) {

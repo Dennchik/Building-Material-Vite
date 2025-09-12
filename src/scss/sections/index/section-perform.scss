@@ -10,7 +10,7 @@
     align-items: center;
     justify-content: space-between;
 
-    padding: 2rem 0 5rem;
+    padding: 0 0 5rem;
 
     @include screen-1024 {
       grid-template-columns: 1fr;

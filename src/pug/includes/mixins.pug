@@ -17,12 +17,21 @@ mixin btn-link(type, text, mod)
   a(class=mod + '' type=type)=text
   block
 
-//-! Mixin iconFont
-mixin picture(src, alt)
+
+
+//-! mixins/picture.pug
+mixin picture(src, alt, className = '', loading = 'lazy', width = false, height = false)
+  - var cleanSrc = src.replace(/^\.?\//, '')
+  - var basePath = getWebRoot(filename)
+  - var webpSrc = basePath + cleanSrc.replace(/\.[^\.]+$/, '.webp')
+  - var imgSrc = basePath + cleanSrc
+
   picture
-    - var webpSrc = src.replace(/\.[^\.]+$/, '.webp')
     source(srcset=webpSrc type='image/webp')
-    img(src=src alt=alt)
+    if width && height
+      img(src=imgSrc alt=alt class=className loading=loading width=width height=height)
+    else
+      img(src=imgSrc alt=alt class=className loading=loading)
 
 //-! Mixin iconFont
 mixin iconfont(mod, classes)

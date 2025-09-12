@@ -1,0 +1,358 @@
+@use '../../core/mixins' as *;
+
+.section-company {
+  // .section-company__body
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding-block: 0 5rem;
+
+    @include screen-1289 {
+      gap: 16px;
+    }
+
+    @include screen-490 {
+      gap: 10px;
+    }
+  }
+
+  // .section-company__row
+  &__row {
+    display: flex;
+    gap: 31px;
+    align-items: flex-end;
+
+    @include screen-1289 {
+      gap: 16px;
+    }
+
+    @include screen-490 {
+      gap: 10px;
+    }
+
+    &:nth-child(1) {
+      .section-company__column {
+        &:nth-child(1) {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+
+          .section-company__images {
+            @include screen-1289 {
+              gap: 16px;
+            }
+
+            @include screen-490 {
+              gap: 10px;
+            }
+
+            &:not(:last-child) {
+              @include screen-690 {
+                margin-bottom: 2rem;
+              }
+
+              @include screen-490 {
+                margin-bottom: 10px;
+              }
+            }
+          }
+        }
+
+        &:nth-child(2) {
+          .section-company__images {
+            max-height: 100%;
+
+            @include screen-690 {
+              gap: 0 !important;
+            }
+          }
+
+          @include screen-690 {
+            display: none;
+          }
+        }
+      }
+
+      .section-company__text {
+        margin-bottom: 5rem;
+
+        @include screen-690 {
+          margin-bottom: 2rem;
+        }
+
+        @include screen-490 {
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      @include screen-1128 {
+        flex-direction: column;
+      }
+
+      .section-company__column {
+        display: flex;
+        gap: 31px;
+        justify-content: flex-start;
+
+        &:nth-child(1) {
+          .section-company__image {
+            @include min-1128 {
+              width: 255px;
+            }
+
+            @include minmax-1128-1440 {
+              width: calc(
+                203px + (255 - 203) * ((100vw - 1128px) / (1440 - 1128))
+              );
+            }
+          }
+
+          section-company__info {
+            flex: 0 0 auto;
+            width: 100%;
+          }
+
+          @include screen-1128 {
+            .section-company__images {
+              // flex: 0 1 420px;
+              min-width: calc(
+                220px + (420 - 220) * ((100vw - 690px) / (1128 - 690))
+              );
+
+              @include screen-840 {
+                flex: 0 1 auto;
+              }
+            }
+          }
+
+          @include screen-960 {
+            flex-direction: column;
+          }
+
+          @include screen-690 {
+            flex-direction: column-reverse;
+          }
+        }
+
+        &:nth-child(2) {
+          @include min-1128 {
+            flex: 0 1 540px;
+          }
+        }
+
+        @include screen-1289 {
+          gap: 16px;
+        }
+
+        @include screen-1128 {
+          width: 100%;
+          max-width: 100%;
+        }
+
+        @include screen-490 {
+          gap: 10px;
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      @include screen-690 {
+        flex-direction: column;
+      }
+    }
+
+    &:nth-child(4) {
+      align-items: stretch;
+
+      @include screen-1289 {
+        gap: 16px;
+      }
+
+      @include screen-960 {
+        flex-direction: column-reverse;
+      }
+
+      @include screen-490 {
+        grid-area: 10px;
+      }
+    }
+  }
+
+  // .section-company__column
+  &__column {
+    display: flex;
+
+    &:nth-child(1) {
+      flex: 0 1 auto;
+    }
+
+    &:nth-child(2) {
+      @include min-690 {
+        min-width: 541px;
+        max-width: 541px;
+
+        @include minmax-690-1440 {
+          min-width: calc(
+            300px + (540 - 300) * ((100vw - 690px) / (1440 - 690))
+          );
+        }
+      }
+    }
+  }
+
+  // .section-company__info
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  // .section-company__title
+  &__title {
+    margin-bottom: 2rem;
+    text-align: left;
+
+    h2 {
+      font-size: 35px;
+      line-height: 100%;
+      text-transform: uppercase;
+
+      @include minmax-490-1440 {
+        font-size: calc(17px + (35 - 17) * ((100vw - 490px) / (1440 - 490)));
+      }
+
+      @include screen-490 {
+        font-size: 17px;
+      }
+    }
+
+    @include screen-490 {
+      margin-bottom: 10px;
+    }
+  }
+
+  // .section-company__text
+  &__text {
+    p {
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+
+        @include screen-490 {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  // .section-company__images
+  &__images {
+    display: flex;
+    gap: 31px;
+
+    @include screen-1289 {
+      gap: 16px;
+    }
+
+    @include screen-490 {
+      gap: 10px;
+    }
+
+    img {
+      border-radius: 10px;
+      object-fit: contain;
+
+      @include screen-490 {
+        border-radius: 5px;
+      }
+    }
+  }
+
+  // .section-company__list
+  &__list {
+    li {
+      margin-bottom: 0.3rem;
+      padding-left: 10px;
+      font-size: 14px;
+
+      &:last-child {
+        margin-bottom: 2rem;
+
+        @include screen-490 {
+          margin-bottom: 10px;
+        }
+      }
+
+      @include screen-490 {
+        font-size: 12px;
+      }
+    }
+  }
+
+  // .section-company__items
+  &__items {
+    &:nth-child(1) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 31px;
+      align-content: stretch;
+
+      @include screen-1289 {
+        gap: 16px;
+      }
+
+      @include screen-490 {
+        grid-area: 10px;
+      }
+    }
+
+    &:nth-child(2) {
+      flex: 0 1 541px;
+
+      @include screen-960 {
+        flex: 1 1 auto;
+      }
+
+      @include min-960 {
+        min-width: 541px;
+        max-width: 541px;
+
+        @include minmax-690-1440 {
+          min-width: calc(
+            300px + (540 - 300) * ((100vw - 690px) / (1440 - 690))
+          );
+        }
+      }
+    }
+  }
+
+  // .section-company__card
+  &__card {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.card-info {
+  padding: 2.7rem 2rem;
+  border: 1px solid rgb(45 47 48 / 100%);
+  border-radius: 10px;
+
+  @include screen-490 {
+    border-radius: 5px;
+  }
+
+  // .card-info__title
+  &__title {
+    height: 100%;
+    padding-bottom: 10px;
+  }
+  // .card-info__text
+  &__text {
+    flex: 1 1 auto;
+    height: 100%;
+  }
+}

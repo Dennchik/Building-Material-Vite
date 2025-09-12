@@ -1,5 +1,5 @@
 import '../scss/main.scss';
-import '../scss/index.scss';
+
 //* - [Utils] -
 import loaded from './utils/preloader.js';
 loaded('.preloader');
