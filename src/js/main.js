@@ -1,8 +1,8 @@
 import '../scss/main.scss';
 
 //* - [Utils] -
-import loaded from './utils/preloader.js';
-loaded('.preloader');
+import { loadedTimer } from './utils/loaded-timer.js';
+loadedTimer();
 
 import { buildSwiper } from './utils/build-swiper.js';
 buildSwiper();
