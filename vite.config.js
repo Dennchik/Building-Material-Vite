@@ -1,25 +1,23 @@
-//! vite.config.js
+//! ✅vite.config.js
 import { defineConfig } from 'vite';
-
-//* Path
+//* // ✅ Path
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { paths } from './vite/config/path.js';
-//* Plugins
-import { visualizer } from 'rollup-plugin-visualizer';
-import postcssSortMediaQueries from 'postcss-sort-media-queries';
+//* // ✅ app
+import { app } from './vite/config/app.js';
+import { getPugConfig } from './vite/config/pug-config.js';
+//* // ✅ Plugins
+import sortMediaQueries from 'postcss-sort-media-queries';
 import postcssMediaMinMax from 'postcss-media-minmax';
 import autoprefixer from 'autoprefixer';
 import { viteConvertPugInHtml } from '@mish.dev/vite-convert-pug-in-html';
-//* Tasks
+//* // ✅ Tasks
 import { moveHtmlFiles } from './vite/tasks/moveHtmlFiles.js';
 import { fontStyle } from './vite/tasks/fontsStyle.js';
 import { convertImagesToWebp } from './vite/tasks/webp.js';
 import { compileScss } from './vite/tasks/compileScss.js';
 import { fonts } from './vite/tasks/fonts.js';
-//* app
-import { app } from './vite/config/app.js';
-import { getPugConfig } from './vite/config/pug-config.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -28,29 +26,22 @@ fonts(paths.fonts.src);
 
 export default defineConfig(({ command, mode }) => {
   const isProd = command === 'build';
-
+  const isDev = command === 'dev';
   return {
     base: './',
     plugins: [
       fonts(),
-      ...(isProd ? [compileScss()] : []), // 👈 Запускаем compileScss() только при build
       fontStyle(),
       convertImagesToWebp(app.webp),
       viteConvertPugInHtml(getPugConfig(isProd)),
+
+      // 🔹 ключевой плагин для переименования HTML
       moveHtmlFiles(), // 👈 ключевой плагин для переименования HTML
 
-      // ✅ Добавляем анализатор только в продакшн-сборке
-      ...(isProd
-        ? [
-            visualizer({
-              filename: './build/chunk-report.html',
-              template: 'treemap', // вид отчёта: 'sunburst', 'tree map', 'network'
-              gzipSize: true,
-              brotliSize: true,
-              open: true,
-            }),
-          ]
-        : []),
+      // 🔹 Запускаем compileScss()
+      ...(isProd ? [compileScss()] : []), // 👈 только при build
+
+      // 🔹 Добавляем анализатор только в продакшн-сборке
     ],
     server: {
       open: true,
@@ -60,8 +51,11 @@ export default defineConfig(({ command, mode }) => {
       postcss: {
         plugins: [
           autoprefixer(app.autoprefixer),
-          postcssSortMediaQueries(app.postcssSortMediaQueries),
-          //*конвертация нового синтаксиса медиа-запросов
+
+          // 🔹сортировки и объединения медиа-запросов CSS
+          ...(isProd ? [] : [sortMediaQueries(app.postcssSortMediaQueries)]),
+
+          // 🔹 конвертация нового синтаксиса медиа-запросов
           ...(isProd ? [] : [postcssMediaMinMax(app.postcssMediaMinMax)]),
         ],
       },
@@ -70,15 +64,17 @@ export default defineConfig(({ command, mode }) => {
     resolve: {
       alias: { '@': resolve(__dirname, 'src') },
     },
-    // root: 'pages', // 👈 теперь Vite ищет index.html в pages/
+
     build: {
       outDir: 'build',
       emptyOutDir: true,
-      // sourcemap: !isProd,
-      sourcemap: false,
+      sourcemap: isDev,
       cssCodeSplit: true, // 👈 теперь стили делятся по Chunks
 
-      chunkSizeWarningLimit: 500,
+      chunkSizeWarningLimit: 244,
+      modulePreload: {
+        polyfill: true,
+      },
       minify: 'esbuild',
       commonjsOptions: {
         transformMixedEsModules: true,
@@ -86,6 +82,7 @@ export default defineConfig(({ command, mode }) => {
 
       rollupOptions: {
         input: {
+          main: resolve(__dirname, 'src/js/main.js'),
           index: resolve(__dirname, 'src/js/index.js'),
           about: resolve(__dirname, 'src/js/about.js'),
         },

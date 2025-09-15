@@ -4,8 +4,6 @@ import '../scss/main.scss';
 import { loadedTimer } from './utils/loaded-timer.js';
 loadedTimer();
 
-import { buildSwiper } from './utils/build-swiper.js';
-buildSwiper();
 
 //* - [ Animation ] -
 import { addCartAnimation } from './animations/add-cart-animation.jsx';
@@ -19,9 +17,7 @@ addCartAnimation(
 
 //* - [ Components ] -
 import { counterProduct } from './components/counter.js';
-import { slide, slidNews } from './components/slide.js';
-slide('.product-slide');
-slidNews('.slide-news');
+
 
 // import { smoother } from './animations/animations.jsx';
 // import { validateForm } from './assets/validate-form.js';
