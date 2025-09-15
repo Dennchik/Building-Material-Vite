@@ -40,7 +40,7 @@
   gap: 3.1rem;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem 0 5rem;
+  padding: 0 0 5rem;
 }
 @media screen and (width <= 1024px) {
   .section-perform__body {
@@ -123,7 +123,7 @@
   width: 100%;
   object-position: top right;
 }
-@media (width > 1024.99px) {
+@media (width > 1024px) {
   .section-perform__image {
     min-width: 541px;
   }
@@ -431,6 +431,9 @@
   .section-about__cards {
     gap: 16px;
   }
+  .section-about__cards :root {
+    --mq-header-size: big;
+  }
 }
 @media screen and (width <= 490px) {
   .section-about__cards {
@@ -462,7 +465,7 @@
   overflow: hidden;
   border-radius: 10px;
 }
-@media (width > 1140.99px) {
+@media (width > 1140px) {
   .section-about__map {
     min-width: 541px;
   }
@@ -517,7 +520,7 @@
   font-size: 14px;
   line-height: 100%;
 }
-@media (width >= 490px) and (width <= 1920px) {
+@media (width > 490px) and (width <= 1920px) {
   .card-about__text {
     font-size: calc(12px + 2 * (100vw - 490px) / 1430);
   }
@@ -608,5 +611,3 @@
 .slide-news__date {
   font-size: 12px;
 }
-
-/*# sourceMappingURL=index.css.map */

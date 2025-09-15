@@ -1,0 +1,114 @@
+// todo --------------------------- Fonts --------------------------------------
+@use 'core/fonts';
+// @use 'core/fonts-import';
+// todo --------------------------- layout -------------------------------------
+@use 'layouts/bem-block';
+@use 'layouts/header';
+@use 'layouts/footer';
+@use 'layouts/page-grid';
+//todo  --------------------------- Icon Fonts ---------------------------------
+@use 'core/iconfonts';
+//todo  --------------------------- Core ---------------------------------------
+@use 'core/reset' as *;
+@use 'core/variables' as *;
+@use 'core/mixins' as *;
+@use 'core/extend' as *;
+// todo --------------------------- utils ------------------------------------
+@use 'utils/loaded-timer';
+// todo --------------------------- Assets -------------------------------------
+@use 'assets/burger-button';
+@use 'assets/swiper-11.2.5';
+// todo ------------------------ components ------------------------------------
+@use 'components/sidebar-menu';
+// @use 'components/parallax';
+// todo --------------------------- Pages --------------------------------------
+@use 'pages/page';
+// todo --------------------------- Chunks -------------------------------------
+
+// todo --------------------------- Plugins ------------------------------------
+
+// todo -------------------------- Section -------------------------------------
+// @use 'sections/index/section-perform';
+// @use 'sections/index/section-label';
+// @use 'sections/index/section-slide';
+@use 'sections/section-categories';
+@use 'sections/section-partners';
+// @use 'sections/index/section-about';
+// @use 'sections/index/section-news';
+
+// todo --------------------------- Style --------------------------------------
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+//
+[class*='_container'] {
+  overflow: hidden;
+
+  box-sizing: border-box;
+  width: 100%;
+  max-width: $maxWidthContainer;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  @include screen-375 {
+    padding: 0 10px;
+  }
+}
+
+[class*=' _img'] {
+  display: inline-block;
+  width: auto;
+  height: auto;
+
+  img {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    object-fit: cover;
+  }
+}
+
+[class*='_ibg'] {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+  }
+
+  svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+}
+
+[class*='icon-'] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

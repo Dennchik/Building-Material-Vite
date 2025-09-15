@@ -8,13 +8,16 @@ export function loadedTimer() {
     const loadTime = endTime - startTime;
 
     let currentTime = 0;
-    const interval = 1; // шаг 1мс для плавности
+    const step = 16; // примерно 60FPS
+
     const timer = setInterval(() => {
-      currentTime += interval;
+      currentTime += step;
+
+      if (currentTime > loadTime) currentTime = loadTime;
+
       const seconds = Math.floor(currentTime / 1000);
-      const milliseconds = currentTime % 1000;
-      const formatted = `${seconds}.${milliseconds.toString().padStart(3, '0')}`;
-      loaderTimer.textContent = formatted;
+      const milliseconds = Math.floor(currentTime % 1000);
+      loaderTimer.textContent = `${seconds}.${milliseconds.toString().padStart(3, '0')}`;
 
       if (currentTime >= loadTime) {
         clearInterval(timer);
@@ -26,10 +29,10 @@ export function loadedTimer() {
             loaderTimer.style.transform = 'scale(1)';
             setTimeout(() => {
               loader.remove();
-            }, 500); // исчезновение
-          }, 300); // scale(2)
+            }, 500);
+          }, 300);
         }, 100);
       }
-    }, interval);
+    }, step);
   });
 }

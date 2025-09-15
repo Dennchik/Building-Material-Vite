@@ -1,4 +1,4 @@
-// vite/config/app.js
+//* vite/config/app.js
 export const app = {
   autoprefixer: {
     cascade: false,
@@ -11,6 +11,7 @@ export const app = {
   // сюда же можно добавить конфиги для других плагинов
   postcssMediaMinMax: {},
   postcssSortMediaQueries: { sort: 'mobile-first' },
+
   webp: {
     inputDir: 'public/img',
     quality: 100,

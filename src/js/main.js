@@ -49,9 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
   sidebarMenuHandle();
   dynamicAdaptive();
 });
-// hideTopMenu('.header__content');
-const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 
+const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 // validateForm();
 // fadeInColumn('.its-col');
 // fadeInBlock('.its-block');
@@ -66,12 +65,6 @@ const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 if (!isMobile) {
   // smoother();
 }
-
-// document.addEventListener('DOMContentLoaded', () => {
-//   cookiesAccept('.cookies-accept', '.cookies-accept__button');
-//   lineMarquee('.running-line__marquee');
-//   maskPhone('.phone');
-// });
 
 //* ----------------------------------------------------------------------------
 console.log(

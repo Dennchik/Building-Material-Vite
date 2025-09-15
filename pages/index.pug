@@ -1,13 +1,12 @@
 extends @/pug/layouts/app_layout.pug
 
-append link  
+append link 
 prepend script 
-	script(defer type="module" src="/src/js/index.js")
 block title
 	- var text = 'Home page'
 
 block main-content 
-
+	script(defer type="module" src="/src/js/index.js")
 	section.main-content__section
 		include @/pug/sections/index/section-perform
 	section.main-content__section
