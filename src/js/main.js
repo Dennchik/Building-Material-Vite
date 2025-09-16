@@ -4,7 +4,6 @@ import '../scss/main.scss';
 import { loadedTimer } from './utils/loaded-timer.js';
 loadedTimer();
 
-
 //* - [ Animation ] -
 import { addCartAnimation } from './animations/add-cart-animation.jsx';
 addCartAnimation(
@@ -17,18 +16,13 @@ addCartAnimation(
 
 //* - [ Components ] -
 import { counterProduct } from './components/counter.js';
-
-
-// import { smoother } from './animations/animations.jsx';
-// import { validateForm } from './assets/validate-form.js';
 import { dynamicAdaptive } from './modules/dynamic-adaptive.js';
-// import { anchorsSmoothScrolling } from './assets/anchors-smooth-scrolling.js';
+//🔹 Если Pug компилируется через Vite плагин, то productsMap можно прокинуть в шаблон:
 import productsMap from '../data/productsMap.json';
-
-// Если Pug компилируется через Vite плагин, то productsMap можно прокинуть в шаблон:
 export const templateData = {
   productsMap,
 };
+
 //* layouts
 import {
   addFavorites,
@@ -45,6 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
   sidebarMenuHandle();
   dynamicAdaptive();
 });
+
+// import { smoother } from './animations/animations.jsx';
+// import { validateForm } from './assets/validate-form.js';
+// import { anchorsSmoothScrolling } from './assets/anchors-smooth-scrolling.js';
 
 const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 // validateForm();

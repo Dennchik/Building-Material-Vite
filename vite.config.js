@@ -1,18 +1,18 @@
-//! ✅vite.config.js
+//! ✅ vite.config.js
 import { defineConfig } from 'vite';
-//* // ✅ Path
+//* ✅ Path
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { paths } from './vite/config/path.js';
-//* // ✅ app
+//* ✅ app
 import { app } from './vite/config/app.js';
 import { getPugConfig } from './vite/config/pug-config.js';
-//* // ✅ Plugins
+//* ✅ Plugins
 import sortMediaQueries from 'postcss-sort-media-queries';
 import postcssMediaMinMax from 'postcss-media-minmax';
 import autoprefixer from 'autoprefixer';
 import { viteConvertPugInHtml } from '@mish.dev/vite-convert-pug-in-html';
-//* // ✅ Tasks
+//* ✅ Tasks
 import { moveHtmlFiles } from './vite/tasks/moveHtmlFiles.js';
 import { fontStyle } from './vite/tasks/fontsStyle.js';
 import { convertImagesToWebp } from './vite/tasks/webp.js';
