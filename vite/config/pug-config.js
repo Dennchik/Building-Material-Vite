@@ -19,7 +19,7 @@ export function getPugConfig(isProd) {
     locals: {
       linkTo: (slug) => {
         const clean = slug.replace(/^\.?\//, '').replace(/\.html$/i, '');
-        return isProd ? `./${clean}.html` : `./${clean}/index.html`;
+        return isProd ? `./${clean}.html` : `/${clean}/index.html`;
       },
       getWebRoot: (filename) => getWebRoot(filename, isProd),
       productsMap,

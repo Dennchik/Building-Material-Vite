@@ -216,6 +216,8 @@
   &__button {
     cursor: pointer;
 
+    flex: 1 1 60%;
+
     padding: 12px 2.84rem;
     border-radius: 1rem;
 
@@ -253,6 +255,7 @@
     }
   }
 }
+
 .navigation {
   pointer-events: none;
 

@@ -30,6 +30,8 @@ html(lang="ru")
             .main-content._container#wrapper
               .main-content__content#content
                 block main-content 
+            section.main-content__section
+              block section-news 
             footer.main-content__footer
               block footer 
                 include footer 
@@ -40,8 +42,7 @@ html(lang="ru")
             block order-call
               //- include ../modules/form-order-call
           .page__form-questions.questions-form
-            block form-question-sheet
-
+            block form-question-sheet 
               //- include ../modules/form-question-sheet
           nav.page__aside-menu
             block burger-menu

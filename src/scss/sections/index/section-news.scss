@@ -1,8 +1,10 @@
 @use '../../core/mixins' as *;
 
 .section-news {
+  // margin-right: -16px;
   // .section-news__body
   &__body {
+    position: relative;
     padding-block: 5rem;
   }
 
@@ -34,6 +36,12 @@
   // .slide-news__slide
   &__slide {
     flex-direction: column;
+    border-radius: 10px;
+    background: #fff;
+
+    @include screen-490 {
+      border-radius: 5px;
+    }
   }
 
   // .slide-news__image
@@ -42,8 +50,19 @@
     width: auto;
     border-radius: 10px;
 
+    &:hover {
+      img {
+        filter: grayscale(0);
+      }
+    }
+
     img {
       min-height: 120px;
+
+      @include min-1024 {
+        filter: grayscale(1);
+        transition: filter 0.4s ease 0s;
+      }
     }
 
     @include screen-490 {

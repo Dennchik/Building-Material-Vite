@@ -1,0 +1,33 @@
+@use '../core/mixins' as *;
+@use '../core/variables' as *;
+.page {
+  // .page__bread-crumbs
+  &__bread-crumbs {
+    padding: 1.6rem 1rem 1.6rem 0;
+  }
+}
+
+.bread-crumbs {
+  // .bread-crumbs__list
+  &__list {
+    display: flex;
+    align-items: center;
+
+    li:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+
+    @include screen-490 {
+      font-size: 12px;
+    }
+  }
+  // .bread-crumbs__link
+  &__link {
+    color: rgb(88 88 86 / 100%);
+  }
+  // .bread-crumbs__current-item
+  &__current-item {
+    pointer-events: none;
+    user-select: none;
+  }
+}

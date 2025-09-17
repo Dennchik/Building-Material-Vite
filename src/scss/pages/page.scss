@@ -133,6 +133,17 @@
     height: 100%;
   }
 
+  // .main-content__section-news
+  &__section-news {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgb(239 239 241 / 100%);
+  }
+
   &__footer {
     background: rgb(38 39 41 / 100%);
   }

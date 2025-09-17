@@ -1,6 +1,5 @@
 @use 'variables' as *;
 @use 'mixins.scss' as *;
-@use 'extend.scss' as *;
 
 html {
   counter-reset: heading;
@@ -24,11 +23,12 @@ body {
 
   overscroll-behavior: none;
 
-  font: 1.4rem/ 1.4 $font-family-default;
+  font: 14px/ 14px $font-family-default;
   font-weight: $font-weight-default;
   line-height: 1;
 
   background: $background;
+  // background: rgb(239 239 241);
 
   &.no-scroll {
     overflow: hidden;

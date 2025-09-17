@@ -3,21 +3,21 @@
     .sidebar-menu__menu.parent 
       each menu in catalog
         .sidebar-menu__catalog._slideToggle 
-          .sidebar-menu__title._trigger
-            span= menu.title
+          .sidebar-menu__link._trigger
+            span= menu.categories
             .sidebar-menu__icons
               +iconfont('pointer-right', 'icon')
           .sidebar-menu__body.parent._collapse
             each item in menu.links
-              ul.sidebar-menu__menu-catalog._slideToggle 
-                li.sidebar-menu__sub-title._trigger
-                  span= item
-                  .sidebar-menu__icons
-                    +iconfont('pointer-right', 'icon') 
-                .sub-menu.sidebar-menu__sub-menu._collapse
-                  ul.sub-menu__items
-                    if productsMap[item]
-                      each prod in productsMap[item]
-                        li.sub-menu__item= prod
-                      else
-                        li.sub-menu__item Нет товаров
+              ul.sidebar-menu__menu-catalog 
+                li.sidebar-menu__sub-link 
+                  a(href="#")= item
+                  //- .sidebar-menu__icons
+                  //-   +iconfont('pointer-right', 'icon') 
+                  //- .sub-menu.sidebar-menu__sub-menu._collapse
+                    ul.sub-menu__items
+                      if productsMap[item]
+                        each prod in productsMap[item]
+                          li.sub-menu__item= prod
+                        else
+                          li.sub-menu__item Нет товаров

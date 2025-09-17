@@ -121,8 +121,8 @@
   }
 }
 
-@mixin screen-820 {
-  @media screen and (width <= 820px) {
+@mixin screen-840 {
+  @media screen and (width <= 840px) {
     :root {
       --mq-header-size: big;
     }
@@ -130,8 +130,8 @@
   }
 }
 
-@mixin screen-840 {
-  @media screen and (width <= 840px) {
+@mixin screen-820 {
+  @media screen and (width <= 820px) {
     :root {
       --mq-header-size: big;
     }

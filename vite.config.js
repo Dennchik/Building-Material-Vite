@@ -85,6 +85,7 @@ export default defineConfig(({ command, mode }) => {
           main: resolve(__dirname, 'src/js/main.js'),
           index: resolve(__dirname, 'src/js/index.js'),
           about: resolve(__dirname, 'src/js/about.js'),
+          catalog: resolve(__dirname, 'src/js/catalog.js'),
         },
         output: {
           entryFileNames: 'assets/[name]-[hash].js',

@@ -1,0 +1,17 @@
+extends @/pug/layouts/app_layout
+
+append link
+prepend script
+	script(defer type="module" src="/src/js/catalog.js")
+block title
+	- var text='Catalog page'
+
+block main-content 
+	.page__bread-crumbs
+		nav.bread-crumbs
+			ul.bread-crumbs__list
+				li.link-underline-center
+					a.bread-crumbs__link(href=getWebRoot(filename) + "index.html" title="/ Главная") Главная 
+				li
+					span.bread-crumbs__current-item / Каталог товаров
+	section.main-content__section
