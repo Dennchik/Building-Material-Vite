@@ -17,10 +17,25 @@ export function getPugConfig(isProd) {
     extension: '.pug',
 
     locals: {
-      linkTo: (slug) => {
+      linkTo: (slug, filename = '') => {
         const clean = slug.replace(/^\.?\//, '').replace(/\.html$/i, '');
-        return isProd ? `./${clean}.html` : `/${clean}/index.html`;
+        const slugParts = clean.split('/');
+        const fileParts = filename
+          .replace(/^\.?\//, '')
+          .replace(/\.pug$/i, '')
+          .split('/');
+
+        const isSamePage =
+          slugParts.join('/') === fileParts.join('/') ||
+          slugParts.at(-1) === fileParts.at(-1); // fallback match
+
+        if (isSamePage) {
+          return isProd ? `./${slugParts.at(-1)}.html` : `./index.html`;
+        }
+
+        return isProd ? `./${clean}.html` : `/${clean}/`;
       },
+
       getWebRoot: (filename) => getWebRoot(filename, isProd),
       productsMap,
       news,

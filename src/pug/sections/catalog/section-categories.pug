@@ -1,0 +1,11 @@
+.categories 
+	.categories__body 
+		.categories__title 
+			h2.t-h2 Электроинструменты
+		.categories__content 
+			each product in products.categories
+				.categories-card 
+					.categories-card__body 
+						.categories-card__image
+							+picture('img/catalog/electric-tools/' + product.image, 'image')
+						.categories-card__info=product.info

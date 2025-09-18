@@ -1,0 +1,196 @@
+@use '../../core/mixins' as *;
+
+.categories-filter {
+  border: 1px solid red;
+
+  &__title {
+    padding-bottom: 12px;
+    font-size: 16px;
+    line-height: 19px;
+    color: rgb(73 74 75 / 100%);
+
+    @include screen-490 {
+      font-size: 14px;
+    }
+  }
+
+  // .categories-filter__body
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  // .categories-filter__column
+  &__column {
+    &:not(:first-child) {
+      border-radius: 5px;
+      background: #fff;
+    }
+  }
+
+  // .categories-filter__price
+  &__price {
+    display: flex;
+    margin-bottom: 12px;
+  }
+
+  // .categories-filter__type
+  &__type {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 12px;
+    padding: 10px;
+
+    font-size: 16px;
+
+    @include screen-490 {
+      font-size: 14px;
+    }
+
+    .icon {
+      transform: rotate(90deg);
+      font-size: 12px;
+    }
+  }
+
+  // .categories-filter__select
+  &__select {
+    display: block; //!
+  }
+
+  .values-price {
+    // .values-price__current-price
+    &__current-price {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+    }
+
+    // .values-price__column
+    &__item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      width: 100%;
+      max-width: 122px;
+      padding: 1rem 0.6rem;
+      border: 1px solid rgb(87 96 105 / 100%);
+      border-radius: 5px;
+    }
+
+    // .values-price__label
+    &__label {
+      font-size: 14px;
+
+      @include screen-490 {
+        font-size: 12px;
+      }
+    }
+
+    // .values-price__input
+    &__input {
+      width: 100%;
+      text-align: center;
+      input {
+        display: inline;
+        max-width: 74px;
+        font-size: 14px;
+
+        @include screen-490 {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+.product-categories {
+  // .product-categories__body
+  &__body {
+    padding-block: 5rem;
+  }
+
+  // .product-categories__content
+  &__content {
+    display: grid;
+    grid-template-columns: 255px 1fr;
+    gap: 31px;
+
+    @include screen-1289 {
+      gap: 20px;
+    }
+
+    @include screen-768 {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+
+  // .product-categories__column
+  &__column {
+    &:nth-child(1) {
+      border: 1px solid red;
+    }
+  }
+
+  // .product-categories__slide
+  &__slide {
+    .product-slide {
+      // .product-slide__header
+      &__header {
+        display: flex;
+        gap: 5rem;
+        padding-bottom: 2rem;
+        font-size: 16px;
+
+        @include screen-490 {
+          font-size: 14px;
+        }
+      }
+
+      // .product-slide__type
+      &__type {
+        display: flex;
+      }
+
+      // .product-slide__buttons
+      &__buttons {
+        display: flex;
+        gap: 3rem;
+      }
+
+      // .product-slide__body
+      &__body {
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-columns: repeat(4, minmax(17%, 1fr));
+        gap: 3.1rem;
+
+        @include screen-1289 {
+          grid-template-columns: repeat(3, minmax(17%, 1fr));
+          gap: 20px;
+        }
+
+        @include screen-1068 {
+          grid-template-columns: repeat(2, minmax(17%, 1fr));
+          gap: 20px;
+        }
+
+        @include screen-768 {
+          grid-template-columns: repeat(2, minmax(17%, 1fr));
+          gap: 20px;
+        }
+
+        @include screen-540 {
+          grid-template-columns: repeat(1, minmax(17%, 1fr));
+          gap: 20px;
+        }
+      }
+
+      // .product-slide__slide
+    }
+  }
+}

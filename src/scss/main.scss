@@ -1,6 +1,6 @@
 // todo --------------------------- Fonts --------------------------------------
 @use 'core/fonts';
-// @use 'core/fonts-import';
+@use 'core/fonts-import';
 // todo --------------------------- layout -------------------------------------
 @use 'layouts/bem-block';
 @use 'layouts/header';
@@ -20,7 +20,6 @@
 @use 'assets/swiper-11.2.5';
 // todo ------------------------ components ------------------------------------
 @use 'components/sidebar-menu';
-// @use 'components/parallax';
 // todo --------------------------- Pages --------------------------------------
 @use 'pages/page';
 // todo --------------------------- Chunks -------------------------------------
@@ -28,13 +27,9 @@
 // todo --------------------------- Plugins ------------------------------------
 
 // todo -------------------------- Section -------------------------------------
-// @use 'sections/index/section-perform';
-// @use 'sections/index/section-label';
-// @use 'sections/index/section-slide';
+@use 'sections/index/section-slide';
 @use 'sections/section-categories';
 @use 'sections/section-partners';
-// @use 'sections/index/section-about';
-// @use 'sections/index/section-news';
 
 // todo --------------------------- Style --------------------------------------
 .wrapper {

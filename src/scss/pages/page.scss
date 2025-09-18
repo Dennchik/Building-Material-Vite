@@ -104,6 +104,10 @@
     height: 100%;
     padding-top: 102px;
 
+    &.accent-color {
+      background: rgb(239 239 241 / 100%);
+    }
+
     @include screen-1260 {
       padding-top: 155px;
     }
@@ -122,9 +126,19 @@
     position: relative;
     z-index: 99;
   }
+
+  // .page__footer
+  &__footer {
+    background: rgb(38 39 41 / 100%);
+  }
 }
 
 .main-content {
+  // .main-content__bread-crumbs
+  &__bread-crumbs {
+    padding: 1.6rem 1rem 1.6rem 0;
+  }
+
   // .main-content__section
   &__section {
     position: relative;
@@ -142,10 +156,6 @@
     height: 100%;
 
     background: rgb(239 239 241 / 100%);
-  }
-
-  &__footer {
-    background: rgb(38 39 41 / 100%);
   }
 }
 

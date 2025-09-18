@@ -85,6 +85,57 @@
       "image": "cement-Novamix-М-150-30kg.png",
       "price": "460,00р",
       "article": "Фирма или артикул"
+    },
+    {
+      "label": "-12$",
+      "title": "Цемент ЦЕМЕНТУМ М500,40 кг (30 шт/под)",
+      "image": "cement-holcim-M-500-50kg.png",
+      "price": "460,00р",
+      "article": "Фирма или артикул"
+    },
+    {
+      "label": "хит",
+      "title": "Пескобетон Novamix М-300,40 кг",
+      "image": "cement-holcim-M-300-40kg.png",
+      "price": "460,00р",
+      "article": "Фирма или артикул"
+    },
+    {
+      "label": "хит",
+      "title": "Сухая смесь универсальная Novamix М-150, 40 кг",
+      "image": "cement-Novamix-М-150-30kg.png",
+      "price": "460,00р",
+      "article": "Фирма или артикул"
+    },
+    {
+      "label": "-12%",
+      "title": "Штукатурка гипсовая Волма Холст серая, 30 кг",
+      "image": "gypsum-volma-grey-30kg.png",
+      "price": "460,00р",
+      "article": "Фирма или артикул"
+    },
+    {
+      "label": "хит",
+      "title": "Шпаклевка готовая финишная Danogips SuperFinish, 17л/28 кг",
+      "image": "shpatlevka-Danogips-Super-17L-28kg.png",
+      "price": "460,00р",
+      "article": "Фирма или артикул"
+    },
+    {
+      "label": "хит",
+      "title": "Сухая смесь универсальная Novamix М-150, 40 кг",
+      "image": "cement-Novamix-М-150-30kg.png",
+      "price": "460,00р",
+      "article": "Фирма или артикул"
     }
+  ],
+  "categories": [
+    { "image": "img-01.png", "info": "Перфораторы" },
+    { "image": "img-01.png", "info": "Шуруповерты" },
+    { "image": "img-01.png", "info": "Дрели, миксеры" },
+    { "image": "img-01.png", "info": "Болгарки" },
+    { "image": "img-01.png", "info": "Электроножницы, лобзики" },
+    { "image": "img-01.png", "info": "Шлифмашинки" },
+    { "image": "img-01.png", "info": "Пилы" }
   ]
 }

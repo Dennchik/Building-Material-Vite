@@ -2,6 +2,11 @@
 @use '../core/mixins' as *;
 
 .footer {
+  .link-underline-center {
+    &::before {
+      background: #fff;
+    }
+  }
   // .footer__body
   &__body {
     padding-block: 5rem;
@@ -149,18 +154,16 @@
 
   // .footer__link
   &__link {
-    &::before {
-      background: #fff;
-    }
+    display: inline;
   }
 
   // .footer__phone
   &__phone {
     margin-bottom: 10px;
-    .link-underline-center {
-      &::before {
-        background: #fff;
-      }
-    }
+    // .link-underline-center {
+    //   &::before {
+    //     background: #fff;
+    //   }
+    // }
   }
 }
