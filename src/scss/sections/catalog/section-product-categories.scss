@@ -3,7 +3,11 @@
 .product-categories {
   // .product-categories__body
   &__body {
-    padding-block: 5rem;
+    padding-block: 3.6rem 5rem;
+
+    @include screen-490 {
+      padding-block: 1.6rem 5rem;
+    }
   }
 
   // .product-categories__content
@@ -33,7 +37,7 @@
       // .product-slide__header
       &__header {
         display: flex;
-        gap: 5rem;
+        gap: 3rem;
         padding-bottom: 2rem;
         font-size: 16px;
 
@@ -50,7 +54,7 @@
       // .product-slide__buttons
       &__buttons {
         display: flex;
-        gap: 3rem;
+        gap: 2rem;
       }
 
       // .product-slide__body
