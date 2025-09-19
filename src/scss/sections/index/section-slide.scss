@@ -2,6 +2,7 @@
 @use '../../core/mixins' as *;
 
 .product {
+  overflow: hidden;
   // .product-prices_body
   &__body {
     padding-block: 5rem;

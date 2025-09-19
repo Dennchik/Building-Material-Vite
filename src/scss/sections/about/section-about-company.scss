@@ -154,6 +154,7 @@
       grid-area: 10px;
     }
   }
+
   // .section-company__info
   &__info {
     display: flex;
@@ -203,10 +204,6 @@
     display: flex;
     gap: 3rem;
 
-    @include screen-1289 {
-      gap: 16px;
-    }
-
     @include screen-490 {
       gap: 10px;
     }
@@ -226,6 +223,23 @@
 
       @include screen-490 {
         border-radius: 5px;
+      }
+    }
+
+    @include screen-1289 {
+      gap: 16px;
+    }
+
+    @include min-1024 {
+      img {
+        filter: grayscale(1);
+        transition: filter 0.4s ease-in-out;
+      }
+
+      &:hover {
+        img {
+          filter: grayscale(0);
+        }
       }
     }
   }

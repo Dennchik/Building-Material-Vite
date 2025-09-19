@@ -42,12 +42,11 @@
 }
 //
 [class*='_container'] {
-  overflow: hidden;
+  // overflow: hidden;
 
   box-sizing: border-box;
   width: 100%;
   max-width: $maxWidthContainer;
-  height: 100%;
   margin: 0 auto;
   padding: 0 2rem;
 

@@ -12,7 +12,7 @@ mqIndicator.style.pointerEvents = 'none';
 mqIndicator.style.fontFamily = 'monospace';
 document.body.appendChild(mqIndicator);
 
-// медиазапросы с реальными условиями
+// медиа запросы с реальными условиями
 const mediaQueries = [
   { query: '(max-width: 599px)' },
   { query: '(min-width: 600px) and (max-width: 1023px)' },

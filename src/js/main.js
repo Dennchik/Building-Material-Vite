@@ -29,12 +29,16 @@ import {
   sidebarMenuHandle,
   hideTopMenu,
   collapseToggle,
+  addToBlock,
+  collapseToggleOne,
 } from './layouts/layouts.js';
+addToBlock();
 
 document.addEventListener('DOMContentLoaded', () => {
   counterProduct();
   hideTopMenu();
   collapseToggle();
+  collapseToggleOne();
   addFavorites('.product-card__favourites');
   sidebarMenuHandle();
   dynamicAdaptive();

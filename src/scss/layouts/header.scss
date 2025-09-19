@@ -44,6 +44,8 @@
     align-items: center;
     justify-content: space-between;
 
+    width: 100%;
+
     @include screen-690 {
       padding-top: 9px !important;
     }
@@ -56,6 +58,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    width: 100%;
     padding-block: 10px !important;
   }
 
@@ -374,7 +378,7 @@
 
   @include min-690 {
     .button {
-      min-width: 184.61px;
+      min-width: 177.61px;
     }
   }
 

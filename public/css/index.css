@@ -222,6 +222,11 @@
     min-width: 541px;
   }
 }
+@media screen and (width <= 1024px) {
+  .section-about__map :root {
+    --mq-header-size: big;
+  }
+}
 @media screen and (width <= 490px) {
   .section-about__map {
     border-radius: 5px;
@@ -236,6 +241,14 @@
 @media screen and (width <= 1024px) {
   .section-about__footer {
     grid-template-columns: 1fr 1fr;
+  }
+  .section-about__footer :root {
+    --mq-header-size: big;
+  }
+}
+@media screen and (width <= 768px) {
+  .section-about__footer {
+    gap: 16px;
   }
   .section-about__footer :root {
     --mq-header-size: big;
@@ -310,7 +323,23 @@
 .about-footer__reviews {
   max-width: 541px;
 }
+@media screen and (width <= 1024px) {
+  .about-footer__reviews {
+    grid-column: 1/3;
+  }
+  .about-footer__reviews :root {
+    --mq-header-size: big;
+  }
+}
+@media screen and (width <= 690px) {
+  .about-footer__reviews {
+    grid-column: 1/2;
+  }
+}
 
+.section-news {
+  overflow: hidden;
+}
 .section-news__body {
   position: relative;
   padding-block: 5rem;
@@ -348,17 +377,8 @@
   width: auto;
   border-radius: 10px;
 }
-.slide-news__image:hover img {
-  filter: grayscale(0);
-}
 .slide-news__image img {
   min-height: 120px;
-}
-@media (width > 1024px) {
-  .slide-news__image img {
-    filter: grayscale(1);
-    transition: filter 0.4s ease 0s;
-  }
 }
 @media screen and (width <= 490px) {
   .slide-news__image {

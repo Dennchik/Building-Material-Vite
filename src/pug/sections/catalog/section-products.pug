@@ -1,27 +1,8 @@
 .product-categories
 	.product-categories__body
 		.product-categories__content
-			.categories-filter
-				.categories-filter__title Фильтр:
-				.categories-filter__body 
-					.categories-filter__column 
-						.categories-filter__type Цена
-						.values-price.categories-filter__price 
-							.values-price__current-price
-								.values-price__item
-									label(for="price-start").values-price__label от
-									.values-price__input
-										input(id="price-start") 
-								.values-price__item
-									label(for="price-end").values-price__label до
-									.values-price__input
-										input(id="price-end").input
-						.values-price__slide
-					.categories-filter__column 
-						.categories-filter__type
-							span Производитель
-							+iconfont('pointer-right', 'icon')
-						.categories-filter__select 
+			.product-categories__column
+				include @/pug/chunks/filter
 			.product-categories__column(data-quantity-container)
 				.product-categories__slide
 					.product-slide

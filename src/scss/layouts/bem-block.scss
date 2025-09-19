@@ -274,16 +274,16 @@
     font-size: 14px !important;
   }
 }
-.t-text-18-12 {
+.t-text-18-14 {
   font-size: 18px;
   line-height: 100%;
 
   @include minmax-490-1440 {
-    font-size: calc(12px + (18 - 12) * ((100vw - 490px) / (1440 - 490)));
+    font-size: calc(12px + (18 - 14) * ((100vw - 490px) / (1440 - 490)));
   }
 
   @include screen-490 {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 

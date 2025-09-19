@@ -38,6 +38,7 @@
 //     });
 //   });
 // }
+
 //* ✅ - [ Hiding an element when scrolling ]
 export function hideTopMenu() {
   let lastScrollTop = 0;
@@ -76,6 +77,7 @@ export function hideTopMenu() {
     { passive: true }
   );
 }
+
 //* ✅ - [ Hiding an element when scrolling ]
 export function shadowScrollHeader() {
   const handleScroll = () => {
@@ -251,7 +253,25 @@ export function collapseToggle() {
     });
   });
 }
+export function collapseToggleOne() {
+  const items = document.querySelectorAll('._slideToggleOne');
 
+  items.forEach((item) => {
+    const trigger = item.querySelector('._trigger');
+
+    if (!trigger) return;
+    //🔹 Создаём объект ItcCollapse один раз и сохраняем в элементе
+    const collapseEl = item.querySelector('._collapse');
+    if (!collapseEl) return;
+    item._collapseInstance = new ItcCollapse(collapseEl);
+
+    trigger.addEventListener('click', () => {
+      //🔹 Переключаем текущий
+      item.classList.toggle('_open');
+      item._collapseInstance.toggle();
+    });
+  });
+}
 //* - [ Управление открытием модальных окон ]
 export function toggleModal() {
   const modals = [
@@ -307,7 +327,7 @@ export function toggleModal() {
   });
 }
 
-//* - [Переключение полей формы]
+//* ✅ - [Переключение полей формы]
 export function fieldSetsToggle() {
   const container = document.querySelector('.form-question__content');
   const fieldSets = document.querySelectorAll(
@@ -353,7 +373,7 @@ export function fieldSetsToggle() {
     showFieldset, // 👈 экспортируем
   };
 }
-//* - [ Управление оповещением cookies ] -
+//* ✅ - [ Управление оповещением cookies ] -
 export function cookiesAccept(el, trigger) {
   const cookiesAccept = document.querySelector(el);
   const button = document.querySelector(trigger);
@@ -378,7 +398,7 @@ export function cookiesAccept(el, trigger) {
   }, 3000);
 }
 
-//* - [ Запуск анимации lineMarquee (бегущей строки) ] -
+//* ✅ - [ Запуск анимации lineMarquee (бегущей строки) ] -
 export function lineMarquee(element) {
   const marquee = document.querySelector(element);
   if (!marquee) return;
@@ -399,4 +419,97 @@ export function lineMarquee(element) {
   );
 
   observer.observe(marquee);
+}
+
+//* ✅ - [ Показать еще ]
+export function addToBlock() {
+  document.addEventListener('DOMContentLoaded', function () {
+    const contents = document.querySelectorAll('.content');
+
+    contents.forEach((content) => {
+      // Кнопка
+      const button = content.querySelector('.form-categories__show-more');
+      console.log(button);
+
+      if (button) {
+        // Текст внутри кнопки
+        const buttonText = button.querySelector('span');
+
+        // Сколько блоков видно изначально
+        let visibleCount = 1;
+        // Сколько блоков нужно показывать при каждом нажатии
+        const blocksToShow = 1;
+
+        // Показываем первые несколько блоков, остальные скрываем
+        const showBlocks = content.querySelectorAll('.section');
+
+        showBlocks.forEach((showBlock, index) => {
+          console.log(index);
+          if (index >= visibleCount) {
+            // Скрываем все блоки, начиная с определенного
+            showBlock.classList.add('hidden');
+          }
+        });
+
+        // Функция для обновления стилей кнопки
+        const updateButtonStyle = () => {
+          // Проверка ширины экрана
+          if (window.innerWidth >= 768) {
+            if (visibleCount % 2 === 0) {
+              // Добавляем класс для четного количества видимых блоков
+              button.classList.add('seo-block__button--even');
+            } else {
+              // Удаляем класс для четного количества
+              button.classList.remove('seo-block__button--even');
+            }
+          } else {
+            // Удаляем класс, если ширина меньше 768px
+            button.classList.remove('seo-block__button--even');
+          }
+        };
+
+        // Проверяем стили кнопки сразу после загрузки
+        updateButtonStyle();
+
+        // Обработчик события для кнопки
+        button.addEventListener('click', function () {
+          if (visibleCount < showBlocks.length) {
+            // Показываем следующие три блока
+            for (let i = 0; i < blocksToShow; i++) {
+              if (visibleCount < showBlocks.length) {
+                // Показываем следующий блок
+                showBlocks[visibleCount].classList.remove('hidden');
+                // Увеличиваем счетчик видимых блоков
+                visibleCount++;
+              }
+            }
+            // Если все блоки показаны, меняем текст кнопки на "Свернуть"
+            if (visibleCount === showBlocks.length) {
+              // Меняем текст на "Свернуть"
+              buttonText.textContent = 'Свернуть';
+              // Добавляем класс для кнопки вращения
+              button.classList.add('_rotate-button');
+            }
+          } else {
+            // Если текст кнопки "Свернуть", возвращаем все блоки в исходное
+            // состояние
+            showBlocks.forEach((showBlock, index) => {
+              if (index >= 1) {
+                showBlock.classList.add('hidden'); // Скрываем блоки снова
+              }
+            });
+            // Сбрасываем видимое количество блоков
+            visibleCount = 1;
+            // Возвращаем текст кнопки обратно на "Читать ещё"
+            buttonText.textContent = 'Показать еще';
+            // Удаляем класс для кнопки вращения
+            button.classList.remove('_rotate-button');
+          }
+
+          // Обновляем стили кнопки после клика
+          updateButtonStyle();
+        });
+      }
+    });
+  });
 }
