@@ -28,7 +28,8 @@ export default defineConfig(({ command, mode }) => {
   const isProd = command === 'build';
   const isDev = command === 'dev';
   return {
-    base: './',
+    // base: './',
+    base: isProd ? '/' : '/',
     plugins: [
       fonts(),
       fontStyle(),
