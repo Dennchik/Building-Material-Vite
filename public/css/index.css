@@ -89,7 +89,7 @@
   font-size: 1.8rem;
   line-height: 100%;
 }
-.section-perform__buttons {
+.section-perform__collection {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -179,7 +179,7 @@
     --mq-header-size: big;
   }
 }
-@media screen and (width <= 768px) {
+@media screen and (width < 768px) {
   .section-about__cards {
     gap: 16px;
   }
@@ -246,7 +246,7 @@
     --mq-header-size: big;
   }
 }
-@media screen and (width <= 768px) {
+@media screen and (width < 768px) {
   .section-about__footer {
     gap: 16px;
   }
@@ -317,7 +317,24 @@
     margin-bottom: 10px;
   }
 }
+.about-footer__section {
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 1fr;
+  padding-bottom: 5px;
+  transition: grid-template-rows 0.2s ease-in-out;
+}
+.about-footer__section.hidden {
+  grid-template-rows: 0fr;
+  padding-bottom: 0;
+}
+.about-footer__section p {
+  overflow: hidden;
+  min-height: 0;
+  font-size: 12px;
+}
 .about-footer__button {
+  cursor: pointer;
   font-size: 12px;
 }
 .about-footer__reviews {

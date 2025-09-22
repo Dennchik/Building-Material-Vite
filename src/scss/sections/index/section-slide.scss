@@ -11,6 +11,9 @@
   // .product-prices__title
   &__title {
     margin-bottom: 4rem;
+    h2 {
+      text-align: center;
+    }
   }
 
   // .product-prices__content
@@ -37,6 +40,7 @@
   padding: 10px 10px 13px;
   border-radius: 10px;
 
+  background: #fff;
   box-shadow: $boxShadow;
 
   @include screen-540 {

@@ -1,10 +1,10 @@
 .categories._container  
 	.categories__body 
 		.categories__title 
-			h2.t-h2 Категории товаров
+			h2.t-h2 Электроинструменты
 		.categories__content 
 			each product in products.categories
-				a(href=linkTo("catalog/card-drill")).categories-card 
+				a(href=linkTo("catalog/card-drill", filename)).categories-card 
 					.categories-card__body 
 						.categories-card__image
 							+picture('img/catalog/electric-tools/' + product.image, 'image')

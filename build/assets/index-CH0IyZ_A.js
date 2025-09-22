@@ -1,1 +1,0 @@
-import"./vendors/modulepreload-polyfill-B5Qt9EMX.js";import{b as i,s,a as r}from"./main-O2QG1VTe.js";import"./vendors/vendor-bIBkycDJ.js";import"./vendors/drop-menu-BL8SW9al.js";i();s(".product-slide");r(".slide-news");

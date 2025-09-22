@@ -17,10 +17,14 @@ block page-content
 								ul.bread-crumbs__list
 									li.link-underline-center
 										a.bread-crumbs__link(href=getWebRoot(filename) + "index.html" title="/ Главная") Главная 
+									li / 
+									li.link-underline-center
+										a.bread-crumbs__link(href=linkTo("catalog-products", filename) title="/ Каталог товаров") Каталог товаров
+									li / 
 									li
-										span.bread-crumbs__current-item / Каталог товаров (Электроинструменты)
-					section.main-content__section
-						include @/pug/sections/catalog/section-categories
+										span.bread-crumbs__current-item Товары со скидками
+						.page-title._container
+							h1.t-h2 Товары со скидками
 					section.main-content__section
 						include @/pug/sections/catalog/section-products
 					section.main-content__section

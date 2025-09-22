@@ -219,7 +219,6 @@
 .t-h2 {
   font-size: 40px;
   line-height: 100%;
-  text-align: center;
   text-transform: uppercase;
 }
 @media (width > 490px) and (width <= 1440px) {
@@ -549,7 +548,7 @@
   display: flex;
   gap: 2.4rem;
 }
-@media screen and (width <= 768px) {
+@media screen and (width < 768px) {
   .main-menu__column:nth-child(1) {
     justify-content: space-between;
     width: 100%;
@@ -822,7 +821,7 @@
 .footer__body {
   padding-block: 5rem;
 }
-@media screen and (width <= 768px) {
+@media screen and (width < 768px) {
   .footer__body {
     padding-block: 5rem 8rem;
   }
@@ -852,7 +851,7 @@
     --mq-header-size: big;
   }
 }
-@media screen and (width <= 768px) {
+@media screen and (width < 768px) {
   .footer__content {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 16px;
@@ -878,7 +877,7 @@
 .footer__column:nth-child(2) {
   grid-column: 2/4;
 }
-@media screen and (width <= 768px) {
+@media screen and (width < 768px) {
   .footer__column:nth-child(2) {
     grid-column: 2/3;
   }
@@ -933,7 +932,7 @@
     column-gap: 20px;
   }
 }
-@media screen and (width <= 768px) {
+@media screen and (width < 768px) {
   .footer__catalog {
     column-gap: 16px;
   }
@@ -2102,6 +2101,43 @@ h6 {
   user-select: none;
 }
 
+.collection__body {
+  padding-block: 5rem;
+}
+.collection__content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.collection__title {
+  margin-bottom: 4rem;
+}
+.collection__title h2 {
+  text-align: center;
+}
+.collection__button {
+  cursor: pointer;
+  padding: 0.9rem 2rem;
+  border: 1px solid rgb(45, 47, 48);
+  border-radius: 10px;
+  transition: color 0.2s ease-in-out;
+}
+.collection__button:hover {
+  border: 1px solid green;
+  color: oklch(35.043% 0.09 147.299deg);
+}
+.collection__button span {
+  pointer-events: none;
+  font-size: 1.4rem;
+  line-height: 100%;
+  white-space: nowrap;
+}
+@media screen and (width <= 490px) {
+  .collection__button {
+    padding: 0.9rem 1rem;
+  }
+}
+
 .product {
   overflow: hidden;
 }
@@ -2110,6 +2146,9 @@ h6 {
 }
 .product__title {
   margin-bottom: 4rem;
+}
+.product__title h2 {
+  text-align: center;
 }
 .product__content {
   position: relative;
@@ -2125,11 +2164,16 @@ h6 {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 320px;
   height: 100%;
   padding: 10px 10px 13px;
   border-radius: 10px;
+  background: #fff;
   box-shadow: 0 0 17px 1px rgba(0, 0, 0, 0.15);
+}
+@media screen and (width <= 580px) {
+  .product-card {
+    max-width: 340px;
+  }
 }
 @media screen and (width <= 490px) {
   .product-card {
@@ -2216,7 +2260,7 @@ h6 {
   text-transform: uppercase;
 }
 .product-card__sum .icon-sum {
-  font-size: 16px;
+  font-size: 14px;
 }
 .product-card__sum .icon-sum::before {
   font-weight: 700;
@@ -2383,7 +2427,7 @@ h6 {
     --mq-header-size: big;
   }
 }
-@media screen and (width <= 768px) {
+@media screen and (width < 768px) {
   .categories__content {
     grid-template-columns: repeat(2, minmax(170px, 1fr));
     gap: 16px;
@@ -2422,7 +2466,7 @@ h6 {
     --mq-header-size: big;
   }
 }
-@media screen and (width <= 768px) {
+@media screen and (width < 768px) {
   .categories__card:last-child {
     grid-column: 1/3;
   }
