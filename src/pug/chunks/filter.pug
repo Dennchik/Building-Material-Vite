@@ -60,7 +60,7 @@
 								label.form-categories__label 
 									input(type="radio" name="level-1" value="Брэнд-12")
 									| Брэнд-12
-							.form-categories__show-more
+							.form-categories__show-more.show-more
 								span.link-underline-center Показать еще
 								+iconfont('pointer-right', 'icon')
 				fieldset.form-categories__item._slideToggleOne 
@@ -98,7 +98,7 @@
 								label.form-categories__label 
 									input(type="radio" name="level-2-3" value="Брэнд-9")
 									| Брэнд-9
-							.form-categories__show-more
+							.form-categories__show-more.show-more
 								span.link-underline-center  Показать еще
 								+iconfont('pointer-right', 'icon')
 				fieldset.form-categories__item._slideToggleOne 
@@ -136,7 +136,7 @@
 								label.form-categories__label 
 									input(type="radio" name="level-3" value="Брэнд-9")
 									| Брэнд-9
-							.form-categories__show-more
+							.form-categories__show-more.show-more
 								span.link-underline-center Показать еще
 								+iconfont('pointer-right', 'icon')
 				fieldset.form-categories__item._slideToggleOne 
@@ -174,7 +174,7 @@
 								label.form-categories__label 
 									input(type="radio" name="level-3" value="Брэнд-9")
 									| Брэнд-9
-							.form-categories__show-more
+							.form-categories__show-more.show-more
 								span.link-underline-center Показать еще
 								+iconfont('pointer-right', 'icon')
 				fieldset.form-categories__item._slideToggleOne 
@@ -212,7 +212,7 @@
 								label.form-categories__label 
 									input(type="radio" name="level-4" value="Брэнд-9")
 									| Брэнд-9
-							.form-categories__show-more
+							.form-categories__show-more.show-more
 								span.link-underline-center Показать еще
 								+iconfont('pointer-right', 'icon')
 				fieldset.form-categories__item._slideToggleOne 
@@ -250,8 +250,13 @@
 								label.form-categories__label 
 									input(type="radio" name="level-5" value="Брэнд-9")
 									| Брэнд-9
-							.form-categories__show-more
+							.form-categories__show-more.show-more
 								span.link-underline-center Показать еще
 								+iconfont('pointer-right', 'icon')
 				button(type="reset").form-categories__button.button
 					span Сбросить фильтр
+		.categories-filter__banner
+			a(href="#").categories-filter__image
+				+picture('/img/catalog/banner.png',  'image') 
+			.categories-filter__text 
+				| Lorem, ipsum dolor esse expedita nemo soluta iste!

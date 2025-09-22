@@ -21,10 +21,13 @@ html(lang="ru")
     include @/pug/includes/mixins
     script(defer type="module" src="/src/js/main.js")
     .wrapper
-      .page 
+      .page
         block header 
           header.page__header
-            include @/pug//layouts/header
+            include @/pug/layouts/header
+            nav.page__dropdown-menu 
+              block dropdown-menu 
+                include @/pug/components/dropdown-menu  
         block page-content
           main.page__main-content
             .main-content#wrapper
@@ -34,19 +37,13 @@ html(lang="ru")
               block section-news 
             footer.page__footer
               block footer 
-                include footer 
-          .page__form-request.request-form
-            block form-request
-              //- include ../modules/form-request
-          .page__order-call.order-call-form
-            block order-call
-              //- include ../modules/form-order-call
-          .page__form-questions.questions-form
-            block form-question-sheet 
-              //- include ../modules/form-question-sheet
+                include footer
         nav.page__aside-menu
           block burger-menu
             include @/pug/components/sidebar-menu 
+        //- nav.page__dropdown-menu 
+          block dropdown-menu 
+            include @/pug/components/dropdown-menu  
         block menu-float
           .menu-float
             .menu-float__body._container

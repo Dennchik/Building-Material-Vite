@@ -132,7 +132,7 @@
 }
 
 @mixin screen-768 {
-  @media screen and (width <= 768px) {
+  @media screen and (width < 768px) {
     :root {
       --mq-header-size: big;
     }

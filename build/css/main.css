@@ -79,7 +79,7 @@
 
 .menu-float {
   position: fixed;
-  z-index: 111;
+  z-index: 17;
   bottom: 0;
   width: 100%;
   border-top: 0.5px solid rgba(87, 96, 105, 0.507);
@@ -274,11 +274,26 @@
 }
 @media (width > 490px) and (width <= 1440px) {
   .t-text-18-14 {
-    font-size: calc(12px + 4 * (100vw - 490px) / 950);
+    font-size: calc(14px + 4 * (100vw - 490px) / 950);
   }
 }
 @media screen and (width <= 490px) {
   .t-text-18-14 {
+    font-size: 14px;
+  }
+}
+
+.t-text-16-14 {
+  font-size: 16px;
+  line-height: 100%;
+}
+@media (width > 490px) and (width <= 1440px) {
+  .t-text-16-14 {
+    font-size: calc(14px + 2 * (100vw - 490px) / 950);
+  }
+}
+@media screen and (width <= 490px) {
+  .t-text-16-14 {
     font-size: 14px;
   }
 }
@@ -295,20 +310,6 @@
 @media screen and (width <= 490px) {
   .t-text-14-12 {
     font-size: 12px;
-  }
-}
-
-.t-text-26 {
-  font-size: 30px;
-}
-@media (width > 490px) and (width <= 1920px) {
-  .t-text-26 {
-    font-size: calc(16px + 10 * (100vw - 490px) / 1430);
-  }
-}
-@media screen and (width <= 490px) {
-  .t-text-26 {
-    font-size: 16px;
   }
 }
 
@@ -465,10 +466,16 @@
   }
 }
 .header__top-menu {
+  overflow: hidden;
   display: flex;
   gap: 31px;
   justify-content: space-between;
+  height: 32px;
   background: rgb(239, 239, 241);
+  transition: height 0.3s ease-in-out;
+}
+.header__top-menu.active {
+  height: 0;
 }
 @media screen and (width <= 690px) {
   .header__top-menu {
@@ -1192,6 +1199,7 @@ body.no-scroll {
 @media screen {
   * {
     scrollbar-width: thin;
+    scrollbar-width: none;
   }
 }
 
@@ -1743,7 +1751,7 @@ h6 {
   cursor: pointer;
   display: block;
   width: 100%;
-  padding: 10px 20px;
+  padding: 10px 12px;
 }
 .sidebar-menu__icons {
   pointer-events: none;
@@ -1816,6 +1824,113 @@ h6 {
   }
 }
 
+.dropdown-menu__body {
+  padding: 3rem 0;
+  background: rgb(239, 239, 241);
+}
+@media screen and (width <= 490px) {
+  .dropdown-menu__body {
+    padding: 16px 0;
+  }
+}
+.dropdown-menu__content {
+  position: relative;
+}
+.dropdown-menu__menu {
+  display: flex;
+  gap: 3px;
+}
+.dropdown-menu__buttons {
+  display: flex;
+  flex: 0 1 372px;
+  flex-direction: column;
+  gap: 3px;
+  max-width: 372px;
+}
+.dropdown-menu__button {
+  cursor: pointer;
+  display: flex;
+  padding: 10px 12px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  background: rgb(255, 255, 255);
+}
+.dropdown-menu__button span {
+  white-space: nowrap;
+}
+.dropdown-menu__button.active span {
+  color: #000;
+}
+.dropdown-menu__button.active .dropdown-menu__tab {
+  transform: scale(1);
+}
+.dropdown-menu__button:hover {
+  border: 2px solid oklch(35.043% 0.09 147.299deg);
+}
+.dropdown-menu__button:hover span {
+  color: #000;
+}
+.dropdown-menu__button span {
+  line-height: 118.75%; /* 19px/16 */
+  color: rgb(73, 74, 75);
+}
+.dropdown-menu__button .icon {
+  transform: scale(0);
+}
+.dropdown-menu__sub-menu {
+  display: flex;
+  gap: 16px;
+}
+@media screen and (width <= 690px) {
+  .dropdown-menu__sub-menu {
+    flex-direction: column;
+  }
+}
+.dropdown-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+}
+.dropdown-menu__link {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+.dropdown-menu__link span {
+  margin-right: 10px;
+}
+.dropdown-menu__link .icon {
+  transform: rotate(90deg);
+}
+.dropdown-menu__tabs {
+  position: relative;
+  flex: 0 1 auto;
+  width: 100%;
+  border-radius: 5px;
+}
+.dropdown-menu__title {
+  margin-bottom: 2rem;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 115%; /* 23px/20 */
+  text-transform: uppercase;
+}
+.dropdown-menu__tab {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px 12px;
+  opacity: 0;
+  background: rgb(255, 255, 255);
+  transition: opacity 0.3s ease-in-out;
+}
+.dropdown-menu__tab.active {
+  opacity: 1;
+}
+
 .scroll-container {
   pointer-events: none;
   position: fixed;
@@ -1827,6 +1942,9 @@ h6 {
   background: rgba(0, 255, 234, 0.2039215686);
 }
 
+.page {
+  position: relative;
+}
 .page__form-questions, .page__form-request, .page__order-call {
   pointer-events: none;
   position: fixed;
@@ -1860,9 +1978,8 @@ h6 {
   z-index: 17;
   top: 0;
   left: 0;
-  overflow: hidden;
+  box-sizing: content-box;
   width: 100%;
-  margin: 0 auto;
   padding: 0 0 14px;
   background-color: #fff;
   transition: 0.3s ease;
@@ -1920,12 +2037,21 @@ h6 {
   position: relative;
   z-index: 99;
 }
+.page__dropdown-menu {
+  position: absolute;
+  z-index: 999;
+  overflow-x: hidden;
+  width: 100%;
+  height: 0;
+  background: rgb(239, 239, 241);
+  transition: height 370ms ease-in-out;
+}
 .page__footer {
   background: rgb(38, 39, 41);
 }
 
-.main-content__bread-crumbs {
-  padding: 1.6rem 1rem 1.6rem 0;
+.main-content__content {
+  position: relative;
 }
 .main-content__section {
   position: relative;
@@ -1948,6 +2074,9 @@ h6 {
   100% {
     transform: translateY(100%);
   }
+}
+.bread-crumbs__body {
+  padding: 1.6rem 1rem 1.6rem 0;
 }
 .bread-crumbs__list {
   display: flex;
@@ -2008,10 +2137,11 @@ h6 {
   }
 }
 .product-card__header {
-  display: flex;
+  display: grid;
+  place-content: center space-between;
   align-items: center;
-  justify-content: space-between;
   width: 100%;
+  height: 28px;
 }
 .product-card__content {
   display: flex;
@@ -2031,10 +2161,11 @@ h6 {
 }
 .product-card__icons {
   display: flex;
+  grid-column: 2/3;
   gap: 1rem;
 }
 .product-card__icons .icon {
-  font-size: 21px;
+  font-size: 24px;
 }
 .product-card__favourites {
   cursor: pointer;
@@ -2104,7 +2235,7 @@ h6 {
 }
 .product-card__footer {
   display: flex;
-  gap: 10px;
+  gap: 5px;
   justify-content: space-between;
   width: 100%;
 }
@@ -2113,6 +2244,7 @@ h6 {
 }
 .product-card__quantity {
   display: flex;
+  gap: 10px;
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
@@ -2146,6 +2278,9 @@ h6 {
 .product-card__button:hover {
   scale: 0.98;
   box-shadow: 0 -1px 10px 1px rgba(0, 1, 2, 0.897) inset;
+}
+.product-card__button:hover span {
+  scale: 1 !important;
 }
 @media screen and (width <= 490px) {
   .product-card__button {
@@ -2214,13 +2349,13 @@ h6 {
 .quantity__button._disabled {
   opacity: 0.3;
 }
-.quantity__button ._icon {
+.quantity__button .icon {
   pointer-events: none;
   display: flex;
   font-size: 15px;
 }
 .quantity__input input {
-  max-width: 33px;
+  max-width: 20px;
   font-size: 17px;
   text-align: center;
 }

@@ -186,8 +186,31 @@
     }
   }
 
+  // .about-footer__section
+  &__section {
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 1fr;
+
+    padding-bottom: 5px;
+
+    transition: grid-template-rows 0.2s ease-in-out;
+
+    &.hidden {
+      grid-template-rows: 0fr;
+      padding-bottom: 0;
+    }
+
+    p {
+      overflow: hidden;
+      min-height: 0;
+      font-size: 12px;
+    }
+  }
+
   // .about-footer__button
   &__button {
+    cursor: pointer;
     font-size: 12px;
   }
 

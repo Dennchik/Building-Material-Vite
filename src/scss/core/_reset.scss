@@ -28,7 +28,6 @@ body {
   line-height: 1;
 
   background: $background;
-  // background: rgb(239 239 241);
 
   &.no-scroll {
     overflow: hidden;
@@ -50,6 +49,7 @@ body {
 
   @media screen {
     scrollbar-width: thin;
+    scrollbar-width: none;
   }
 }
 

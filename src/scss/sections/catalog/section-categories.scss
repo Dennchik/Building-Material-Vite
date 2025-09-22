@@ -22,9 +22,12 @@
   }
   // .categories-card__body
   &__body {
+    pointer-events: none;
+
     display: flex;
     flex-direction: column;
     gap: 6px;
+
     padding: 2.2rem;
   }
 

@@ -17,10 +17,20 @@
 
   // .header__top-menu
   &__top-menu {
+    overflow: hidden;
     display: flex;
     gap: 31px;
     justify-content: space-between;
+
+    height: 32px;
+
     background: rgb(239 239 241 / 100%);
+
+    transition: height 0.3s ease-in-out;
+
+    &.active {
+      height: 0;
+    }
 
     @include screen-690 {
       display: none;

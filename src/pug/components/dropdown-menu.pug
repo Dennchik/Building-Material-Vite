@@ -1,0 +1,25 @@
+.dropdown-menu._container._collapse
+	.dropdown-menu__body
+		.dropdown-menu__content
+			.dropdown-menu__menu
+				.dropdown-menu__buttons
+					each menu in buttons
+						.dropdown-menu__button
+							span.t-text-16-14=menu.button 
+							+iconfont('pointer-right', 'icon')
+				.dropdown-menu__tabs 
+					each menu in buttons
+						.dropdown-menu__tab
+							.dropdown-menu__title
+								span=menu.button 
+							.dropdown-menu__sub-menu
+								ul.dropdown-menu__list
+									each item in menu.links
+										li.dropdown-menu__link
+											span=item 
+											+iconfont('pointer-right', 'icon')  
+								ul.dropdown-menu__list
+									each item in menu.links
+										li.dropdown-menu__link
+											span=item
+											+iconfont('pointer-right', 'icon') 

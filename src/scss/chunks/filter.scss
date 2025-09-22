@@ -4,12 +4,6 @@
   position: sticky;
   top: 110px;
 
-  // @include min-690 {
-  //   > ._collapse:not(._show) {
-  //     display: block;
-  //   }
-  // }
-
   // .categories-filter__title
   &__title {
     padding: 10px 0;
@@ -53,28 +47,53 @@
   &__no-ui {
     display: block; //!
   }
+
+  // .categories-filter__text
+  &__text {
+    font-size: 14px;
+
+    @include screen-490 {
+      font-size: 12px;
+    }
+  }
+
+  // .categories-filter__image
+  &__image {
+    display: block;
+    margin-bottom: 13px;
+    img {
+      width: 100%;
+    }
+  }
 }
 
 .values-price {
   // .values-price__current-price
   &__current-price {
-    display: flex;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(100px, 122px));
+    // display: flex;
+    gap: 1rem;
     justify-content: space-around;
+
     width: 100%;
   }
 
   // .values-price__item
   &__item {
     display: flex;
-    align-items: center;
+    gap: 5px;
+    align-items: baseline;
     justify-content: space-between;
 
     width: 100%;
-    max-width: 122px;
     padding: 1rem 0.6rem;
     border: 1px solid rgb(87 96 105 / 100%);
     border-radius: 5px;
+
+    @include min-490 {
+      max-width: 122px;
+    }
   }
 
   // .values-price__label
@@ -88,12 +107,13 @@
 
   // .values-price__input
   &__input {
+    overflow: hidden;
     width: 100%;
     text-align: center;
 
     input {
       display: inline;
-      max-width: 74px;
+      max-width: 100%;
       font-size: 14px;
 
       @include screen-490 {
@@ -220,8 +240,20 @@
       rgb(21 23 25 / 100%) 100%
     );
 
+    transition:
+      scale 0.2s,
+      box-shadow 0.2s ease-in-out;
+
     span {
       color: #fff;
+    }
+
+    &:hover {
+      scale: 0.98;
+      box-shadow: 0 -1px 10px 1px rgb(0 1 2 / 89.7%) inset;
+      span {
+        scale: 1 !important;
+      }
     }
 
     @include screen-490 {

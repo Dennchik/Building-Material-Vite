@@ -1,5 +1,14 @@
 import '../scss/main.scss';
 
+import { buildSwiper } from './utils/build-swiper.js';
+
+buildSwiper();
+import { slide } from './components/slide.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+  slide('.product-slide');
+});
+
 //* - [Utils] -
 import { loadedTimer } from './utils/loaded-timer.js';
 loadedTimer();
@@ -17,23 +26,29 @@ addCartAnimation(
 //* - [ Components ] -
 import { counterProduct } from './components/counter.js';
 import { dynamicAdaptive } from './modules/dynamic-adaptive.js';
+
 //🔹 Если Pug компилируется через Vite плагин, то productsMap можно прокинуть в шаблон:
-import productsMap from '../data/productsMap.json';
-export const templateData = {
-  productsMap,
-};
+// import productsMap from '../data/productsMap.json';
+// export const templateData = {
+//   productsMap,
+// };
 
 //* layouts
 import {
   addFavorites,
   sidebarMenuHandle,
   hideTopMenu,
-  collapseToggle,
   addToBlock,
-  collapseToggleOne,
 } from './layouts/layouts.js';
 addToBlock();
 
+import {
+  dropDownMenu,
+  collapseToggle,
+  collapseToggleOne,
+} from './modules/drop-menu.js';
+
+dropDownMenu('.main-menu__link');
 document.addEventListener('DOMContentLoaded', () => {
   counterProduct();
   hideTopMenu();
@@ -43,10 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
   sidebarMenuHandle();
   dynamicAdaptive();
 });
-
-// import { smoother } from './animations/animations.jsx';
-// import { validateForm } from './assets/validate-form.js';
-// import { anchorsSmoothScrolling } from './assets/anchors-smooth-scrolling.js';
 
 const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 // validateForm();
@@ -72,3 +83,19 @@ console.log(
     'border-right: 2px solid black; border-bottom: 30px solid red;'
 );
 //* ----------------------------------------------------------------------------
+
+const header = document.querySelector('.page__header');
+const menuFloat = document.querySelector('.menu-float');
+function goodBye() {
+  window.addEventListener('scroll', () => {
+    let rectHeader = header.getBoundingClientRect();
+    let rectFloat = menuFloat.getBoundingClientRect();
+    let heightOffset = rectHeader.height + rectFloat.height;
+    // console.log(heightOffset);
+  });
+  function sayHello() {}
+  return sayHello;
+}
+let sayGoodBye = goodBye();
+
+sayGoodBye();

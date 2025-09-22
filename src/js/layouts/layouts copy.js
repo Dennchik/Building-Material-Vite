@@ -1,41 +1,41 @@
 //* ✅ - [ Hiding an element when scrolling ]
-// export function hideTopMenu() {
-//   let lastScrollTop = 0;
-//   const scrollMenu = document.querySelector('.page__header');
+export function hideTopMenu() {
+  let lastScrollTop = 0;
+  const scrollMenu = document.querySelector('.page__header');
 
-//   window.addEventListener(
-//     'scroll',
-//     () => {
-//       const screenWidth = window.innerWidth;
-//       const scrollTop =
-//         window.pageYOffset || document.documentElement.scrollTop;
+  window.addEventListener(
+    'scroll',
+    () => {
+      const screenWidth = window.innerWidth;
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
 
-//       // let offset = '-32px';
-//       let offset = 32;
-//       if (screenWidth <= 690) {
-//         // offset = '-39px';
-//         offset = 39;
-//       }
-//       if (screenWidth <= 490) {
-//         offset = 36;
-//       }
+      // let offset = '-32px';
+      let offset = 32;
+      if (screenWidth <= 690) {
+        // offset = '-39px';
+        offset = 39;
+      }
+      if (screenWidth <= 490) {
+        offset = 36;
+      }
 
-//       if (scrollTop > lastScrollTop) {
-//         //🔹 scrollMenu.style.top = offset;
-//         scrollMenu.style.top = `-${offset}px`;
-//         //🔹 Прокрутка вниз — скрываем
-//         scrollMenu.classList.add('with-border');
-//       } else {
-//         //🔹 Прокрутка вверх — показываем
-//         scrollMenu.style.top = '0';
-//         scrollMenu.classList.remove('with-border');
-//       }
-//       //🔹 защита от отрицательных значений
-//       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-//     },
-//     { passive: true }
-//   );
-// }
+      if (scrollTop > lastScrollTop) {
+        //🔹 scrollMenu.style.top = offset;
+        scrollMenu.style.top = `-${offset}px`;
+        //🔹 Прокрутка вниз — скрываем
+        scrollMenu.classList.add('with-border');
+      } else {
+        //🔹 Прокрутка вверх — показываем
+        scrollMenu.style.top = '0';
+        scrollMenu.classList.remove('with-border');
+      }
+      //🔹 защита от отрицательных значений
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    },
+    { passive: true }
+  );
+}
 
 //* ✅ - [ Hiding an element when scrolling ]
 export function shadowScrollHeader() {
@@ -101,34 +101,174 @@ export function sidebarMenuHandle() {
   });
 }
 
-//* ✅ - [ Hiding an element when scrolling ]
-export function hideTopMenu() {
-  let lastScrollTop = 0; // последняя позиция скролла
-  const target = document.querySelector('.header__top-menu'); // элемент, которому добавляем/убираем класс
+//* - [ Устраняем смещение Contents  ]
+function resetScrollbarOffset(el) {
+  document.documentElement.style.removeProperty('--scroll-position');
 
-  window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+  if (el) {
+    el.style.paddingRight = '';
+    pageHeader.style.paddingRight = ``;
+  }
 
-    if (scrollTop < lastScrollTop) {
-      target.classList.remove('active');
-      // 📈 прокрутка вверх
-    } else {
-      // 📉 прокрутка вниз
-      target.classList.add('active');
-    }
+  //🔹 Убираем компенсацию scroll bar
+  document.body.style.paddingRight = '';
+  window.scrollTo(0, scrollY);
+}
 
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // защита от отрицательных значений
+//* ✅ - [ Выпадающий список ]
+import ItcCollapse from '../assets/its-collapse.js';
+export function collapseToggle() {
+  const items = document.querySelectorAll('._slideToggle');
+
+  items.forEach((item) => {
+    const trigger = item.querySelector('._trigger');
+
+    if (!trigger) return;
+    //🔹 Создаём объект ItcCollapse один раз и сохраняем в элементе
+    const collapseEl = item.querySelector('._collapse');
+    if (!collapseEl) return;
+    item._collapseInstance = new ItcCollapse(collapseEl);
+
+    trigger.addEventListener('click', () => {
+      //🔹 Закрываем другие элементы в том же аккордеоне
+      const collapse = item.closest('.parent');
+      if (collapse) {
+        const opened = collapse.querySelector('._open');
+        if (opened && opened !== item) {
+          opened.classList.remove('_open');
+          opened._collapseInstance.toggle();
+        }
+      }
+      //🔹 Переключаем текущий
+      item.classList.toggle('_open');
+      item._collapseInstance.toggle();
+    });
   });
 }
+export function collapseToggleOne() {
+  const items = document.querySelectorAll('._slideToggleOne');
+
+  items.forEach((item) => {
+    const trigger = item.querySelector('._trigger');
+
+    if (!trigger) return;
+    //🔹 Создаём объект ItcCollapse один раз и сохраняем в элементе
+    const collapseEl = item.querySelector('._collapse');
+    if (!collapseEl) return;
+    item._collapseInstance = new ItcCollapse(collapseEl);
+
+    trigger.addEventListener('click', () => {
+      //🔹 Переключаем текущий
+      item.classList.toggle('_open');
+      item._collapseInstance.toggle();
+    });
+  });
+}
+
+//* ✅ - [ Drop down menu]
+export function dropDownMenu(element) {
+  const button = document.querySelector(element);
+  const dropMenu = document.querySelector('.page__dropdown-menu');
+  const pageHeader = document.querySelector('.page__header');
+  const collapseEl = dropMenu.querySelector('._collapse');
+
+  const scrollbarWidth =
+    window.innerWidth - document.documentElement.clientWidth;
+
+  if (!collapseEl) return;
+  dropMenu._collapseInstance = new ItcCollapse(collapseEl);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuLinks = document.querySelectorAll('.dropdown-menu__button');
+
+    // ✅ добавляем класс первому элементу
+    if (menuLinks.length > 0) {
+      menuLinks[0].classList.add('active');
+    }
+
+    for (let i = 0; i < menuLinks.length; i++) {
+      const menuLink = menuLinks[i];
+    }
+  });
+
+  button.addEventListener('click', () => {
+    dropMenu.classList.toggle('open');
+    dropMenu._collapseInstance.toggle();
+
+    if (dropMenu.classList.contains('open')) {
+      document.body.classList.add('no-scroll');
+      if (scrollbarWidth > 0) {
+        pageHeader.style.paddingRight = `10px`;
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+      }
+    } else {
+      document.body.classList.remove('no-scroll');
+      document.body.style.paddingRight = `0px`;
+      pageHeader.style.paddingRight = `0px`;
+    }
+  });
+}
+
+export function dropDownMenu(element) {
+  const button = document.querySelector(element);
+  const dropMenu = document.querySelector('.page__dropdown-menu');
+  const collapseEl = dropMenu.querySelector('._collapse');
+
+  if (!collapseEl) return;
+  dropMenu._collapseInstance = new ItcCollapse(collapseEl);
+
+  const scrollbarWidth =
+    window.innerWidth - document.documentElement.clientWidth;
+  const pageHeader = document.querySelector('.header');
+
+  button.addEventListener('click', () => {
+    const isOpening = !dropMenu.classList.contains('open');
+
+    if (isOpening) {
+      if (scrollbarWidth > 0) {
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+        pageHeader.style.paddingRight = `${scrollbarWidth}px`;
+        dropMenu.style.paddingRight = `${scrollbarWidth}px`;
+      }
+
+      document.body.classList.add('no-scroll');
+      dropMenu.classList.add('open');
+      dropMenu._collapseInstance.show();
+    } else {
+      document.body.classList.remove('no-scroll');
+      document.body.style.paddingRight = `0px`;
+      pageHeader.style.paddingRight = `0px`;
+      dropMenu.style.paddingRight = `0px`;
+
+      dropMenu.classList.remove('open');
+      dropMenu._collapseInstance.hide();
+    }
+  });
+}
+
+//* 🔹 - [Компенсируем отступы ]
+export function handleScrollbarOffset(enable) {
+  const scrollbarWidth =
+    window.innerWidth - document.documentElement.clientWidth;
+
+  console.log('scrollbarWidth:', scrollbarWidth);
+
+  if (enable && scrollbarWidth > 0) {
+    document.body.style.paddingRight = `${scrollbarWidth}px`;
+  } else {
+    document.body.style.paddingRight = `0px`;
+  }
+}
+
 //* ✅ - [ Показать еще ]
 export function addToBlock() {
   document.addEventListener('DOMContentLoaded', function () {
     const contents = document.querySelectorAll('.content');
-    console.log(contents);
 
     contents.forEach((content) => {
       // Кнопка
-      const button = content.querySelector('.show-more');
+      const button = content.querySelector('.form-categories__show-more');
+      console.log(button);
 
       if (button) {
         // Текст внутри кнопки
@@ -143,6 +283,7 @@ export function addToBlock() {
         const showBlocks = content.querySelectorAll('.section');
 
         showBlocks.forEach((showBlock, index) => {
+          console.log(index);
           if (index >= visibleCount) {
             // Скрываем все блоки, начиная с определенного
             showBlock.classList.add('hidden');
@@ -211,11 +352,13 @@ export function addToBlock() {
     });
   });
 }
-
+//* ----------------------------------------------------------------------------
 //* ✅ - [ Sidebar - Menu ]
 export function toggleSidebarMenu(sidebarMenu) {
   const asideButton = document.querySelector('.page__aside-button');
   if (sidebarMenu.classList.contains('_open-menu')) {
+    //🔹 Компенсируем исчезновение scroll bar (если нужно)
+    sidebarMenu.style.transition = 'transform 0.3s ease';
     sidebarMenu.classList.remove('_open-menu');
 
     resetScrollbarOffset();
@@ -238,6 +381,7 @@ export function toggleSidebarMenu(sidebarMenu) {
     sidebarMenu.style.transition = 'transform 0.3s ease';
     sidebarMenu.classList.add('_open-menu');
 
+    handleScrollbarOffset(sidebarMenu);
     document.body.classList.add('no-scroll');
     resetTransitionOnce(sidebarMenu);
   }
@@ -251,7 +395,6 @@ export function toggleSidebarMenu(sidebarMenu) {
     element.addEventListener('transitionend', transitionEndHandler);
   }
 }
-//* ----------------------------------------------------------------------------
 //* - [ Управление открытием модальных окон ]
 export function toggleModal() {
   const modals = [
@@ -375,30 +518,4 @@ export function cookiesAccept(el, trigger) {
     cookiesAccept.style.transform = 'translateY(0)';
     cookiesAccept.style.transition = 'transform 0.5s ease';
   }, 3000);
-}
-//* 🔹 - [Компенсируем отступы ]
-export function handleScrollbarOffset(enable) {
-  const scrollbarWidth =
-    window.innerWidth - document.documentElement.clientWidth;
-
-  console.log('scrollbarWidth:', scrollbarWidth);
-
-  if (enable && scrollbarWidth > 0) {
-    document.body.style.paddingRight = `${scrollbarWidth}px`;
-  } else {
-    document.body.style.paddingRight = `0px`;
-  }
-}
-//* - [ Устраняем смещение Contents  ]
-function resetScrollbarOffset(el) {
-  document.documentElement.style.removeProperty('--scroll-position');
-
-  if (el) {
-    el.style.paddingRight = '';
-    pageHeader.style.paddingRight = ``;
-  }
-
-  //🔹 Убираем компенсацию scroll bar
-  document.body.style.paddingRight = '';
-  window.scrollTo(0, scrollY);
 }
