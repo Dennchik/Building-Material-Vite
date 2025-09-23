@@ -240,22 +240,23 @@
   }
 }
 .t-h3 {
-  font-size: 32px;
+  font-size: 25px;
   line-height: 100%;
-  text-transform: uppercase;
 
   @include minmax-490-1920 {
     font-size: calc(
-      20px + (32 - 20) * ((100vw - 490px) / (1920 - 490))
+      22px + (25 - 22) * ((100vw - 490px) / (1920 - 490))
     ) !important;
   }
 
   @include screen-490 {
-    font-size: 20px !important;
+    font-size: 22px !important;
   }
 }
 
 .t-h4 {
+  font-size: 16px;
+  line-height: 100%;
   text-transform: uppercase;
 }
 

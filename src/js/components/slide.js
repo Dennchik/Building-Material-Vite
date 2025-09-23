@@ -1,6 +1,54 @@
 //* import Swiper bundle with all modules installed
 import Swiper from 'swiper/bundle';
 
+export function cardSlide(mainSlide = '.card-slide') {
+  if (mainSlide) {
+    // ⚠️ Функция для определения количества слайдов на основе количества элементов
+    function getSlidesPerView() {
+      const thumbContainer = document.querySelector('.card-thumb');
+      if (!thumbContainer) return 4;
+
+      const slides = thumbContainer.querySelectorAll('.swiper-slide');
+      const totalSlides = slides.length;
+
+      // Показываем все если их 3 или меньше, иначе показываем 4
+      return totalSlides <= 3 ? totalSlides : 4;
+    }
+
+    let swiper = new Swiper('.card-thumb', {
+      spaceBetween: 26,
+      speed: 800,
+      slidesPerView: getSlidesPerView(),
+      freeMode: true,
+      watchSlidesProgress: true,
+      updateOnWindowResize: true,
+    });
+
+    new Swiper('.card-product__slide', {
+      spaceBetween: 26,
+      speed: 800,
+      grabCursor: true,
+      loop: true,
+      slidesPerView: 1,
+      updateOnWindowResize: true,
+      thumbs: {
+        swiper: swiper,
+      },
+    });
+
+    // ⚠️ Обновляем при изменении DOM (если слайды могут динамически добавляться)
+    const observer = new MutationObserver(() => {
+      swiper.params.slidesPerView = getSlidesPerView();
+      swiper.update();
+    });
+
+    const thumbContainer = document.querySelector('.card-thumb');
+    if (thumbContainer) {
+      observer.observe(thumbContainer, { childList: true, subtree: true });
+    }
+  }
+}
+
 export function slide(selector) {
   document.querySelectorAll(selector).forEach((root) => {
     const swiperEl = root.matches('.swiper')

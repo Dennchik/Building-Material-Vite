@@ -61,7 +61,7 @@ svg {
   max-width: 100%;
   height: auto;
 
-  vertical-align: top;
+  vertical-align: middle;
 }
 
 a {
@@ -123,7 +123,9 @@ button::-moz-focus-inner {
 label {
   cursor: pointer;
 }
-
+table {
+  font-weight: initial;
+}
 ul,
 ol,
 li {

@@ -27,13 +27,13 @@
 													+iconfont('heart', 'icon')
 													+iconfont('heart-like', 'icon')
 										.product-card__content
-											a(href=linkTo("catalog/card-drill", filename)).product-card__image
+											a(href=linkTo("electric-tools/card-drill", filename)).product-card__image
 												+picture('/img/products/' + product.image, 'image')
 											.product-card__info
 												p= product.title 
-											.product-card__price
+											.product-card__price.price-product
 												span 460,00р
-											.product-card__sum
+											.product-card__sum.product-sum
 												+iconfont('sum', 'icon')
 												| :&nbsp; 
 												span

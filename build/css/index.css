@@ -103,7 +103,7 @@
 }
 .section-perform__button:hover {
   border: 1px solid green;
-  color: oklch(35.043% 0.09 147.299deg);
+  color: rgb(16, 71, 28);
 }
 .section-perform__button span {
   pointer-events: none;

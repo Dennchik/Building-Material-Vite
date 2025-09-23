@@ -67,7 +67,8 @@ export function counterProduct() {
   // Подсчёт суммы внутри конкретного контейнера
   function _totalSum(container) {
     const productPrices = container.querySelectorAll(
-      '.product-card__price span'
+      // '.product-card__price span'
+      '.price-product span'
     );
     let totalSum = 0;
 
@@ -75,11 +76,12 @@ export function counterProduct() {
       const valuePrice =
         parseFloat(priceEl.textContent.replace(/ /g, '').replace(',', '.')) ||
         0;
-      const card = priceEl.closest('.product-card');
+      const card = priceEl.closest('.product-card, .card-counter');
       const quantity = Number(card.querySelector('input').value) || 0;
 
       // Ищем блок суммы
-      const productSumWrap = card.querySelector('.product-card__sum span');
+      // const productSumWrap = card.querySelector('.product-card__sum span');
+      const productSumWrap = card.querySelector('.product-sum span');
       if (!productSumWrap) return; // если нет — пропускаем
 
       // Считаем сумму по товару

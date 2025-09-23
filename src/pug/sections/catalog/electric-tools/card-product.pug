@@ -1,0 +1,113 @@
+.card-product._container 
+  .card-product__body
+    .card-product__content
+      .card-product__column
+        button.card-product__button-prev
+          +iconfont('arrow-left', 'icon')
+          span.link-underline-center Вернуться назад
+        .card-product__thumb-slide
+          .card-slide.card-product__slide.swiper
+            .card-slide__slide
+              .card-slide__image 
+                +picture('img/categories/electric-tools/img-01.png', 'image')
+            .card-slide__slide
+              .card-slide__image 
+                +picture('img/categories/electric-tools/img-02.png', 'image')
+            .card-slide__slide
+              .card-slide__image 
+                +picture('img/categories/electric-tools/img-03.png', 'image')
+            .card-slide__slide
+              .card-slide__image 
+                +picture('img/categories/electric-tools/img-04.png', 'image')
+            .card-slide__slide
+              .card-slide__image 
+                +picture('img/categories/electric-tools/img-05.png', 'image')
+            .card-slide__slide
+              .card-slide__image 
+                +picture('img/categories/electric-tools/img-06.png', 'image')
+          .card-slide.card-product__thumb.card-thumb.swiper
+            .card-slide__slide-thumb
+              .card-slide__image
+                +picture('img/categories/electric-tools/img-01.png', 'image')
+            .card-slide__slide-thumb
+              .card-slide__image
+                +picture('img/categories/electric-tools/img-02.png', 'image')
+            .card-slide__slide-thumb
+              .card-slide__image
+                +picture('img/categories/electric-tools/img-03.png', 'image')
+            .card-slide__slide-thumb
+              .card-slide__image
+                +picture('img/categories/electric-tools/img-04.png', 'image')
+            .card-slide__slide-thumb
+              .card-slide__image
+                +picture('img/categories/electric-tools/img-05.png', 'image')
+            .card-slide__slide-thumb
+              .card-slide__image
+                +picture('img/categories/electric-tools/img-06.png', 'image')
+        .service-product.card-product__service 
+          .service-product__column
+            .service-product__title Доставка:
+            .service-product__row
+              .service-product__type Самовывоз: 
+              .service-product__text 
+                p Боровский район, 
+                p деревня Тимашово строение 3
+                p Пн-вс 08:00-19:00
+            .service-product__row
+              .service-product__type Курьером:
+              .service-product__text 
+                p Стоимость доставки от 500 р.
+          .service-product__column
+            .service-product__title Оплата:
+            .service-product__row
+              .service-product__type Для физических лиц:
+              .service-product__text 
+                p Наличными курьеру при получении Банковской картой при самовывозе Онлайн-оплата на сайте (при оформлении заказа)
+            .service-product__row
+              .service-product__type Для юридических лиц:
+              .service-product__text 
+                p Безналичный расчет по выставленному счету
+      .card-product__column
+        .card-product__article
+          p Артикул: 3466489
+          p Наличие: 
+            span.card-product__stock есть на складе
+        .card-product__name
+          span.t-h3 Дрель-шуруповерт ATLET PDN400N
+        .card-product__counter
+          .card-product__unit Цена за единицу:
+          include @/pug/chunks/counter
+        .card-product__specifications.content
+          .card-product__thead Характеристики:
+          table.card-product__table.section  
+            tbody
+              each i in table
+                tr
+                  th=i.th
+                  td=i.td 
+          table.card-product__table.section  
+            tbody 
+              each i in table
+                tr
+                  th=i.th
+                  td=i.td 
+          button.card-product__button.link-underline-center.show-more 
+            span Все характеристики
+        .card-product__description.content
+          .card-product__title Описание 
+          .card-product__info
+            .card-product__text.section
+              .card-product__text-wrapper
+                p Домашних дел мастер
+                p Если надо штробить каналы под&nbsp;проводку, отбивать старый кафель, сверлить отверстия в&nbsp;бетоне, возьмите в&nbsp;руки перфоратор AEG&nbsp;KH24IE. Мощность его&nbsp;двигателя составляет 800&nbsp;Вт, а&nbsp;энергия удара – 2,4&nbsp;Дж. При&nbsp;этом инструмент весит всего&nbsp;2,8кг. Он&nbsp;работает в&nbsp;трех режимах: сверление, сверление с&nbsp;ударом и&nbsp;долбление – и&nbsp;отлично справится с&nbsp;любыми бытовыми задачами. Подходит также для&nbsp;выполнения мелких профессиональных работ.
+            .card-product__text.section
+              .card-product__text-wrapper
+                p Домашних дел мастер
+                p Если надо штробить каналы под&nbsp;проводку, отбивать старый кафель, сверлить отверстия в&nbsp;бетоне, возьмите в&nbsp;руки перфоратор AEG&nbsp;KH24IE. Мощность его&nbsp;двигателя составляет 800&nbsp;Вт, а&nbsp;энергия удара – 2,4&nbsp;Дж. При&nbsp;этом инструмент весит всего&nbsp;2,8кг. Он&nbsp;работает в&nbsp;трех режимах: сверление, сверление с&nbsp;ударом и&nbsp;долбление – и&nbsp;отлично справится с&nbsp;любыми бытовыми задачами. Подходит также для&nbsp;выполнения мелких профессиональных работ.
+          button.card-product__button.link-underline-center.show-more 
+            span Все характеристики    
+      .card-product__column
+        .card-product__icon 
+          +iconfont('tools', 'icon')
+        .card-product__label 
+          +picture('img/categories/electric-tools/label.png', 'image')

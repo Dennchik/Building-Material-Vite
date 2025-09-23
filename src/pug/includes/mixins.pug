@@ -17,6 +17,19 @@ mixin btn-link(type, text, mod)
   a(class=mod + '' type=type)=text
   block
 
+//-! mixins SVG.pug
+mixin imgSvg(src, alt, className = '', loading = 'lazy', width = false, height = false)
+  - var cleanSrc = src.replace(/^\.?\//, '')
+  - var basePath = getWebRoot(filename)
+  - var imgSrc = basePath + cleanSrc
+
+  if width && height
+    img(src=imgSrc alt=alt class=className loading=loading width=width height=height)
+  else
+    img(src=imgSrc alt=alt class=className loading=loading)
+
+
+
 
 
 //-! mixins/picture.pug

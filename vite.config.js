@@ -29,7 +29,6 @@ export default defineConfig(({ command, mode }) => {
   const isDev = command === 'dev';
   return {
     base: './',
-    // base: isProd ? '/' : './',
 
     plugins: [
       fonts(),
@@ -88,6 +87,7 @@ export default defineConfig(({ command, mode }) => {
           index: resolve(__dirname, 'src/js/index.js'),
           about: resolve(__dirname, 'src/js/about.js'),
           catalog: resolve(__dirname, 'src/js/catalog.js'),
+          'card-product': resolve(__dirname, 'src/js/card.js'),
         },
         output: {
           entryFileNames: 'assets/[name]-[hash].js',

@@ -1,4 +1,21 @@
 # Building-Material-Vite
+build/													# Production
+├─ assets/                        # стили
+├─ css/
+│  и т.д
+
+pages/													# Production
+├─ catalog/                        # стили
+│  ├─ categories/
+│  │   └─ card-drill.pug
+│  │   └─ electric-tools.pug-drill.pug
+├─ about.pug
+├─ index.pug
+│
+│
+│
+
+
 src/
 ├─ scss/                        # стили
 ├─ js/

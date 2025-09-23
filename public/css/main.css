@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import 'https://fonts.googleapis.com/css?family=Roboto:regular,500,600,700,800,900&display=swap&subset=cyrillic-ext&v=1';
+@import 'https://fonts.googleapis.com/css?family=Roboto:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic';
 :root {
   --width: calc(0px + (260 - 0) * ((100vw - 320px) / (1024 - 320)));
   --font-color-default: rgb(0 0 0);
@@ -233,22 +233,23 @@
 }
 
 .t-h3 {
-  font-size: 32px;
+  font-size: 25px;
   line-height: 100%;
-  text-transform: uppercase;
 }
 @media (width > 490px) and (width <= 1920px) {
   .t-h3 {
-    font-size: calc(20px + 12 * (100vw - 490px) / 1430) !important;
+    font-size: calc(22px + 3 * (100vw - 490px) / 1430) !important;
   }
 }
 @media screen and (width <= 490px) {
   .t-h3 {
-    font-size: 20px !important;
+    font-size: 22px !important;
   }
 }
 
 .t-h4 {
+  font-size: 16px;
+  line-height: 100%;
   text-transform: uppercase;
 }
 
@@ -371,7 +372,7 @@
   width: 100%;
   height: 1px;
   opacity: 0.6;
-  background-color: oklch(35.043% 0.09 147.299deg);
+  background-color: rgb(16, 71, 28);
   transition: transform 0.3s ease-in-out;
 }
 .link-underline-center::after {
@@ -541,7 +542,7 @@
   transition: color 0.2s ease;
 }
 .top-menu__link:hover {
-  color: oklch(35.043% 0.09 147.299deg);
+  color: rgb(16, 71, 28);
 }
 
 .main-menu__column:nth-child(1) {
@@ -699,7 +700,7 @@
   transition: color 0.2s ease;
 }
 .menu-header__item:hover {
-  color: oklch(35.043% 0.09 147.299deg);
+  color: rgb(16, 71, 28);
 }
 .menu-header__link {
   display: flex;
@@ -1208,7 +1209,7 @@ svg {
   user-select: none;
   max-width: 100%;
   height: auto;
-  vertical-align: top;
+  vertical-align: middle;
 }
 
 a {
@@ -1265,6 +1266,10 @@ button::-moz-focus-inner {
 
 label {
   cursor: pointer;
+}
+
+table {
+  font-weight: initial;
 }
 
 ul,
@@ -1864,7 +1869,7 @@ h6 {
   transform: scale(1);
 }
 .dropdown-menu__button:hover {
-  border: 2px solid oklch(35.043% 0.09 147.299deg);
+  border: 2px solid rgb(16, 71, 28);
 }
 .dropdown-menu__button:hover span {
   color: #000;
@@ -2094,7 +2099,7 @@ h6 {
   transition: color 0.3s ease;
 }
 .bread-crumbs__link:hover {
-  color: oklch(35.043% 0.09 147.299deg);
+  color: rgb(16, 71, 28);
 }
 .bread-crumbs__current-item {
   pointer-events: none;
@@ -2124,7 +2129,7 @@ h6 {
 }
 .collection__button:hover {
   border: 1px solid green;
-  color: oklch(35.043% 0.09 147.299deg);
+  color: rgb(16, 71, 28);
 }
 .collection__button span {
   pointer-events: none;
@@ -2362,7 +2367,7 @@ h6 {
   transition: color 0.2s ease-in-out;
 }
 .navigation__prev:hover .icon, .navigation__next:hover .icon {
-  color: oklch(35.043% 0.09 147.299deg);
+  color: rgb(16, 71, 28);
 }
 .navigation__icon {
   transition: opacity 0.4s ease;

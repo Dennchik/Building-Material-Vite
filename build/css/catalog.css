@@ -673,7 +673,7 @@
   transition: color 0.3s, box-shadow 0.3s ease-in-out;
 }
 .product-categories__pagination .swiper-pagination-bullet:hover {
-  color: oklch(35.043% 0.09 147.299deg);
+  color: rgb(16, 71, 28);
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.0901960784);
 }
 
