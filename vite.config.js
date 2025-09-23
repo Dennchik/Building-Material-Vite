@@ -28,8 +28,9 @@ export default defineConfig(({ command, mode }) => {
   const isProd = command === 'build';
   const isDev = command === 'dev';
   return {
-    // base: './',
-    base: isProd ? '/' : '/',
+    base: './',
+    // base: isProd ? '/' : './',
+
     plugins: [
       fonts(),
       fontStyle(),
@@ -110,6 +111,11 @@ export default defineConfig(({ command, mode }) => {
         include: ['lodash', 'axios'],
         exclude: [],
       },
+    },
+
+    preview: {
+      port: 4173,
+      host: true,
     },
   };
 });
