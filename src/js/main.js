@@ -3,10 +3,11 @@ import '../scss/main.scss';
 import { buildSwiper } from './utils/build-swiper.js';
 
 buildSwiper();
-import { slide } from './components/slide.js';
+import { slide, slidNews } from './components/slide.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   slide('.product-slide');
+  slidNews('.slide-news');
 });
 
 //* - [Utils] -

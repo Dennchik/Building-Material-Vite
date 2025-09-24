@@ -14,18 +14,15 @@
 						li.top-menu__item
 							a(href=linkTo("about", filename)).top-menu__link.link-underline-center О магазине
 						li.top-menu__item
-							a(href="#").top-menu__link.link-underline-center Новости
+							a(href=linkTo("news", filename)).top-menu__link.link-underline-center Новости
 						li.top-menu__item
 							a(href="#").top-menu__link.link-underline-center Контакты
 		.main-menu.header__main-menu._container 
 			.main-menu__column
 				.main-menu__logo-wrapper 
 					a(href=getWebRoot(filename) + "index.html" aria-label="home").main-menu__logo.anchor-link 
-						+imgSvg('img/logo.svg', 'image')
-
-						//- img(src="img/logo.svg" alt="logo")
+						+imgSvg('img/logo.svg', 'image') 
 				.main-menu__button(data-da="col-2" data-da-position="1" data-da-resolution="960")
-					//- a(href=linkTo('categories/catalog', filename)).main-menu__link.button
 					button(type="button").main-menu__link.button._trigger
 						+iconfont('paragraph-right', 'icon')
 						span Каталог
