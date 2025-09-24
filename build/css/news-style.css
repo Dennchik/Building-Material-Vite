@@ -1,0 +1,104 @@
+:root {
+  --width: calc(0px + (260 - 0) * ((100vw - 320px) / (1024 - 320)));
+  --font-color-default: rgb(0 0 0);
+  --font-color-second: rgb(77 91 206);
+  --font-color-title: rgb(136 192 255);
+  --font-color-active: rgb(119 150 243);
+  --font-color-not-active: rgb(139 176 255 / 42.4%);
+  --background-color: rgb(210 242 255);
+  --background-second: rgb(2 10 16);
+  --background-selected: rgb(43 45 65 / 33.7%);
+  --background-transparent: rgb(14 14 19 / 85.5%);
+  --selected-color: rgb(94 77 168);
+  --thumb-color: rgb(149 186 224);
+  --background-hover: rgb(94 77 168 / 24%);
+  --scrollbar-thumb-color: rgb(36 52 68);
+  --border-color: rgb(255 184 181);
+  --pos: center center;
+  --size: 0;
+  --inset-top: 0;
+  --inset-right: 100%;
+  --inset-bottom: 100%;
+  --inset-left: 0;
+  --stripe-width: 10px;
+  --nav-marker-border: rgb(59 134 134);
+  --sidebar-width: 28.5rem;
+  --duration: 0.3s;
+  --button-size: 4rem;
+  --mob-expanded-width: 320px;
+  --mob-collapsed-width: 4rem;
+}
+
+/* stylelint-disable at-rule-descriptor-value-no-unknown */
+:root {
+  --mq-header-size: normal;
+}
+
+.news__body {
+  padding-block: 5rem;
+}
+.news__content {
+  display: flex;
+  gap: 30px;
+}
+@media screen and (width < 768px) {
+  .news__content {
+    gap: 16px;
+  }
+  .news__content :root {
+    --mq-header-size: big;
+  }
+}
+@media screen and (width <= 490px) {
+  .news__content {
+    gap: 10px;
+  }
+}
+.news__row:not(:last-child) {
+  margin-bottom: 4rem;
+}
+.news__post p:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.news__column:nth-child(1) {
+  flex: 0 1 auto;
+}
+.news__column:nth-child(2) {
+  flex: 0 1 auto;
+  min-width: 541px;
+}
+.news__line:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.news__title h1,
+.news__title h2 {
+  margin-bottom: 20px;
+  text-align: left;
+}
+.news__data {
+  margin-bottom: 3.6rem;
+  font-size: 12px;
+}
+.news__text {
+  margin-bottom: 2.6rem;
+  font-size: 12px;
+}
+.news__info p {
+  font-size: 12px;
+}
+.news__num {
+  padding-bottom: 5px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.news__list {
+  padding-left: 10px;
+}
+.news__list-item {
+  list-style: disc;
+  list-style-position: inside;
+}
+.news__list-item::before {
+  content: "";
+  margin-right: -7px;
+}
