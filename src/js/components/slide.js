@@ -1,8 +1,9 @@
 //* import Swiper bundle with all modules installed
 import Swiper from 'swiper/bundle';
 
-export function cardSlide(mainSlide = '.card-slide') {
-  if (mainSlide) {
+//* ✅ Слайдер карточки товара
+export function cardSlide(slide = '.card-slide') {
+  if (slide) {
     // ⚠️ Функция для определения количества слайдов на основе количества элементов
     function getSlidesPerView() {
       const thumbContainer = document.querySelector('.card-thumb');
@@ -49,8 +50,9 @@ export function cardSlide(mainSlide = '.card-slide') {
   }
 }
 
-export function slide(selector) {
-  document.querySelectorAll(selector).forEach((root) => {
+//* ✅ Основные слайдеры
+export function slide(slide) {
+  document.querySelectorAll(slide).forEach((root) => {
     const swiperEl = root.matches('.swiper')
       ? root
       : root.querySelector('.swiper');
@@ -87,9 +89,11 @@ export function slide(selector) {
     });
   });
 }
-export function slidNews(selector) {
-  if (selector) {
-    new Swiper(selector, {
+
+//* ✅ Слайдер новостей на Главной странице
+export function slidNews(slide) {
+  if (slide) {
+    new Swiper(slide, {
       effect: 'slide',
       lazy: true,
 
@@ -111,9 +115,11 @@ export function slidNews(selector) {
     });
   }
 }
-export function mainSlide(Slide) {
-  if (Slide) {
-    new Swiper(Slide, {
+
+//* ✅ Слайдер каталога товаров
+export function catalogSlide(slide) {
+  if (slide) {
+    new Swiper(slide, {
       slidesPerView: 1,
       lazy: true,
       speed: 800,
@@ -135,8 +141,31 @@ export function mainSlide(Slide) {
     });
   }
 }
-// export function mainSlide(Slide) {
-//   if (Slide) {
+
+//* ✅ Слайдер новостей
+export function newsSlide(slide) {
+  if (slide) {
+    new Swiper(slide, {
+      slidesPerView: 1,
+      lazy: true,
+      speed: 800,
+      spaceBetween: 30,
+      loop: true,
+      grabCursor: true,
+      centeredSlides: false,
+      // pagination: {
+      //   el: '.slide-pagination',
+      //   clickable: true,
+      //   renderBullet: function (index, className) {
+      //     return '<span class="' + className + '">' + (index + 1) + '</span>';
+      //   },
+      // },
+    });
+  }
+}
+
+// export function mainSlide(slide) {
+//   if (slide) {
 //     new Swiper(Slide, {
 //       effect: 'slide',
 //       lazy: true,

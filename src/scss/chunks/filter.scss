@@ -4,6 +4,10 @@
   position: sticky;
   top: 110px;
 
+  @include screen-1289 {
+    top: 148px;
+  }
+
   // .categories-filter__title
   &__title {
     padding: 10px 0;

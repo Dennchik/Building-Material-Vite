@@ -1,9 +1,8 @@
 import '../scss/main.scss';
-
 import { buildSwiper } from './utils/build-swiper.js';
+import { slide, slidNews } from './components/slide.js';
 
 buildSwiper();
-import { slide, slidNews } from './components/slide.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   slide('.product-slide');

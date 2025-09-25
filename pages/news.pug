@@ -6,14 +6,20 @@ prepend script
 block title
 	- var text = 'News company page'
 
-block main-content 
-	section.main-content__section
-		nav.bread-crumbs._container
-			.bread-crumbs__body
-				ul.bread-crumbs__list
-					li.link-underline-center
-						a.bread-crumbs__link(href=getWebRoot(filename) + "index.html" title="/ Главная") Главная 
-					li / 
-					li
-						span.bread-crumbs__current-item Новости
-	section.main-content__section  
+block page-content
+	main.page__main-content.accent-color
+		.main-content#wrapper
+			.main-content__content#content
+				block main-content 
+					section.main-content__section
+						nav.bread-crumbs._container
+							.bread-crumbs__body
+								ul.bread-crumbs__list
+									li.link-underline-center
+										a.bread-crumbs__link(href=getWebRoot(filename) + "index.html" title="/ Главная") Главная 
+									li / 
+									li
+										span.bread-crumbs__current-item Новости
+					section.main-content__section 
+						include @/pug/sections/news-company/main-news
+

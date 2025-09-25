@@ -1,6 +1,7 @@
 import '../scss/catalog.scss';
 import { noUiSlide } from './components/noUiSlide.js';
 import { collapseToggleOne } from './modules/drop-menu.js';
+
 noUiSlide('.values-price__no-ui');
 
 function applyCollapse() {
@@ -13,15 +14,15 @@ function applyCollapse() {
   }
 }
 
-// Срабатывает при загрузке страницы
+//* ✅ Срабатывает при загрузке страницы
 window.addEventListener('DOMContentLoaded', applyCollapse);
 
 // Срабатывает при изменении размера окна
 window.addEventListener('resize', applyCollapse);
-//* ----------------------------------------------------------------------------
+//* ✅ -------------------------------------------------------------------------
 import { buildSwiper } from './utils/build-swiper.js';
 
 buildSwiper();
 
-import { mainSlide } from './components/slide.js';
-mainSlide('.categories-slide');
+import { catalogSlide } from './components/slide.js';
+catalogSlide('.categories-slide');

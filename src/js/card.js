@@ -21,9 +21,9 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Функция для применения анимации
+//* ✅ Функция для применения анимации стрелки для кнопки возврат назад
 function initArrowAnimation() {
-  const buttons = document.querySelectorAll('.card-product__button');
+  const buttons = document.querySelectorAll('.card-product__button-prev');
 
   buttons.forEach((button) => {
     const arrow = button.querySelector('.icon-arrow-left');
@@ -56,3 +56,25 @@ const observer = new MutationObserver(() => {
 });
 
 observer.observe(document.body, { childList: true, subtree: true });
+
+//* ✅ Возврат
+// Находим кнопку по классу
+const backButton = document.querySelector('.card-product__button-prev');
+
+// 🔹 Добавляем обработчик события
+// backButton.addEventListener('click', function () {
+//   window.history.back(); // Возврат на одну страницу в истории браузера
+// });
+backButton.addEventListener('click', function () {
+  // Укажите нужный URL
+  const isProd = window.location.href.includes('.html');
+
+  const targetPath = isProd
+    ? '/build/categories/electric-tools.html'
+    : '/categories/electric-tools';
+
+  window.location.href = targetPath;
+  // window.location.href = '/categories/electric-tools'; // Пример: переход в каталог
+  // или
+  // window.location.href = document.referrer; // Переход на страницу, с которой пришли
+});

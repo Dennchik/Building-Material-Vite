@@ -38,6 +38,11 @@
   position: sticky;
   top: 110px;
 }
+@media screen and (width <= 1289px) {
+  .categories-filter {
+    top: 148px;
+  }
+}
 .categories-filter__title {
   padding: 10px 0;
   font-size: 16px;

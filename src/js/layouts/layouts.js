@@ -85,7 +85,6 @@ export function hideTopMenu() {
 export function addToBlock() {
   document.addEventListener('DOMContentLoaded', function () {
     const contents = document.querySelectorAll('.content');
-    console.log(contents);
 
     contents.forEach((content) => {
       // ⚠️ Кнопка
