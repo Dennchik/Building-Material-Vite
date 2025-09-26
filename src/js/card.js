@@ -5,6 +5,7 @@ import { cardSlide } from './components/slide.js';
 buildSwiper();
 cardSlide();
 
+//* ✅ Animation back button
 const style = document.createElement('style');
 style.textContent = `
 @keyframes arrowShake {
@@ -47,10 +48,10 @@ function initArrowAnimation() {
   });
 }
 
-// Инициализируем при загрузке страницы
+// 🔹 Инициализируем при загрузке страницы
 document.addEventListener('DOMContentLoaded', initArrowAnimation);
 
-// Если элементы добавляются динамически
+// 🔹 Если элементы добавляются динамически
 const observer = new MutationObserver(() => {
   initArrowAnimation();
 });

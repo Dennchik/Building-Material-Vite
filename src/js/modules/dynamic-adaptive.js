@@ -3,7 +3,8 @@ export function dynamicAdaptive() {
   let daElements = document.querySelectorAll('[data-da]');
   let daElementsArray = [];
   let daMatchMedia = [];
-  //Заполняем массивы
+
+  //* ⚠️ Заполняем массивы
   if (daElements.length > 0) {
     let number = 0;
     for (let index = 0; index < daElements.length; index++) {
@@ -17,14 +18,17 @@ export function dynamicAdaptive() {
       )
         ? daElement.getAttribute('data-da-resolution')
         : 768;
-      // noinspection JSCheckFunctionSignatures
+
+      // 🔹 noinspection JSCheckFunctionSignatures
       daElement.setAttribute('data-da-index', number);
-      //Заполняем массив первоначальных позиций
+
+      // 🔹 Заполняем массив первоначальных позиций
       originalPositions[number] = {
         parent: daElement.parentNode,
         index: indexInParent(daElement),
       };
-      //Заполняем массив элементов
+
+      // 🔹 Заполняем массив элементов
       daElementsArray[number] = {
         element: daElement,
         destination: document.querySelector('.' + daMove),
@@ -35,23 +39,23 @@ export function dynamicAdaptive() {
     }
     dynamicAdaptSort(daElementsArray);
 
-    //Создаем события в точке breakpoints
+    //* ⚠️ Создаем события в точке breakpoints
     for (let index = 0; index < daElementsArray.length; index++) {
       const el = daElementsArray[index];
       const daBreakpoint = el.breakpoint;
-      const daType = 'max'; // Для MobileFirst поменять на min
+      const daType = 'max'; // ❗ Для MobileFirst поменять на min
 
       const mediaQuery = window.matchMedia(
         `(${daType}-width: ${daBreakpoint}px)`
       );
       daMatchMedia.push(mediaQuery);
 
-      // Заменяем addListener на addEventListener
+      // 🔹 Заменяем addListener на addEventListener
       mediaQuery.addEventListener('change', dynamicAdapt);
     }
   }
 
-  //Основная функция
+  //* ⚠️ Основная функция
   function dynamicAdapt() {
     for (let index = 0; index < daElementsArray.length; index++) {
       const el = daElementsArray[index];
@@ -62,7 +66,7 @@ export function dynamicAdaptive() {
       const daClassname = '_dynamic_adapt_' + daBreakpoint;
 
       if (daMatchMedia[index].matches) {
-        //Перебрасываем элементы
+        // 🔹 Перебрасываем элементы
         if (!daElement.classList.contains(daClassname)) {
           let actualIndex = indexOfElements(daDestination)[daPlace];
           if (daPlace === 'first') {
@@ -80,7 +84,7 @@ export function dynamicAdaptive() {
           daElement.classList.add(daClassname);
         }
       } else {
-        //Возвращаем на место
+        // 🔹 Возвращаем на место
         if (daElement.classList.contains(daClassname)) {
           dynamicAdaptBack(daElement);
           daElement.classList.remove(daClassname);
@@ -90,10 +94,10 @@ export function dynamicAdaptive() {
     // customAdapt();
   }
 
-  //Вызов основной функции
+  //🔹 Вызов основной функции
   dynamicAdapt();
 
-  //Функция возврата на место
+  //* ⚠️ Функция возврата на место
   function dynamicAdaptBack(el) {
     const daIndex = el.getAttribute('data-da-index');
     const originalPlace = originalPositions[daIndex];
@@ -103,13 +107,13 @@ export function dynamicAdaptive() {
     parentPlace.insertBefore(el, parentPlace.children[actualIndex]);
   }
 
-  //Функция получения индекса внутри родителя
+  //* ⚠️ Функция получения индекса внутри родителя
   function indexInParent(el) {
     const children = Array.prototype.slice.call(el.parentNode.children);
     return children.indexOf(el);
   }
 
-  //Функция получения массива индексов элементов внутри родителя
+  //* ⚠️Функция получения массива индексов элементов внутри родителя
   function indexOfElements(parent, back) {
     const children = parent.children;
     const childrenArray = [];
@@ -118,7 +122,7 @@ export function dynamicAdaptive() {
       if (back) {
         childrenArray.push(i);
       } else {
-        //Исключая перенесенный элемент
+        // 🔹 Исключая перенесенный элемент
         if (childrenElement.getAttribute('data-da') == null) {
           childrenArray.push(i);
         }
@@ -127,14 +131,14 @@ export function dynamicAdaptive() {
     return childrenArray;
   }
 
-  //Сортировка объекта
+  //* ⚠️ Сортировка объекта
   function dynamicAdaptSort(arr) {
     arr.sort(function (a, b) {
       if (a.breakpoint > b.breakpoint) {
         return -1;
       } else {
         return 1;
-      } //Для MobileFirst поменять
+      } // ❗ Для MobileFirst поменять
     });
     arr.sort(function (a, b) {
       if (a.place > b.place) {
@@ -145,7 +149,7 @@ export function dynamicAdaptive() {
     });
   }
 
-  //Дополнительные сценарии адаптации
+  //* ⚠️ Дополнительные сценарии адаптации
   // function customAdapt() {
   // 	const viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
   // }

@@ -7,7 +7,7 @@
       .card-product__icon 
         +iconfont('tools', 'icon') 
     .card-product__content 
-      .card-product__column
+      .card-product__column.bp-slide
         .card-product__thumb-slide
           .card-slide.card-product__slide.swiper
             .card-slide__slide
@@ -74,35 +74,36 @@
                     td=i.td 
             button.card-product__button.link-underline-center.show-more 
               span Все характеристики
-          .card-product__label 
+          .card-product__label(data-da="bp-slide" data-da-position="0" data-da-resolution="960") 
             .card-product__image
               +picture('img/categories/electric-tools/label.png', 'image')
     .card-product__footer
       .service-product.card-product__service 
-        .service-product__column
+        .service-product__row
           .service-product__title
             span.th-5 Доставка:
-          .service-product__row
+          .service-product__title
+            span.th-5 Оплата:
+        .service-product__row
+          .service-product__column
             .service-product__type Самовывоз: 
             .service-product__text 
               p Боровский район, 
-              p деревня Тимашово строение 3
+              p деревня Тимашово строение&nbsp;3
               p Пн-вс 08:00-19:00
-          .service-product__row
-            .service-product__type Курьером:
-            .service-product__text 
-              p Стоимость доставки от 500 р.
-        .service-product__column
-          .service-product__title
-            span.th-5 Оплата:
-          .service-product__row
+          .service-product__column
             .service-product__type Для физических лиц:
             .service-product__text 
-              p Наличными курьеру при получении Банковской картой при самовывозе Онлайн-оплата на сайте (при оформлении заказа)
-          .service-product__row
+              p Наличными курьеру при&nbsp;получении Банковской картой при&nbsp;самовывозе Онлайн-оплата на&nbsp;сайте (при&nbsp;оформлении&nbsp;заказа)
+        .service-product__row
+          .service-product__column
+            .service-product__type Курьером:
+            .service-product__text 
+              p Стоимость доставки от&nbsp;500р.
+          .service-product__column
             .service-product__type Для юридических лиц:
             .service-product__text 
-              p Безналичный расчет по выставленному счету
+              p Безналичный расчет по&nbsp;выставленному счету 
       .card-product__description.content
         .card-product__title Описание 
         .card-product__info
@@ -114,8 +115,8 @@
             .card-product__text-wrapper
               p Домашних дел мастер
               p Если надо штробить каналы под&nbsp;проводку, отбивать старый кафель, сверлить отверстия в&nbsp;бетоне, возьмите в&nbsp;руки перфоратор AEG&nbsp;KH24IE. Мощность его&nbsp;двигателя составляет 800&nbsp;Вт, а&nbsp;энергия удара – 2,4&nbsp;Дж. При&nbsp;этом инструмент весит всего&nbsp;2,8кг. Он&nbsp;работает в&nbsp;трех режимах: сверление, сверление с&nbsp;ударом и&nbsp;долбление – и&nbsp;отлично справится с&nbsp;любыми бытовыми задачами. Подходит также для&nbsp;выполнения мелких профессиональных работ.
-        button.card-product__button.link-underline-center.show-more 
-          span Все характеристики 
+          button.card-product__button.link-underline-center.show-more 
+            span Все характеристики 
         .card-product__info
           .card-product__text
             p Работать проще простого

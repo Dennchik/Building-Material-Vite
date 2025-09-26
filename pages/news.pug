@@ -21,5 +21,8 @@ block page-content
 									li
 										span.bread-crumbs__current-item Новости
 					section.main-content__section 
-						include @/pug/sections/news-company/main-news
+						include @/pug/sections/news-company/main-news 
+	footer.page__footer
+		block footer 
+			include @/pug/layouts/footer
 

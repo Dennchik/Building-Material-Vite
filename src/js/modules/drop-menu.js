@@ -9,6 +9,8 @@ export function dropDownMenu(element) {
   const menuFloat = document.querySelector('.menu-float');
   const button = document.querySelector(element);
   const tabContents = dropMenu.querySelectorAll('.dropdown-menu__tab');
+  const tabsItem = document.querySelector('.dropdown-menu__tab');
+  const ButtonsItem = document.querySelector('.dropdown-menu__buttons');
 
   if (!dropMenu || !collapseEl || !header || !button) return;
 
@@ -35,8 +37,10 @@ export function dropDownMenu(element) {
     }
 
     function applyMenuHeight() {
-      dropMenu.style.height = `calc(100vh + 1px - ${heightOffset}px)`;
+      dropMenu.style.height = `calc(100vh - ${heightOffset}px)`;
       dropMenu.style.top = `${rectHeader}px`;
+      // tabsItem.style.height = `calc(100vh - 3rem - ${heightOffset}px)`;
+      // ButtonsItem.style.height = `calc(100vh - 3rem - ${heightOffset}px)`;
     }
 
     // ❗ Пересчёт при загрузке
@@ -53,7 +57,7 @@ export function dropDownMenu(element) {
     let resizeEl = resizeElement();
 
     // ✅ пересчёт при resize и scroll
-    ['scroll', 'resize'].forEach((evt) => {
+    ['scroll', 'resize', 'click'].forEach((evt) => {
       window.addEventListener(evt, () => {
         updateHeightOffset();
         if (menuIsOpen) applyMenuHeight();
@@ -73,7 +77,7 @@ export function dropDownMenu(element) {
         dropMenu._collapseInstance.toggle();
 
         dropMenu.style.height = isOpening
-          ? `calc(100vh + 1px - ${heightOffset}px)`
+          ? `calc(100vh - ${heightOffset}px)`
           : `0px`;
 
         // ❗ top всегда равен высоте шапки

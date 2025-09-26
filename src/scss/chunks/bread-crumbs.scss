@@ -10,10 +10,13 @@
   // .bread-crumbs__list
   &__list {
     display: flex;
+    flex-wrap: wrap;
+    row-gap: 5px;
     align-items: center;
 
     li:not(:last-child) {
       margin-right: 0.5rem;
+      white-space: nowrap;
     }
 
     @include screen-490 {

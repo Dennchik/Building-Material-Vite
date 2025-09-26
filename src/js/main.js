@@ -29,9 +29,12 @@ import { dynamicAdaptive } from './modules/dynamic-adaptive.js';
 
 //🔹 Если Pug компилируется через Vite плагин, то productsMap можно прокинуть в шаблон:
 // import productsMap from '../data/productsMap.json';
+
 // export const templateData = {
 //   productsMap,
 // };
+
+// console.log('productsMap keys:', Object.keys(productsMap));
 
 //* layouts
 import {
@@ -83,19 +86,3 @@ console.log(
     'border-right: 2px solid black; border-bottom: 30px solid red;'
 );
 //* ----------------------------------------------------------------------------
-
-const header = document.querySelector('.page__header');
-const menuFloat = document.querySelector('.menu-float');
-function goodBye() {
-  window.addEventListener('scroll', () => {
-    let rectHeader = header.getBoundingClientRect();
-    let rectFloat = menuFloat.getBoundingClientRect();
-    let heightOffset = rectHeader.height + rectFloat.height;
-    // console.log(heightOffset);
-  });
-  function sayHello() {}
-  return sayHello;
-}
-let sayGoodBye = goodBye();
-
-sayGoodBye();

@@ -8,8 +8,6 @@ import about from '../../src/data/about.json' with { type: 'json' };
 import partners from '../../src/data/partners.json' with { type: 'json' };
 import products from '../../src/data/products.json' with { type: 'json' };
 import data from '../../src/data/data.json' with { type: 'json' };
-import catalogMenu from '../../src/data/dropDownMenu.json' with { type: 'json' };
-import productsMap from '../../src/data/productsMap.json' with { type: 'json' };
 //* ⚠️
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -57,12 +55,10 @@ export function getPugConfig(isProd) {
       },
 
       getWebRoot: (filename) => getWebRoot(filename, isProd),
-      productsMap,
       news,
       about,
       partners,
       products,
-      catalogMenu,
       table,
       ...data,
     },

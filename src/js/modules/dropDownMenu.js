@@ -1,4 +1,5 @@
 import ItcCollapse from '../assets/its-collapse.js';
+
 //* ✅ - [ Drop down menu]
 export function dropDownMenu(element) {
   const dropMenu = document.querySelector('.page__dropdown-menu');

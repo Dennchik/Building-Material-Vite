@@ -314,4 +314,16 @@
     @content;
   }
 }
+
+@mixin minmax-490-960 {
+  @media (width > 490px) and (width <= 960px) {
+    @content;
+  }
+}
+
+@mixin minmax-690-960 {
+  @media (width > 690px) and (width <= 960px) {
+    @content;
+  }
+}
 //* ----------------------------------------------------------------------------

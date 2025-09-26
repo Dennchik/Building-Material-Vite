@@ -2,6 +2,7 @@
 @use 'core/fonts';
 @use 'core/fonts-import';
 // todo --------------------------- layout -------------------------------------
+@use 'layouts/page';
 @use 'layouts/bem-block';
 @use 'layouts/header';
 @use 'layouts/footer';
@@ -21,8 +22,6 @@
 // todo ------------------------ components ------------------------------------
 @use 'components/sidebar-menu';
 @use 'components/dropdown-menu';
-// todo --------------------------- Pages --------------------------------------
-@use 'pages/page';
 // todo --------------------------- Chunks -------------------------------------
 @use 'chunks/bread-crumbs';
 @use 'chunks/collection';
@@ -45,15 +44,13 @@
 }
 //
 [class*='_container'] {
-  // overflow: hidden;
-
   box-sizing: border-box;
   width: 100%;
   max-width: $maxWidthContainer;
   margin: 0 auto;
   padding: 0 2rem;
 
-  @include screen-375 {
+  @include screen-490 {
     padding: 0 10px;
   }
 }

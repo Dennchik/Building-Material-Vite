@@ -11,9 +11,9 @@
             each item in menu.links
               ul.sidebar-menu__menu-catalog 
                 li.sidebar-menu__sub-link 
-                  a(href="#")= item
+                  a(href=linkTo("categories/electric-tools", filename))= item
                   //- .sidebar-menu__icons
-                  //-   +iconfont('pointer-right', 'icon') 
+                    +iconfont('pointer-right', 'icon') 
                   //- .sub-menu.sidebar-menu__sub-menu._collapse
                     ul.sub-menu__items
                       if productsMap[item]
