@@ -13,9 +13,6 @@
 
   // .news__content
   &__content {
-    // display: flex;
-    // gap: 30px;
-
     @include screen-768 {
       gap: 16px;
     }

@@ -30,7 +30,7 @@ function initArrowAnimation() {
     const arrow = button.querySelector('.icon-arrow-left');
 
     if (arrow) {
-      // Добавляем базовые стили для стрелки
+      // 🔹 Добавляем базовые стили для стрелки
       arrow.style.display = 'inline-block';
       arrow.style.transition = 'transform 0.3s ease';
 
@@ -39,7 +39,7 @@ function initArrowAnimation() {
       });
 
       button.addEventListener('mouseleave', () => {
-        // Сбрасываем анимацию после завершения
+        // 🔹 Сбрасываем анимацию после завершения
         setTimeout(() => {
           arrow.style.animation = 'none';
         }, 600);
@@ -48,10 +48,10 @@ function initArrowAnimation() {
   });
 }
 
-// 🔹 Инициализируем при загрузке страницы
+// ⚠️ Инициализируем при загрузке страницы
 document.addEventListener('DOMContentLoaded', initArrowAnimation);
 
-// 🔹 Если элементы добавляются динамически
+// ⚠️ Если элементы добавляются динамически
 const observer = new MutationObserver(() => {
   initArrowAnimation();
 });
@@ -59,23 +59,23 @@ const observer = new MutationObserver(() => {
 observer.observe(document.body, { childList: true, subtree: true });
 
 //* ✅ Возврат
-// Находим кнопку по классу
+// ⚠️ Находим кнопку по классу
 const backButton = document.querySelector('.card-product__button-prev');
-
-// 🔹 Добавляем обработчик события
-// backButton.addEventListener('click', function () {
-//   window.history.back(); // Возврат на одну страницу в истории браузера
-// });
+// ⚠️ Добавляем обработчик события
 backButton.addEventListener('click', function () {
-  // Укажите нужный URL
-  const isProd = window.location.href.includes('.html');
-
-  const targetPath = isProd
-    ? '/build/categories/electric-tools.html'
-    : '/categories/electric-tools';
-
-  window.location.href = targetPath;
-  // window.location.href = '/categories/electric-tools'; // Пример: переход в каталог
-  // или
-  // window.location.href = document.referrer; // Переход на страницу, с которой пришли
+  window.history.back(); // 🔹 Возврат на одну страницу в истории браузера
 });
+
+// backButton.addEventListener('click', function () {
+// Укажите нужный URL
+// const isProd = window.location.href.includes('.html');
+
+// const targetPath = isProd
+//   ? '/build/categories/electric-tools.html'
+//   : '/categories/electric-tools';
+
+// window.location.href = targetPath;
+// window.location.href = '/categories/electric-tools'; // Пример: переход в каталог
+// или
+// window.location.href = document.referrer; // Переход на страницу, с которой пришли
+// });

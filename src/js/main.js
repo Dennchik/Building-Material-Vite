@@ -27,15 +27,6 @@ addCartAnimation(
 import { counterProduct } from './components/counter.js';
 import { dynamicAdaptive } from './modules/dynamic-adaptive.js';
 
-//🔹 Если Pug компилируется через Vite плагин, то productsMap можно прокинуть в шаблон:
-// import productsMap from '../data/productsMap.json';
-
-// export const templateData = {
-//   productsMap,
-// };
-
-// console.log('productsMap keys:', Object.keys(productsMap));
-
 //* layouts
 import {
   addFavorites,
@@ -62,6 +53,14 @@ document.addEventListener('DOMContentLoaded', () => {
   dynamicAdaptive();
 });
 
+document.querySelectorAll('.product-card__label').forEach((priceBlock) => {
+  const span = priceBlock.querySelector('span');
+
+  if (!span || !span.textContent.trim()) {
+    priceBlock.style.display = 'none';
+  }
+});
+
 const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 // validateForm();
 // fadeInColumn('.its-col');
@@ -78,6 +77,14 @@ if (!isMobile) {
   // smoother();
 }
 
+//🔹 Если Pug компилируется через Vite плагин, то productsMap можно прокинуть в шаблон:
+// import productsMap from '../data/productsMap.json';
+
+// export const templateData = {
+//   productsMap,
+// };
+
+// console.log('productsMap keys:', Object.keys(productsMap));
 //* ----------------------------------------------------------------------------
 console.log(
   '%c РОССИЯ ',

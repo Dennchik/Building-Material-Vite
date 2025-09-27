@@ -3,6 +3,29 @@
 @use 'mixins.scss' as *;
 
 //* ----------------------------------------------------------------------------
+.anime-border {
+  --t: transparent;
+  --c: rgb(75 128 16); //* 👈 цвет границы
+  --b: 2px; //* 👈 толщина границы
+  --g: 3px; //* 👈 промежуток при наведении курсора мыши или события
+  --var: var(--t) 25%, var(--c) 0;
+
+  position: relative;
+  z-index: 1;
+
+  padding: calc(var(--g) + var(--b));
+  border: 2px solid var(--t);
+
+  background:
+    conic-gradient(from 180deg at top var(--b) right var(--b), var(--var))
+      var(--i, 200%) 0 /200% var(--i, var(--b)) no-repeat,
+    conic-gradient(at bottom var(--b) left var(--b), var(--var)) 0
+      var(--i, 200%) / var(--i, var(--b)) 200% no-repeat;
+
+  transition:
+    0.3s,
+    background-position 0.3s 0.3s;
+}
 
 .box-shadow {
   backdrop-filter: blur(10px);

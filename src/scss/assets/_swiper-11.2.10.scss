@@ -1,7 +1,6 @@
-/**
- * Swiper 11.2.10 
- */
+//* ✅ Swiper 11.2.10
 
+//* ❗ FONT_START
 @use '../core/swiper-vars' as vars;
 
 @at-root {
@@ -16,7 +15,7 @@
 
 @at-root {
   :root {
-    --swiper-theme-color: #{vars.$themeColor};
+    --swiper-theme-color: $themeColor;
 
     /*
     --swiper-preloader-color: var(--swiper-theme-color);
@@ -24,6 +23,7 @@
     */
   }
 }
+
 :host {
   position: relative;
   z-index: 1;
@@ -33,13 +33,14 @@
   margin-right: auto;
   margin-left: auto;
 }
+
 .swiper {
   position: relative;
 
-  /* Fix of Webkit flickering */
+  // 🔹 Fix of Webkit flickering
   z-index: 1;
 
-  overflow: hidden;
+  overflow: visible;
   display: block;
 
   margin-right: auto;
@@ -48,9 +49,11 @@
 
   list-style: none;
 }
+
 .swiper-vertical > .swiper-wrapper {
   flex-direction: column;
 }
+
 .swiper-wrapper {
   position: relative;
   z-index: 1;
@@ -67,25 +70,29 @@
   );
   transition-property: transform;
 }
+
 .swiper-android .swiper-slide,
 .swiper-ios .swiper-slide,
 .swiper-wrapper {
   transform: translate3d(0, 0, 0);
 }
+
 .swiper-horizontal {
   touch-action: pan-y;
 }
+
 .swiper-vertical {
   touch-action: pan-x;
 }
+
 .swiper-slide {
   position: relative;
 
-  display: block;
+  display: flex;
   flex-shrink: 0;
 
   width: 100%;
-  height: 100%;
+  height: auto;
 
   transition-property: transform;
 }
@@ -93,32 +100,90 @@
   visibility: hidden;
 }
 
-/* Auto Height */
+// 🔹 Auto Height
 .swiper-autoheight,
 .swiper-autoheight .swiper-slide {
   height: auto;
 }
+
 .swiper-autoheight .swiper-wrapper {
   align-items: flex-start;
   transition-property: transform, height;
 }
+
 .swiper-backface-hidden .swiper-slide {
   transform: translateZ(0);
   backface-visibility: hidden;
 }
 
-/* 3D Effects */
+// 🔹 3D Effects
 .swiper-3d.swiper-css-mode .swiper-wrapper {
   perspective: 1200px;
 }
+
 .swiper-3d .swiper-wrapper {
   transform-style: preserve-3d;
 }
+
 .swiper-3d {
   perspective: 1200px;
+
   .swiper-slide,
   .swiper-cube-shadow {
     transform-style: preserve-3d;
+  }
+
+  /* 3D Shadows */
+  .swiper-slide-shadow,
+  .swiper-slide-shadow-left,
+  .swiper-slide-shadow-right,
+  .swiper-slide-shadow-top,
+  .swiper-slide-shadow-bottom {
+    pointer-events: none;
+
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide-shadow {
+    background: rgb(0 0 0 / 15%);
+  }
+
+  .swiper-slide-shadow-left {
+    background-image: linear-gradient(
+      to left,
+      rgb(0 0 0 / 50%),
+      rgb(0 0 0 / 0%)
+    );
+  }
+
+  .swiper-slide-shadow-right {
+    background-image: linear-gradient(
+      to right,
+      rgb(0 0 0 / 50%),
+      rgb(0 0 0 / 0%)
+    );
+  }
+
+  .swiper-slide-shadow-top {
+    background-image: linear-gradient(
+      to top,
+      rgb(0 0 0 / 50%),
+      rgb(0 0 0 / 0%)
+    );
+  }
+
+  .swiper-slide-shadow-bottom {
+    background-image: linear-gradient(
+      to bottom,
+      rgb(0 0 0 / 50%),
+      rgb(0 0 0 / 0%)
+    );
   }
 }
 
@@ -188,61 +253,6 @@
 }
 
 /* Slide styles start */
-
-/* 3D Shadows */
-.swiper-3d {
-  .swiper-slide-shadow,
-  .swiper-slide-shadow-left,
-  .swiper-slide-shadow-right,
-  .swiper-slide-shadow-top,
-  .swiper-slide-shadow-bottom,
-  .swiper-slide-shadow,
-  .swiper-slide-shadow-left,
-  .swiper-slide-shadow-right,
-  .swiper-slide-shadow-top,
-  .swiper-slide-shadow-bottom {
-    pointer-events: none;
-
-    position: absolute;
-    z-index: 10;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-  }
-  .swiper-slide-shadow {
-    background: rgb(0 0 0 / 15%);
-  }
-  .swiper-slide-shadow-left {
-    background-image: linear-gradient(
-      to left,
-      rgb(0 0 0 / 50%),
-      rgb(0 0 0 / 0%)
-    );
-  }
-  .swiper-slide-shadow-right {
-    background-image: linear-gradient(
-      to right,
-      rgb(0 0 0 / 50%),
-      rgb(0 0 0 / 0%)
-    );
-  }
-  .swiper-slide-shadow-top {
-    background-image: linear-gradient(
-      to top,
-      rgb(0 0 0 / 50%),
-      rgb(0 0 0 / 0%)
-    );
-  }
-  .swiper-slide-shadow-bottom {
-    background-image: linear-gradient(
-      to bottom,
-      rgb(0 0 0 / 50%),
-      rgb(0 0 0 / 0%)
-    );
-  }
-}
 .swiper-lazy-preloader {
   position: absolute;
   z-index: 10;
@@ -259,15 +269,18 @@
   border-top-color: transparent;
   border-radius: 50%;
 }
+
 .swiper:not(.swiper-watch-progress),
 .swiper-watch-progress .swiper-slide-visible {
   .swiper-lazy-preloader {
     animation: swiper-preloader-spin 1s infinite linear;
   }
 }
+
 .swiper-lazy-preloader-white {
   --swiper-preloader-color: #fff;
 }
+
 .swiper-lazy-preloader-black {
   --swiper-preloader-color: #000;
 }
@@ -280,5 +293,3 @@
     transform: rotate(360deg);
   }
 }
-
-/* Slide styles end */

@@ -4,7 +4,7 @@
       button.card-product__button-prev
         +iconfont('arrow-left', 'icon')
         span.link-underline-center Вернуться назад
-      .card-product__icon 
+      a(href=linkTo("categories/electric-tools", fileName)).card-product__icon 
         +iconfont('tools', 'icon') 
     .card-product__content 
       .card-product__column.bp-slide
@@ -28,25 +28,33 @@
             .card-slide__slide
               .card-slide__image 
                 +picture('img/categories/electric-tools/img-06.png', 'image')
-          .card-slide.card-product__thumb.card-thumb.swiper
-            .card-slide__slide-thumb
-              .card-slide__image
-                +picture('img/categories/electric-tools/img-01.png', 'image')
-            .card-slide__slide-thumb
-              .card-slide__image
-                +picture('img/categories/electric-tools/img-02.png', 'image')
-            .card-slide__slide-thumb
-              .card-slide__image
-                +picture('img/categories/electric-tools/img-03.png', 'image')
-            .card-slide__slide-thumb
-              .card-slide__image
-                +picture('img/categories/electric-tools/img-04.png', 'image')
-            .card-slide__slide-thumb
-              .card-slide__image
-                +picture('img/categories/electric-tools/img-05.png', 'image')
-            .card-slide__slide-thumb
-              .card-slide__image
-                +picture('img/categories/electric-tools/img-06.png', 'image')
+          .card-product__thumb-wrapper
+            .card-slide.card-product__thumb.card-thumb.swiper
+              .card-slide__slide-thumb
+                .card-slide__image
+                  +picture('img/categories/electric-tools/img-01.png', 'image')
+              .card-slide__slide-thumb
+                .card-slide__image
+                  +picture('img/categories/electric-tools/img-02.png', 'image')
+              .card-slide__slide-thumb
+                .card-slide__image
+                  +picture('img/categories/electric-tools/img-03.png', 'image')
+              .card-slide__slide-thumb
+                .card-slide__image
+                  +picture('img/categories/electric-tools/img-04.png', 'image')
+              .card-slide__slide-thumb
+                .card-slide__image
+                  +picture('img/categories/electric-tools/img-05.png', 'image')
+              .card-slide__slide-thumb
+                .card-slide__image
+                  +picture('img/categories/electric-tools/img-06.png', 'image')
+            .navigation
+              .navigation__prev.btn-prev
+                .navigation__icon
+                  +iconfont('arrow-left', 'icon')
+              .navigation__next.btn-next
+                .navigation__icon
+                  +iconfont('arrow-right', 'icon')
       .card-product__column 
         .card-product__grid-cont
           .card-product__specifications.content

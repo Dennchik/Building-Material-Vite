@@ -1,14 +1,9 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { getWebRoot } from '../utils/getWebRoot.js';
-//* data - данные
-import table from '../../src/data/table.json' with { type: 'json' };
-import news from '../../src/data/news.json' with { type: 'json' };
-import about from '../../src/data/about.json' with { type: 'json' };
-import partners from '../../src/data/partners.json' with { type: 'json' };
-import products from '../../src/data/products.json' with { type: 'json' };
+//* ✅ data - данные
 import data from '../../src/data/data.json' with { type: 'json' };
-//* ⚠️
+//* ✅
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export function getPugConfig(isProd) {
@@ -55,11 +50,6 @@ export function getPugConfig(isProd) {
       },
 
       getWebRoot: (filename) => getWebRoot(filename, isProd),
-      news,
-      about,
-      partners,
-      products,
-      table,
       ...data,
     },
 

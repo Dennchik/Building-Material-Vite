@@ -21,7 +21,7 @@ import { fonts } from './vite/tasks/fonts.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-// 🔹 конвертируем шрифты перед dev/build
+//* ✅ конвертируем шрифты перед dev/build
 fonts(paths.fonts.src);
 
 export default defineConfig(({ command, mode }) => {
@@ -48,7 +48,7 @@ export default defineConfig(({ command, mode }) => {
       open: true,
     },
     css: {
-      devSourcemap: !isProd, // только для dev
+      devSourcemap: !isProd, // 👈 только для dev
       postcss: {
         plugins: [
           autoprefixer(app.autoprefixer),
@@ -88,6 +88,7 @@ export default defineConfig(({ command, mode }) => {
           about: resolve(__dirname, 'src/js/about.js'),
           catalog: resolve(__dirname, 'src/js/catalog.js'),
           news: resolve(__dirname, 'src/js/news.js'),
+          cart: resolve(__dirname, 'src/js/cart.js'),
           'card-product': resolve(__dirname, 'src/js/card.js'),
         },
         output: {

@@ -18,7 +18,7 @@
 @use 'utils/loaded-timer';
 // todo --------------------------- Assets -------------------------------------
 @use 'assets/burger-button';
-@use 'assets/swiper-11.2.5';
+@use 'assets/swiper-11.2.10';
 // todo ------------------------ components ------------------------------------
 @use 'components/sidebar-menu';
 @use 'components/dropdown-menu';
@@ -102,6 +102,7 @@
 }
 
 [class*='icon-'] {
+  pointer-events: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;

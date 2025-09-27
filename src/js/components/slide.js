@@ -1,4 +1,4 @@
-//* import Swiper bundle with all modules installed
+//* ✅ import Swiper bundle with all modules installed
 import Swiper from 'swiper/bundle';
 
 //* ✅ Слайдер карточки товара
@@ -12,26 +12,31 @@ export function cardSlide(slide = '.card-slide') {
       const slides = thumbContainer.querySelectorAll('.swiper-slide');
       const totalSlides = slides.length;
 
-      // Показываем все если их 3 или меньше, иначе показываем 4
+      // ⚠️ Показываем все если их 3 или меньше, иначе показываем 4
       return totalSlides <= 3 ? totalSlides : 4;
     }
 
     let swiper = new Swiper('.card-thumb', {
-      spaceBetween: 26,
+      spaceBetween: 15,
       speed: 800,
       slidesPerView: getSlidesPerView(),
       freeMode: true,
       watchSlidesProgress: true,
       updateOnWindowResize: true,
+      navigation: {
+        nextEl: '.btn-next',
+        prevEl: '.btn-prev',
+      },
     });
 
     new Swiper('.card-product__slide', {
-      spaceBetween: 26,
+      spaceBetween: 22,
       speed: 800,
       grabCursor: true,
       loop: true,
       slidesPerView: 1,
       updateOnWindowResize: true,
+
       thumbs: {
         swiper: swiper,
       },
@@ -98,8 +103,8 @@ export function slidNews(slide) {
       lazy: true,
 
       navigation: {
-        nextEl: '.btn-prev',
-        prevEl: '.btn-next',
+        nextEl: '.btn-next',
+        prevEl: '.btn-prev',
       },
       slidesPerView: 3,
       speed: 800,

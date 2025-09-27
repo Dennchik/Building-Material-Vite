@@ -5,32 +5,9 @@
 				h1.section-perform__title.t-h1 Лучшие&nbsp;цены&nbsp;на&nbsp; строительные инструменты и&nbsp; материалы
 				.section-perform__text Бесплатная доставка при&nbsp;заказе от&nbsp;5000&nbsp;₽
 				.collection.section-perform__collection 
-					a(href=linkTo("categories/electric-tools", filename)).section-perform__button
-						span Строительные материалы
-					a(href=linkTo("categories/electric-tools", filename)).section-perform__button
-						span Электроинструмент
-					a(href=linkTo("categories/electric-tools", filename)).section-perform__button
-						span Бензоинструмент
-					a(href=linkTo("categories/electric-tools", filename)).section-perform__button
-						span Металл
-					a(href=linkTo("categories/electric-tools", filename)).section-perform__button
-						span Сантехника
-					a(href=linkTo("categories/electric-tools", filename)).section-perform__button
-						span Крепеж и метизы
-					a(href=linkTo("categories/electric-tools", filename)).section-perform__button
-						span Товары для сада и огорода
-					a(href=linkTo("categories/electric-tools", filename)).section-perform__button
-						span Краски и химия
-					a(href=linkTo("categories/electric-tools", filename)).section-perform__button
-						span Пиломатериалы
-					a(href=linkTo("categories/electric-tools", filename)).section-perform__button
-						span Электротовары
-					a(href=linkTo("categories/electric-tools", filename)).section-perform__button
-						span Сопутствующие товары
-					a(href=linkTo("categories/electric-tools", filename)).section-perform__button
-						span Ручной инструмент
-					a(href=linkTo("categories/electric-tools", filename)).section-perform__button
-						span Измерительные приборы
+					each item in selection
+						a(href=linkTo("categories/" + item.links, filename)).collection__button 
+							span= item.text
 		.section-perform__column
 			.section-perform__image
 				+picture('/img/picture/building.png', 'image')

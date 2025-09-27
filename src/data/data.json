@@ -1,5 +1,113 @@
 {
-  "categories": [
+  "recommend": [
+    {
+      "links": "electric-tools",
+      "text": "Профессиональный электроинструмент"
+    },
+    {
+      "links": "electric-tools",
+      "text": "Дрели-шуруповерты для мебели"
+    },
+    {
+      "links": "electric-tools",
+      "text": "Аккумуляторные дрели-шуруповерты без АКБ"
+    },
+    {
+      "links": "electric-tools",
+      "text": "Дрели-шуруповерты для женщин"
+    },
+    {
+      "links": "electric-tools",
+      "text": "Бензоинструмент"
+    }
+  ],
+  "selection": [
+    {
+      "links": "electric-tools",
+      "text": "Строительные материалы"
+    },
+    {
+      "links": "electric-tools",
+      "text": "Электроинструмент"
+    },
+    {
+      "links": "electric-tools",
+      "text": "Бензоинструмент"
+    },
+    {
+      "links": "electric-tools",
+      "text": "Металл"
+    },
+    {
+      "links": "electric-tools",
+      "text": "Сантехника"
+    },
+    {
+      "links": "electric-tools",
+      "text": "Крепеж и метизы"
+    },
+    {
+      "links": "electric-tools",
+      "text": "Товары для сада и огорода"
+    },
+    {
+      "links": "electric-tools",
+      "text": "Краски и химия"
+    },
+    {
+      "links": "electric-tools",
+      "text": "Пиломатериалы"
+    },
+    {
+      "links": "electric-tools",
+      "text": "Электротовары"
+    },
+    {
+      "links": "electric-tools",
+      "text": "Сопутствующие товары"
+    },
+    {
+      "links": "electric-tools",
+      "text": "Ручной инструмент"
+    },
+    {
+      "links": "electric-tools",
+      "text": "Измерительные приборы"
+    }
+  ],
+  "news": [
+    {
+      "image": "img-1.png",
+      "text": "Как выбрать перфоратор: 5 ключевых критериев для правильного выбора",
+      "data": "24.02.2025"
+    },
+    {
+      "image": "img-2.png",
+      "text": "Чем отличается OSB от фанеры: плюсы и минусы материалов",
+      "data": "24.02.2025"
+    },
+    {
+      "image": "img-1.png",
+      "text": "ТОП-10 электроинструментов 2025 года для профессиональных мастеров",
+      "data": "24.02.2025"
+    },
+    {
+      "image": "img-2.png",
+      "text": "Как утеплить дом снаружи: обзор современных материалов и технологий",
+      "data": "24.02.2025"
+    },
+    {
+      "image": "img-1.png",
+      "text": "Какой краской покрасить деревянный дом: советы по выбору и нанесению",
+      "data": "24.02.2025"
+    },
+    {
+      "image": "img-2.png",
+      "text": "Сравнение брендов: Bosch, Makita или DeWalt — кто лучше?",
+      "data": "24.02.2025"
+    }
+  ],
+  "collections": [
     { "title": "Для строительства", "image": "img-1.png" },
     { "title": "Для отделки помещений", "image": "img-2.png" },
     { "title": "Для сантехники и водоснабжения", "image": "img-3.png" },
@@ -10,7 +118,15 @@
     { "title": "Для упаковки и транспортировки", "image": "img-8.png" },
     { "title": "Для безопасности и защиты", "image": "img-9.png" }
   ],
-
+  "categories": [
+    { "image": "img-01.png", "info": "Перфораторы" },
+    { "image": "img-01.png", "info": "Шуруповерты" },
+    { "image": "img-01.png", "info": "Дрели, миксеры" },
+    { "image": "img-01.png", "info": "Болгарки" },
+    { "image": "img-01.png", "info": "Электро-ножницы, лобзики" },
+    { "image": "img-01.png", "info": "Шлифмашинки" },
+    { "image": "img-01.png", "info": "Пилы" }
+  ],
   "catalog": [
     {
       "categories": "Строительные материалы",
@@ -31,7 +147,7 @@
         "Шуруповёрт",
         "Дрели, миксеры",
         "Болгарки (УШМ)",
-        "Электроножницы, лобзики",
+        "Электро-ножницы, лобзики",
         "Шлифмашины (вибро-, эксцентриковые и др.)",
         "Пилы (циркулярные, сабельные)"
       ]
@@ -150,7 +266,6 @@
       "links": []
     }
   ],
-
   "buttons": [
     {
       "button": "Строительные материалы",
@@ -369,6 +484,239 @@
         { "Позиция - 4": [] },
         { "Позиция - 5": [] }
       ]
+    }
+  ],
+  "about": [
+    { "icon": "persons", "text": "Помогаем клиентам с выбором" },
+    { "icon": "clock", "text": "Тщательно следим за качеством товара" },
+    { "icon": "union", "text": "Поддерживаем прозрачную политику цен" },
+    { "icon": "patch-plus", "text": "Широкий ассортимент" },
+    { "icon": "car", "text": "Самовывоз и доставка" }
+  ],
+  "partners": [
+    { "image": "dryzone.png" },
+    { "image": "heller.png" },
+    { "image": "hit.png" },
+    { "image": "hw.png" },
+    { "image": "kiheung.png" },
+    { "image": "gdk.png" },
+    { "image": "gresson.png" },
+    { "image": "mirtec.png" },
+    { "image": "oubel.png" },
+    { "image": "emst.png" },
+    { "image": "dektec.png" },
+    { "image": "ruichi.png" },
+    { "image": "vcta.png" },
+    { "image": "x-ray.png" },
+    { "image": "argus.png" },
+    { "image": "hct.png" },
+    { "image": "clever.png" },
+    { "image": "seamark.png" }
+  ],
+  "priceProducts": [
+    {
+      "label": "-12%",
+      "title": "Цемент ЦЕМЕНТУМ М500,40 кг (30 шт/под)",
+      "image": "cement-holcim-M-500-50kg.png",
+      "price": "723,00р",
+      "article": "Фирма или артикул"
+    },
+    {
+      "label": "",
+      "title": "Пескобетон Novamix М-300,40 кг",
+      "image": "cement-holcim-M-300-40kg.png",
+      "price": "460,00р",
+      "article": "Фирма или артикул"
+    },
+    {
+      "label": "хит",
+      "title": "Сухая смесь универсальная Novamix М-150, 40 кг",
+      "image": "cement-Novamix-М-150-30kg.png",
+      "price": "560,00р",
+      "article": "Фирма или артикул"
+    },
+    {
+      "label": "-12%",
+      "title": "Штукатурка гипсовая Волма Холст серая, 30 кг",
+      "image": "gypsum-volma-grey-30kg.png",
+      "price": "361,00р",
+      "article": "Фирма или артикул"
+    },
+    {
+      "label": "хит",
+      "title": "Шпаклевка готовая финишная Danogips SuperFinish, 17л/28 кг",
+      "image": "shpatlevka-Danogips-Super-17L-28kg.png",
+      "price": "740,00р",
+      "article": "Фирма или артикул"
+    },
+    {
+      "label": "",
+      "title": "Сухая смесь универсальная Novamix М-150, 40 кг",
+      "image": "cement-Novamix-М-150-30kg.png",
+      "price": "1460,00р",
+      "article": "Фирма или артикул"
+    },
+    {
+      "label": "-12$",
+      "title": "Цемент ЦЕМЕНТУМ М500,40 кг (30 шт/под)",
+      "image": "cement-holcim-M-500-50kg.png",
+      "price": "820,00р",
+      "article": "Фирма или артикул"
+    },
+    {
+      "label": "",
+      "title": "Пескобетон Novamix М-300,40 кг",
+      "image": "cement-holcim-M-300-40kg.png",
+      "price": "480,00р",
+      "article": "Фирма или артикул"
+    },
+    {
+      "label": "хит",
+      "title": "Сухая смесь универсальная Novamix М-150, 40 кг",
+      "image": "cement-Novamix-М-150-30kg.png",
+      "price": "520,00р",
+      "article": "Фирма или артикул"
+    },
+    {
+      "label": "-12%",
+      "title": "Штукатурка гипсовая Волма Холст серая, 30 кг",
+      "image": "gypsum-volma-grey-30kg.png",
+      "price": "920,00р",
+      "article": "Фирма или артикул"
+    },
+    {
+      "label": "",
+      "title": "Шпаклевка готовая финишная Danogips SuperFinish, 17л/28 кг",
+      "image": "shpatlevka-Danogips-Super-17L-28kg.png",
+      "price": "713,00р",
+      "article": "Фирма или артикул"
+    },
+    {
+      "label": "хит",
+      "title": "Сухая смесь универсальная Novamix М-150, 40 кг",
+      "image": "cement-Novamix-М-150-30kg.png",
+      "price": "1120,00р",
+      "article": "Фирма или артикул"
+    }
+  ],
+  "newProducts": [
+    {
+      "label": "хит",
+      "title": "Цемент ЦЕМЕНТУМ М500,40 кг (30 шт/под)",
+      "image": "prod-1.png",
+      "price": "365,00р",
+      "article": "Фирма или артикул"
+    },
+    {
+      "label": "-12%",
+      "title": "Пескобетон Novamix М-300,40 кг",
+      "image": "prod-2.png",
+      "price": "260,00р",
+      "article": "Фирма или артикул"
+    },
+    {
+      "label": "",
+      "title": "Сухая смесь универсальная Novamix М-150, 40 кг",
+      "image": "prod-3.png",
+      "price": "360,00р",
+      "article": "Фирма или артикул"
+    },
+    {
+      "label": "",
+      "title": "Штукатурка гипсовая Волма Холст серая, 30 кг",
+      "image": "prod-4.png",
+      "price": "760,00р",
+      "article": "Фирма или артикул"
+    },
+    {
+      "label": "хит",
+      "title": "Шпаклевка готовая финишная Danogips SuperFinish, 17л/28 кг",
+      "image": "prod-5.png",
+      "price": "860,00р",
+      "article": "Фирма или артикул"
+    },
+    {
+      "label": "-12%",
+      "title": "Сухая смесь универсальная Novamix М-150, 40 кг",
+      "image": "prod-3.png",
+      "price": "1460,00р",
+      "article": "Фирма или артикул"
+    },
+    {
+      "label": "хит",
+      "title": "Цемент ЦЕМЕНТУМ М500,40 кг (30 шт/под)",
+      "image": "prod-1.png",
+      "price": "365,00р",
+      "article": "Фирма или артикул"
+    },
+    {
+      "label": "-12%",
+      "title": "Пескобетон Novamix М-300,40 кг",
+      "image": "prod-2.png",
+      "price": "260,00р",
+      "article": "Фирма или артикул"
+    },
+    {
+      "label": "",
+      "title": "Сухая смесь универсальная Novamix М-150, 40 кг",
+      "image": "prod-3.png",
+      "price": "360,00р",
+      "article": "Фирма или артикул"
+    },
+    {
+      "label": "",
+      "title": "Штукатурка гипсовая Волма Холст серая, 30 кг",
+      "image": "prod-4.png",
+      "price": "760,00р",
+      "article": "Фирма или артикул"
+    },
+    {
+      "label": "хит",
+      "title": "Шпаклевка готовая финишная Danogips SuperFinish, 17л/28 кг",
+      "image": "prod-5.png",
+      "price": "860,00р",
+      "article": "Фирма или артикул"
+    },
+    {
+      "label": "-12%",
+      "title": "Сухая смесь универсальная Novamix М-150, 40 кг",
+      "image": "prod-3.png",
+      "price": "1460,00р",
+      "article": "Фирма или артикул"
+    }
+  ],
+  "table": [
+    {
+      "th": "Мощность:",
+      "td": "400 Вт"
+    },
+    {
+      "th": "Max крутящий момент:",
+      "td": "45 Нм"
+    },
+    {
+      "th": "Регулировка глубины завинчивания:",
+      "td": "нет"
+    },
+    {
+      "th": "Max диаметр сверления (металл):",
+      "td": "10 мм"
+    },
+    {
+      "th": "Мах диаметр сверления (дерево):",
+      "td": "40 мм"
+    },
+    {
+      "th": "Вес нетто:",
+      "td": "1.2 кг"
+    },
+    {
+      "th": "Частота вращения шпинделя:",
+      "td": "0-500/ 0-1800 об/мин"
+    },
+    {
+      "th": "Производитель:",
+      "td": "ATLET"
     }
   ]
 }
