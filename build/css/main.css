@@ -445,6 +445,20 @@
 }
 
 /* stylelint-disable plugin/selector-bem-pattern */
+.anime-border {
+  --t: transparent;
+  --c: rgb(75 128 16);
+  --b: 2px;
+  --g: 3px;
+  --var: var(--t) 25%, var(--c) 0;
+  position: relative;
+  z-index: 1;
+  padding: calc(var(--g) + var(--b));
+  border: 2px solid var(--t);
+  background: conic-gradient(from 180deg at top var(--b) right var(--b), var(--var)) var(--i, 200%) 0/200% var(--i, var(--b)) no-repeat, conic-gradient(at bottom var(--b) left var(--b), var(--var)) 0 var(--i, 200%)/var(--i, var(--b)) 200% no-repeat;
+  transition: 0.3s, background-position 0.3s 0.3s;
+}
+
 .box-shadow {
   backdrop-filter: blur(10px);
   box-shadow: 0 1px 5px #000;
@@ -1334,7 +1348,7 @@ svg {
   pointer-events: none;
   user-select: none;
   max-width: 100%;
-  height: auto;
+  height: 100%;
   vertical-align: middle;
 }
 
@@ -1538,9 +1552,6 @@ h6 {
     transform: scale(0);
   }
 }
-/**
- * Swiper 11.2.5
- */
 :root {
   --swiper-scrollbar-top: auto;
   --swiper-scrollbar-bg-color: rgb(0 0 0 / 10%);
@@ -1589,7 +1600,6 @@ h6 {
 
 .swiper {
   position: relative;
-  /* Fix of Webkit flickering */
   z-index: 1;
   overflow: visible;
   display: block;
@@ -1641,7 +1651,6 @@ h6 {
   visibility: hidden;
 }
 
-/* Auto Height */
 .swiper-autoheight,
 .swiper-autoheight .swiper-slide {
   height: auto;
@@ -1657,7 +1666,6 @@ h6 {
   backface-visibility: hidden;
 }
 
-/* 3D Effects */
 .swiper-3d.swiper-css-mode .swiper-wrapper {
   perspective: 1200px;
 }
@@ -1668,10 +1676,39 @@ h6 {
 
 .swiper-3d {
   perspective: 1200px;
+  /* 3D Shadows */
 }
 .swiper-3d .swiper-slide,
 .swiper-3d .swiper-cube-shadow {
   transform-style: preserve-3d;
+}
+.swiper-3d .swiper-slide-shadow,
+.swiper-3d .swiper-slide-shadow-left,
+.swiper-3d .swiper-slide-shadow-right,
+.swiper-3d .swiper-slide-shadow-top,
+.swiper-3d .swiper-slide-shadow-bottom {
+  pointer-events: none;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.swiper-3d .swiper-slide-shadow {
+  background: rgba(0, 0, 0, 0.15);
+}
+.swiper-3d .swiper-slide-shadow-left {
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+.swiper-3d .swiper-slide-shadow-right {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+.swiper-3d .swiper-slide-shadow-top {
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+.swiper-3d .swiper-slide-shadow-bottom {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 
 /* CSS Mode */
@@ -1725,41 +1762,6 @@ h6 {
 }
 
 /* Slide styles start */
-/* 3D Shadows */
-.swiper-3d .swiper-slide-shadow,
-.swiper-3d .swiper-slide-shadow-left,
-.swiper-3d .swiper-slide-shadow-right,
-.swiper-3d .swiper-slide-shadow-top,
-.swiper-3d .swiper-slide-shadow-bottom,
-.swiper-3d .swiper-slide-shadow,
-.swiper-3d .swiper-slide-shadow-left,
-.swiper-3d .swiper-slide-shadow-right,
-.swiper-3d .swiper-slide-shadow-top,
-.swiper-3d .swiper-slide-shadow-bottom {
-  pointer-events: none;
-  position: absolute;
-  z-index: 10;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.swiper-3d .swiper-slide-shadow {
-  background: rgba(0, 0, 0, 0.15);
-}
-.swiper-3d .swiper-slide-shadow-left {
-  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
-}
-.swiper-3d .swiper-slide-shadow-right {
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
-}
-.swiper-3d .swiper-slide-shadow-top {
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
-}
-.swiper-3d .swiper-slide-shadow-bottom {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
-}
-
 .swiper-lazy-preloader {
   position: absolute;
   z-index: 10;
@@ -1797,7 +1799,6 @@ h6 {
     transform: rotate(360deg);
   }
 }
-/* Slide styles end */
 .sidebar-menu {
   pointer-events: all;
   position: fixed;
@@ -2024,9 +2025,6 @@ h6 {
 }
 .dropdown-menu__tab {
   pointer-events: none;
-  position: absolute;
-  top: 0;
-  left: 0;
   display: none;
   width: 100%;
   height: 100%;
@@ -2213,6 +2211,7 @@ h6 {
 }
 
 .product-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -2239,12 +2238,6 @@ h6 {
   width: 100%;
   height: 28px;
 }
-.product-card__content {
-  display: flex;
-  flex: 0 1 auto;
-  flex-direction: column;
-  height: 100%;
-}
 .product-card__label span {
   display: block;
   padding: 7px 12px;
@@ -2262,6 +2255,41 @@ h6 {
 }
 .product-card__icons .icon {
   font-size: 24px;
+}
+.product-card__content {
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: column;
+  height: 100%;
+}
+.product-card__compare {
+  pointer-events: auto;
+  cursor: pointer;
+  position: relative;
+}
+.product-card__compare::after {
+  pointer-events: none;
+  content: attr(data-title);
+  position: absolute;
+  z-index: 1;
+  top: 130%;
+  right: -220%;
+  transform: translate(-10px, 10px);
+  padding: 0.8rem 1rem;
+  border: 1px solid rgb(16, 71, 28);
+  border-radius: 5px;
+  font-size: 1.3rem;
+  white-space: nowrap;
+  opacity: 0;
+  background: #fff;
+  transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+}
+.product-card__compare:hover::after {
+  transform: translate(0);
+  opacity: 1;
+}
+.product-card__compare .icon {
+  pointer-events: none;
 }
 .product-card__favourites {
   cursor: pointer;
@@ -2825,6 +2853,7 @@ h6 {
 }
 
 [class*=icon-] {
+  pointer-events: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;

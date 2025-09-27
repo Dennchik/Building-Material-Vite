@@ -77,28 +77,6 @@
   flex-wrap: wrap;
   gap: 1rem;
 }
-.section-perform__button {
-  cursor: pointer;
-  padding: 0.9rem 2rem;
-  border: 1px solid rgb(45, 47, 48);
-  border-radius: 10px;
-  transition: color 0.2s ease-in-out;
-}
-.section-perform__button:hover {
-  border: 1px solid green;
-  color: rgb(16, 71, 28);
-}
-.section-perform__button span {
-  pointer-events: none;
-  font-size: 1.4rem;
-  line-height: 100%;
-  white-space: nowrap;
-}
-@media screen and (width <= 490px) {
-  .section-perform__button {
-    padding: 0.9rem 1rem;
-  }
-}
 .section-perform__image {
   width: auto;
 }

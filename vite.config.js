@@ -88,7 +88,7 @@ export default defineConfig(({ command, mode }) => {
           about: resolve(__dirname, 'src/js/about.js'),
           catalog: resolve(__dirname, 'src/js/catalog.js'),
           news: resolve(__dirname, 'src/js/news.js'),
-          cart: resolve(__dirname, 'src/js/cart.js'),
+          card: resolve(__dirname, 'src/js/card.js'),
           'card-product': resolve(__dirname, 'src/js/card.js'),
         },
         output: {
