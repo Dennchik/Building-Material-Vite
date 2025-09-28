@@ -1,12 +1,12 @@
-//* Animation target, add item to target
+//* ✅ Animation target, add item to target
 
 export function addCartAnimation(targetEl, trigger, itemEl, itemTarget, mod) {
   const targetElement = document.querySelector(targetEl);
   const itemValue = document.querySelector(`${targetEl} span`);
   const speedAnimation = 500;
-  // Объявляем переменную в начале
+  // ⚠️ Объявляем переменную в начале
   const itemTargetElement = document.querySelector(itemTarget);
-
+  if (!targetElement) return;
   document.addEventListener('click', function (e) {
     const triggerElement = e.target;
 

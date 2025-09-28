@@ -1,0 +1,15 @@
+extends @/pug/layouts/app_layout
+
+append link
+prepend script
+	script(defer type="module" src="/src/js/about.js")
+block title
+	- var text='About page'
+
+block page
+	body
+		include @/pug/includes/mixins
+		script(defer type="module" src="/src/js/main.js")
+	block page-content
+		block main-content 
+			include @/pug/components/section-404

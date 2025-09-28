@@ -3,16 +3,15 @@ import ItcCollapse from '../assets/its-collapse.js';
 //* ✅ - [ Drop down menu]
 export function dropDownMenu(element) {
   const dropMenu = document.querySelector('.page__dropdown-menu');
+  if (!dropMenu) return;
   const collapseEl = dropMenu.querySelector('._collapse');
   const menuLinks = document.querySelectorAll('.dropdown-menu__button');
   const header = document.querySelector('.page__header');
   const menuFloat = document.querySelector('.menu-float');
   const button = document.querySelector(element);
   const tabContents = dropMenu.querySelectorAll('.dropdown-menu__tab');
-  const tabsItem = document.querySelector('.dropdown-menu__tab');
-  const ButtonsItem = document.querySelector('.dropdown-menu__buttons');
 
-  if (!dropMenu || !collapseEl || !header || !button) return;
+  if (!collapseEl || !header || !button || !collapseEl) return;
 
   // ✅  создаём collapse-instance
   dropMenu._collapseInstance = new ItcCollapse(collapseEl);

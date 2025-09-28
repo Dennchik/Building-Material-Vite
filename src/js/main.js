@@ -33,9 +33,10 @@ import {
   sidebarMenuHandle,
   hideTopMenu,
   addToBlock,
+  cookiesAccept,
 } from './layouts/layouts.js';
 addToBlock();
-
+cookiesAccept('.cookies-accept', '.cookies-accept__button');
 import {
   dropDownMenu,
   collapseToggle,

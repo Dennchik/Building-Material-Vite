@@ -93,7 +93,7 @@ export function addToBlock() {
       if (button) {
         // ⚠️ Текст внутри кнопки
         const buttonText = button.querySelector('span');
-
+        const backText = buttonText.textContent;
         // ⚠️ Сколько блоков видно изначально
         let visibleCount = 1;
         // Сколько блоков нужно показывать при каждом нажатии
@@ -157,8 +157,9 @@ export function addToBlock() {
             });
             // ⚠️ Сбрасываем видимое количество блоков
             visibleCount = 1;
-            // ⚠️ Возвращаем текст кнопки обратно на "Читать ещё"
-            buttonText.textContent = 'Показать еще';
+            // ⚠️ Возвращаем текст кнопки обратно
+            // buttonText.textContent = 'Показать еще';
+            buttonText.textContent = backText;
             // ⚠️ Удаляем класс для кнопки вращения
             button.classList.remove('_rotate-button');
           }
@@ -316,10 +317,7 @@ export function cookiesAccept(el, trigger) {
   const cookiesAccept = document.querySelector(el);
   const button = document.querySelector(trigger);
 
-  if (!cookiesAccept) {
-    console.log('Элемент cookiesAccept не найден');
-    return;
-  }
+  if (!cookiesAccept) return;
 
   if (button) {
     button.addEventListener('click', () => {

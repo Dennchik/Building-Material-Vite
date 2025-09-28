@@ -2,6 +2,7 @@ export function loadedTimer() {
   const loader = document.querySelector('.loader');
   const loaderTimer = document.querySelector('.loader__timer');
   const startTime = performance.now();
+  if (!loader) return;
 
   window.addEventListener('load', () => {
     const endTime = performance.now();

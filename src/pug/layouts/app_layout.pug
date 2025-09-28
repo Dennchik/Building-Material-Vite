@@ -1,5 +1,5 @@
 include @/pug/includes/mixins
-//- block vars
+
 doctype html
 html(lang="ru")
   head
@@ -15,39 +15,36 @@ html(lang="ru")
     block title
     - var text
       title #{text}
-
-  body
-    include @/pug/utils/loaded-timer
-    include @/pug/includes/mixins
-    script(defer type="module" src="/src/js/main.js")
-    .wrapper
-      .page
-        block header 
-          header.page__header
-            include @/pug/layouts/header
-            nav.page__dropdown-menu 
-              block dropdown-menu 
-                include @/pug/components/dropdown-menu  
-        block page-content
-          main.page__main-content
-            .main-content#wrapper
-              .main-content__content#content
-                block main-content 
-            .main-content__section
-              block section-news 
-            footer.page__footer
-              block footer 
-                include footer
-        nav.page__aside-menu
-          block burger-menu
-            include @/pug/components/sidebar-menu 
-        //- nav.page__dropdown-menu 
-          block dropdown-menu 
-            include @/pug/components/dropdown-menu  
-        block menu-float
-          .menu-float
-            .menu-float__body._container
-        block cookies
-          //- include ../modules/cookies-accept
-          //- block .page-grid
-            include ../layouts/page-grid
+  block page
+    body
+      include @/pug/utils/loaded-timer
+      include @/pug/includes/mixins
+      script(defer type="module" src="/src/js/main.js")
+      .wrapper
+        .page
+          block header 
+            header.page__header
+              include @/pug/layouts/header
+              nav.page__dropdown-menu 
+                block dropdown-menu 
+                  include @/pug/components/dropdown-menu 
+          block page-content
+            main.page__main-content
+              .main-content#wrapper
+                .main-content__content#content
+                  block main-content 
+              .main-content__section
+                block section-news 
+              footer.page__footer
+                block footer 
+                  include footer
+            block cookies
+              include ../components/cookies-accept
+            block menu-float
+              .menu-float
+                .menu-float__body._container
+          nav.page__aside-menu
+            block burger-menu
+              include @/pug/components/sidebar-menu
+            //- block .page-grid
+              include ../layouts/page-grid
