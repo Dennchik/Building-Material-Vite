@@ -2,6 +2,10 @@ import '../scss/main.scss';
 import { buildSwiper } from './utils/build-swiper.js';
 import { slide, slidNews } from './components/slide.js';
 
+// import { maskPhone } from './plugins/phone-mask.js';
+// document.addEventListener('DOMContentLoaded', () => {
+//   maskPhone('.phone');
+// });
 buildSwiper();
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -26,7 +30,8 @@ addCartAnimation(
 //* - [ Components ] -
 import { counterProduct } from './components/counter.js';
 import { dynamicAdaptive } from './modules/dynamic-adaptive.js';
-
+import { validateForm } from './assets/validate-form.js';
+validateForm();
 //* layouts
 import {
   addFavorites,
@@ -34,6 +39,7 @@ import {
   hideTopMenu,
   addToBlock,
   cookiesAccept,
+  toggleModalOpen,
 } from './layouts/layouts.js';
 addToBlock();
 cookiesAccept('.cookies-accept', '.cookies-accept__button');
@@ -45,6 +51,7 @@ import {
 
 dropDownMenu('.main-menu__link');
 document.addEventListener('DOMContentLoaded', () => {
+  toggleModalOpen();
   counterProduct();
   hideTopMenu();
   collapseToggle();
@@ -62,8 +69,7 @@ document.querySelectorAll('.product-card__label').forEach((priceBlock) => {
   }
 });
 
-const isMobile = /Mobi|Android/i.test(navigator.userAgent);
-// validateForm();
+// const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 // fadeInColumn('.its-col');
 // fadeInBlock('.its-block');
 // fadeInItem('.its-el');
@@ -74,9 +80,6 @@ const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 // anchorsSmoothScrolling();
 // shadowScrollHeader();
 // toggleModal();
-if (!isMobile) {
-  // smoother();
-}
 
 //🔹 Если Pug компилируется через Vite плагин, то productsMap можно прокинуть в шаблон:
 // import productsMap from '../data/productsMap.json';

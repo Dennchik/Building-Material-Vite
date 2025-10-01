@@ -117,6 +117,8 @@ export function collapseToggle() {
     item._collapseInstance = new ItcCollapse(collapseEl);
 
     trigger.addEventListener('click', () => {
+      console.log('yes');
+
       //🔹 Закрываем другие элементы в том же аккордеоне
       const collapse = item.closest('.parent');
       if (collapse) {

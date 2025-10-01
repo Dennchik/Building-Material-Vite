@@ -1,21 +1,12 @@
-include @/pug/includes/mixins
+extends @/pug/layouts/app_layout
 
-doctype html
-html(lang="ru")
-	head
-		meta(charset="UTF-8")
-		meta(http-equiv="X-UA-Compatible" content="IE=edge") 
-		meta(name="viewport" content="width=device-width, initial-scale=1.0")
-		meta(name="description" content="Краткое описание документа")
-		meta(name="keywords" content="keywords-ключевые слова для поиска")
-		block link 
-			link(rel="icon" type="image/icon" href="/img/icons/icon.svg") 
-		block script 
+append link
+prepend script
+	script(defer type="module" src="/src/js/about.js")
+block title
+	- var text='Page 404'
 
-		block title
-		- var text
-			title #{text}
-
+block page
 	body
 		include @/pug/utils/loaded-timer
 		include @/pug/includes/mixins
@@ -29,14 +20,11 @@ html(lang="ru")
 							block dropdown-menu 
 								include @/pug/components/dropdown-menu 
 				block page-content
-					//- main.page__main-content
-					//- 	.main-content#wrapper
-					//- 		.main-content__content#content
-					block main-content
-						include @/pug/components/section-404
+					main.page__main-content
+						.main-content#wrapper
+							.main-content__content#content
+								block main-content 
+									include @/pug/components/section-404
 				nav.page__aside-menu
 					block burger-menu
 						include @/pug/components/sidebar-menu
-				block menu-float
-					.menu-float
-						.menu-float__body._container 

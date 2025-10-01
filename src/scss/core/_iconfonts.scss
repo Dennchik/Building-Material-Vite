@@ -30,6 +30,46 @@
   letter-spacing: 0;
 }
 
+.icon-whatsapp {
+  &::before {
+    content: $icon-whatsapp;
+  }
+}
+.icon-phone-call {
+  &::before {
+    content: $icon-phone-call;
+  }
+}
+.icon-telegram {
+  &::before {
+    content: $icon-telegram;
+  }
+}
+.icon-angle-down {
+  &::before {
+    content: $icon-angle-down;
+  }
+}
+.icon-yandex {
+  &::before {
+    content: $icon-yandex;
+  }
+}
+.icon-sum {
+  &::before {
+    content: $icon-sum;
+  }
+}
+.icon-rub {
+  &::before {
+    content: $icon-rub;
+  }
+}
+.icon-vk {
+  &::before {
+    content: $icon-vk;
+  }
+}
 .icon-pointer-right {
   &::before {
     content: $icon-pointer-right;
@@ -128,16 +168,6 @@
 .icon-bar-chart {
   &::before {
     content: $icon-bar-chart;
-  }
-}
-.icon-sum {
-  &::before {
-    content: $icon-sum;
-  }
-}
-.icon-rub {
-  &::before {
-    content: $icon-rub;
   }
 }
 .icon-minus {

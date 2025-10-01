@@ -213,19 +213,11 @@ export function toggleSidebarMenu(sidebarMenu) {
 }
 //* ----------------------------------------------------------------------------
 //* - [ Управление открытием модальных окон ]
-export function toggleModal() {
+export function toggleModalOpen() {
   const modals = [
     {
-      triggerSelector: '.button-request',
-      modalSelector: '.request-form',
-    },
-    {
-      triggerSelector: '.ordercall-button',
-      modalSelector: '.order-call-form',
-    },
-    {
-      triggerSelector: '.button-question',
-      modalSelector: '.questions-form',
+      triggerSelector: '.login-button',
+      modalSelector: '.page__form-login',
     },
   ];
 
@@ -248,7 +240,6 @@ export function toggleModal() {
     });
 
     closeBtn.addEventListener('click', () => {
-      resetScrollbarOffset(modal);
       modal.classList.remove('is-open');
       document.body.classList.remove('no-scroll');
 
@@ -264,6 +255,14 @@ export function toggleModal() {
         }
       }
     });
+  });
+}
+//* - [ Управление открытием Widget ]
+
+export function toggleWidget() {
+  const widget = document.querySelector('.widget__button');
+  widget.addEventListener('click', () => {
+    const element = document.querySelector('.className');
   });
 }
 //* ✅ - [Переключение полей формы]
@@ -320,8 +319,9 @@ export function cookiesAccept(el, trigger) {
   if (!cookiesAccept) return;
 
   if (button) {
+    cookiesAccept.style.transform = 'translateY(110%)';
     button.addEventListener('click', () => {
-      cookiesAccept.style.transform = 'translateY(100%)';
+      cookiesAccept.style.transform = 'translateY(110%)';
       cookiesAccept.style.transition = 'transform 0.5s ease';
     });
   } else {

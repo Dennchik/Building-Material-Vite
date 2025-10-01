@@ -182,7 +182,6 @@
 
   // .main-menu__link
   &__link {
-    display: flex;
     gap: 0.5rem;
 
     .icon {
@@ -303,6 +302,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
 
     .icon {
       pointer-events: none;

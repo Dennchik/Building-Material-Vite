@@ -25,7 +25,8 @@
 													ul.dropdown-menu__sub-items
 														if products.length
 															each prod in products
-																li.dropdown-menu__sub-item= prod
+																li.dropdown-menu__sub-item
+																	a(href=linkTo('electric-tools/card-drill', filename))= prod
 														else
 															// Выводим 5 строк "Нет товаров" для визуального баланса
 															each _ in Array(5)

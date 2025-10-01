@@ -1,0 +1,30 @@
+form(action="#" method="" id="form").order-call._order-form
+	.order-call__body 
+		.order-call__title
+			.t-h2 вход / регистрация
+		.order-call__content
+			.order-call__form-group
+				input.email(id="email" type="email" name="email" placeholder=" " autocomplete="off" autofocus=true)
+				label(for="email") Почта
+			.order-call__form-group
+				input.password(id="password" type="password" name="{:password}" autocomplete="off" placeholder=" " )
+				label(for="password") Пароль
+		a(href="").order-call__recover
+			span.link-underline-center Забыли пароль?
+		.order-call__footer
+			.order-call__line
+				span.link-underline-center Регистрация
+			.order-call__line
+				span.link-underline-center Авторизоваться через 
+				.order-call__icon  
+					a(href="#")
+						+iconfont('yandex', 'icon') 
+					a(href="#")
+						+iconfont('vk', 'icon')
+			.order-call__line
+				include @/pug/chunks/check-box
+			.order-call__button.button-container
+				button.button.send-button(type="submit" disabled)
+					span Войти
+		.btn-close
+			+iconfont('plus', 'icon') 

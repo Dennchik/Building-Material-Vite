@@ -88,7 +88,6 @@ a {
 button,
 input[type='submit'] {
   cursor: pointer;
-  display: inline-block;
   background: transparent none;
   box-shadow: none;
 }
@@ -97,12 +96,9 @@ input,
 textarea,
 button,
 select {
-  border: none;
-
   font-family: inherit;
   font-size: inherit;
   color: inherit;
-
   background-color: transparent;
 }
 a:focus,

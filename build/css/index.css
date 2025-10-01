@@ -1,4 +1,5 @@
 :root {
+  --alarm-color: rgb(255 74 74 / 60%);
   --width: calc(0px + (260 - 0) * ((100vw - 320px) / (1024 - 320)));
   --background-transparent: rgb(14 14 19 / 85.5%);
   --thumb-color: rgb(16 71 28 / 37.7%);
@@ -13,6 +14,7 @@
 }
 
 /* stylelint-disable at-rule-descriptor-value-no-unknown */
+/* stylelint-disable annotation-no-unknown */
 :root {
   --mq-header-size: normal;
 }

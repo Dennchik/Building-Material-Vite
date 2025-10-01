@@ -12,13 +12,16 @@
     transition: opacity 0.9s ease-in-out;
   }
 }
+
 ._collapse:not(._show) {
   display: none;
 }
+
 .button {
   cursor: pointer;
 
   display: flex;
+  align-items: center;
   justify-content: center;
 
   width: 100%;

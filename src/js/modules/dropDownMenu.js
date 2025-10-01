@@ -99,6 +99,7 @@ export function collapseToggle() {
 
   items.forEach((item) => {
     const trigger = item.querySelector('._trigger');
+    // console.log(trigger);
 
     if (!trigger) return;
     //🔹 Создаём объект ItcCollapse один раз и сохраняем в элементе

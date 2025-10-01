@@ -25,9 +25,13 @@
     var icons;
     if (!supportsProperty('fontFeatureSettings')) {
         icons = {
-            'heart-like': '&#xe9da;',
+            'whatsapp': '&#xf232;',
+            'phone-call': '&#xe919;',
+            'angle-down': '&#xf107;',
             'rouble': '&#xf159;',
             'rub': '&#xf159;',
+            'vk': '&#xea98;',
+            'heart-like': '&#xe9da;',
             'minus': '&#xe912;',
             'plus': '&#xe913;',
             'recycle': '&#xe911;',
