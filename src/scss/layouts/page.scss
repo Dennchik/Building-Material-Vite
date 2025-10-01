@@ -18,38 +18,6 @@
 .page {
   position: relative;
   // .page__form-request
-  &__form-questions,
-  &__form-request,
-  &__order-call {
-    pointer-events: none;
-
-    position: fixed;
-    z-index: 17;
-    top: 0;
-
-    overflow-x: hidden;
-    display: flex;
-
-    width: 100%;
-    height: 100vh;
-
-    opacity: 0;
-    background-color: #24344496;
-    backdrop-filter: blur(40px);
-
-    transition: opacity 0.3s ease-in-out;
-
-    &.is-open {
-      opacity: 1;
-      .form-question,
-      .form-request,
-      .order-call {
-        pointer-events: auto;
-        top: 0;
-        opacity: 1;
-      }
-    }
-  }
 
   // .page__header
   &__header {

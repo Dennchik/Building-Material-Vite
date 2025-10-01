@@ -42,34 +42,6 @@
 .page {
   position: relative;
 }
-.page__form-questions, .page__form-request, .page__order-call {
-  pointer-events: none;
-  position: fixed;
-  z-index: 17;
-  top: 0;
-  overflow-x: hidden;
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  opacity: 0;
-  background-color: rgba(36, 52, 68, 0.5882352941);
-  backdrop-filter: blur(40px);
-  transition: opacity 0.3s ease-in-out;
-}
-.page__form-questions.is-open, .page__form-request.is-open, .page__order-call.is-open {
-  opacity: 1;
-}
-.page__form-questions.is-open .form-question,
-.page__form-questions.is-open .form-request,
-.page__form-questions.is-open .order-call, .page__form-request.is-open .form-question,
-.page__form-request.is-open .form-request,
-.page__form-request.is-open .order-call, .page__order-call.is-open .form-question,
-.page__order-call.is-open .form-request,
-.page__order-call.is-open .order-call {
-  pointer-events: auto;
-  top: 0;
-  opacity: 1;
-}
 .page__header {
   position: fixed;
   z-index: 17;
