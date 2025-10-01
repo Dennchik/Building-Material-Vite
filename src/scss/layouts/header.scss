@@ -300,8 +300,10 @@
   // menu-header__link
   &__link {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+
     width: 100%;
 
     .icon {
@@ -314,7 +316,9 @@
 
       transition: transform 0.2s ease;
     }
+
     span {
+      pointer-events: none;
       position: relative;
     }
 
@@ -331,7 +335,6 @@
 
   // .menu-header__text
   &__text {
-    pointer-events: none;
     font-size: 12px;
     line-height: 100%;
   }

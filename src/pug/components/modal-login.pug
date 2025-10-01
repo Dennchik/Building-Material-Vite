@@ -1,4 +1,4 @@
-form(action="#" method="" id="form").form-login._order-form
+form(action="#" method="#" id="login").form-login._order-form
 	.form-login__body 
 		.form-login__title
 			.t-h2 вход / регистрация
@@ -7,21 +7,23 @@ form(action="#" method="" id="form").form-login._order-form
 				input.email(id="email" type="email" name="email" placeholder=" " autocomplete="off" autofocus=true)
 				label(for="email") Почта
 			.form-login__form-group
-				input.password(id="password" type="password" name="{:password}" autocomplete="off" placeholder=" " )
+				input.password(id="password" type="text" name="password" autocomplete="off" placeholder=" " )
 				label(for="password") Пароль
 		a(href="").form-login__recover
 			span.link-underline-center Забыли пароль?
 		.form-login__footer
 			.form-login__line
-				span.link-underline-center Регистрация
+				a(href="#").link-underline-center 
+					span Регистрация
 			.form-login__line
-				span.link-underline-center Авторизоваться через 
+				a(href="#").link-underline-center 
+					span Авторизоваться через 
 				.form-login__icon  
 					a(href="#")
 						+iconfont('yandex', 'icon') 
 					a(href="#")
 						+iconfont('vk', 'icon')
-			.form-login__line
+			//- .form-login__line
 				include @/pug/chunks/check-box
 			.form-login__button.button-container
 				button.button.send-button(type="submit" disabled)

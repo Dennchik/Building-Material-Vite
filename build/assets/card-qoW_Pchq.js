@@ -1,4 +1,4 @@
-import{b as a,c as o}from"./vendors/slide-D5TpHpes.js";import"./vendors/vendor-bIBkycDJ.js";a();o();const r=document.createElement("style");r.textContent=`
+import{b as a,c as o}from"./vendors/slide-oSiZXUx5.js";import"./vendors/vendor-BrPt5w0u.js";a();o();const r=document.createElement("style");r.textContent=`
 @keyframes arrowShake {
   0% { transform: translateX(0); }
   12.5% { transform: translateX(-5px); }

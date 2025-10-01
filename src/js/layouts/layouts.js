@@ -219,6 +219,10 @@ export function toggleModalOpen() {
       triggerSelector: '.login-button',
       modalSelector: '.page__form-login',
     },
+    {
+      triggerSelector: '.phone-call',
+      modalSelector: '.page__order-call',
+    },
   ];
 
   modals.forEach(({ triggerSelector, modalSelector }) => {

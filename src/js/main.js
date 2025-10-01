@@ -2,10 +2,10 @@ import '../scss/main.scss';
 import { buildSwiper } from './utils/build-swiper.js';
 import { slide, slidNews } from './components/slide.js';
 
-// import { maskPhone } from './plugins/phone-mask.js';
-// document.addEventListener('DOMContentLoaded', () => {
-//   maskPhone('.phone');
-// });
+import { maskPhone } from './assets/phone-mask.js';
+document.addEventListener('DOMContentLoaded', () => {
+  maskPhone('.phone');
+});
 buildSwiper();
 
 document.addEventListener('DOMContentLoaded', () => {

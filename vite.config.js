@@ -72,7 +72,7 @@ export default defineConfig(({ command, mode }) => {
       sourcemap: isDev,
       cssCodeSplit: true, // 👈 теперь стили делятся по Chunks
 
-      chunkSizeWarningLimit: 244,
+      chunkSizeWarningLimit: 264,
       modulePreload: {
         polyfill: true,
       },
