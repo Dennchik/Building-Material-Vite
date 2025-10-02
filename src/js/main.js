@@ -1,24 +1,38 @@
 import '../scss/main.scss';
 import { buildSwiper } from './utils/build-swiper.js';
 import { slide, slidNews } from './components/slide.js';
+import { maskPhone } from './assets/mask-phone.js';
+import { loadedTimer } from './utils/loaded-timer.js';
+import { addCartAnimation } from './animations/add-cart-animation.jsx';
+import { counterProduct } from './components/counter.js';
+import { dynamicAdaptive } from './modules/dynamic-adaptive.js';
+import { validateForm } from './assets/validate-form.js';
+import {
+  addFavorites,
+  sidebarMenuHandle,
+  hideTopMenu,
+  addToBlock,
+  cookiesAccept,
+  toggleModalOpen,
+} from './layouts/layouts.js';
+import {
+  dropDownMenu,
+  collapseToggle,
+  collapseToggleOne,
+} from './modules/drop-menu.js';
 
-import { maskPhone } from './assets/phone-mask.js';
-document.addEventListener('DOMContentLoaded', () => {
-  maskPhone('.phone');
-});
 buildSwiper();
 
 document.addEventListener('DOMContentLoaded', () => {
   slide('.product-slide');
   slidNews('.slide-news');
+  maskPhone('.phone');
 });
 
 //* - [Utils] -
-import { loadedTimer } from './utils/loaded-timer.js';
 loadedTimer();
 
 //* - [ Animation ] -
-import { addCartAnimation } from './animations/add-cart-animation.jsx';
 addCartAnimation(
   '.favourites',
   '.product-card__favourites',
@@ -28,26 +42,10 @@ addCartAnimation(
 );
 
 //* - [ Components ] -
-import { counterProduct } from './components/counter.js';
-import { dynamicAdaptive } from './modules/dynamic-adaptive.js';
-import { validateForm } from './assets/validate-form.js';
 validateForm();
 //* layouts
-import {
-  addFavorites,
-  sidebarMenuHandle,
-  hideTopMenu,
-  addToBlock,
-  cookiesAccept,
-  toggleModalOpen,
-} from './layouts/layouts.js';
 addToBlock();
 cookiesAccept('.cookies-accept', '.cookies-accept__button');
-import {
-  dropDownMenu,
-  collapseToggle,
-  collapseToggleOne,
-} from './modules/drop-menu.js';
 
 dropDownMenu('.main-menu__link');
 document.addEventListener('DOMContentLoaded', () => {
@@ -69,26 +67,6 @@ document.querySelectorAll('.product-card__label').forEach((priceBlock) => {
   }
 });
 
-// const isMobile = /Mobi|Android/i.test(navigator.userAgent);
-// fadeInColumn('.its-col');
-// fadeInBlock('.its-block');
-// fadeInItem('.its-el');
-// fadeInItemLeft('.its-el-left');
-// fadeInItemRight('.its-el-right');
-// smoothScrollTitle('.el-item');
-// animateHeader();
-// anchorsSmoothScrolling();
-// shadowScrollHeader();
-// toggleModal();
-
-//🔹 Если Pug компилируется через Vite плагин, то productsMap можно прокинуть в шаблон:
-// import productsMap from '../data/productsMap.json';
-
-// export const templateData = {
-//   productsMap,
-// };
-
-// console.log('productsMap keys:', Object.keys(productsMap));
 //* ----------------------------------------------------------------------------
 console.log(
   '%c РОССИЯ ',

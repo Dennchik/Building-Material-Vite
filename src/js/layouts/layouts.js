@@ -81,6 +81,7 @@ export function hideTopMenu() {
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // защита от отрицательных значений
   });
 }
+
 //* ✅ - [ Показать еще ]
 export function addToBlock() {
   document.addEventListener('DOMContentLoaded', function () {
