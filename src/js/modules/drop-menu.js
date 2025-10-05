@@ -106,7 +106,7 @@ export function dropDownMenu(element) {
 //* ✅ - [ Выпадающий список ]
 export function collapseToggle() {
   const items = document.querySelectorAll('._slideToggle');
-
+  const closeButton = document.querySelector('.widget__icon');
   items.forEach((item) => {
     const trigger = item.querySelector('._trigger');
 
@@ -128,6 +128,11 @@ export function collapseToggle() {
       }
       //🔹 Переключаем текущий
       item.classList.toggle('_open');
+      item._collapseInstance.toggle();
+    });
+
+    if (!closeButton) return;
+    closeButton.addEventListener('click', () => {
       item._collapseInstance.toggle();
     });
   });

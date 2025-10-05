@@ -602,9 +602,6 @@
   width: 100%;
   margin-bottom: 3rem;
 }
-.product-categories__slide .product-slide {
-  overflow: hidden;
-}
 .product-categories__slide .product-slide__body {
   display: grid;
   grid-auto-flow: row;

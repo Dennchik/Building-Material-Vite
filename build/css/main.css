@@ -2526,6 +2526,7 @@ h6 {
 }
 .widget__items {
   pointer-events: all;
+  position: relative;
   display: inline-flex;
   flex-direction: column;
   padding: 30px 20px;
@@ -2537,6 +2538,15 @@ h6 {
   .widget__items {
     border-radius: 5px;
   }
+}
+.widget__icon {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+.widget__icon .icon {
+  transform: rotate(-45deg);
+  font-size: 24px;
 }
 .widget__item {
   display: inline-flex;
@@ -2787,7 +2797,7 @@ h6 {
   transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
 }
 .product-card__compare:hover::after {
-  transform: translate(0);
+  transform: translate(-10px, 0);
   opacity: 1;
 }
 .product-card__compare .icon {
