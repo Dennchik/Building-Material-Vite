@@ -21,12 +21,18 @@ import {
   collapseToggleOne,
 } from './modules/drop-menu.js';
 
-buildSwiper();
-
 document.addEventListener('DOMContentLoaded', () => {
   slide('.product-slide');
   slidNews('.slide-news');
   maskPhone('.phone');
+  toggleModalOpen();
+  counterProduct();
+  hideTopMenu();
+  collapseToggle();
+  collapseToggleOne();
+  addFavorites('.product-card__favourites');
+  sidebarMenuHandle();
+  dynamicAdaptive();
 });
 
 //* - [Utils] -
@@ -42,22 +48,12 @@ addCartAnimation(
 );
 
 //* - [ Components ] -
+buildSwiper();
 validateForm();
 //* layouts
 addToBlock();
 cookiesAccept('.cookies-accept', '.cookies-accept__button');
-
 dropDownMenu('.main-menu__link');
-document.addEventListener('DOMContentLoaded', () => {
-  toggleModalOpen();
-  counterProduct();
-  hideTopMenu();
-  collapseToggle();
-  collapseToggleOne();
-  addFavorites('.product-card__favourites');
-  sidebarMenuHandle();
-  dynamicAdaptive();
-});
 
 document.querySelectorAll('.product-card__label').forEach((priceBlock) => {
   const span = priceBlock.querySelector('span');

@@ -212,8 +212,7 @@ export function toggleSidebarMenu(sidebarMenu) {
     element.addEventListener('transitionend', transitionEndHandler);
   }
 }
-//* ----------------------------------------------------------------------------
-//* - [ Управление открытием модальных окон ]
+//* ✅ - [ Управление открытием модальных окон ]
 export function toggleModalOpen() {
   const modals = [
     {
@@ -262,13 +261,11 @@ export function toggleModalOpen() {
     });
   });
 }
-//* - [ Управление открытием Widget ]
-
+//* ✅ - [ Управление открытием Widget ]
 export function toggleWidget() {
-  const widget = document.querySelector('.widget__button');
-  widget.addEventListener('click', () => {
-    const element = document.querySelector('.className');
-  });
+  const closeButton = document.querySelector('.widget__icon');
+
+  closeButton.addEventListener('click', () => {});
 }
 //* ✅ - [Переключение полей формы]
 export function fieldSetsToggle() {
@@ -316,6 +313,33 @@ export function fieldSetsToggle() {
     showFieldset, // 👈 экспортируем
   };
 }
+//* ✅ - [Компенсируем отступы ]
+export function handleScrollbarOffset(enable) {
+  const scrollbarWidth =
+    window.innerWidth - document.documentElement.clientWidth;
+
+  console.log('scrollbarWidth:', scrollbarWidth);
+
+  if (enable && scrollbarWidth > 0) {
+    document.body.style.paddingRight = `${scrollbarWidth}px`;
+  } else {
+    document.body.style.paddingRight = `0px`;
+  }
+}
+//* ✅ - [ Устраняем смещение Contents  ]
+function resetScrollbarOffset(el) {
+  document.documentElement.style.removeProperty('--scroll-position');
+
+  if (el) {
+    el.style.paddingRight = '';
+    pageHeader.style.paddingRight = ``;
+  }
+
+  //🔹 Убираем компенсацию scroll bar
+  document.body.style.paddingRight = '';
+  window.scrollTo(0, scrollY);
+}
+
 //* ✅ - [ Управление оповещением cookies ] -
 export function cookiesAccept(el, trigger) {
   const cookiesAccept = document.querySelector(el);
@@ -337,30 +361,4 @@ export function cookiesAccept(el, trigger) {
     cookiesAccept.style.transform = 'translateY(0)';
     cookiesAccept.style.transition = 'transform 0.5s ease';
   }, 3000);
-}
-//* 🔹 - [Компенсируем отступы ]
-export function handleScrollbarOffset(enable) {
-  const scrollbarWidth =
-    window.innerWidth - document.documentElement.clientWidth;
-
-  console.log('scrollbarWidth:', scrollbarWidth);
-
-  if (enable && scrollbarWidth > 0) {
-    document.body.style.paddingRight = `${scrollbarWidth}px`;
-  } else {
-    document.body.style.paddingRight = `0px`;
-  }
-}
-//* - [ Устраняем смещение Contents  ]
-function resetScrollbarOffset(el) {
-  document.documentElement.style.removeProperty('--scroll-position');
-
-  if (el) {
-    el.style.paddingRight = '';
-    pageHeader.style.paddingRight = ``;
-  }
-
-  //🔹 Убираем компенсацию scroll bar
-  document.body.style.paddingRight = '';
-  window.scrollTo(0, scrollY);
 }

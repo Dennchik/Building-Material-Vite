@@ -136,7 +136,7 @@
 
     &:hover {
       &::after {
-        transform: translate(0);
+        transform: translate(-10px, 0);
         opacity: 1;
       }
     }
