@@ -85,9 +85,9 @@ export function slide(slide) {
       grabCursor: true,
       navigation: { nextEl, prevEl },
       breakpoints: {
-        0: { slidesPerView: 1 },
-        540: { slidesPerView: 2 },
-        786: { slidesPerView: 3, spaceBetween: 16 },
+        0: { slidesPerView: 2, spaceBetween: 5 },
+        // 540: { slidesPerView: 2 },
+        786: { slidesPerView: 3, spaceBetween: 10 },
         1025: { slidesPerView: 4, spaceBetween: 20 },
         1289: { slidesPerView: 5, spaceBetween: 30 },
       },

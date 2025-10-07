@@ -261,11 +261,53 @@ export function toggleModalOpen() {
     });
   });
 }
-//* ✅ - [ Управление открытием Widget ]
-export function toggleWidget() {
-  const closeButton = document.querySelector('.widget__icon');
+//* ✅ - [Компенсируем отступы ]
+export function handleScrollbarOffset(enable) {
+  const scrollbarWidth =
+    window.innerWidth - document.documentElement.clientWidth;
 
-  closeButton.addEventListener('click', () => {});
+  console.log('scrollbarWidth:', scrollbarWidth);
+
+  if (enable && scrollbarWidth > 0) {
+    document.body.style.paddingRight = `${scrollbarWidth}px`;
+  } else {
+    document.body.style.paddingRight = `0px`;
+  }
+}
+//* ✅ - [ Устраняем смещение Contents  ]
+function resetScrollbarOffset(el) {
+  document.documentElement.style.removeProperty('--scroll-position');
+
+  if (el) {
+    el.style.paddingRight = '';
+    pageHeader.style.paddingRight = ``;
+  }
+
+  //🔹 Убираем компенсацию scroll bar
+  document.body.style.paddingRight = '';
+  window.scrollTo(0, scrollY);
+}
+//* ✅ - [ Управление оповещением cookies ] -
+export function cookiesAccept(el, trigger) {
+  const cookiesAccept = document.querySelector(el);
+  const button = document.querySelector(trigger);
+
+  if (!cookiesAccept) return;
+
+  if (button) {
+    cookiesAccept.style.transform = 'translateY(110%)';
+    button.addEventListener('click', () => {
+      cookiesAccept.style.transform = 'translateY(110%)';
+      cookiesAccept.style.transition = 'transform 0.5s ease';
+    });
+  } else {
+    console.log('кнопка не найдена');
+  }
+
+  setTimeout(() => {
+    cookiesAccept.style.transform = 'translateY(0)';
+    cookiesAccept.style.transition = 'transform 0.5s ease';
+  }, 3000);
 }
 //* ✅ - [Переключение полей формы]
 export function fieldSetsToggle() {
@@ -312,53 +354,4 @@ export function fieldSetsToggle() {
   return {
     showFieldset, // 👈 экспортируем
   };
-}
-//* ✅ - [Компенсируем отступы ]
-export function handleScrollbarOffset(enable) {
-  const scrollbarWidth =
-    window.innerWidth - document.documentElement.clientWidth;
-
-  console.log('scrollbarWidth:', scrollbarWidth);
-
-  if (enable && scrollbarWidth > 0) {
-    document.body.style.paddingRight = `${scrollbarWidth}px`;
-  } else {
-    document.body.style.paddingRight = `0px`;
-  }
-}
-//* ✅ - [ Устраняем смещение Contents  ]
-function resetScrollbarOffset(el) {
-  document.documentElement.style.removeProperty('--scroll-position');
-
-  if (el) {
-    el.style.paddingRight = '';
-    pageHeader.style.paddingRight = ``;
-  }
-
-  //🔹 Убираем компенсацию scroll bar
-  document.body.style.paddingRight = '';
-  window.scrollTo(0, scrollY);
-}
-
-//* ✅ - [ Управление оповещением cookies ] -
-export function cookiesAccept(el, trigger) {
-  const cookiesAccept = document.querySelector(el);
-  const button = document.querySelector(trigger);
-
-  if (!cookiesAccept) return;
-
-  if (button) {
-    cookiesAccept.style.transform = 'translateY(110%)';
-    button.addEventListener('click', () => {
-      cookiesAccept.style.transform = 'translateY(110%)';
-      cookiesAccept.style.transition = 'transform 0.5s ease';
-    });
-  } else {
-    console.log('кнопка не найдена');
-  }
-
-  setTimeout(() => {
-    cookiesAccept.style.transform = 'translateY(0)';
-    cookiesAccept.style.transition = 'transform 0.5s ease';
-  }, 3000);
 }

@@ -15,8 +15,9 @@
   &__content {
     display: grid;
     grid-template-columns:
-      calc(208px + (255 - 208) * ((100vw - 768px) / (1920 - 768)))
-      auto;
+      // calc(208px + (255 - 208) * ((100vw - 768px) / (1920 - 768)))
+      // auto;
+      255px 1fr;
     gap: 3.1rem;
 
     @include screen-1289 {
@@ -109,8 +110,6 @@
           gap: 20px;
         }
       }
-
-      // .product-slide__slide
     }
   }
 

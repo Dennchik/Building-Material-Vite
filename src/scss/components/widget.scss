@@ -39,9 +39,11 @@
 
   // .widget__icon
   &__icon {
+    cursor: pointer;
     position: absolute;
     top: 2rem;
     right: 2rem;
+
     .icon {
       transform: rotate(-45deg);
       font-size: 24px;

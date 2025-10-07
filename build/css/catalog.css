@@ -545,7 +545,7 @@
 }
 .product-categories__content {
   display: grid;
-  grid-template-columns: calc(208px + 47 * (100vw - 768px) / 1152) auto;
+  grid-template-columns: 255px 1fr;
   gap: 3.1rem;
 }
 @media screen and (width <= 1289px) {
