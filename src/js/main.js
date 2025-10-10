@@ -71,3 +71,5 @@ console.log(
     'border-right: 2px solid black; border-bottom: 30px solid red;'
 );
 //* ----------------------------------------------------------------------------
+import { tabsPage } from './components/tabs-page.js';
+tabsPage();

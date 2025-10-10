@@ -1,23 +1,28 @@
 .sidebar-menu 
   .sidebar-menu__content
-    .sidebar-menu__menu.parent 
+    .sidebar-menu__body.parent 
       each menu in catalog
         .sidebar-menu__catalog._slideToggle 
           .sidebar-menu__link._trigger
             span= menu.categories
             .sidebar-menu__icons
               +iconfont('pointer-right', 'icon')
-          .sidebar-menu__body.parent._collapse
-            each item in menu.links
-              ul.sidebar-menu__menu-catalog 
-                li.sidebar-menu__sub-link 
-                  a(href=linkTo("categories/electric-tools", filename))= item
-                  //- .sidebar-menu__icons
-                    +iconfont('pointer-right', 'icon') 
-                  //- .sub-menu.sidebar-menu__sub-menu._collapse
-                    ul.sub-menu__items
-                      if productsMap[item]
-                        each prod in productsMap[item]
-                          li.sub-menu__item= prod
-                        else
-                          li.sub-menu__item Нет товаров
+          .sub-menu.sidebar-menu__menu.parent._collapse
+            .sub-menu__menu
+              each item in menu.links
+                - const title = Object.keys(item)[0]
+                - const products = item[title] 
+                .sub-menu__list._slideToggle 
+                  .sub-menu__link._trigger
+                    span= title
+                    span.sub-menu__icons
+                      +iconfont('pointer-right', 'icon') 
+                  .sub-menu__items._collapse
+                    if products.length
+                      each prod in products
+                        .sub-menu__item
+                          a(href=linkTo('electric-tools/card-drill', filename))= prod
+                    else
+                      // Выводим 5 строк "Нет товаров" для визуального баланса
+                      each _ in Array(5)
+                        .sub-menu__item Нет товаров 

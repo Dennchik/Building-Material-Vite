@@ -20,7 +20,6 @@ export function shadowScrollHeader() {
     window.removeEventListener('scroll', handleScroll);
   };
 }
-
 //* ✅ - [ Добавить в избранное ] -
 export function addFavorites(className) {
   const els = document.querySelectorAll(className);
@@ -30,7 +29,6 @@ export function addFavorites(className) {
     });
   });
 }
-
 //* ✅ - [ Управление переключением меню ] -
 export function sidebarMenuHandle() {
   const burgerButtons = document.querySelectorAll('.burger-button');
@@ -61,7 +59,45 @@ export function sidebarMenuHandle() {
     });
   });
 }
+//* ✅ - [ Sidebar - Menu ]
+function toggleSidebarMenu(sidebarMenu) {
+  const asideButton = document.querySelector('.page__aside-button');
+  if (sidebarMenu.classList.contains('_open-menu')) {
+    sidebarMenu.classList.remove('_open-menu');
 
+    resetScrollbarOffset();
+    document.body.classList.remove('no-scroll');
+    resetTransitionOnce(sidebarMenu);
+
+    if (asideButton) {
+      setTimeout(() => {
+        asideButton.style.opacity = '1';
+        asideButton.style.transition = 'opacity 0.3s ease';
+        asideButton.style.pointerEvents = 'all';
+      }, 300);
+    }
+  } else {
+    if (asideButton) {
+      asideButton.style.opacity = '0';
+      asideButton.style.transition = 'opacity 0.3s ease';
+      asideButton.style.pointerEvents = 'none';
+    }
+    sidebarMenu.style.transition = 'transform 0.3s ease';
+    sidebarMenu.classList.add('_open-menu');
+
+    document.body.classList.add('no-scroll');
+    resetTransitionOnce(sidebarMenu);
+  }
+
+  function resetTransitionOnce(element) {
+    function transitionEndHandler() {
+      element.style.transition = '';
+      element.removeEventListener('transitionend', transitionEndHandler);
+    }
+
+    element.addEventListener('transitionend', transitionEndHandler);
+  }
+}
 //* ✅ - [ Hiding an element when scrolling ]
 export function hideTopMenu() {
   let lastScrollTop = 0; // последняя позиция скролла
@@ -81,7 +117,6 @@ export function hideTopMenu() {
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // защита от отрицательных значений
   });
 }
-
 //* ✅ - [ Показать еще ]
 export function addToBlock() {
   document.addEventListener('DOMContentLoaded', function () {
@@ -171,46 +206,6 @@ export function addToBlock() {
       }
     });
   });
-}
-
-//* ✅ - [ Sidebar - Menu ]
-export function toggleSidebarMenu(sidebarMenu) {
-  const asideButton = document.querySelector('.page__aside-button');
-  if (sidebarMenu.classList.contains('_open-menu')) {
-    sidebarMenu.classList.remove('_open-menu');
-
-    resetScrollbarOffset();
-    document.body.classList.remove('no-scroll');
-    resetTransitionOnce(sidebarMenu);
-
-    if (asideButton) {
-      setTimeout(() => {
-        asideButton.style.opacity = '1';
-        asideButton.style.transition = 'opacity 0.3s ease';
-        asideButton.style.pointerEvents = 'all';
-      }, 300);
-    }
-  } else {
-    if (asideButton) {
-      asideButton.style.opacity = '0';
-      asideButton.style.transition = 'opacity 0.3s ease';
-      asideButton.style.pointerEvents = 'none';
-    }
-    sidebarMenu.style.transition = 'transform 0.3s ease';
-    sidebarMenu.classList.add('_open-menu');
-
-    document.body.classList.add('no-scroll');
-    resetTransitionOnce(sidebarMenu);
-  }
-
-  function resetTransitionOnce(element) {
-    function transitionEndHandler() {
-      element.style.transition = '';
-      element.removeEventListener('transitionend', transitionEndHandler);
-    }
-
-    element.addEventListener('transitionend', transitionEndHandler);
-  }
 }
 //* ✅ - [ Управление открытием модальных окон ]
 export function toggleModalOpen() {

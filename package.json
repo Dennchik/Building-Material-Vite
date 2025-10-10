@@ -19,6 +19,7 @@
     "imask": "^7.6.1",
     "jquery": "^3.7.1",
     "nouislider": "^15.7.2",
+    "paginate-js": "^0.0.2",
     "paginationjs": "^2.6.0",
     "parallax-js": "^3.1.0",
     "rellax": "^1.12.1",

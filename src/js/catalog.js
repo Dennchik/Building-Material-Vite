@@ -2,7 +2,7 @@ import '../scss/catalog.scss';
 import { noUiSlide } from './components/noUiSlide.js';
 import { collapseToggleOne } from './modules/drop-menu.js';
 import { buildSwiper } from './utils/build-swiper.js';
-import { catalogSlide } from './components/slide.js';
+// import { catalogSlide } from './components/slide.js';
 
 noUiSlide('.values-price__no-ui');
 
@@ -23,4 +23,4 @@ window.addEventListener('DOMContentLoaded', applyCollapse);
 window.addEventListener('resize', applyCollapse);
 //* ✅ -------------------------------------------------------------------------
 buildSwiper();
-catalogSlide('.categories-slide');
+// catalogSlide('.categories-slide');

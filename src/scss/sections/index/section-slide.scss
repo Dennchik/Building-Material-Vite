@@ -240,11 +240,13 @@
   // .product-card__footer
   &__footer {
     display: flex;
-    flex-direction: column;
     gap: 5px;
     justify-content: space-between;
-
     width: 100%;
+
+    @include screen-490 {
+      flex-direction: column;
+    }
   }
 
   // .product-card__counter

@@ -11,9 +11,9 @@
 							span.t-text-16-14 По популярности
 						button(type="button").product-categories__button.link-underline-center 
 							span.t-text-16-14 По цене 
-				.product-categories__slide.categories-slide
+				.product-categories__slide.categories-slide.swiper
 					.product-slide
-						.product-slide__body#data-container 
+						.product-slide__body 
 							each product in priceProducts
 								.product-slide__slide
 									.product-card
@@ -49,7 +49,7 @@
 															+iconfont('plus', 'icon')
 												.product-card__button
 													span В корзину
-					//- .product-slide
+					.product-slide
 						.product-slide__body 
 							each product in priceProducts
 								.product-slide__slide
@@ -86,4 +86,4 @@
 															+iconfont('plus', 'icon')
 												.product-card__button
 													span В корзину
-				.slide-pagination.product-categories__pagination#pagination-container
+				.slide-pagination.product-categories__pagination
