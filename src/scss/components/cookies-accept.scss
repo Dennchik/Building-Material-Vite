@@ -44,8 +44,10 @@
 
   // .cookies-accept__text
   &__text {
-    p {
-      font-size: 12px;
+    font-size: 12px;
+
+    @include screen-490 {
+      font-size: 10px;
     }
   }
 

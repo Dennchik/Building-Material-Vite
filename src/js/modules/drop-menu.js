@@ -126,6 +126,7 @@ export function collapseToggle() {
           opened._collapseInstance.toggle();
         }
       }
+
       //🔹 Переключаем текущий
       item.classList.toggle('_open');
       item._collapseInstance.toggle();

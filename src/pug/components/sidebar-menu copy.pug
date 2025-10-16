@@ -1,7 +1,7 @@
 .sidebar-menu 
   .sidebar-menu__content
-    .sidebar-menu__body 
-      //- each menu in catalog
+    .sidebar-menu__body.parent 
+      each menu in catalog
         .sidebar-menu__catalog._slideToggle 
           .sidebar-menu__link._trigger
             span= menu.categories

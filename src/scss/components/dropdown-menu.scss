@@ -21,6 +21,10 @@
   &__menu {
     display: flex;
     gap: 3px;
+
+    @include screen-490 {
+      display: none;
+    }
   }
 
   // .dropdown-menu__buttons
