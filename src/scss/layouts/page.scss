@@ -103,7 +103,6 @@
   &__dropdown-menu {
     position: absolute;
     z-index: 999;
-    // top: 102px;
 
     overflow-x: hidden;
 
@@ -181,7 +180,7 @@
     pointer-events: none;
 
     position: fixed;
-    z-index: 20;
+    z-index: 25;
     right: 0;
     bottom: 10%;
 
@@ -240,63 +239,3 @@
     transform: translateY(100%);
   }
 }
-// @keyframes blick {
-//   0% {
-//     left: -30px;
-//     margin-left: 0px;
-//   }
-//   30% {
-//     left: 110%;
-//     margin-left: 80px;
-//   }
-//   100% {
-//     left: 110%;
-//     margin-left: 80px;
-//   }
-// }
-
-// @keyframes fadeInBackground {
-//   0% {
-//     background: rgb(28, 21, 63);
-//   }
-
-//   100% {
-//     background: $font-color-title;
-//   }
-// }
-
-// /* Анимация открытия */
-// @keyframes expand-height {
-//   0% {
-//     width: 0;width
-//     height: 2px;height /* Тонкая полоска */
-//     transform: translate(-50%, -50%) scaleX(0);transform /* Сжатие по ширине */
-//   }
-//   50% {
-//     width: 100%;width /* Полоса расширяется по ширине */
-//     height: 2px;height /* Пока остаётся тонкой */
-//     transform: translate(-50%, -50%) scaleX(1);transform /* Расширение по ширине */
-//   }
-//   100% {width /* Полная ширина */
-//     height: 100%;height /* Полная высота */
-//     transform: translate(-50%, -50%) scaleX(1);transform /* Завершение */
-//   }
-// }
-
-// /* Анимация закрытия */
-// @keyframes collapse-width {
-//   0% {width /* Полная ширина */
-//     height: 100%;height /* Полная высота */
-//     transform: translate(-50%, -50%) scaleX(1);transform /* Полное состояние */
-//   }
-//   50% {
-//     width: 100%;width /* Полоса остаётся широкой */
-//     height: 2px;height /* Высота уменьшается до тонкой линии */
-//     transform: translate(-50%, -50%) scaleX(1);transform /* Ширина сохраняется */
-//   }
-//   100% {
-//     width: 0;width /* Полоса исчезает по ширине */
-//     height: 2px;height /* Тонкая полоска */
-//     transform: translate(-50%, -50%) scaleX(0);transform /* Сжатие по ширине */
-//   }
-// }
