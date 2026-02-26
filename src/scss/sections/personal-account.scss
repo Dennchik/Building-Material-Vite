@@ -119,9 +119,8 @@
       }
 
       @include screen-768 {
-        top: 58px;
-        height: calc(100% - 58px);
-        border-radius: 0;
+        top: 165px;
+        // height: calc(100% - 58px);
       }
     }
 

@@ -135,9 +135,7 @@
 }
 @media screen and (width < 768px) {
   .personal-account__column:nth-child(1) {
-    top: 58px;
-    height: calc(100% - 58px);
-    border-radius: 0;
+    top: 165px;
   }
   .personal-account__column:nth-child(1) :root {
     --mq-header-size: big;
