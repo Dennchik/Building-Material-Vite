@@ -961,7 +961,6 @@
   transition: transform 0.2s ease;
 }
 .menu-header__link span {
-  pointer-events: none;
   position: relative;
 }
 .menu-header__link .icon-heart-like {
