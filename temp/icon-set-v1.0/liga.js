@@ -25,6 +25,9 @@
     var icons;
     if (!supportsProperty('fontFeatureSettings')) {
         icons = {
+            'user-check': '&#xe975;',
+            'trash': '&#xe938;',
+            'cancel': '&#xea3d;',
             'whatsapp': '&#xf232;',
             'phone-call': '&#xe919;',
             'angle-down': '&#xf107;',

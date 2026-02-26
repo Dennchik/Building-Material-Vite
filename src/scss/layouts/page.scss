@@ -19,6 +19,10 @@
   position: relative;
   z-index: 21;
 
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+
   // .page__header
   &__header {
     position: fixed;
@@ -27,9 +31,6 @@
     left: 0;
 
     box-sizing: content-box;
-
-    // overflow-x: hidden;
-
     width: 100%;
     padding: 0 0 14px;
 
@@ -71,6 +72,10 @@
     position: relative;
     z-index: 8;
     inset: 0;
+
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
 
     width: 100%;
     height: 100%;
@@ -199,9 +204,17 @@
 }
 
 .main-content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  height: 100%;
+
   // .main-content__content
   &__content {
     position: relative;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
   }
 
   // .main-content__title
@@ -213,6 +226,11 @@
   &__section {
     position: relative;
     z-index: 1;
+
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+
     width: 100%;
     height: 100%;
   }

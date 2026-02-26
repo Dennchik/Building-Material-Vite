@@ -1,0 +1,50 @@
+@use '../../core/mixins' as *;
+@use '../../core/variables' as *;
+
+.section-favourites {
+  padding-block: 1.4rem 6rem !important;
+  // .section-favourites__title
+  &__title {
+    margin-bottom: 5rem;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+
+    @include screen-425 {
+      font-size: 2.3rem;
+    }
+  }
+
+  &__body {
+    display: flex;
+    gap: 3rem;
+    height: 100%;
+  }
+
+  .product-slide {
+    width: 100%;
+
+    // .product-slide__body
+    &__body {
+      display: grid;
+      grid-auto-flow: row;
+      grid-template-columns: repeat(5, minmax(auto, 255px));
+      gap: 3.1rem;
+
+      width: 100%;
+
+      @include screen-1289 {
+        grid-template-columns: repeat(3, minmax(auto, 1fr));
+        gap: 2rem;
+      }
+
+      @include screen-820 {
+        grid-template-columns: repeat(2, minmax(auto, 1fr));
+      }
+
+      @include screen-540 {
+        grid-template-columns: repeat(1, minmax(auto, 1fr));
+        gap: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,136 @@
+@use '../core/mixins' as *;
+@use '../core/variables' as *;
+
+.select > ._collapse:not(._show) {
+  display: none;
+}
+.send-order > ._collapse:not(._show) {
+  display: none;
+}
+
+.send-order {
+  // .send-order__order-place
+  &__order-place {
+    display: flex;
+    gap: 3.5rem;
+    justify-content: space-between;
+    min-height: 0;
+
+    @include screen-690 {
+      flex-direction: column;
+    }
+  }
+
+  // .send-order__column
+  &__column {
+    @include min-690 {
+      flex: 0 1 50%;
+      max-width: 51rem;
+    }
+  }
+
+  // .send-order__row
+  &__row {
+    width: 100%;
+  }
+
+  // .send-order__title
+  &__title {
+    margin-bottom: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  // .send-order__line
+
+  &__line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  // .send-order__lebel
+  &__lebel {
+    min-width: 14rem;
+    margin-right: 0.5rem;
+    font-size: 1.5rem;
+    white-space: nowrap;
+
+    span {
+      color: $color;
+    }
+  }
+
+  // .send-order__input
+  &__input {
+    width: 90%;
+
+    @include min-690 {
+      max-width: 23rem;
+    }
+
+    @include minmax-320-690 {
+      max-width: 53rem;
+    }
+
+    input {
+      width: 100%;
+      height: 32px;
+      padding-left: 0.5rem;
+      border: 1px solid $green;
+      border-radius: 5px;
+
+      font-size: 13px;
+
+      &:focus {
+        box-shadow: 0 0 0 2px #00464677;
+      }
+
+      @include screen-320 {
+        max-width: 181px;
+      }
+    }
+    textarea {
+      @include screen-320 {
+        max-width: 181px;
+      }
+    }
+  }
+
+  // .send-order__comments
+  &__comments {
+    resize: none;
+
+    overflow: auto;
+
+    width: 100%;
+    min-height: 90px;
+    padding: 0.5rem 1rem;
+    border: 1px solid #dadada;
+    border: none;
+    border: 1px solid $green;
+    border-radius: 5px;
+
+    font-size: 13px;
+
+    background-color: #fff;
+
+    &:focus {
+      height: 100%;
+      box-shadow: 0 0 0 2px #00464677;
+    }
+  }
+}
+
+.checkbox {
+  // .checkbox__text
+  &__text {
+    span {
+      margin-right: 2rem;
+      font-size: 9px;
+    }
+  }
+}

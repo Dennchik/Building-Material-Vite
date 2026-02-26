@@ -1,0 +1,151 @@
+.cart-page.page__cart._container
+	.cart-page__title ваша корзина
+	.cart-page__body
+		.cart-page__user-order 
+			.cart-page__table-head
+				.cart-page__column
+					span Товар 
+				.cart-page__column
+					.cart-page__thead
+						span Количество
+				.cart-page__column 
+					span Цена 
+				.cart-page__column 
+					span Сумма 
+				.cart-page__column 
+					.cart-page__button 
+						+iconfont('trash', 'icon')
+			.order-place
+				form(action="" method="get").order-place__place-order
+					.order-place__content 
+						.shopping-cart
+							.shopping-cart__item
+								.product-cart.shopping-cart__row(data-quantity-container) 
+									.product-cart__column
+										.product-cart__product-info
+											.product-cart__image 
+												img(src="/img/products/gypsum-volma-grey-30kg.png" alt="картинка")
+											.product-cart__description
+												span Название описание Артикул&nbsp;00000 
+									.product-cart__column
+										.product-cart__counter
+											.counter-product 
+												.quantity.counter-product__quantity
+													.quantity__button.quantity-remove
+														+iconfont('minus', 'icon')
+													.quantity__input
+														input.input(type="text" name="form[]" value="0" placeholder="<+>" autocomplete="off")
+													.quantity__button.quantity-add._arrow._arrow_next
+														+iconfont('plus', 'icon')
+												p.counter-product__price В наличии&nbsp;
+													span.counter-product__price-product 5 
+													span шт.
+									.product-cart__column
+										.product-cart__price
+											p.product-cart__price.product-price 1000 
+												span.product-cart__units
+													+iconfont('rub', '_icon')
+									.product-cart__column 
+										span.product-cart__quantity-price.
+									.product-cart__column
+										.product-cart__cancel
+											button(type="button").product-cart__button 
+												+iconfont('cancel', 'icon')
+								.product-cart.shopping-cart__row(data-quantity-container) 
+									.product-cart__column
+										.product-cart__product-info
+											.product-cart__image 
+												img(src="/img/products/gypsum-volma-grey-30kg.png" alt="картинка")
+											.product-cart__description
+												span Название описание Артикул&nbsp;00000 
+									.product-cart__column
+										.product-cart__counter
+											.counter-product 
+												.quantity.counter-product__quantity
+													.quantity__button.quantity-remove
+														+iconfont('minus', 'icon')
+													.quantity__input
+														input.input(type="text" name="form[]" value="0" placeholder="<+>" autocomplete="off")
+													.quantity__button.quantity-add._arrow._arrow_next
+														+iconfont('plus', 'icon')
+												p.counter-product__price В наличии&nbsp;
+													span.counter-product__price-product 5 
+													span шт.
+									.product-cart__column
+										.product-cart__price
+											p.product-cart__price.product-price 1000 
+												span.product-cart__units
+													+iconfont('rub', '_icon')
+									.product-cart__column 
+										span.product-cart__quantity-price
+									.product-cart__column
+										.product-cart__cancel
+											button(type="button").product-cart__button 
+												+iconfont('cancel', 'icon')
+								.product-cart.shopping-cart__row(data-quantity-container) 
+									.product-cart__column
+										.product-cart__product-info
+											.product-cart__image 
+												img(src="/img/products/gypsum-volma-grey-30kg.png" alt="картинка")
+											.product-cart__description
+												span Название описание Артикул&nbsp;00000 
+									.product-cart__column
+										.product-cart__counter
+											.counter-product 
+												.quantity.counter-product__quantity
+													.quantity__button.quantity-remove
+														+iconfont('minus', 'icon')
+													.quantity__input
+														input.input(type="text" name="form[]" value="0" placeholder="<+>" autocomplete="off")
+													.quantity__button.quantity-add._arrow._arrow_next
+														+iconfont('plus', 'icon')
+												p.counter-product__price В наличии&nbsp;
+													span.counter-product__price-product 5 
+													span шт.
+									.product-cart__column
+										.product-cart__price
+											p.product-cart__price.product-price 1000 
+												span.product-cart__units
+													+iconfont('rub', '_icon')
+									.product-cart__column 
+										span.product-cart__quantity-price
+									.product-cart__column
+										.product-cart__cancel
+											button(type="button").product-cart__button 
+												+iconfont('cancel', 'icon') 
+						.result-container
+							.result-container__body 
+								.result-container__column 
+									.result-container__discounts Скидка 3%
+								.result-container__column.--result 
+									.result-container__totalprice-order.input-total.product-sum Итого:
+										span.result-container__total-sum 
+						.send-order._send-order
+							include ../../assets/send-order
+						.order-place__footer
+							.order-place__column.order-place__column--footer
+								.order-place__info 
+									p После поступления заказа, с&nbsp;вами свяжется менеджер. Он&nbsp;подтвердит наличие необходимого количества товара и&nbsp;обсудит все детали заказа. После согласования вам&nbsp;выставят счет для&nbsp;оплаты на&nbsp;электронную почту и&nbsp;в&nbsp;личный кабинет.
+							.order-place__column.order-place__column--button
+								button(type="button").order-place__form-button
+									span оформить заказ 
+								button(type="submit").order-place__send-button
+									span отправить заказ
+								.order-place__checkbox
+									.checkbox
+										input.checkbox__input(id="form-agreement" name="agreement" type="checkbox") 
+										label(for="form-agreement").checkbox__label 
+											span.checkbox__icon
+												+iconfont('pointer', 'icon')
+											span Я согласен с&nbsp;
+												a(href="#") условиями 
+												| предоставления услуг и&nbsp;политикой конфиденциальности
+
+		aside.cart-page__help-order
+			.help-order
+				.help-order__info
+					.help-order__title Возникли вопросы при оформлении заказа?
+					.help-order__text
+						p Проконсультируйтесь с&nbsp;нашим специалистом
+						.help-order__phone +7&nbsp;(961)&nbsp;120&nbsp;50&nbsp;00 
+

@@ -1,0 +1,35 @@
+.user-personal-data
+	form(action="").data-form
+		.data-form__body
+			.data-form__title Персональные данные
+			.data-form__column
+				.data-form__line
+					label(for="user-data-surname").data-form__lebel Фамилия:
+					.data-form__input
+						input.input(id='user-data-surname' autocomplete="off" type="text" value='Белова' name="surname")
+				.data-form__line
+					label(for="user-data-name").data-form__lebel Имя:
+					.data-form__input
+						input.input(id="user-data-name" autocomplete="off" type="text" value="Валентина" name="name")
+				.data-form__line
+					label(for="user-data-middlename").data-form__lebel Отчество:
+						span *
+					.data-form__input
+						input.input(id="user-data-middlename" autocomplete="off" type="text" value="Петровна" name="middle-name") 
+				.data-form__line
+					label(for="user-data-phone").data-form__lebel Телефон:
+					.data-form__input
+						input.input(id='user-data-phone' autocomplete="off" type="text" value="+7 900 (545) 17-54" name="phone")
+			.data-form__column
+				.data-form__line
+					label(for="user-data-email").data-form__lebel Эл.почта:
+					.data-form__input
+						input.input(id="user-data-email" autocomplete="off" type="text" value="fjjopk@mail.ru" name="email")
+				.data-form__line
+					label(for="user-data-index").data-form__lebel Индекс:
+					.data-form__input
+						input.input(id="user-data-index" autocomplete="off" type="text" name="index-city")
+				.data-form__line
+					label(for="user-data-city").data-form__lebel Город:
+					.data-form__input
+						input.input(id="user-data-city" autocomplete="off" type="text" name="city")

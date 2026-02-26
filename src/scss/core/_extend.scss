@@ -1,7 +1,49 @@
 /* stylelint-disable plugin/selector-bem-pattern */
 @use 'variables' as *;
 @use 'mixins.scss' as *;
+//* ----------------------------------------------------------------------------
+.greed-laout {
+  grid-template-columns:
+    1fr
+    minmax(25rem, min-content)
+    minmax(18rem, min-content)
+    minmax(9rem, min-content)
+    50px;
 
+  @include screen-1440 {
+    grid-template-columns:
+      1fr
+      minmax(18rem, min-content)
+      minmax(11rem, min-content)
+      minmax(9rem, min-content)
+      50px;
+  }
+
+  @include screen-960 {
+    grid-template-columns:
+      1fr
+      minmax(25rem, min-content)
+      minmax(13rem, min-content)
+      minmax(9rem, min-content)
+      30px;
+  }
+
+  @include screen-690 {
+    grid-template-columns:
+      minmax(20rem, min-content)
+      minmax(13rem, min-content)
+      minmax(9rem, min-content)
+      30px;
+  }
+
+  @include screen-490 {
+    grid-template-columns:
+      minmax(18rem, min-content)
+      minmax(7rem, min-content)
+      minmax(4rem, min-content)
+      30px;
+  }
+}
 //* ----------------------------------------------------------------------------
 .anime-border {
   --t: transparent;

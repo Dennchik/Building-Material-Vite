@@ -1,0 +1,33 @@
+.history-order
+	.date-period.history-order__period-date
+		.date-period__title Период
+		.date-period__input 
+			label.date-period__label(for="start-date") от: 
+			input(type="date" id="start-date" name="start-date")
+		.date-period__input 
+			label.date-period__label(for="end-date") до:
+			input(type="date" id="end-date" name="end-date")
+	.history-order__period-history
+		.history-period__thead
+			.history-period__item Номер заказа
+			.history-period__item Дата оформления
+			.history-period__item Сумма
+			.history-period__item Статус
+		.history-period__row
+			.history-period__item#number 
+				a(href="#")._link Заказ № 385
+			.history-period__item#date 23.03.2019 
+			.history-period__item#sum 5 480 рублей
+			.history-period__item#status Отправлен 
+		.history-period__row
+			.history-period__item#number 
+				a(href="#")._link Заказ № 385
+			.history-period__item#date 23.03.2019 
+			.history-period__item#sum 5 480 рублей
+			.history-period__item#status Получен 
+		.history-period__row
+			.history-period__item#number 
+				a(href="#")._link Заказ № 385
+			.history-period__item#date 23.03.2019 
+			.history-period__item#sum 5 480 рублей
+			.history-period__item#status Ожидает оплаты   

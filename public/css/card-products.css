@@ -21,6 +21,33 @@
 }
 
 /* stylelint-disable plugin/selector-bem-pattern */
+.greed-laout {
+  grid-template-columns: 1fr minmax(25rem, min-content) minmax(18rem, min-content) minmax(9rem, min-content) 50px;
+}
+@media screen and (width <= 1440px) {
+  .greed-laout {
+    grid-template-columns: 1fr minmax(18rem, min-content) minmax(11rem, min-content) minmax(9rem, min-content) 50px;
+  }
+}
+@media screen and (width <= 960px) {
+  .greed-laout {
+    grid-template-columns: 1fr minmax(25rem, min-content) minmax(13rem, min-content) minmax(9rem, min-content) 30px;
+  }
+  .greed-laout :root {
+    --mq-header-size: big;
+  }
+}
+@media screen and (width <= 690px) {
+  .greed-laout {
+    grid-template-columns: minmax(20rem, min-content) minmax(13rem, min-content) minmax(9rem, min-content) 30px;
+  }
+}
+@media screen and (width <= 490px) {
+  .greed-laout {
+    grid-template-columns: minmax(18rem, min-content) minmax(7rem, min-content) minmax(4rem, min-content) 30px;
+  }
+}
+
 .anime-border, .card-slide__image {
   --t: transparent;
   --c: rgb(75 128 16);

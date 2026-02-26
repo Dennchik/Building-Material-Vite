@@ -1,0 +1,49 @@
+.personal-account._container
+	.personal-account__title личный кабинет 
+		.burger-block
+			.toggle-wrap
+				.toggle-menu
+					span
+					span
+					span
+	.personal-account__body
+		.personal-account__column 
+			.user-bar.personal-account__sidebar-menu
+				.user-bar__user-name
+					+iconfont('user-check', 'icon')
+					span Валентина Белова
+				ul.user-bar__list
+					li.user-bar__item._active 
+						span(data-page="ure-personal-data").link Профиль
+							+iconfont('arrow-right', 'icon')
+					li.user-bar__item
+						span(data-page="order-cart").link Корзина
+							+iconfont('arrow-right', 'icon')
+					li.user-bar__item
+						span(data-page="history-order").link История заказов 
+							+iconfont('arrow-right', 'icon') 
+					li.user-bar__item
+						span(data-page="user-favourites").link Избранное
+							+iconfont('arrow-right', 'icon') 
+					li.user-bar__item
+						span(data-page="feed-back").link Обратная связь
+							+iconfont('arrow-right', 'icon') 
+					li.user-bar__item
+						span(data-page="change-password").link Сменить пароль
+							+iconfont('arrow-right', 'icon') 
+		.personal-account__column 
+			.personal-account__personal-data
+				.personal-account__tab
+					include @/pug/user-data/user-personal-data
+				.personal-account__tab
+					include @/pug/user-data/user-order-cart
+				.personal-account__tab
+					include @/pug/user-data/history-order
+				.personal-account__tab
+					include @/pug/user-data/product-slide
+				.personal-account__tab
+					include @/pug/user-data/feed-back
+				.personal-account__tab
+					include @/pug/user-data/change-password
+
+

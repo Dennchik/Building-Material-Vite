@@ -350,3 +350,48 @@ export function fieldSetsToggle() {
     showFieldset, // 👈 экспортируем
   };
 }
+//todo -----------Событие при нажатии на кнопку "Оформить заказ"----------------
+import ItcCollapse from '../assets/its-collapse.js';
+
+export function placeOrder() {
+  let orderCollapse = document.querySelector('.send-order');
+
+  // Проверяем, существует ли orderCollapse перед тем как пытаться найти в нем _collapse
+  let collapseElement = orderCollapse
+    ? orderCollapse.querySelector('._collapse')
+    : null;
+  const collapse = collapseElement ? new ItcCollapse(collapseElement) : null; // Создаем ItcCollapse только если элемент найден
+
+  const elcheckboxLabelement = document.querySelector('.order-place__checkbox');
+
+  document
+    .querySelector('.order-place__form-button')
+    .addEventListener('click', function () {
+      let titleDocument = document.querySelector('.cart-page__title');
+
+      // ДОБАВЛЕНА ПРОВЕРКА:
+      if (titleDocument) {
+        // Если элемент найден, тогда меняем его содержимое
+        titleDocument.innerHTML = 'оформление заказа';
+      }
+
+      // Проверяем, существует ли объект collapse перед вызовом toggle()
+      if (collapse) {
+        collapse.toggle();
+      }
+
+      let sendButton = document.querySelector('.order-place__send-button');
+      let formButton = document.querySelector('.order-place__form-button');
+
+      // Добавим проверки и для этих элементов, на всякий случай
+      if (sendButton) {
+        sendButton.style.display = 'block';
+      }
+      if (formButton) {
+        formButton.style.display = 'none';
+      }
+      if (elcheckboxLabelement) {
+        elcheckboxLabelement.style.display = 'block';
+      }
+    });
+}

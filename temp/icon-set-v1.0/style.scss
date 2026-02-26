@@ -5,15 +5,15 @@
   font-weight: normal;
   font-style: normal;
   font-display: block;
-  src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?ibqy1c');
+  src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?uj10tk');
   src:
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?ibqy1c#iefix')
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?uj10tk#iefix')
       format('embedded-opentype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?ibqy1c')
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?uj10tk')
       format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?ibqy1c')
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?uj10tk')
       format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?ibqy1c##{$icomoon-font-family}')
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?uj10tk##{$icomoon-font-family}')
       format('svg');
 }
 
@@ -43,6 +43,21 @@
   letter-spacing: 0;
 }
 
+.icon-user-check {
+  &::before {
+    content: $icon-user-check;
+  }
+}
+.icon-trash {
+  &::before {
+    content: $icon-trash;
+  }
+}
+.icon-cancel {
+  &::before {
+    content: $icon-cancel;
+  }
+}
 .icon-whatsapp {
   &::before {
     content: $icon-whatsapp;

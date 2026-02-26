@@ -1,5 +1,6 @@
 @use '../core/variables' as *;
 @use '../core/mixins' as *;
+@use '../core/extend' as *;
 
 .swiper-wrapper > .swiper-slide:not(.swiper-slide-active) {
   .main-slide__title {
@@ -12,7 +13,33 @@
     transition: opacity 0.9s ease-in-out;
   }
 }
+//* ----------------------------------------------------------------------------
+.shopping-cart {
+  // .shopping-cart__item
+  &__item {
+    display: flex;
+    flex-direction: column;
+  }
 
+  // .shopping-cart__row
+  &__row {
+    display: grid;
+    gap: 0.8rem;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 2rem;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    @extend.greed-laout;
+
+    @include screen-690 {
+      row-gap: 4rem;
+      padding-bottom: 2rem;
+    }
+  }
+}
+//* ----------------------------------------------------------------------------
 ._collapse:not(._show) {
   display: none;
 }
@@ -131,7 +158,7 @@
   &__input {
     display: none;
 
-    &:checked + .checkbox__checked ._icon {
+    &:checked + .checkbox__label .checkbox__icon {
       scale: 1;
     }
   }
@@ -154,9 +181,11 @@
   &__label {
     cursor: pointer;
 
+    position: relative;
+
     display: flex;
     gap: 12px;
-    align-items: flex-start;
+    align-items: center;
 
     max-width: 66.1rem;
 
@@ -178,9 +207,9 @@
       transition: box-shadow 0.3s ease-in-out;
     }
 
-    .icon {
+    .checkbox__icon {
       position: absolute;
-      transform: translateX(-1px);
+      top: 0;
       scale: 0;
 
       display: block;
@@ -190,8 +219,11 @@
 
       transition: scale 0.2s ease;
 
-      &::before {
-        font-size: 18px;
+      .icon {
+        &::before {
+          font-size: 22px;
+          color: $green;
+        }
       }
     }
 

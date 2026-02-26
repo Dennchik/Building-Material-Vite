@@ -7,6 +7,7 @@ import { addCartAnimation } from './animations/add-cart-animation.jsx';
 import { counterProduct } from './components/counter.js';
 import { dynamicAdaptive } from './modules/dynamic-adaptive.js';
 import { validateForm } from './assets/validate-form.js';
+import { anchorsSmoothScrolling } from './assets/anchors-smooth-scrolling.js';
 import {
   addFavorites,
   sidebarMenuHandle,
@@ -34,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
   sidebarMenuHandle();
   dynamicAdaptive();
 });
-
+anchorsSmoothScrolling();
 //* - [Utils] -
 loadedTimer();
 

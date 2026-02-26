@@ -5,18 +5,18 @@
 				.header__location
 					+iconfont('local', 'icon')
 					span Обнинск 
-				.top-menu(data-da="sidebar-menu__body" data-da-position="0" data-da-resolution="690")   
+				.top-menu(data-da="sidebar-menu__body" data-da-position="0" data-da-resolution="690")
 					ul.top-menu__list 
 						li.top-menu__item
 							a(href=linkTo('404', filename)).top-menu__link.link-underline-center Оплата и доставка
 						li.top-menu__item
-							a(href="#").top-menu__link.link-underline-center Производители
+							a(href="#maker").top-menu__link.link-underline-center.anchor-link  Производители
 						li.top-menu__item
 							a(href=linkTo("about", filename)).top-menu__link.link-underline-center О магазине
 						li.top-menu__item
 							a(href=linkTo("news", filename)).top-menu__link.link-underline-center Новости
 						li.top-menu__item
-							a(href="#").top-menu__link.link-underline-center Контакты
+							a(href="#contacts").top-menu__link.link-underline-center.anchor-link Контакты
 		.main-menu.header__main-menu._container 
 			.main-menu__column
 				.main-menu__logo-wrapper 
@@ -37,7 +37,7 @@
 				.menu-header
 					ul.menu-header__list(data-da="menu-float__body" data-da-position="1" data-da-resolution="768") 
 						li.menu-header__item.link-underline-center
-							a(href="#").menu-header__link
+							a(href=linkTo("favourites", filename)).menu-header__link
 								span.favourites 
 									+iconfont('heart', 'icon') 
 									+iconfont('heart-like', 'icon')
@@ -48,10 +48,10 @@
 								+iconfont('person', 'icon')
 								span.menu-header__text Войти
 						li.menu-header__item.link-underline-center
-							a(href="#").menu-header__link 
+							a(href=linkTo("cart-page", filename)).menu-header__link 
 								+iconfont('cart', 'icon')
 								span.menu-header__text Корзина
-						li.menu-header__item.link-underline-center
+						//- li.menu-header__item.link-underline-center
 							a(href="#").menu-header__link 
 								+iconfont('bar-chart', 'icon')
 								span.menu-header__text Сравнение

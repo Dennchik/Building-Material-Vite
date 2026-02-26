@@ -1,0 +1,11 @@
+extends @/pug/layouts/app_layout
+
+append link
+prepend script
+	script(defer type="module" src="/src/js/favourites.js")
+block title
+	- var text='Корзина'
+
+block main-content 
+	section.main-content__section
+		include @/pug/sections/section-favourites

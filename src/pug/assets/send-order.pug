@@ -1,0 +1,61 @@
+.send-order
+	.send-order__wrapp-collapse._collapse
+		.send-order__order-place 
+			.send-order__column  
+				.send-order__row
+					.send-order__title Данные покупателя
+					.send-order__line
+						label(for="form-phone").send-order__lebel Телефон: 
+							span *
+						.send-order__input
+							input.input(id='form-phone' autocomplete=" " type="text" name="phone")
+					.send-order__line
+						label(for="form-surname").send-order__lebel Фамилия:
+							span *
+						.send-order__input
+							input.input(id='form-surname' autocomplete=" " type="text" name="surname")
+					.send-order__line
+						label(for="form-name").send-order__lebel Имя:
+							span  *
+						.send-order__input
+							input.input(id="form-name" autocomplete=" " type="text" name="name")
+					.send-order__line
+						label(for="form-middlename").send-order__lebel Отчество:
+							span *
+						.send-order__input
+							input.input(id="form-middlename" autocomplete=" " type="text" name="middle-name")
+					.send-order__line
+						label(for="form-email").send-order__lebel Эл.почта":
+						.send-order__input
+							input.input(id="form-email" autocomplete=" " type="text" name="email")
+			.send-order__column
+				.send-order__row
+					.send-order__title Доставка
+					.send-order__line
+						label(for="form-index").send-order__lebel Индекс:
+							span *
+						.send-order__input
+							input.input(id="form-index" autocomplete=" " type="text" name="index-city")
+					.send-order__line
+						label(for="form-address").send-order__lebel Адрес доставки:
+							span *
+						.send-order__input
+							input.input(id="form-address" autocomplete=" " type="text" name="address")
+					.send-order__line(data-select)
+						label(for="form-select").send-order__lebel Способ доставки*:
+						.select.send-order__input
+							.select__box-button
+								input.select__button.input(id="form-select" type="button" name="form-select" value="способ доставки") 
+								i.icon-arow-right
+							ul.select__list._collapse
+								li.select__list-item._selected(value="CDK") СДЭК
+								li.select__list-item(value="RussianPost") Почта России
+								li.select__list-item(value="Boxberry") Boxberry
+								li.select__list-item(value="TransportCompany") Траспортная компания 
+								li.select__list-item(value="CourierToDoor")  Курьер до двери 
+								li.select__list-item(value="Pickup") Самовывоз
+					.send-order__line 
+						label(for="form-massege").send-order__lebel Комментарии:
+						.send-order__input
+							textarea.send-order__comments(id='form-massege' name="massege" placeholder="Enter your message...")
+

@@ -1,0 +1,30 @@
+.feed-back
+	form(action="").data-form 
+		.data-form__body 
+			.data-form__column
+				.data-form__line
+					label(for="user-data-phone").data-form__lebel Задайте&nbsp;вопрос:
+					textarea.send-order__comments#massege-form(name="massege" placeholder="Enter your message...")
+				.data-form__line(data-select)
+					label(for="form-select").data-form__lebel Выбрать способ ответа:
+					.select.data-form__input
+						.select__box-button
+							input.select__button.input(id="select-form" type="button" name="form-select" value="Выбрать способ ответа") 
+							+iconfont('pointer-right', 'icon')
+						ul.select__list._collapse
+							li.select__list-item._selected(value="Телефон") Телефон
+							li.select__list-item(value="Эл.почта") Эл.почта
+							li.select__list-item(value="Ватсап") Ватсап
+
+				.data-form__line
+					label(for="user-phone").data-form__lebel Телефон:
+					.data-form__input
+						input.input(id='user-phone' autocomplete="off" type="text" value="+7 900 (545) 17-54" name="phone")
+				.data-form__line
+					label(for="user-email").data-form__lebel Эл.почта:
+					.data-form__input
+						input.input(id="user-email" autocomplete="off" type="text" value="fjjopk@mail.ru" name="email")
+				.data-form__line
+					label(for="user-whatsapp").data-form__lebel Ватсап:
+					.data-form__input
+						input.input(id='user-whatsapp' autocomplete="off" type="text" value="+7 900 (545) 17-54" name="phone")
