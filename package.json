@@ -1,13 +1,12 @@
 {
-  "name": "vite-project-pug",
+  "name": "building-material-vite",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "start": "vite",
-    "build": "vite build",
-    "Preview": "vite preview",
-    "scss:build": "stylelint '**/*.{css,scss}' --fix"
+    "Build-Prod": "vite build",
+    "Preview": "vite preview"
   },
   "dependencies": {
     "animateplus": "^2.1.1",
@@ -29,7 +28,7 @@
   },
   "devDependencies": {
     "@mish.dev/vite-convert-pug-in-html": "^2.0.0",
-    "autoprefixer": "^10.4.21",
+    "autoprefixer": "^10.5.4",
     "eslint": "^9.34.0",
     "fast-glob": "^3.3.3",
     "globals": "^16.3.0",
